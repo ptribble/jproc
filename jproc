@@ -1,0 +1,144 @@
+#!/bin/sh
+#
+# run the jproc utilities
+#
+
+JPDIR=`dirname $0`
+LIBDIR=${JPDIR}/lib
+ARCHLIBDIR=${LIBDIR}/`/usr/bin/uname -p`
+ARCHLIBDIR_64=${LIBDIR}/`/usr/bin/isainfo -k`
+JARLIBDIR=${LIBDIR}/java
+JAVA=/usr/bin/java
+
+#
+# if installed then the locations change
+#
+INSTALLED=false
+if [ "$INSTALLED" = "true" ]; then
+    ARCHLIBDIR=/usr/lib
+    ARCHLIBDIR_64=/usr/lib/64
+    JARLIBDIR=/usr/share/jproc
+fi
+
+usage() {
+    echo "Usage: jproc subcommand [options]"
+    echo "Available subcommands:"
+    echo " info"
+    echo " usage"
+    echo " userinfo"
+    echo " zoneinfo"
+    echo " ptree [pid]"
+    echo " jptree"
+}
+
+case $# in
+0)
+    usage
+    exit 1
+    ;;
+*)
+    SUBCOMMAND=$1
+    shift
+    ;;
+esac
+
+JSONJAR=${JARLIBDIR}/org-json.jar
+JINGLEJAR=${JARLIBDIR}/jingle.jar
+JUMBLEJAR=${JARLIBDIR}/jumble.jar
+JPJAR=${JARLIBDIR}/jproc.jar
+JPAPIJAR=${JARLIBDIR}/jproc-api.jar
+ALLJARS=${JSONJAR}:${JINGLEJAR}:${JUMBLEJAR}:${JPJAR}
+DEMOPKG="uk.co.petertribble.jproc.demo"
+SERVERJARS=${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-server-3.1.3.jar:${JARLIBDIR}/commons-logging-1.1.1.jar:${JARLIBDIR}/ws-commons-util-1.0.2.jar
+HTTPJARS=${JARLIBDIR}/httpclient-4.2.3.jar:${JARLIBDIR}/httpcore-4.2.2.jar:${JARLIBDIR}/commons-codec-1.6.jar
+CLIENTJARS=${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-client-3.1.3.jar:${JARLIBDIR}/commons-logging-1.1.1.jar:${JARLIBDIR}/ws-commons-util-1.0.2.jar
+
+#
+# Normally, -s or -S means we're a client and need the client-side jars
+# for remote access
+#
+case $1 in
+-s|-S)
+    ALLJARS="${ALLJARS}:${CLIENTJARS}:${HTTPJARS}"
+    ;;
+esac
+
+#
+# attempt to use a 64-bit version if possible
+#
+if [ -f "${ARCHLIBDIR_64}/libproc_jni.so" ]; then
+    if [ "${ARCHLIBDIR}" != "${ARCHLIBDIR_64}" ]; then
+	ARCHLIBDIR="${ARCHLIBDIR_64}"
+	JFLAGS="-d64"
+    fi
+fi
+
+case $SUBCOMMAND in
+
+'info')
+    JPCLASS=${DEMOPKG}.JPinfo
+    ;;
+
+'userinfo')
+    JPCLASS=${DEMOPKG}.UserInfo
+    ;;
+
+'zoneinfo')
+    JPCLASS=${DEMOPKG}.ZoneInfo
+    ;;
+
+'usage')
+    JPCLASS=${DEMOPKG}.JPusage
+    ;;
+
+'ptree')
+    JPCLASS=${DEMOPKG}.PTree
+    ;;
+
+'jptree')
+    JPCLASS=${DEMOPKG}.JPTree
+    ;;
+
+'server')
+    JPCLASS=uk.co.petertribble.jproc.server.PServer1
+    ALLJARS=${JPJAR}:${SERVERJARS}
+    ;;
+
+#
+# EXPERIMENTAL
+#
+'jmxserver')
+    JPCLASS=uk.co.petertribble.jproc.server.JProcMXserver
+    # the following works for jconsole
+    JFLAGS="${JFLAGS} -Dcom.sun.management.jmxremote"
+    # the following for a remote client like jmanage
+    JFLAGS="${JFLAGS} -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
+    ALLJARS=${JPJAR}:${SERVERJARS}
+    ;;
+
+#
+# EXPERIMENTAL
+#
+'jmxclient')
+    /usr/java/bin/jconsole -J-Djava.class.path=/usr/java/lib/jconsole.jar:/usr/java/lib/tools.jar:${JPAPIJAR}
+    exit 0
+    ;;
+
+#
+# undocumented for debugging only
+#
+'jsondump')
+    JPCLASS=${DEMOPKG}.JSONdump
+    ;;
+
+*)
+    usage
+    exit 1
+    ;;
+
+esac
+
+#
+# launch the class specified
+#
+LD_LIBRARY_PATH=${ARCHLIBDIR} $JAVA ${JFLAGS} -Dswing.aatext=true -cp ${ALLJARS} ${JPCLASS} $*

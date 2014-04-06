@@ -1,0 +1,26 @@
+Things to do, and problems to solve.
+
+kar-like archive and parser "par"
+
+JPtree - process tree; funky graphics. (Can expand etc like a tree;
+show contract and zone transitions; show user transitions; show
+aggregated usage.)
+
+Table sort is lost when structure changes.
+
+Generalize jptree and ptree to handle the case where there isn't a
+single root to the tree
+
+JLwp needs hashcode
+
+Top lookalike - sort on anything, filter on anything, display anything,
+choose what fields to display; dynamically expand process into LWPs
+like a tree. Really belongs in solview, which brings multiple bits
+together
+
+JsonJproc should catch IOException explicitly as that's what
+client.execute() throws (need to test to see exactly what comes back)
+
+Shame zoneinfo (and userinfo) don't show rates, especially in the form
+of %cpu - that would be very useful.
+

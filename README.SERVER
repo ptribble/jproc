@@ -1,0 +1,63 @@
+This is currently a hack.
+
+Standalone Server
+=================
+
+On the server machine, run
+
+./jproc server -p 7777
+
+this will listen on port 7777 (which might conflict with something else -
+choose something different if it does)
+
+On the client machine, run
+
+./jproc info -s server_url
+
+where server_url is of the form
+
+http://server_name:7777/
+
+
+Embedded servlet
+================
+
+Run
+
+./build war
+
+which will create a file jproc.war. You need to deploy that (for
+tomcat, just copy it into the webapps directory), and then start your
+servlet container so that it can find libproc_jni.so (for example, set
+LD_LIBRARY_PATH so it points to the directory containing the library).
+
+Then on the client
+
+./jproc info -s server_url
+
+where server_url is of the form
+
+http://server_name:8080/jproc/xmlrpc
+
+
+Tomcat notes
+============
+
+The simplest way to configure tomcat is to
+
+cd $CATALINA_HOME
+
+whee CATALINA_HOME is the main directory where tomcat lives. Then
+create a lib directory
+
+mkdir lib
+
+and copy the shared library in there
+
+cp .../path/to/libproc_jni.so lib
+
+then create a file $CATALINA_HOME/bin/setenv.sh that contains the
+following two lines
+
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CATALINA_HOME/lib
+export LD_LIBRARY_PATH

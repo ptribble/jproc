@@ -1,0 +1,222 @@
+1.0
+
+NOTE: Post version 1.0, new features will appear in v2.0 and later
+which will require a minimum Java 7
+
+Update httpclient to 4.2.3
+
+Remove Play sample
+
+Build packages
+
+Add man page
+
+Add SMF manifest to run server
+
+0.12
+
+Update license details
+
+Refactor the table models
+
+0.11
+
+Tweak popup code
+
+Play server implementation
+
+RESTful client implementation
+
+Start time only shows date for processes over 24 hours old, not 1 hour
+
+Remove auth from PServerConfig as the embedded server doesn't support
+it.
+
+Expose project lookups by name/id.
+
+New zoneinfo subcommand, showing aggregate usage by zone
+
+NativeJProc.getProcesses() checks the process still exists before
+adding it.
+
+Remove RemoteJProc, functionality incorporated directly into JProc.
+
+JProc getUserName() and friends returns the uid as a String if there's
+no matching user, rather than null.
+
+0.10
+
+Fixed process exit handling in LWPUsageTableModel
+
+New ProcessExitedTableModel which ProcessTable and LWPUsageTable now
+show if the process they're displaying exits.
+
+PSusageTableModel handles process exit correctly (NPE if it needed to
+redraw a cell before the next update that actually removed the process
+from the table)
+
+Update Jingle
+
+New userinfo subcommand, showing aggregate usage by user
+
+0.9
+
+Add JSON output and JSON parser
+
+Add server and client
+
+Add XML-RPC jars, json jar
+
+jmx code actually works (not necessarily useful, but not actually
+broken)
+
+PTree no longer gives NPE if given invalid pid
+
+Added README.SERVER and 'build war'
+
+0.8
+
+Preliminary JMX support
+
+Add filtering by task, project, and process contract to JProcessFilter.
+
+Clean up matchFilter()
+
+JProcessSet gains getTasks() and getProjects(). These return a Set of
+numeric ids, without being converted
+
+Java 7 compatibility: don't instantiate JProcResources
+
+Java 7 compatibility: fix getColumnClass()
+
+Remove unnecessary no-argument constructors
+
+0.7
+
+Updated jumble to 1.4
+
+Significant refactoring - all information now retrieved via
+JProc. NativeJProc extends the abstract class ProcessInterface. This
+will allow remote interfaces to be added later, which was impossible
+with the old design.
+
+Thread popups now show the right process if the table has been sorted.
+
+ProcessTreeNode has getProcess(), so use it.
+
+JProcessFilter can represent a single process.
+
+Harmonize order of constructor arguments
+
+JPinfoPanel, JPusagePanel, and LWPusagePanel directly extend
+JTable. And class names changed to reflect that.
+
+JPTree shows process info as well as thread information
+
+Correct the help (especially for jptree)
+
+Create a NoSuchProcessException class.
+
+Moved the ActionListener from the model to the enclosing table.
+
+Clean javadoc
+
+0.6
+
+Add pmd checks migrating,strictexception,braces
+
+Remove unnecessary static initialization blocks
+
+Updated jumble to 1.3
+
+Clean up ProcessTreeNode
+
+@author annotation
+
+JProcUsage needs to be implemented
+
+info - hide zone column if there's only one
+
+Add tables for process and lwp usage
+
+New usage subcommand, showing the usage tables
+
+Fix exception generated when setting a custom renderer on a column
+that's not visible
+
+Move panel classes from demo to gui
+
+jptree updates the tree as processes come and go
+
+On usage and info tables right-click gives you a menu that shows a
+thread activity table in a new window.
+
+ps subcommand removed - it was mostly for initial debugging
+
+0.5
+
+Updated jingle and jumble.
+
+pmd target in build script
+
+Fix some typos in the help files
+
+JProcStatus also simply return times as doubles, rather than the
+seconds/nanoseconds parts
+
+Remove JProcLwpUsage - it's functionally identical to JProcUsage, with
+the same structure underneath.
+
+Fix JLwp.equals()
+
+Actually close anything we open in native code; we had a massive file
+descriptor leak
+
+Just open a File on /proc once in JProc
+
+Remove the windows and client/server stuff inherited from jkstat
+
+Neater display of time used
+
+jpinfo can now hide and show columns as the user chooses; new Column menu
+
+0.4
+
+pmd cleanup
+
+No more Jtop - Jps is a superset
+
+No more Vector
+
+ptree subcommand - with no arguments or a single pid
+
+Humanize memory, start and elapsed times in jpinfo (using
+CellRenderers, so the tables still sort correctly on the underlying
+data)
+
+64-bit, needed so that 64-bit processes can be shown
+
+Added pr_ctime from psinfo_t
+
+Remove access to the individual seconds/nanoseconds parts of time and
+ctime.
+
+0.3
+
+classes properly public
+
+0.2
+
+Cleaned up javadoc
+
+Native lookup of user, group, zone, project names and ids
+
+JProcessSet, allows process tracking
+
+JProcessFilter, allows process filtering by user or zone
+
+JPinfo now does filtering by user or zone
+
+0.1
+
+Initial version

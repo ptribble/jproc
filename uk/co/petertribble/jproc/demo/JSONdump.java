@@ -1,0 +1,53 @@
+/*
+ * CDDL HEADER START
+ *
+ * The contents of this file are subject to the terms of the
+ * Common Development and Distribution License, Version 1.0 only
+ * (the "License").  You may not use this file except in compliance
+ * with the License.
+ *
+ * You can obtain a copy of the license at usr/src/OPENSOLARIS.LICENSE
+ * or http://www.opensolaris.org/os/licensing.
+ * See the License for the specific language governing permissions
+ * and limitations under the License.
+ *
+ * When distributing Covered Code, include this CDDL HEADER in each
+ * file and include the License file at usr/src/OPENSOLARIS.LICENSE.
+ * If applicable, add the following below this CDDL HEADER, with the
+ * fields enclosed by brackets "[]" replaced with your own identifying
+ * information: Portions Copyright [yyyy] [name of copyright owner]
+ *
+ * CDDL HEADER END
+ */
+
+package uk.co.petertribble.jproc.demo;
+
+import uk.co.petertribble.jproc.api.*;
+
+/**
+ * Dump out the process list in JSON format.
+ *
+ * @author Peter Tribble
+ */
+public final class JSONdump {
+
+    /**
+     * Create the application.
+     *
+     * @param args Command line arguments, ignored.
+     */
+    public static void main(String[] args) {
+	boolean firstentry = true;
+	JProc jproc = new JProc();
+	System.out.println("[");
+	for (JProcess jp : jproc.getProcesses()) {
+	    if (firstentry) {
+		firstentry = false;
+	    } else {
+		System.out.println(",");
+	    }
+	    System.out.println(jproc.getInfo(jp).toJSON());
+	}
+	System.out.println("]");
+    }
+}

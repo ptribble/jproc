@@ -1,0 +1,141 @@
+#!/bin/sh
+#
+# build jproc
+# optionally create the jni header file or run an application
+#
+# Usage:
+#
+# ./build -jni
+#    (Re)Creates the jni header file. Only needed if the native interface
+#    changes, which it shouldn't very often
+#
+# ./build -compile
+#    Just build the jni library
+#
+# ./build -doc
+#    Generates the javadoc
+#
+# ./build
+#    Builds all the java classes, and recompiles the native library.
+#
+# If you have the ON build tools installed, then jstyle gets run.
+#
+
+PATH=/usr/jdk/instances/jdk1.5.0/bin:$PATH
+export PATH
+
+JPDIR=`dirname $0`
+LIBDIR=${JPDIR}/lib
+ARCHLIBDIR=${LIBDIR}/`/usr/bin/uname -p`
+ARCHLIBDIR_64=${LIBDIR}/`/usr/bin/isainfo -k`
+JARLIBDIR=${LIBDIR}/java
+JAVA=java
+JAVAC=javac
+
+JSONJAR=${JARLIBDIR}/org-json.jar
+JINGLEJAR=${JARLIBDIR}/jingle.jar
+JUMBLEJAR=${JARLIBDIR}/jumble.jar
+JPJAR=${JARLIBDIR}/jproc.jar
+JPAPIJAR=${JARLIBDIR}/jproc-api.jar
+HTTPJARS=${JARLIBDIR}/httpclient-4.2.3.jar:${JARLIBDIR}/httpcore-4.2.2.jar
+ALLJARS=${JCJAR}:${JFJAR}:${JINGLEJAR}:${JUMBLEJAR}:${JPJAR}
+SERVERJARS=${JUMBLEJAR}:${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-server-3.1.3.jar
+CLIENTJARS=${JUMBLEJAR}:${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-client-3.1.3.jar
+REMOTEJARS=${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-server-3.1.3.jar:${JARLIBDIR}/xmlrpc-client-3.1.3.jar
+BUILDJARS=${JSONJAR}:${JINGLEJAR}:${JUMBLEJAR}:${REMOTEJARS}:${HTTPJARS}
+
+#
+# run
+# ./build pmd
+# to use this, these checks should always pass, it's a regression if
+# any warnings appear. Of course, you must have pmd in your path
+#
+PMDCHECKS="imports,unusedcode,typeresolution,coupling,clone,sunsecure,finalizers,migrating,strictexception,braces"
+
+case $1 in
+-jni)
+	javac uk/co/petertribble/jproc/api/NativeJProc.java
+	javah -jni uk.co.petertribble.jproc.api.NativeJProc
+	exit 0
+	;;
+-compile)
+	javac uk/co/petertribble/jproc/api/*.java
+	cc -G -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
+	exit 0
+	;;
+-doc)
+	rm -fr javadoc
+	mkdir javadoc
+	javadoc -d javadoc -classpath .:$JINGLEJAR uk.co.petertribble.jproc.api uk.co.petertribble.jproc.gui uk.co.petertribble.jproc.demo
+	exit 0
+	;;
+clean)
+	rm -f `find uk/co -name '*.class'`
+	rm -f `find . -type f -name '*~'`
+	rm -fr javadoc
+	rm -f jproc.war
+	exit 0
+	;;
+pmd)
+	pmd uk $PMDCHECKS
+	exit 0
+	;;
+packages)
+	cat jproc | sed s:INSTALLED=false:INSTALLED=true: > jproc.installed
+	./mkproto i386 $2 > prototype.i386
+	./mkproto sparc $2 > prototype.sparc
+	pkgmk -d /tmp -f prototype.i386 -r `pwd` TRIBjproc
+	pkgtrans -s /tmp /tmp/TRIBjproc-i386.pkg TRIBjproc
+	rm -fr /tmp/TRIBjproc
+	pkgmk -d /tmp -f prototype.sparc -r `pwd` TRIBjproc
+	pkgtrans -s /tmp /tmp/TRIBjproc-sparc.pkg TRIBjproc
+	rm -fr /tmp/TRIBjproc
+	ls -l /tmp/TRIBjproc-sparc.pkg /tmp/TRIBjproc-i386.pkg
+	rm prototype.i386 prototype.sparc
+	rm jproc.installed
+	rm -f depend
+	exit 0
+	;;
+war)
+	mkdir war
+	cd war
+	mkdir -p WEB-INF/lib
+	mkdir -p org/apache/xmlrpc/webserver
+	cp -p ../properties/PServer1.properties org/apache/xmlrpc/webserver/XmlRpcServlet.properties
+	jar cf WEB-INF/lib/props.jar org
+	rm -fr org
+	# only copy the jars we need
+	cp ../lib/java/jproc.jar ../lib/java/ws* ../lib/java/xmlrpc* ../lib/java/commons-logging* WEB-INF/lib
+	cp ../WEB-INF/web.xml WEB-INF
+	jar cf ../jproc.war *
+	cd ..
+	rm -fr war
+	exit 0
+	;;
+esac
+
+XFLAGS="-Xlint -Xlint:-serial"
+
+if [ -x /opt/onbld/bin/jstyle ]; then
+	/opt/onbld/bin/jstyle `find uk/co/petertribble -name '*.java'`
+fi
+
+javac ${XFLAGS} -classpath .:${BUILDJARS} uk/co/petertribble/jproc/api/*.java uk/co/petertribble/jproc/demo/*.java uk/co/petertribble/jproc/gui/*.java uk/co/petertribble/jproc/server/*.java uk/co/petertribble/jproc/client/*.java uk/co/petertribble/jproc/parse/*.java
+
+cc -G -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
+
+#
+# compiling 64-bit objects is just plain funky
+#
+case `isainfo -k` in
+amd64)
+    cc -Kpic -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR_64}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
+    ;;
+sparcv9)
+    cc -xcode=pic13 -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR_64}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
+    ;;
+esac
+
+jar -cmf jproc.manifest ${JPJAR} help/*.html help/CDDL.txt properties/*.properties `find uk/co -name '*.class'`
+
+jar -cf ${JPAPIJAR} `find uk/co/petertribble/jproc/api -name '*.class'`

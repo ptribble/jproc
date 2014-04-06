@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>JPTree help</title>
+</head>
+<body>
+
+<h1>JPTree</h1>
+
+<p>JPTree is a tabular display of running processes, displayed as a
+tree to display the relationship between processes. Selecting a process
+displays some of its properties.</p>
+
+<p>At the top of the display is basic information about a
+process. Below that is usage information for the processes threads.</p>
+
+<p>The process information fields displayed are:</p>
+
+<ul>
+<li>USER: name of process owner</li>
+<li>GROUP: group of process owner</li>
+<li>SZ: the size of the process</li>
+<li>RSS: resident set size</li>
+<li>START: the time the process started execution</li>
+<li>TIME: cpu time accumulated by the process</li>
+<li>TASK: process taskid</li>
+<li>PROJ: process project id</li>
+<li>ZONE: id of the zone the process is running in</li>
+<li>CT: process contract id (see smf)</li>
+</ul>
+
+<p>The thread usage fields displayed are:</p>
+
+<ul>
+<li>LWP: the lwp id</li>
+<li>RTIME: elapsed time used by the lwp</li>
+<li>UTIME: user time</li>
+<li>STIME: system time</li>
+<li>MAJF: major faults incurred by the lwp</li>
+<li>INBLK: blocks input by this lwp</li>
+<li>OUBLK: blocks output by this lwp</li>
+<li>SIGS: signals received by this lwp</li>
+<li>VCTX: voluntary context switches incurred by the lwp</li>
+<li>ICTX: involuntary context switches incurred by the lwp</li>
+<li>SYSC: system calls executed by the lwp</li>
+<li>IOCH: number of chars read and written by this lwp</li>
+</ul>
+
+<p>The rows can be sorted by selecting the column header.</p>
+
+<h2>The toolbar</h2>
+
+<p>The toolbar contains a small number of menus.</p>
+
+<ul>
+
+<li>File - allows you to exit jptree.</li>
+
+<li>Update Every - allows you to change how rapidly the statistics are
+updated.</li>
+
+<li>Help - shows this help file, and the CDDL license that this
+software is licensed under.</li>
+
+</ul>
+
+</body>
+</html>
