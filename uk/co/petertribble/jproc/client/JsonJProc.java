@@ -22,6 +22,7 @@
 
 package uk.co.petertribble.jproc.client;
 
+import java.io.IOException;
 import java.util.Set;
 import uk.co.petertribble.jproc.api.*;
 import uk.co.petertribble.jproc.parse.JSONParser;
@@ -55,8 +56,7 @@ public class JsonJProc extends ProcessInterface {
 	try {
 	    String m = client.execute("getProcesses");
 	    return JSONParser.getProcesses(m);
-	    // FIXME catch IOException explicitly in all these blocks
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getProcesses failed", e);
 	}
     }
@@ -74,7 +74,7 @@ public class JsonJProc extends ProcessInterface {
 	    String m = client.execute("getLwps",
 					new String[] {Integer.toString(pid)});
 	    return JSONParser.getLwps(m);
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getLwps failed", e);
 	}
     }
@@ -92,7 +92,7 @@ public class JsonJProc extends ProcessInterface {
 	    String m = client.execute("getStatus",
 					new String[] {Integer.toString(pid)});
 	    return JSONParser.getStatus(m);
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getStatus failed", e);
 	}
     }
@@ -112,7 +112,7 @@ public class JsonJProc extends ProcessInterface {
 					new String[] {Integer.toString(pid),
 						Integer.toString(lwpid)});
 	    return JSONParser.getLwpStatus(m);
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getLwpStatus failed", e);
 	}
     }
@@ -130,7 +130,7 @@ public class JsonJProc extends ProcessInterface {
 	    String m = client.execute("getInfo",
 					new String[] {Integer.toString(pid)});
 	    return JSONParser.getInfo(m);
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getInfo failed", e);
 	}
     }
@@ -150,7 +150,7 @@ public class JsonJProc extends ProcessInterface {
 					new String[] {Integer.toString(pid),
 						Integer.toString(lwpid)});
 	    return JSONParser.getLwpInfo(m);
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getLwpInfo failed", e);
 	}
     }
@@ -168,7 +168,7 @@ public class JsonJProc extends ProcessInterface {
 	    String m = client.execute("getUsage",
 					new String[] {Integer.toString(pid)});
 	    return JSONParser.getUsage(m);
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getUsage failed", e);
 	}
     }
@@ -188,7 +188,7 @@ public class JsonJProc extends ProcessInterface {
 					new String[] {Integer.toString(pid),
 						Integer.toString(lwpid)});
 	    return JSONParser.getUsage(m);
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getLwpUsage failed", e);
 	}
     }
@@ -204,7 +204,7 @@ public class JsonJProc extends ProcessInterface {
 	try {
 	    return client.execute("getUserName",
 					new String[] {Integer.toString(uid)});
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getUserName failed", e);
 	}
     }
@@ -220,7 +220,7 @@ public class JsonJProc extends ProcessInterface {
 	try {
 	    return Integer.parseInt(client.execute("getUserId",
 					new String[] {username}));
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getUserId failed", e);
 	}
     }
@@ -236,7 +236,7 @@ public class JsonJProc extends ProcessInterface {
 	try {
 	    return client.execute("getGroupName",
 					new String[] {Integer.toString(gid)});
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getGroupName failed", e);
 	}
     }
@@ -252,7 +252,7 @@ public class JsonJProc extends ProcessInterface {
 	try {
 	    return Integer.parseInt(client.execute("getGroupId",
 					new String[] {group}));
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getGroupId failed", e);
 	}
     }
@@ -268,7 +268,7 @@ public class JsonJProc extends ProcessInterface {
 	try {
 	    return client.execute("getProjectName",
 				new String[] {Integer.toString(projid)});
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getProjectName failed", e);
 	}
     }
@@ -284,7 +284,7 @@ public class JsonJProc extends ProcessInterface {
 	try {
 	    return Integer.parseInt(client.execute("getProjectId",
 					new String[] {project}));
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getProjectId failed", e);
 	}
     }
@@ -300,7 +300,7 @@ public class JsonJProc extends ProcessInterface {
 	try {
 	    return client.execute("getZoneName",
 				new String[] {Integer.toString(zoneid)});
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getZoneName failed", e);
 	}
     }
@@ -316,7 +316,7 @@ public class JsonJProc extends ProcessInterface {
 	try {
 	    return Integer.parseInt(client.execute("getZoneId",
 						new String[] {zone}));
-	} catch (Exception e) {
+	} catch (IOException e) {
 	    throw new JProcException("JsonJProc getZoneId failed", e);
 	}
     }
