@@ -93,4 +93,16 @@ public class JLwp {
         }
         return false;
     }
+
+    /*
+     * We need to override hashCode() to be consistent with equals().
+     * The characteristics of JLwp are that most processes have similar pids,
+     * most processes only have a few (or 1) lwps, and that we're primarily
+     * interested in differentiating lwps from the same process. Consistency
+     * with equals requires that we only use pid and lwpid.
+     */
+    @Override
+    public int hashCode() {
+	return lwpid + 31*pid;
+    }
 }

@@ -11,8 +11,6 @@ Table sort is lost when structure changes.
 Generalize jptree and ptree to handle the case where there isn't a
 single root to the tree
 
-JLwp needs hashcode
-
 Top lookalike - sort on anything, filter on anything, display anything,
 choose what fields to display; dynamically expand process into LWPs
 like a tree. Really belongs in solview, which brings multiple bits
