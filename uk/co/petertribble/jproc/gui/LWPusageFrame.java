@@ -35,7 +35,7 @@ import uk.co.petertribble.jproc.api.JProcess;
  */
 public class LWPusageFrame extends JFrame {
 
-    private LWPusageTable lup;
+    LWPusageTable lup;
 
     /**
      * Construct a new LWPusageFrame.

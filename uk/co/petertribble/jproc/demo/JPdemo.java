@@ -99,7 +99,7 @@ public class JPdemo extends JFrame implements ActionListener {
 
     private String demoname;
     private int interval;
-    private boolean standalone;
+    boolean standalone;
 
     /**
      * Constructs a JPdemo object.

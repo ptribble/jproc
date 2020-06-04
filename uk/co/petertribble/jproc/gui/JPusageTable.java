@@ -40,13 +40,13 @@ import java.util.List;
  */
 public class JPusageTable extends JTable implements ActionListener {
 
-    private JProc jproc;
-    private PSusageTableModel ftm;
-    private TableSorter sortedModel;
+    JProc jproc;
+    PSusageTableModel ftm;
+    TableSorter sortedModel;
     private DefaultTableCellRenderer timeColumnRenderer;
 
     private Timer timer;
-    private int interval;
+    int interval;
 
     /**
      * Create a new JPusageTable.

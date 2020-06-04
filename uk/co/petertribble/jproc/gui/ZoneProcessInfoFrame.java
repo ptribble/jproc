@@ -36,7 +36,7 @@ import javax.swing.*;
  */
 public class ZoneProcessInfoFrame extends JFrame implements ActionListener {
 
-    private JPinfoTable jpip;
+    JPinfoTable jpip;
 
     /**
      * Create a new ZoneProcessInfoFrame.

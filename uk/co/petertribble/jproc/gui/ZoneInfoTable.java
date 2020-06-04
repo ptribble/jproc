@@ -38,14 +38,14 @@ import javax.swing.table.*;
  */
 public class ZoneInfoTable extends JTable implements ActionListener {
 
-    private JProc jproc;
-    private ZoneInfoTableModel ftm;
-    private TableSorter sortedModel;
+    JProc jproc;
+    ZoneInfoTableModel ftm;
+    TableSorter sortedModel;
     private DefaultTableCellRenderer sizeColumnRenderer;
     private DefaultTableCellRenderer timeColumnRenderer;
 
     private Timer timer;
-    private int interval;
+    int interval;
 
     /**
      * Create a new ZoneInfoTable.

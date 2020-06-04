@@ -38,14 +38,14 @@ import javax.swing.table.*;
  */
 public class UserInfoTable extends JTable implements ActionListener {
 
-    private JProc jproc;
-    private UserInfoTableModel ftm;
-    private TableSorter sortedModel;
+    JProc jproc;
+    UserInfoTableModel ftm;
+    TableSorter sortedModel;
     private DefaultTableCellRenderer sizeColumnRenderer;
     private DefaultTableCellRenderer timeColumnRenderer;
 
     private Timer timer;
-    private int interval;
+    int interval;
 
     /**
      * Create a new UserInfoTable.

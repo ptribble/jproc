@@ -40,15 +40,15 @@ import java.util.List;
  */
 public class JPinfoTable extends JTable implements ActionListener {
 
-    private JProc jproc;
-    private PSinfoTableModel ftm;
-    private TableSorter sortedModel;
+    JProc jproc;
+    PSinfoTableModel ftm;
+    TableSorter sortedModel;
     private DefaultTableCellRenderer sizeColumnRenderer;
     private DefaultTableCellRenderer timeColumnRenderer;
     private DefaultTableCellRenderer dateColumnRenderer;
 
     private Timer timer;
-    private int interval;
+    int interval;
 
     /**
      * Create a new JPinfoTable.
