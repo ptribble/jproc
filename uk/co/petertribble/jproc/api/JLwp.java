@@ -89,7 +89,7 @@ public class JLwp {
     public boolean equals(Object o) {
 	if (o instanceof JLwp) {
 	    JLwp jlwp = (JLwp) o;
-	    return (pid == jlwp.getPid()) && (lwpid == jlwp.getLWPid());
+	    return pid == jlwp.getPid() && lwpid == jlwp.getLWPid();
         }
         return false;
     }

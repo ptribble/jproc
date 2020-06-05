@@ -113,7 +113,7 @@ public class PTree {
 	for (JProcess p : jp.getProcesses()) {
 	    int ppid = p.getCachedInfo().getppid();
 	    ProcessTreeNode ptn = nodemap.get(ppid);
-	    if ((ptn != null) && (ppid != p.getPid())) {
+	    if (ptn != null && ppid != p.getPid()) {
 		ptn.add(nodemap.get(p.getPid()));
 	    }
 	}

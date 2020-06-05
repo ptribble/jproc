@@ -72,7 +72,7 @@ public class JPusageTable extends JTable implements ActionListener {
 	    new DefaultTableCellRenderer() {
 		public void setValue(Object value) {
 		    // We know it's a Double, we wrote the model
-		    setText((value instanceof Double) ?
+		    setText(value instanceof Double ?
 			    PrettyFormat.timescale((Double) value) : "");
 	    }
 	};

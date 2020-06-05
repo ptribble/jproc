@@ -120,7 +120,7 @@ public class PrettyFormat {
      */
     public static String date(long l) {
 	long then = l*1000;
-	return (System.currentTimeMillis() - then < 86400000) ?
+	return System.currentTimeMillis() - then < 86400000 ?
 	    dtt.format(new Date(then)) :
 	    dt.format(new Date(then));
     }

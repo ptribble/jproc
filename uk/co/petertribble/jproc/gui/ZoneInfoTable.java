@@ -71,7 +71,7 @@ public class ZoneInfoTable extends JTable implements ActionListener {
 	    new DefaultTableCellRenderer() {
 		public void setValue(Object value) {
 		    // We know it's a Long, we wrote the model, but to be safe
-		    setText((value instanceof Long) ?
+		    setText(value instanceof Long ?
 			    PrettyFormat.memscale((Long) value) : "");
 	    }
 	};
@@ -80,7 +80,7 @@ public class ZoneInfoTable extends JTable implements ActionListener {
 	    new DefaultTableCellRenderer() {
 		public void setValue(Object value) {
 		    // We know it's a Double, we wrote the model
-		    setText((value instanceof Double) ?
+		    setText(value instanceof Double ?
 			    PrettyFormat.timescale((Double) value) : "");
 	    }
 	};

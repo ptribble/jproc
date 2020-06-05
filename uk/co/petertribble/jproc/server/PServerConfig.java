@@ -71,7 +71,7 @@ public class PServerConfig {
      * @return true if this object is configured
      */
     public boolean isConfigured() {
-	return (port != 0);
+	return port != 0;
     }
 
     /**

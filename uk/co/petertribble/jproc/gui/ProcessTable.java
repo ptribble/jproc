@@ -128,7 +128,7 @@ public class ProcessTable extends JTable implements ActionListener {
     public class SizeRenderer extends DefaultTableCellRenderer {
 	public void setValue(Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
-	    setText((value instanceof Long) ?
+	    setText(value instanceof Long ?
 		    PrettyFormat.memscale((Long) value) : "");
 	}
     }
@@ -140,16 +140,16 @@ public class ProcessTable extends JTable implements ActionListener {
     public class TimeRenderer extends DefaultTableCellRenderer {
 	public void setValue(Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
-	    setText((value instanceof Double) ?
+	    setText(value instanceof Double ?
 		    PrettyFormat.timescale((Double) value) : "");
 	}
     }
 
     public TableCellRenderer getCellRenderer(int row, int col) {
-	if (((row == 1)||(row == 2)) &&((col == 1)||(col == 2))) {
+	if ((row == 1||row == 2) &&(col == 1||col == 2)) {
 	    return sizeRenderer;
 	}
-	if (((row == 3)||(row == 4)) &&((col == 1)||(col == 2))) {
+	if ((row == 3||row == 4) &&(col == 1||col == 2)) {
 	    return timeRenderer;
 	}
 	return super.getCellRenderer(row, col);

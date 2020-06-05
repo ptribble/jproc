@@ -227,19 +227,19 @@ public class JProcessFilter {
 	if (jpi == null) {
 	    return false;
 	}
-	if ((suid > -1) && (jpi.getuid() != suid)) {
+	if (suid > -1 && jpi.getuid() != suid) {
 	    return false;
 	}
-	if ((szone > -1) && (jpi.getzoneid() != szone)) {
+	if (szone > -1 && jpi.getzoneid() != szone) {
 	    return false;
 	}
-	if ((sctid > -1) && (jpi.getcontract() != sctid)) {
+	if (sctid > -1 && jpi.getcontract() != sctid) {
 	    return false;
 	}
-	if ((staskid > -1) && (jpi.gettaskid() != staskid)) {
+	if (staskid > -1 && jpi.gettaskid() != staskid) {
 	    return false;
 	}
-	if ((sprojid > -1) && (jpi.getprojid() != sprojid)) {
+	if (sprojid > -1 && jpi.getprojid() != sprojid) {
 	    return false;
 	}
 	return true;

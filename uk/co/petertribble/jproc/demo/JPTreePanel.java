@@ -95,7 +95,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	for (JProcess p : jpf.getProcesses()) {
 	    int ppid = p.getCachedInfo().getppid();
 	    ProcessTreeNode ptn = nodemap.get(ppid);
-	    if ((ptn != null) && (ppid != p.getPid())) {
+	    if (ptn != null && ppid != p.getPid()) {
 		ptn.add(nodemap.get(p.getPid()));
 	    }
 	}
@@ -220,7 +220,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	    for (JProcess jp : jpf.getAddedProcesses()) {
 		int ppid = jp.getCachedInfo().getppid();
 		ProcessTreeNode ptn = nodemap.get(ppid);
-		if ((ptn != null) && (ppid != jp.getPid())) {
+		if (ptn != null && ppid != jp.getPid()) {
 		    ptn.add(nodemap.get(jp.getPid()));
 		    dtm.nodeStructureChanged(ptn);
 		}
@@ -271,7 +271,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 		    // ok, we're still here
 		    int ppid = jpi.getppid();
 		    ProcessTreeNode ptn = nodemap.get(ppid);
-		    if ((ptn != null) && (ppid != jp.getPid())) {
+		    if (ptn != null && ppid != jp.getPid()) {
 			// FIXME if we haven't got a valid parent, we ought to
 			// save the process and get a new parent next time
 			// around
