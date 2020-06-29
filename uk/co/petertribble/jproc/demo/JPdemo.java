@@ -33,7 +33,7 @@ import uk.co.petertribble.jingle.JingleInfoFrame;
  *
  * @author Peter Tribble
  */
-public class JPdemo extends JFrame implements ActionListener {
+public abstract class JPdemo extends JFrame implements ActionListener {
 
     /**
      * A menu item to exit the demo.
@@ -126,7 +126,6 @@ public class JPdemo extends JFrame implements ActionListener {
      *
      * @param demoname  a String used as the demo title.
      * @param interval  the update delay in seconds.
-     * application
      */
     public JPdemo(String demoname, int interval) {
 	this(demoname, interval, true);
@@ -137,27 +136,10 @@ public class JPdemo extends JFrame implements ActionListener {
      *
      * @param demoname  a String used as the demo title.
      * @param interval  the update delay in seconds.
-     * application
      * @param standalone  a boolean, true if the demo is a standalone
      * application.
      */
     public JPdemo(String demoname, int interval, boolean standalone) {
-	this(demoname, interval, standalone, true, true);
-    }
-
-    /**
-     * Constructs a JPdemo object.
-     *
-     * @param demoname  a String used as the demo title.
-     * @param interval  the update delay in seconds.
-     * application
-     * @param standalone  a boolean, true if the demo is a standalone
-     * application.
-     * @param showdelay  a boolean determining whether the sleep menu is shown
-     * @param showhelp  a boolean determining whether the help menu is shown
-     */
-    public JPdemo(String demoname, int interval, boolean standalone,
-		  boolean showdelay, boolean showhelp) {
 	super(demoname);
 	this.demoname = demoname;
 	this.interval = interval;
@@ -167,12 +149,8 @@ public class JPdemo extends JFrame implements ActionListener {
 	setJMenuBar(jm);
 	addWindowListener(new winExit());
 	addFileMenu();
-	if (showdelay) {
-	    addSleepMenu();
-	}
-	if (showhelp) {
-	    addHelpMenu();
-	}
+	addSleepMenu();
+	addHelpMenu();
     }
 
     /**
@@ -277,15 +255,6 @@ public class JPdemo extends JFrame implements ActionListener {
 		+ JProcResources.getString("SLEEP.SEC"));
     }
 
-    /**
-     * Add a menu.
-     *
-     * @param menu The menu to add
-     */
-    protected void addMenu(JMenu menu) {
-	jm.add(menu);
-    }
-
     class winExit extends WindowAdapter {
 	public void windowClosing(WindowEvent we) {
 	    if (standalone) {
@@ -302,14 +271,12 @@ public class JPdemo extends JFrame implements ActionListener {
      *
      * @param i The update delay in seconds
      */
-    public void setDelay(int i) {
-    }
+    public abstract void setDelay(int i);
 
     /**
      * Must override this to do anything useful.
      */
-    public void stopLoop() {
-    }
+    public abstract void stopLoop();
 
     public void actionPerformed(ActionEvent e) {
 	if (e.getSource() == exitItem) {
