@@ -38,7 +38,6 @@ import javax.swing.tree.TreeNode;
  */
 public class PTree {
 
-    private JProc jp;
     private SortedMap <Integer, ProcessTreeNode> nodemap;
     private SortedMap <Integer, JProcess> pmap;
 
@@ -83,8 +82,7 @@ public class PTree {
      * @param jp a JProc to query for process information
      */
     public PTree(JProc jp) {
-	this.jp = jp;
-	buildtree();
+	buildtree(jp);
 	printit((ProcessTreeNode) nodemap.get(nodemap.firstKey()).getRoot());
     }
 
@@ -95,12 +93,11 @@ public class PTree {
      * @param pid the process id to display
      */
     public PTree(JProc jp, int pid) {
-	this.jp = jp;
-	buildtree();
+	buildtree(jp);
 	printit(pmap.get(pid));
     }
 
-    private void buildtree() {
+    private void buildtree(JProc jp) {
 	pmap = new TreeMap <Integer, JProcess> ();
 	nodemap = new TreeMap <Integer, ProcessTreeNode> ();
 	// create a node for each process

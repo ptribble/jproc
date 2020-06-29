@@ -81,9 +81,9 @@ public class JPusage extends JPdemo implements ActionListener {
 
         // create main display panel
 	jps = new JProcessSet(jproc);
-	JProcessFilter jpf = new JProcessFilter(jps);
 
-        jpup = new JPusageTable(jproc, jpf, DEFAULT_INTERVAL);
+        jpup = new JPusageTable(jproc, new JProcessFilter(jps),
+				DEFAULT_INTERVAL);
 
 	JPanel mainPanel = new JPanel(new BorderLayout());
 	mainPanel.add(new JScrollPane(jpup));

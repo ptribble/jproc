@@ -62,9 +62,8 @@ public class JPTree extends JPdemo {
     public JPTree(JProc jproc, boolean standalone) {
 	super("JPTree", standalone);
 
-	JProcessFilter jpf = new JProcessFilter(new JProcessSet(jproc));
-
-        jpt = new JPTreePanel(jproc, jpf, DEFAULT_INTERVAL);
+        jpt = new JPTreePanel(jproc, new JProcessFilter(new JProcessSet(jproc)),
+			DEFAULT_INTERVAL);
 
 	setContentPane(jpt);
 

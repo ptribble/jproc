@@ -75,9 +75,9 @@ public class UserInfo extends JPdemo implements ActionListener {
 
         // create main display panel
 	JProcessSet jps = new JProcessSet(jproc);
-	JProcessFilter jpf = new JProcessFilter(jps);
 
-        jpip = new UserInfoTable(jproc, jpf, DEFAULT_INTERVAL);
+        jpip = new UserInfoTable(jproc, new JProcessFilter(jps),
+				DEFAULT_INTERVAL);
 
 	JPanel mainPanel = new JPanel(new BorderLayout());
 	mainPanel.add(new JScrollPane(jpip));

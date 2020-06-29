@@ -75,9 +75,9 @@ public class ZoneInfo extends JPdemo implements ActionListener {
 
         // create main display panel
 	JProcessSet jps = new JProcessSet(jproc);
-	JProcessFilter jpf = new JProcessFilter(jps);
 
-        jpip = new ZoneInfoTable(jproc, jpf, DEFAULT_INTERVAL);
+        jpip = new ZoneInfoTable(jproc, new JProcessFilter(jps),
+				DEFAULT_INTERVAL);
 
 	JPanel mainPanel = new JPanel(new BorderLayout());
 	mainPanel.add(new JScrollPane(jpip));

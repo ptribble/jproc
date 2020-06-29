@@ -81,9 +81,9 @@ public class JPinfo extends JPdemo implements ActionListener {
 
         // create main display panel
 	jps = new JProcessSet(jproc);
-	JProcessFilter jpf = new JProcessFilter(jps);
 
-        jpip = new JPinfoTable(jproc, jpf, DEFAULT_INTERVAL);
+        jpip = new JPinfoTable(jproc, new JProcessFilter(jps),
+			DEFAULT_INTERVAL);
 
 	JPanel mainPanel = new JPanel(new BorderLayout());
 	mainPanel.add(new JScrollPane(jpip));
