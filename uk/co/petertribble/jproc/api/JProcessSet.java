@@ -37,7 +37,6 @@ public class JProcessSet {
 
     private Set <JProcess> addedProcesses;
     private Set <JProcess> deletedProcesses;
-    private Set <JProcess> newProcesses;
     private Set <JProcess> currentProcesses;
 
     /**
@@ -66,7 +65,7 @@ public class JProcessSet {
      * @return true if the process list has changed, otherwise false
      */
     public boolean update() {
-	newProcesses = jproc.getProcesses();
+	Set <JProcess> newProcesses = jproc.getProcesses();
 	addedProcesses = new HashSet <JProcess> (newProcesses);
 	addedProcesses.removeAll(currentProcesses);
 	deletedProcesses = new HashSet <JProcess> (currentProcesses);
