@@ -272,27 +272,26 @@ public class JProcInfo implements Serializable {
      * {@code JProcInfo}.
      */
     public String toJSON() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("{");
-	sb.append("\"fname\":\"").append(pr_fname).append("\",");
-	sb.append("\"pid\":").append(pr_pid).append(",");
-	sb.append("\"ppid\":").append(pr_ppid).append(",");
-	sb.append("\"uid\":").append(pr_uid).append(",");
-	sb.append("\"euid\":").append(pr_euid).append(",");
-	sb.append("\"gid\":").append(pr_gid).append(",");
-	sb.append("\"egid\":").append(pr_egid).append(",");
-	sb.append("\"nlwp\":").append(pr_nlwp).append(",");
-	sb.append("\"size\":").append(pr_size).append(",");
-	sb.append("\"rssize\":").append(pr_rssize).append(",");
-	sb.append("\"stime\":").append(stime).append(",");
-	sb.append("\"etime\":").append(etime).append(",");
-	sb.append("\"ntime\":").append(ntime).append(",");
-	sb.append("\"ectime\":").append(ectime).append(",");
-	sb.append("\"nctime\":").append(nctime).append(",");
-	sb.append("\"taskid\":").append(pr_taskid).append(",");
-	sb.append("\"projid\":").append(pr_projid).append(",");
-	sb.append("\"zoneid\":").append(pr_zoneid).append(",");
-	sb.append("\"contract\":").append(pr_contract);
+	StringBuilder sb = new StringBuilder(256);
+	sb.append("{\"fname\":\"").append(pr_fname);
+	sb.append(",\"pid\":").append(pr_pid);
+	sb.append(",\"ppid\":").append(pr_ppid);
+	sb.append(",\"uid\":").append(pr_uid);
+	sb.append(",\"euid\":").append(pr_euid);
+	sb.append(",\"gid\":").append(pr_gid);
+	sb.append(",\"egid\":").append(pr_egid);
+	sb.append(",\"nlwp\":").append(pr_nlwp);
+	sb.append(",\"size\":").append(pr_size);
+	sb.append(",\"rssize\":").append(pr_rssize);
+	sb.append(",\"stime\":").append(stime);
+	sb.append(",\"etime\":").append(etime);
+	sb.append(",\"ntime\":").append(ntime);
+	sb.append(",\"ectime\":").append(ectime);
+	sb.append(",\"nctime\":").append(nctime);
+	sb.append(",\"taskid\":").append(pr_taskid);
+	sb.append(",\"projid\":").append(pr_projid);
+	sb.append(",\"zoneid\":").append(pr_zoneid);
+	sb.append(",\"contract\":").append(pr_contract);
 	sb.append("}");
 	return sb.toString();
     }

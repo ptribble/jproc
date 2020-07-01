@@ -124,17 +124,16 @@ public class JProcStatus {
      * {@code JProcStatus}.
      */
     public String toJSON() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("{");
-	sb.append("\"pid\":").append(pid).append(",");
-	sb.append("\"utime\":").append(utime).append(",");
-	sb.append("\"nutime\":").append(nutime).append(",");
-	sb.append("\"stime\":").append(stime).append(",");
-	sb.append("\"nstime\":").append(nstime).append(",");
-	sb.append("\"cutime\":").append(cutime).append(",");
-	sb.append("\"ncutime\":").append(ncutime).append(",");
-	sb.append("\"cstime\":").append(cstime).append(",");
-	sb.append("\"ncstime\":").append(ncstime);
+	StringBuilder sb = new StringBuilder(128);
+	sb.append("{\"pid\":").append(pid);
+	sb.append(",\"utime\":").append(utime);
+	sb.append(",\"nutime\":").append(nutime);
+	sb.append(",\"stime\":").append(stime);
+	sb.append(",\"nstime\":").append(nstime);
+	sb.append(",\"cutime\":").append(cutime);
+	sb.append(",\"ncutime\":").append(ncutime);
+	sb.append(",\"cstime\":").append(cstime);
+	sb.append(",\"ncstime\":").append(ncstime);
 	sb.append("}");
 	return sb.toString();
     }

@@ -270,28 +270,27 @@ public class JProcUsage {
      * {@code JProcUsage}.
      */
     public String toJSON() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("{");
-	sb.append("\"lwpid\":").append(lwpid).append(",");
-	sb.append("\"count\":").append(count).append(",");
-	sb.append("\"rtime\":").append(rtime).append(",");
-	sb.append("\"nrtime\":").append(nrtime).append(",");
-	sb.append("\"utime\":").append(utime).append(",");
-	sb.append("\"nutime\":").append(nutime).append(",");
-	sb.append("\"stime\":").append(stime).append(",");
-	sb.append("\"nstime\":").append(nstime).append(",");
-	sb.append("\"minf\":").append(minf).append(",");
-	sb.append("\"majf\":").append(majf).append(",");
-	sb.append("\"nswap\":").append(nswap).append(",");
-	sb.append("\"inblk\":").append(inblk).append(",");
-	sb.append("\"oublk\":").append(oublk).append(",");
-	sb.append("\"msnd\":").append(msnd).append(",");
-	sb.append("\"mrcv\":").append(mrcv).append(",");
-	sb.append("\"sigs\":").append(sigs).append(",");
-	sb.append("\"vctx\":").append(vctx).append(",");
-	sb.append("\"ictx\":").append(ictx).append(",");
-	sb.append("\"sysc\":").append(sysc).append(",");
-	sb.append("\"ioch\":").append(ioch);
+	StringBuilder sb = new StringBuilder(256);
+	sb.append("{\"lwpid\":").append(lwpid);
+	sb.append(",\"count\":").append(count);
+	sb.append(",\"rtime\":").append(rtime);
+	sb.append(",\"nrtime\":").append(nrtime);
+	sb.append(",\"utime\":").append(utime);
+	sb.append(",\"nutime\":").append(nutime);
+	sb.append(",\"stime\":").append(stime);
+	sb.append(",\"nstime\":").append(nstime);
+	sb.append(",\"minf\":").append(minf);
+	sb.append(",\"majf\":").append(majf);
+	sb.append(",\"nswap\":").append(nswap);
+	sb.append(",\"inblk\":").append(inblk);
+	sb.append(",\"oublk\":").append(oublk);
+	sb.append(",\"msnd\":").append(msnd);
+	sb.append(",\"mrcv\":").append(mrcv);
+	sb.append(",\"sigs\":").append(sigs);
+	sb.append(",\"vctx\":").append(vctx);
+	sb.append(",\"ictx\":").append(ictx);
+	sb.append(",\"sysc\":").append(sysc);
+	sb.append(",\"ioch\":").append(ioch);
 	sb.append("}");
 	return sb.toString();
     }

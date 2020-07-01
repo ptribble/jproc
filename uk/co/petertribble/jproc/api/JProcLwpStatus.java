@@ -103,14 +103,13 @@ public class JProcLwpStatus {
      * {@code JProcLwpStatus}.
      */
     public String toJSON() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("{");
-	sb.append("\"pid\":").append(pid).append(",");
-	sb.append("\"lwpid\":").append(lwpid).append(",");
-	sb.append("\"utime\":").append(utime).append(",");
-	sb.append("\"nutime\":").append(nutime).append(",");
-	sb.append("\"stime\":").append(stime).append(",");
-	sb.append("\"nstime\":").append(nstime);
+	StringBuilder sb = new StringBuilder(80);
+	sb.append("{\"pid\":").append(pid);
+	sb.append(",\"lwpid\":").append(lwpid);
+	sb.append(",\"utime\":").append(utime);
+	sb.append(",\"nutime\":").append(nutime);
+	sb.append(",\"stime\":").append(stime);
+	sb.append(",\"nstime\":").append(nstime);
 	sb.append("}");
 	return sb.toString();
     }

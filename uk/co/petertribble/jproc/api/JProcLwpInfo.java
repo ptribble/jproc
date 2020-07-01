@@ -99,13 +99,12 @@ public class JProcLwpInfo {
      * {@code JProcLwpInfo}.
      */
     public String toJSON() {
-	StringBuilder sb = new StringBuilder();
-	sb.append("{");
-	sb.append("\"pid\":").append(pid).append(",");
-	sb.append("\"lwpid\":").append(lwpid).append(",");
-	sb.append("\"stime\":").append(stime).append(",");
-	sb.append("\"etime\":").append(etime).append(",");
-	sb.append("\"ntime\":").append(ntime);
+	StringBuilder sb = new StringBuilder(64);
+	sb.append("{\"pid\":").append(pid);
+	sb.append(",\"lwpid\":").append(lwpid);
+	sb.append(",\"stime\":").append(stime);
+	sb.append(",\"etime\":").append(etime);
+	sb.append(",\"ntime\":").append(ntime);
 	sb.append("}");
 	return sb.toString();
     }

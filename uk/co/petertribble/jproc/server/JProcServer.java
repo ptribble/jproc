@@ -46,11 +46,11 @@ public class JProcServer {
      */
     public String getProcesses() {
 	StringBuilder sb = new StringBuilder();
-	sb.append("[");
+	sb.append('[');
 	for (JProcess jp : jproc.getProcesses()) {
 	    sb.append(jproc.getInfo(jp).toJSON()).append(",\n");
 	}
-	sb.append("]");
+	sb.append(']');
 	return sb.toString();
     }
 
@@ -67,11 +67,11 @@ public class JProcServer {
 	    return "";
 	}
 	StringBuilder sb = new StringBuilder();
-	sb.append("[");
+	sb.append('[');
 	for (JLwp jlwp : lwps) {
-	    sb.append(jlwp.toJSON()).append(",");
+	    sb.append(jlwp.toJSON()).append(',');
 	}
-	sb.append("]");
+	sb.append(']');
 	return sb.toString();
     }
 
