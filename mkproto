@@ -30,13 +30,17 @@ EOF
   echo "i depend=./depend"
 fi
 
+#
+# as of Java 8, there's only a 64-bit JVM, so there's no point
+# packaging the 32-bit libraries
+#
 case $MYARCH in
 i386)
-	echo "f none /${LIBDIR}/${JLIB}=lib/i386/${JLIB} 0755 ${OWNER}"
+	#echo "f none /${LIBDIR}/${JLIB}=lib/i386/${JLIB} 0755 ${OWNER}"
 	echo "f none /${LIBDIR}/amd64/${JLIB}=lib/amd64/${JLIB} 0755 ${OWNER}"
 	;;
 sparc)
-	echo "f none /${LIBDIR}/${JLIB}=lib/sparc/${JLIB} 0755 ${OWNER}"
+	#echo "f none /${LIBDIR}/${JLIB}=lib/sparc/${JLIB} 0755 ${OWNER}"
 	echo "f none /${LIBDIR}/sparcv9/${JLIB}=lib/sparcv9/${JLIB} 0755 ${OWNER}"
 	;;
 esac
@@ -47,7 +51,7 @@ echo "d none /usr/share/jproc 0755 ${OWNER}"
 echo "d none /usr/share/man 0755 ${OWNER}"
 echo "f none /usr/share/man/man1/jproc.1=man1/jproc.1 0644 ${OWNER}"
 echo "f none /usr/share/jproc/jproc.xml=./jproc.xml 0644 ${OWNER}"
-echo "f none /usr/share/jproc/README=./README 0644 ${OWNER}"
+echo "f none /usr/share/jproc/README=./README.md 0644 ${OWNER}"
 
 #
 # if depending on installed packages, then:
