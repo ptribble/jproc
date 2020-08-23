@@ -1,7 +1,7 @@
 PKG="TRIBjproc"
 NAME="JProc"
 ARCH="sparc"
-VERSION="1.2"
+VERSION="1.3"
 CATEGORY="application"
 VENDOR="Peter Tribble"
 EMAIL="peter.tribble@gmail.com"
