@@ -65,6 +65,7 @@ public class LWPusageFrame extends JFrame {
      * On closure, stop the table updating.
      */
     class winExit extends WindowAdapter {
+	@Override
 	public void windowClosing(WindowEvent we) {
 	    lup.stopLoop();
 	}

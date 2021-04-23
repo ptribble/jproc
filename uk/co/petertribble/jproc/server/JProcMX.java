@@ -39,10 +39,12 @@ public class JProcMX implements JProcMXMBean {
      *
      * @return a Set of all the processes
      */
+    @Override
     public Set <JProcess> getProcesses() {
 	return jproc.getProcesses();
     }
 
+    @Override
     public JProcess getProcess(int pid) {
 	return new JProcess(pid, jproc.getInfo(pid));
     }

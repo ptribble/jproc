@@ -197,6 +197,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	ppanel.validate();
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	updateJprocess();
     }
@@ -285,6 +286,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
     }
 
     // handle TreeSelectionListener events
+    @Override
     public void valueChanged(TreeSelectionEvent e) {
 	TreePath tpth = e.getNewLeadSelectionPath();
 	if (tpth != null) {

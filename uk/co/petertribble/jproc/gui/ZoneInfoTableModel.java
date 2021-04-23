@@ -141,10 +141,12 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	fireTableDataChanged();
     }
 
+    @Override
     public int getColumnCount() {
 	return colMap.size();
     }
 
+    @Override
     public int getRowCount() {
 	return zoneids.size();
     }
@@ -236,6 +238,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
     /**
      * Return the appropriate data.
      */
+    @Override
     public Object getValueAt(int row, int icol) {
 	int col = mapColumn(icol);
 	int uid = zoneids.get(row);

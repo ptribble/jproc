@@ -84,14 +84,17 @@ public final class ProcessTableModel extends AbstractTableModel {
 	}
     }
 
+    @Override
     public int getColumnCount() {
 	return columnNames.length;
     }
 
+    @Override
     public int getRowCount() {
 	return rowNames.length;
     }
 
+    @Override
     public String getColumnName(int col) {
 	return columnNames[col];
     }
@@ -99,6 +102,7 @@ public final class ProcessTableModel extends AbstractTableModel {
     /**
      * Return the appropriate data.
      */
+    @Override
     public Object getValueAt(int row, int col) {
 	if (col == 0) {
 	    return rowNames[row];

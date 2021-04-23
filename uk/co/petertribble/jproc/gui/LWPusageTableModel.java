@@ -122,10 +122,12 @@ public final class LWPusageTableModel extends AbstractTableModel {
 	fireTableDataChanged();
     }
 
+    @Override
     public int getColumnCount() {
 	return colMap.size();
     }
 
+    @Override
     public int getRowCount() {
 	return vp.size();
     }
@@ -194,6 +196,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
     /**
      * Return the appropriate data.
      */
+    @Override
     public Object getValueAt(int row, int icol) {
 	int col = mapColumn(icol);
 	JProcUsage jpu = vpu.get(row);

@@ -117,6 +117,7 @@ public class ProcessTable extends JTable implements ActionListener {
 	}
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	update();
     }
@@ -126,6 +127,7 @@ public class ProcessTable extends JTable implements ActionListener {
      * format.
      */
     public class SizeRenderer extends DefaultTableCellRenderer {
+	@Override
 	public void setValue(Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
 	    setText(value instanceof Long ?
@@ -138,6 +140,7 @@ public class ProcessTable extends JTable implements ActionListener {
      * format.
      */
     public class TimeRenderer extends DefaultTableCellRenderer {
+	@Override
 	public void setValue(Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
 	    setText(value instanceof Double ?
@@ -145,6 +148,7 @@ public class ProcessTable extends JTable implements ActionListener {
 	}
     }
 
+    @Override
     public TableCellRenderer getCellRenderer(int row, int col) {
 	if ((row == 1||row == 2) &&(col == 1||col == 2)) {
 	    return sizeRenderer;

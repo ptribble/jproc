@@ -70,6 +70,7 @@ public class JPusageTable extends JTable implements ActionListener {
 	 */
 	timeColumnRenderer =
 	    new DefaultTableCellRenderer() {
+		@Override
 		public void setValue(Object value) {
 		    // We know it's a Double, we wrote the model
 		    setText(value instanceof Double ?
@@ -209,6 +210,7 @@ public class JPusageTable extends JTable implements ActionListener {
 	}
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	ftm.updateJprocess();
     }
@@ -218,10 +220,12 @@ public class JPusageTable extends JTable implements ActionListener {
      */
     class PopupListener extends MouseAdapter {
 
+	@Override
 	public void mousePressed(MouseEvent e) {
 	    showPopup(e);
 	}
 
+	@Override
 	public void mouseReleased(MouseEvent e) {
 	    showPopup(e);
 	}
@@ -247,6 +251,7 @@ public class JPusageTable extends JTable implements ActionListener {
 	JMenuItem showChartItem = new JMenuItem(
 		JProcResources.getString("THREAD.MENU") + " " + jp.getPid());
 	showChartItem.addActionListener(new ActionListener() {
+	    @Override
 	    public void actionPerformed(ActionEvent e) {
 		new LWPusageFrame(jproc, jp, interval);
 	    }

@@ -34,14 +34,17 @@ import javax.swing.table.*;
  */
 public final class ProcessExitedTableModel extends AbstractTableModel {
 
+    @Override
     public int getColumnCount() {
 	return 1;
     }
 
+    @Override
     public int getRowCount() {
 	return 1;
     }
 
+    @Override
     public String getColumnName(int col) {
 	return "Status";
     }
@@ -49,6 +52,7 @@ public final class ProcessExitedTableModel extends AbstractTableModel {
     /**
      * Return the appropriate data.
      */
+    @Override
     public Object getValueAt(int row, int col) {
 	return "Process has exited";
     }

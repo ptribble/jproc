@@ -69,6 +69,7 @@ public class UserInfoTable extends JTable implements ActionListener {
 	 */
 	sizeColumnRenderer =
 	    new DefaultTableCellRenderer() {
+		@Override
 		public void setValue(Object value) {
 		    // We know it's a Long, we wrote the model, but to be safe
 		    setText(value instanceof Long ?
@@ -78,6 +79,7 @@ public class UserInfoTable extends JTable implements ActionListener {
 	sizeColumnRenderer.setHorizontalAlignment(JLabel.RIGHT);
 	timeColumnRenderer =
 	    new DefaultTableCellRenderer() {
+		@Override
 		public void setValue(Object value) {
 		    // We know it's a Double, we wrote the model
 		    setText(value instanceof Double ?
@@ -173,6 +175,7 @@ public class UserInfoTable extends JTable implements ActionListener {
 	}
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	ftm.updateJprocess();
     }
@@ -182,10 +185,12 @@ public class UserInfoTable extends JTable implements ActionListener {
      */
     class PopupListener extends MouseAdapter {
 
+	@Override
 	public void mousePressed(MouseEvent e) {
 	    showPopup(e);
 	}
 
+	@Override
 	public void mouseReleased(MouseEvent e) {
 	    showPopup(e);
 	}
@@ -214,6 +219,7 @@ public class UserInfoTable extends JTable implements ActionListener {
 		JProcResources.getString("USER.SHOW") + " "
 				+ jproc.getUserName(uid));
 	showChartItem.addActionListener(new ActionListener() {
+	    @Override
 	    public void actionPerformed(ActionEvent e) {
 		new UserProcessInfoFrame(jproc, uid, interval);
 	    }

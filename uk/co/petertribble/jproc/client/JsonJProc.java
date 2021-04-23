@@ -52,6 +52,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return A Set of all the processes running on the system.
      */
+    @Override
     public Set <JProcess> getProcesses() {
 	try {
 	    String m = client.execute("getProcesses");
@@ -69,6 +70,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return A Set of JLwp objects representing the lwps in this process.
      */
+    @Override
     public Set <JLwp> getLwps(int pid) {
 	try {
 	    String m = client.execute("getLwps",
@@ -87,6 +89,7 @@ public class JsonJProc extends ProcessInterface {
      * @return A new JProcStatus object populated with current data, or null
      * if the process does not exist
      */
+    @Override
     public JProcStatus getStatus(int pid) {
 	try {
 	    String m = client.execute("getStatus",
@@ -106,6 +109,7 @@ public class JsonJProc extends ProcessInterface {
      * @return A new JProcLwpStatus object populated with current data, or null
      * if the process or lwp does not exist
      */
+    @Override
     public JProcLwpStatus getLwpStatus(int pid, int lwpid) {
 	try {
 	    String m = client.execute("getLwpStatus",
@@ -125,6 +129,7 @@ public class JsonJProc extends ProcessInterface {
      * @return A new JProcInfo object populated with current data, or null
      * if the process does not exist
      */
+    @Override
     public JProcInfo getInfo(int pid) {
 	try {
 	    String m = client.execute("getInfo",
@@ -144,6 +149,7 @@ public class JsonJProc extends ProcessInterface {
      * @return A new JProcLwpInfo object populated with current data, or null
      * if the process or lwp does not exist
      */
+    @Override
     public JProcLwpInfo getLwpInfo(int pid, int lwpid) {
 	try {
 	    String m = client.execute("getLwpInfo",
@@ -163,6 +169,7 @@ public class JsonJProc extends ProcessInterface {
      * @return A new JProcUsage object populated with current data, or null
      * if the process does not exist
      */
+    @Override
     public JProcUsage getUsage(int pid) {
 	try {
 	    String m = client.execute("getUsage",
@@ -182,6 +189,7 @@ public class JsonJProc extends ProcessInterface {
      * @return A new JProcUsage object populated with current data, or null
      * if the process or lwp does not exist
      */
+    @Override
     public JProcUsage getLwpUsage(int pid, int lwpid) {
 	try {
 	    String m = client.execute("getLwpUsage",
@@ -200,6 +208,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return The user name, or null if no user matches.
      */
+    @Override
     public String getUserName(int uid) {
 	try {
 	    return client.execute("getUserName",
@@ -216,6 +225,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return The userid, or -1 if no user matches.
      */
+    @Override
     public int getUserId(String username) {
 	try {
 	    return Integer.parseInt(client.execute("getUserId",
@@ -232,6 +242,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return The group name, or null if no group matches.
      */
+    @Override
     public String getGroupName(int gid) {
 	try {
 	    return client.execute("getGroupName",
@@ -248,6 +259,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return The groupid, or -1 if no group matches.
      */
+    @Override
     public int getGroupId(String group) {
 	try {
 	    return Integer.parseInt(client.execute("getGroupId",
@@ -264,6 +276,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return The project name, or null if no project matches.
      */
+    @Override
     public String getProjectName(int projid) {
 	try {
 	    return client.execute("getProjectName",
@@ -280,6 +293,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return The project id, or -1 if no project matches.
      */
+    @Override
     public int getProjectId(String project) {
 	try {
 	    return Integer.parseInt(client.execute("getProjectId",
@@ -296,6 +310,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return The zone name, or null if no zone matches.
      */
+    @Override
     public String getZoneName(int zoneid) {
 	try {
 	    return client.execute("getZoneName",
@@ -312,6 +327,7 @@ public class JsonJProc extends ProcessInterface {
      *
      * @return The zone id, or -1 if no zone matches.
      */
+    @Override
     public int getZoneId(String zone) {
 	try {
 	    return Integer.parseInt(client.execute("getZoneId",

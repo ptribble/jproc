@@ -116,6 +116,7 @@ public class ZoneProcessInfoFrame extends JFrame implements ActionListener {
 	}
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	handleColumn((JCheckBoxMenuItem) e.getSource());
     }
@@ -124,6 +125,7 @@ public class ZoneProcessInfoFrame extends JFrame implements ActionListener {
      * On closure, stop the table updating.
      */
     class winExit extends WindowAdapter {
+	@Override
 	public void windowClosing(WindowEvent we) {
 	    jpip.stopLoop();
 	}

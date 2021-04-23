@@ -54,6 +54,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return A Set of all the processes running on the system.
      */
+    @Override
     public Set <JProcess> getProcesses() {
 	Set <JProcess> pset = new HashSet <JProcess> ();
 	for (String s : fproc.list()) {
@@ -75,6 +76,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return A Set of JLwp objects representing the lwps in this process.
      */
+    @Override
     public Set <JLwp> getLwps(int pid) {
 	File pf = new File("/proc/" + Integer.toString(pid) + "/lwp");
 	String[] lwpids = pf.list();
@@ -96,6 +98,7 @@ public class NativeJProc extends ProcessInterface {
      * @return A new JProcStatus object populated with current data, or null
      * if the process does not exist
      */
+    @Override
     public native JProcStatus getStatus(int pid);
 
     /**
@@ -107,6 +110,7 @@ public class NativeJProc extends ProcessInterface {
      * @return A new JProcLwpStatus object populated with current data, or null
      * if the process or lwp does not exist
      */
+    @Override
     public native JProcLwpStatus getLwpStatus(int pid, int lwpid);
 
     /**
@@ -117,6 +121,7 @@ public class NativeJProc extends ProcessInterface {
      * @return A new JProcInfo object populated with current data, or null
      * if the process does not exist
      */
+    @Override
     public native JProcInfo getInfo(int pid);
 
     /**
@@ -128,6 +133,7 @@ public class NativeJProc extends ProcessInterface {
      * @return A new JProcLwpInfo object populated with current data, or null
      * if the process or lwp does not exist
      */
+    @Override
     public native JProcLwpInfo getLwpInfo(int pid, int lwpid);
 
     /**
@@ -138,6 +144,7 @@ public class NativeJProc extends ProcessInterface {
      * @return A new JProcUsage object populated with current data, or null
      * if the process does not exist
      */
+    @Override
     public native JProcUsage getUsage(int pid);
 
     /**
@@ -149,6 +156,7 @@ public class NativeJProc extends ProcessInterface {
      * @return A new JProcUsage object populated with current data, or null
      * if the process or lwp does not exist
      */
+    @Override
     public native JProcUsage getLwpUsage(int pid, int lwpid);
 
     /**
@@ -158,6 +166,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return The user name, or null if no user matches.
      */
+    @Override
     public native String getUserName(int uid);
 
     /**
@@ -167,6 +176,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return The userid, or -1 if no user matches.
      */
+    @Override
     public native int getUserId(String username);
 
     /**
@@ -176,6 +186,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return The group name, or null if no group matches.
      */
+    @Override
     public native String getGroupName(int gid);
 
     /**
@@ -185,6 +196,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return The groupid, or -1 if no group matches.
      */
+    @Override
     public native int getGroupId(String group);
 
     /**
@@ -194,6 +206,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return The project name, or null if no project matches.
      */
+    @Override
     public native String getProjectName(int projid);
 
     /**
@@ -203,6 +216,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return The project id, or -1 if no project matches.
      */
+    @Override
     public native int getProjectId(String project);
 
     /**
@@ -212,6 +226,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return The zone name, or null if no zone matches.
      */
+    @Override
     public native String getZoneName(int zoneid);
 
     /**
@@ -221,6 +236,7 @@ public class NativeJProc extends ProcessInterface {
      *
      * @return The zone id, or -1 if no zone matches.
      */
+    @Override
     public native int getZoneId(String zone);
 
     /*

@@ -63,6 +63,7 @@ public class LWPusageTable extends JTable implements ActionListener {
 	 */
 	timeColumnRenderer =
 	    new DefaultTableCellRenderer() {
+		@Override
 		public void setValue(Object value) {
 		    // We know it's a Double, we wrote the model
 		    setText(value instanceof Double ?
@@ -183,6 +184,7 @@ public class LWPusageTable extends JTable implements ActionListener {
 	}
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	update();
     }

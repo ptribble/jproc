@@ -256,6 +256,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     }
 
     class winExit extends WindowAdapter {
+	@Override
 	public void windowClosing(WindowEvent we) {
 	    if (standalone) {
 		System.exit(0);
@@ -278,6 +279,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      */
     public abstract void stopLoop();
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	if (e.getSource() == exitItem) {
 	    if (standalone) {
