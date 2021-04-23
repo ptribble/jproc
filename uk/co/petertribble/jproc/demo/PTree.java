@@ -161,21 +161,21 @@ public class PTree {
 	} else if (args.length == 1) {
 	    new PTree(Integer.parseInt(args[0]));
 	} else if (args.length == 2) {
-	    if (args[0].equals("-s")) {
+	    if ("-s".equals(args[0])) {
 		new PTree(
 		    new PClientConfig(args[1], PClientConfig.CLIENT_XMLRPC));
-	    } else if (args[0].equals("-S")) {
+	    } else if ("-S".equals(args[0])) {
 		new PTree(
 		    new PClientConfig(args[1], PClientConfig.CLIENT_REST));
 	    } else {
 		System.err.println("Usage: ptree [-s|-S server] [pid]");
 	    }
 	} else if (args.length == 3) {
-	    if (args[0].equals("-s")) {
+	    if ("-s".equals(args[0])) {
 		new PTree(
 		    new PClientConfig(args[1], PClientConfig.CLIENT_XMLRPC),
 		    Integer.parseInt(args[2]));
-	    } else if (args[0].equals("-S")) {
+	    } else if ("-S".equals(args[0])) {
 		new PTree(
 		    new PClientConfig(args[1], PClientConfig.CLIENT_REST),
 		    Integer.parseInt(args[2]));

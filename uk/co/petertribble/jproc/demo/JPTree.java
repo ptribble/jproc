@@ -94,10 +94,10 @@ public class JPTree extends JPdemo {
 	if (args.length == 0) {
 	    new JPTree();
 	} else if (args.length == 2) {
-	    if (args[0].equals("-s")) {
+	    if ("-s".equals(args[0])) {
 		new JPTree(
 		    new PClientConfig(args[1], PClientConfig.CLIENT_XMLRPC));
-	    } else if (args[0].equals("-S")) {
+	    } else if ("-S".equals(args[0])) {
 		new JPTree(
 		    new PClientConfig(args[1], PClientConfig.CLIENT_REST));
 	    } else {
