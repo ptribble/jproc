@@ -69,7 +69,6 @@ esac
 if [ -f "${ARCHLIBDIR_64}/libproc_jni.so" ]; then
     if [ "${ARCHLIBDIR}" != "${ARCHLIBDIR_64}" ]; then
 	ARCHLIBDIR="${ARCHLIBDIR_64}"
-	JFLAGS="-d64"
     fi
 fi
 
@@ -110,9 +109,9 @@ case $SUBCOMMAND in
 'jmxserver')
     JPCLASS=uk.co.petertribble.jproc.server.JProcMXserver
     # the following works for jconsole
-    JFLAGS="${JFLAGS} -Dcom.sun.management.jmxremote"
+    JFLAGS="-Dcom.sun.management.jmxremote"
     # the following for a remote client like jmanage
-    JFLAGS="${JFLAGS} -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
+    JFLAGS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
     ALLJARS=${JPJAR}:${SERVERJARS}
     ;;
 
