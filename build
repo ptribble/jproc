@@ -21,7 +21,7 @@
 # If you have the ON build tools installed, then jstyle gets run.
 #
 
-PATH=/usr/jdk/instances/jdk1.5.0/bin:$PATH
+PATH=/usr/jdk/instances/jdk1.8.0/bin:$PATH
 export PATH
 
 JPDIR=`dirname $0`
@@ -37,7 +37,7 @@ JINGLEJAR=${JARLIBDIR}/jingle.jar
 JUMBLEJAR=${JARLIBDIR}/jumble.jar
 JPJAR=${JARLIBDIR}/jproc.jar
 JPAPIJAR=${JARLIBDIR}/jproc-api.jar
-HTTPJARS=${JARLIBDIR}/httpclient-4.2.3.jar:${JARLIBDIR}/httpcore-4.2.2.jar
+HTTPJARS=${JARLIBDIR}/httpclient-4.5.14.jar:${JARLIBDIR}/httpcore-4.4.16.jar
 ALLJARS=${JCJAR}:${JFJAR}:${JINGLEJAR}:${JUMBLEJAR}:${JPJAR}
 SERVERJARS=${JUMBLEJAR}:${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-server-3.1.3.jar
 CLIENTJARS=${JUMBLEJAR}:${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-client-3.1.3.jar
