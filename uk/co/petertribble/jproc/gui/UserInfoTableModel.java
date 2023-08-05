@@ -245,7 +245,7 @@ public final class UserInfoTableModel extends AbstractTableModel {
 	if (col == 0) {
 	    return jproc.getUserName(uid);
 	} else if (col == 5) {
-	    return new Double(aggrTIME(uid));
+	    return Double.valueOf(aggrTIME(uid));
 	}
 	long l = 0;
 	switch (col) {

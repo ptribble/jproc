@@ -203,11 +203,11 @@ public final class LWPusageTableModel extends AbstractTableModel {
 	if (col == 0) {
 	    return Integer.valueOf(vp.get(row).getLWPid());
 	} else if (col == 1) {
-	    return new Double(jpu.getrtime());
+	    return Double.valueOf(jpu.getrtime());
 	} else if (col == 2) {
-	    return new Double(jpu.getutime());
+	    return Double.valueOf(jpu.getutime());
 	} else if (col == 3) {
-	    return new Double(jpu.getstime());
+	    return Double.valueOf(jpu.getstime());
 	}
 	long l = 0;
 	switch (col) {

@@ -257,11 +257,11 @@ public final class PSusageTableModel extends AbstractTableModel {
 	} else if (col == 2) {
 	    return jproc.getUserName(jpi.getuid());
 	} else if (col == 4) {
-	    return new Double(jpu.getrtime());
+	    return Double.valueOf(jpu.getrtime());
 	} else if (col == 5) {
-	    return new Double(jpu.getutime());
+	    return Double.valueOf(jpu.getutime());
 	} else if (col == 6) {
-	    return new Double(jpu.getstime());
+	    return Double.valueOf(jpu.getstime());
 	}
 	long l = 0;
 	switch (col) {

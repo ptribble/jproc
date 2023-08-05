@@ -245,7 +245,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	if (col == 0) {
 	    return jproc.getZoneName(uid);
 	} else if (col == 5) {
-	    return new Double(aggrTIME(uid));
+	    return Double.valueOf(aggrTIME(uid));
 	}
 	long l = 0;
 	switch (col) {

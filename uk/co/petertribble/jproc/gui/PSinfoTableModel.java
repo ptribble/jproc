@@ -269,7 +269,7 @@ public final class PSinfoTableModel extends AbstractTableModel {
 	} else if (col == 12) {
 	    return jproc.getZoneName(jpi.getzoneid());
 	} else if (col == 9) {
-	    return new Double(jpi.gettime());
+	    return Double.valueOf(jpi.gettime());
 	}
 	long l = 0;
 	switch (col) {
