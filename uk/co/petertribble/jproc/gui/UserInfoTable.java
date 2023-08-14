@@ -101,7 +101,7 @@ public class UserInfoTable extends JTable implements ActionListener {
 
     /*
      * This is also called from addColumn and removeColumn as the act of
-     * messing with the columns destroys the custom rendererers, so we
+     * messing with the columns destroys the custom renderers, so we
      * need to add them back.
      *
      * If a column is removed then it isn't shown and getColumn throws an
