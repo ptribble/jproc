@@ -29,8 +29,6 @@ LIBDIR=${JPDIR}/lib
 ARCHLIBDIR=${LIBDIR}/`/usr/bin/uname -p`
 ARCHLIBDIR_64=${LIBDIR}/`/usr/bin/isainfo -k`
 JARLIBDIR=${LIBDIR}/java
-JAVA=java
-JAVAC=javac
 
 JSONJAR=${JARLIBDIR}/org-json.jar
 JINGLEJAR=${JARLIBDIR}/jingle.jar
@@ -38,9 +36,6 @@ JUMBLEJAR=${JARLIBDIR}/jumble.jar
 JPJAR=${JARLIBDIR}/jproc.jar
 JPAPIJAR=${JARLIBDIR}/jproc-api.jar
 HTTPJARS=${JARLIBDIR}/httpclient-4.5.14.jar:${JARLIBDIR}/httpcore-4.4.16.jar
-ALLJARS=${JCJAR}:${JFJAR}:${JINGLEJAR}:${JUMBLEJAR}:${JPJAR}
-SERVERJARS=${JUMBLEJAR}:${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-server-3.1.3.jar
-CLIENTJARS=${JUMBLEJAR}:${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-client-3.1.3.jar
 REMOTEJARS=${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-server-3.1.3.jar:${JARLIBDIR}/xmlrpc-client-3.1.3.jar
 BUILDJARS=${JSONJAR}:${JINGLEJAR}:${JUMBLEJAR}:${REMOTEJARS}:${HTTPJARS}
 
@@ -95,7 +90,7 @@ pmd|-pmd)
 	exit 0
 	;;
 packages)
-	cat jproc | sed s:INSTALLED=false:INSTALLED=true: > jproc.installed
+	sed s:INSTALLED=false:INSTALLED=true: jproc > jproc.installed
 	./mkproto i386 $2 > prototype.i386
 	./mkproto sparc $2 > prototype.sparc
 	pkgmk -d /tmp -f prototype.i386 -r `pwd` TRIBjproc
