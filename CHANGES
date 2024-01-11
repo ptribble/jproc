@@ -1,3 +1,13 @@
+1.5
+
+General tidying
+
+Update HttpClient to 4.5.14
+
+1.4
+
+Enable running under jdk11
+
 1.0
 
 NOTE: Post version 1.0, new features will appear in v2.0 and later
