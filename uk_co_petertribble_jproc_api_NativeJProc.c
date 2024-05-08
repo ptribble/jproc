@@ -65,9 +65,9 @@ JNIEXPORT jobject JNICALL Java_uk_co_petertribble_jproc_api_NativeJProc_getStatu
   }
   jps = (*env)->NewObject(env, jps_class, jps_constructor_mid);
   (*env)->CallVoidMethod(env, jps, jps_insert_mid, (jint)ps.pr_pid,
-		(jlong)ps.pr_utime.tv_sec, (jlong)ps.pr_utime.tv_nsec, 
+		(jlong)ps.pr_utime.tv_sec, (jlong)ps.pr_utime.tv_nsec,
 		(jlong)ps.pr_stime.tv_sec, (jlong)ps.pr_stime.tv_nsec,
-		(jlong)ps.pr_cutime.tv_sec, (jlong)ps.pr_cutime.tv_nsec, 
+		(jlong)ps.pr_cutime.tv_sec, (jlong)ps.pr_cutime.tv_nsec,
 		(jlong)ps.pr_cstime.tv_sec, (jlong)ps.pr_cstime.tv_nsec);
   close(fd);
   return (jps);
@@ -97,7 +97,7 @@ JNIEXPORT jobject JNICALL Java_uk_co_petertribble_jproc_api_NativeJProc_getLwpSt
   }
   jpls = (*env)->NewObject(env, jpls_class, jpls_constructor_mid);
   (*env)->CallVoidMethod(env, jpls, jpls_insert_mid, pid, (jint)lps.pr_lwpid,
-		(jlong)lps.pr_utime.tv_sec, (jlong)lps.pr_utime.tv_nsec, 
+		(jlong)lps.pr_utime.tv_sec, (jlong)lps.pr_utime.tv_nsec,
 		(jlong)lps.pr_stime.tv_sec, (jlong)lps.pr_stime.tv_nsec);
   close(fd);
   return (jpls);
@@ -200,7 +200,7 @@ JNIEXPORT jobject JNICALL Java_uk_co_petertribble_jproc_api_NativeJProc_getUsage
   (*env)->CallVoidMethod(env, jpu, jpu_insert_mid, (jint)pu.pr_lwpid,
 		(jint)pu.pr_count,
 		(jlong)pu.pr_rtime.tv_sec, (jlong)pu.pr_rtime.tv_nsec,
-		(jlong)pu.pr_utime.tv_sec, (jlong)pu.pr_utime.tv_nsec, 
+		(jlong)pu.pr_utime.tv_sec, (jlong)pu.pr_utime.tv_nsec,
 		(jlong)pu.pr_stime.tv_sec, (jlong)pu.pr_stime.tv_nsec,
 		(jlong)pu.pr_minf, (jlong)pu.pr_majf, (jlong)pu.pr_nswap,
 		(jlong)pu.pr_inblk, (jlong)pu.pr_oublk,
@@ -238,7 +238,7 @@ JNIEXPORT jobject JNICALL Java_uk_co_petertribble_jproc_api_NativeJProc_getLwpUs
   (*env)->CallVoidMethod(env, jpu, jpu_insert_mid, (jint)pu.pr_lwpid,
 		(jint)pu.pr_count,
 		(jlong)pu.pr_rtime.tv_sec, (jlong)pu.pr_rtime.tv_nsec,
-		(jlong)pu.pr_utime.tv_sec, (jlong)pu.pr_utime.tv_nsec, 
+		(jlong)pu.pr_utime.tv_sec, (jlong)pu.pr_utime.tv_nsec,
 		(jlong)pu.pr_stime.tv_sec, (jlong)pu.pr_stime.tv_nsec,
 		(jlong)pu.pr_minf, (jlong)pu.pr_majf, (jlong)pu.pr_nswap,
 		(jlong)pu.pr_inblk, (jlong)pu.pr_oublk,
