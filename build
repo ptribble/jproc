@@ -5,18 +5,31 @@
 #
 # Usage:
 #
+# ./build
+#    Builds all the java classes, and recompiles the native library.
+#
 # ./build -jni
 #    (Re)Creates the jni header file. Only needed if the native interface
 #    changes, which it shouldn't very often
 #
-# ./build -compile
-#    Just build the jni library
-#
 # ./build -doc
 #    Generates the javadoc
 #
-# ./build
-#    Builds all the java classes, and recompiles the native library.
+# ./build clean
+#    Removes all the class files, ready for distribution
+#
+# ./build pmd
+#    Runs the pmd static code analysis tool, if it's installed
+#
+# ./build spotbugs
+#    Runs the spotbugs static code analysis tool, if it's installed
+#
+# ./build packages [deps]
+#    Creates SVR4 packages
+#
+# ./build war
+#    Creates a war file to run an XMLRPC server with tomcat
+#    See README.SERVER for details of how to run it
 #
 # If you have the ON build tools installed, then jstyle gets run.
 #
@@ -55,11 +68,6 @@ jni|-jni)
 	javah -jni uk.co.petertribble.jproc.api.NativeJProc
 	exit 0
 	;;
-compile|-compile)
-	javac uk/co/petertribble/jproc/api/*.java
-	cc -G -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
-	exit 0
-	;;
 doc|-doc)
 	rm -fr javadoc
 	mkdir javadoc
@@ -79,6 +87,14 @@ pmd|-pmd)
 	fi
 	pmd check --cache "${PMDCACHE}" -d uk -R ${PMDRULES} --use-version java-1.8 --aux-classpath $(echo lib/java/* | sed 's= =:=g') 2>/dev/null
 	pmd check --cache ${PMDCACHE}.html -d help/*.html  -R category/html/bestpractices.xml 2>/dev/null
+	exit 0
+	;;
+spotbugs)
+	#
+	# spotbugs works on the class files, so those need to be available
+	#
+	./build
+	spotbugs -auxclasspath $(echo lib/java/* | sed 's= =:=g') uk
 	exit 0
 	;;
 packages)
