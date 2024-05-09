@@ -74,10 +74,9 @@ public class JProcessFilter {
      * @param jp A JProcess.
      */
     public JProcessFilter(JProcess jp) {
-	this.jps = jps;
+	spid = 1;
 	currentProcesses = new HashSet <JProcess> ();
 	currentProcesses.add(jp);
-	spid = 1;
 	addedProcesses = new HashSet <JProcess> ();
 	deletedProcesses = new HashSet <JProcess> ();
     }
