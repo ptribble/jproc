@@ -42,7 +42,7 @@ case $# in
     ;;
 esac
 
-JSONJAR=${JARLIBDIR}/org-json.jar
+JSONJAR=${JARLIBDIR}/json-20240303.jar
 JINGLEJAR=${JARLIBDIR}/jingle.jar
 JUMBLEJAR=${JARLIBDIR}/jumble.jar
 JPJAR=${JARLIBDIR}/jproc.jar
