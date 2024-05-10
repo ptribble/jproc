@@ -26,7 +26,11 @@ import org.apache.xmlrpc.server.PropertyHandlerMapping;
 import org.apache.xmlrpc.server.XmlRpcServer;
 import org.apache.xmlrpc.server.XmlRpcServerConfigImpl;
 import org.apache.xmlrpc.webserver.WebServer;
+import java.io.IOException;
 import java.io.File;
+import java.net.InetAddress;
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceInfo;
 
 /**
  * A simple jproc server using the xml-rpc WebServer class. Taken straight
@@ -36,23 +40,17 @@ import java.io.File;
  */
 public class PServer1 {
 
-    /**
-     * Constructs a PServer1 object.
-     *
-     * @param port a String representing the port to listen on
-     */
-    public PServer1(int port) {
-	this(new PServerConfig(port));
-    }
+    // global so can be called at shutdown
+    private JmDNS jmdns;
 
     /**
      * Constructs a PServer1 object.
      *
-     * @param ksc  The configuration to be applied
+     * @param psc the configuration to be applied
      */
-    public PServer1(PServerConfig ksc) {
+    public PServer1(PServerConfig psc) {
 	try {
-	    WebServer webServer = new WebServer(ksc.getPort());
+	    WebServer webServer = new WebServer(psc.getPort());
 	    XmlRpcServer xmlRpcServer = webServer.getXmlRpcServer();
 	    PropertyHandlerMapping phm = new PropertyHandlerMapping();
 	    phm.load(Thread.currentThread().getContextClassLoader(),
@@ -63,9 +61,38 @@ public class PServer1 {
 	    serverConfig.setContentLengthOptional(false);
 
 	    webServer.start();
+	    if (psc.getRegister()) {
+		registerService(psc);
+	    }
 	} catch (Exception e) {
 	    System.err.println("Server failed to start!");
 	}
+    }
+
+    /*
+     * Register this server in mdns, with the type "_jproc._tcp"
+     */
+    private void registerService(PServerConfig psc) {
+	try {
+	    jmdns = JmDNS.create(psc.getInetAddress());
+	    ServiceInfo serviceInfo = ServiceInfo.create("_jproc._tcp.local.",
+		    "JProc/"+psc.getHostname(),
+		    psc.getPort(),
+		    "path=/");
+            jmdns.registerService(serviceInfo);
+	    Thread exitHook = new Thread(() -> this.unRegisterService());
+	    Runtime.getRuntime().addShutdownHook(exitHook);
+	    System.out.println("Service registered on "+psc.getInetAddress());
+	} catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    /*
+     * Called as a shutdown hook.
+     */
+    private void unRegisterService() {
+	jmdns.unregisterAllServices();
     }
 
     private static void usage() {
@@ -74,34 +101,46 @@ public class PServer1 {
     }
 
     /**
-     * Start the server. A -p argument specifies a listener port, or
-     * a -f argument specifies a configuration file. Without arguments,
-     * listens on port 8080.
+     * Start the server. A -p argument specifies a listener port, default
+     * 8080. A -f argument specifies a configuration file. A -m argument
+     * causes the server to be registered in mdns.
      *
      * @param args command line arguments
      */
     public static void main(String[] args) {
-	if (args.length == 0) {
-	    new PServer1(8080);
-	} else if (args.length == 2) {
-	    if ("-p".equals(args[0])) {
-		try {
-		    new PServer1(new PServerConfig(Integer.parseInt(args[1])));
-		} catch (NumberFormatException nfe) {
+	PServerConfig psc = new PServerConfig();
+	int i = 0;
+	while (i < args.length) {
+	    if ("-m".equals(args[i])) {
+		psc.setRegister(true);
+	    } else if ("-p".equals(args[i])) {
+		if (i+1 < args.length) {
+		    i++;
+		    try {
+			psc.setPort(Integer.parseInt(args[i]));
+		    } catch (NumberFormatException nfe) {
+			usage();
+		    }
+		} else {
 		    usage();
 		}
-	    } else if ("-f".equals(args[0])) {
-		File f = new File(args[1]);
-		if (f.exists()) {
-		    new PServer1(new PServerConfig(f));
+	    } else if ("-f".equals(args[i])) {
+		if (i+1 < args.length) {
+		    i++;
+		    File f = new File(args[i]);
+		    if (f.exists()) {
+			psc.parseConfig(f);
+		    } else {
+			usage();
+		    }
 		} else {
 		    usage();
 		}
 	    } else {
 		usage();
 	    }
-	} else {
-	    usage();
+	    i++;
 	}
+	new PServer1(psc);
     }
 }
