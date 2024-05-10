@@ -273,7 +273,7 @@ public class JProcInfo implements Serializable {
      */
     public String toJSON() {
 	StringBuilder sb = new StringBuilder(256);
-	sb.append("{\"fname\":\"").append(pr_fname);
+	sb.append("{\"fname\":\"").append(pr_fname).append("\"");
 	sb.append(",\"pid\":").append(pr_pid);
 	sb.append(",\"ppid\":").append(pr_ppid);
 	sb.append(",\"uid\":").append(pr_uid);
