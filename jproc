@@ -53,6 +53,13 @@ SERVERJARS=${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-server-3.1.3
 HTTPJARS=${JARLIBDIR}/httpclient-4.5.14.jar:${JARLIBDIR}/httpcore-4.4.16.jar:${JARLIBDIR}/commons-codec-1.11.jar
 CLIENTJARS=${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-client-3.1.3.jar:${JARLIBDIR}/commons-logging-1.1.1.jar:${JARLIBDIR}/ws-commons-util-1.0.2.jar:${JARLIBDIR}/jmdns-3.5.9.jar:${JARLIBDIR}/slf4j-api-2.0.13.jar
 
+#
+# need to find where java is
+#
+JLOC=/usr/java
+if [ -d /usr/jdk/latest/bin ]; then
+    JLOC=/usr/jdk/latest
+fi
 
 #
 # Normally, -s or -S means we're a client and need the client-side jars
@@ -120,7 +127,7 @@ case $SUBCOMMAND in
 # EXPERIMENTAL
 #
 'jmxclient')
-    /usr/java/bin/jconsole -J-Djava.class.path=/usr/java/lib/jconsole.jar:/usr/java/lib/tools.jar:${JPAPIJAR}
+    ${JLOC}/bin/jconsole -J-Djava.class.path=${JLOC}/lib/jconsole.jar:${JLOC}/lib/tools.jar:${JPAPIJAR}
     exit 0
     ;;
 
