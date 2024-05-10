@@ -96,7 +96,7 @@ public class PServer1 {
     }
 
     private static void usage() {
-	System.err.println("Usage: server [-m | -p port | -f config_file]");
+	System.err.println("Usage: server [-m] [-p port | -f config_file]");
 	System.exit(1);
     }
 
