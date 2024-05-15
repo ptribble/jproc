@@ -5,8 +5,7 @@
 
 JPDIR=`dirname $0`
 LIBDIR=${JPDIR}/lib
-ARCHLIBDIR=${LIBDIR}/`/usr/bin/uname -p`
-ARCHLIBDIR_64=${LIBDIR}/`/usr/bin/isainfo -k`
+ARCHLIBDIR=${LIBDIR}/`/usr/bin/isainfo -k`
 JARLIBDIR=${LIBDIR}/java
 JAVA=/usr/bin/java
 
@@ -15,8 +14,7 @@ JAVA=/usr/bin/java
 #
 INSTALLED=false
 if [ "$INSTALLED" = "true" ]; then
-    ARCHLIBDIR=/usr/lib
-    ARCHLIBDIR_64=/usr/lib/64
+    ARCHLIBDIR=/usr/lib/64
     JARLIBDIR=/usr/share/jproc
 fi
 
@@ -70,15 +68,6 @@ case $1 in
     ALLJARS="${ALLJARS}:${CLIENTJARS}:${HTTPJARS}"
     ;;
 esac
-
-#
-# attempt to use a 64-bit version if possible
-#
-if [ -f "${ARCHLIBDIR_64}/libproc_jni.so" ]; then
-    if [ "${ARCHLIBDIR}" != "${ARCHLIBDIR_64}" ]; then
-	ARCHLIBDIR="${ARCHLIBDIR_64}"
-    fi
-fi
 
 case $SUBCOMMAND in
 

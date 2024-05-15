@@ -31,16 +31,13 @@ EOF
 fi
 
 #
-# as of Java 8, there's only a 64-bit JVM, so there's no point
-# packaging the 32-bit libraries
+# as of Java 8, there's only a 64-bit JVM
 #
 case $MYARCH in
 i386)
-	#echo "f none /${LIBDIR}/${JLIB}=lib/i386/${JLIB} 0755 ${OWNER}"
 	echo "f none /${LIBDIR}/amd64/${JLIB}=lib/amd64/${JLIB} 0755 ${OWNER}"
 	;;
 sparc)
-	#echo "f none /${LIBDIR}/${JLIB}=lib/sparc/${JLIB} 0755 ${OWNER}"
 	echo "f none /${LIBDIR}/sparcv9/${JLIB}=lib/sparcv9/${JLIB} 0755 ${OWNER}"
 	;;
 esac

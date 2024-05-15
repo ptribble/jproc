@@ -39,8 +39,7 @@ export PATH
 
 JPDIR=`dirname $0`
 LIBDIR=${JPDIR}/lib
-ARCHLIBDIR=${LIBDIR}/`/usr/bin/uname -p`
-ARCHLIBDIR_64=${LIBDIR}/`/usr/bin/isainfo -k`
+ARCHLIBDIR=${LIBDIR}/`/usr/bin/isainfo -k`
 JARLIBDIR=${LIBDIR}/java
 
 JSONJAR=${JARLIBDIR}/json-20240303.jar
@@ -139,17 +138,15 @@ fi
 
 javac ${XFLAGS} -classpath .:${BUILDJARS} uk/co/petertribble/jproc/api/*.java uk/co/petertribble/jproc/demo/*.java uk/co/petertribble/jproc/gui/*.java uk/co/petertribble/jproc/server/*.java uk/co/petertribble/jproc/client/*.java uk/co/petertribble/jproc/parse/*.java
 
-cc -G -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
-
 #
 # compiling 64-bit objects is just plain funky
 #
 case `isainfo -k` in
 amd64)
-    cc -Kpic -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR_64}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
+    cc -Kpic -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
     ;;
 sparcv9)
-    cc -xcode=pic13 -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR_64}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
+    cc -xcode=pic13 -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
     ;;
 esac
 
