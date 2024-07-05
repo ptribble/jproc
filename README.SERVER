@@ -24,7 +24,7 @@ Embedded servlet
 
 Run
 
-./build war
+./build jproc.war
 
 which will create a file jproc.war. You need to deploy that  (for tomcat 8
 or 9, just copy it into the webapps directory; for tomcat 10 or later, create

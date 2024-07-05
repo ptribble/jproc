@@ -1,0 +1,46 @@
+The REST interface is supplied by the files in
+uk/co/petertribble/jprest.
+
+The automatic detection only works if you deploy the files as classes;
+supplying a jar doesn't work. So you need to copy the class files into
+the right place in the war file
+
+mkdir -p .../WEB-INF/classes/uk/co/petertribble/jprest
+cp uk/co/petertribble/jprest/*.class .../WEB-INF/classes/uk/co/petertribble/jprest
+
+and use the web.xml file from here that has the jersey extensions
+added.
+
+I'm not shipping the jersey libs with jproc; they just make the
+download bigger. To build with jersey support, unpack the jersey
+archive in the same directory you unpacked jproc, and run './build
+jprest.war'. (If the jersey version isn't 2.x, then you'll need to fix
+the build script.)
+
+Deployment:
+===========
+
+The tomcat route is very simple. You must use java 8.
+
+unzip /path/to/apache-tomcat-9.0.36.zip
+cd apache-tomcat-9.0.36
+mkdir -p lib
+cp .../jproc/lib/amd64/libproc_jni.so lib
+cd bin
+cat > setenv.sh <<_EOF
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CATALINA_HOME/lib
+export LD_LIBRARY_PATH
+_EOF
+chmod a+x *.sh
+env JAVA_HOME=/usr/jdk/instances/jdk1.8.0 ./startup.sh
+
+Copy the war file:
+
+cp .../jprest.war ../webapps
+
+As the war file supports both RESTful and XML-RPC jproc services, both
+the following jproc invocations will work:
+
+
+./jproc subcommand -s http://localhost:8080/jprest/xmlrpc
+./jproc subcommand -S http://localhost:8080/jprest/jproc

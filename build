@@ -1,7 +1,6 @@
 #!/bin/sh
 #
 # build jproc
-# optionally create the jni header file or run an application
 #
 # Usage:
 #
@@ -27,9 +26,13 @@
 # ./build packages [deps]
 #    Creates SVR4 packages
 #
-# ./build war
+# ./build jproc.war
 #    Creates a war file to run an XMLRPC server with tomcat
 #    See README.SERVER for details of how to run it
+#
+# ./build jprest.war
+#    Creates a war file to run a RESTful server with tomcat
+#    See jersey/README.JERSEY for details of how to run it
 #
 # If you have the ON build tools installed, then jstyle gets run.
 #
@@ -61,6 +64,12 @@ BUILDJARS=${JSONJAR}:${JINGLEJAR}:${JUMBLEJAR}:${REMOTEJARS}:${HTTPJARS}
 PMDRULES="./pmd-ruleset.xml"
 PMDCACHE="${HOME}/.pmd/cache.jproc"
 
+#
+# This is to build a RESTful server using jersey.
+#
+JERSEYDIR="../jaxrs-ri"
+JAXRSJAR="../${JERSEYDIR}/api/jakarta.ws.rs-api-2.1.6.jar"
+
 case $1 in
 jni|-jni)
 	javac uk/co/petertribble/jproc/api/NativeJProc.java
@@ -78,6 +87,7 @@ clean|-clean)
 	rm -f `find . -type f -name '*~'`
 	rm -fr javadoc
 	rm -f jproc.war
+	rm -f jprest.war
 	exit 0
 	;;
 pmd|-pmd)
@@ -112,7 +122,7 @@ packages)
 	rm -f depend
 	exit 0
 	;;
-war)
+jproc.war)
 	mkdir war
 	cd war
 	mkdir -p WEB-INF/lib
@@ -126,6 +136,42 @@ war)
 	jar cf ../jproc.war *
 	cd ..
 	rm -fr war
+	exit 0
+	;;
+jprest.war)
+	# this is an extended war using jersey, allowing RESTful services
+	if [ ! -d "${JERSEYDIR}" ]; then
+	    echo "Unable to find jersey, exiting..."
+	    exit 1
+	fi
+	cd jersey
+	if [ ! -f "${JAXRSJAR}" ]; then
+	    echo "Unable to find javax.ws.rs jar, exiting..."
+	    exit 1
+	fi
+	javac ${XFLAGS} -classpath ../lib/java/jproc.jar:${JAXRSJAR} uk/co/petertribble/jprest/*.java
+	cd ..
+	mkdir war
+	cd war
+	mkdir -p WEB-INF/lib org/apache/xmlrpc/webserver
+	mkdir -p WEB-INF/lib
+	mkdir -p org/apache/xmlrpc/webserver
+	cp -p ../properties/PServer1.properties org/apache/xmlrpc/webserver/XmlRpcServlet.properties
+	jar cf WEB-INF/lib/props.jar org
+	rm -fr org
+	# only copy the jars we need
+	cp ../lib/java/jproc.jar ../lib/java/ws* ../lib/java/xmlrpc* ../lib/java/commons-logging* WEB-INF/lib
+	cp ../${JERSEYDIR}/lib/*.jar WEB-INF/lib
+	cp ../${JERSEYDIR}/api/*.jar WEB-INF/lib
+	cp ../${JERSEYDIR}/ext/*.jar WEB-INF/lib
+	cp ../jersey/web.xml WEB-INF/web.xml
+	mkdir -p WEB-INF/classes/uk/co/petertribble/jprest
+	cp ../jersey/uk/co/petertribble/jprest/*.class WEB-INF/classes/uk/co/petertribble/jprest
+	# create the war file
+	jar cf ../jprest.war *
+	cd ..
+	rm -fr war
+	rm -f jersey/uk/co/petertribble/jprest/*.class
 	exit 0
 	;;
 esac
