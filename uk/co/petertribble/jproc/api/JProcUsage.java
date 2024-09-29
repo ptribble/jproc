@@ -271,27 +271,27 @@ public class JProcUsage {
      */
     public String toJSON() {
 	StringBuilder sb = new StringBuilder(256);
-	sb.append("{\"lwpid\":").append(lwpid);
-	sb.append(",\"count\":").append(count);
-	sb.append(",\"rtime\":").append(rtime);
-	sb.append(",\"nrtime\":").append(nrtime);
-	sb.append(",\"utime\":").append(utime);
-	sb.append(",\"nutime\":").append(nutime);
-	sb.append(",\"stime\":").append(stime);
-	sb.append(",\"nstime\":").append(nstime);
-	sb.append(",\"minf\":").append(minf);
-	sb.append(",\"majf\":").append(majf);
-	sb.append(",\"nswap\":").append(nswap);
-	sb.append(",\"inblk\":").append(inblk);
-	sb.append(",\"oublk\":").append(oublk);
-	sb.append(",\"msnd\":").append(msnd);
-	sb.append(",\"mrcv\":").append(mrcv);
-	sb.append(",\"sigs\":").append(sigs);
-	sb.append(",\"vctx\":").append(vctx);
-	sb.append(",\"ictx\":").append(ictx);
-	sb.append(",\"sysc\":").append(sysc);
-	sb.append(",\"ioch\":").append(ioch);
-	sb.append("}");
+	sb.append("{\"lwpid\":").append(lwpid)
+	    .append(",\"count\":").append(count)
+	    .append(",\"rtime\":").append(rtime)
+	    .append(",\"nrtime\":").append(nrtime)
+	    .append(",\"utime\":").append(utime)
+	    .append(",\"nutime\":").append(nutime)
+	    .append(",\"stime\":").append(stime)
+	    .append(",\"nstime\":").append(nstime)
+	    .append(",\"minf\":").append(minf)
+	    .append(",\"majf\":").append(majf)
+	    .append(",\"nswap\":").append(nswap)
+	    .append(",\"inblk\":").append(inblk)
+	    .append(",\"oublk\":").append(oublk)
+	    .append(",\"msnd\":").append(msnd)
+	    .append(",\"mrcv\":").append(mrcv)
+	    .append(",\"sigs\":").append(sigs)
+	    .append(",\"vctx\":").append(vctx)
+	    .append(",\"ictx\":").append(ictx)
+	    .append(",\"sysc\":").append(sysc)
+	    .append(",\"ioch\":").append(ioch)
+	    .append('}');
 	return sb.toString();
     }
 }

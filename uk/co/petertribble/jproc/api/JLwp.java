@@ -69,9 +69,9 @@ public class JLwp {
      */
     public String toJSON() {
 	StringBuilder sb = new StringBuilder(28);
-	sb.append("{\"pid\":").append(pid);
-	sb.append(",\"lwpid\":").append(lwpid);
-	sb.append("}");
+	sb.append("{\"pid\":").append(pid)
+	    .append(",\"lwpid\":").append(lwpid)
+	    .append('}');
 	return sb.toString();
     }
 

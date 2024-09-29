@@ -104,13 +104,13 @@ public class JProcLwpStatus {
      */
     public String toJSON() {
 	StringBuilder sb = new StringBuilder(80);
-	sb.append("{\"pid\":").append(pid);
-	sb.append(",\"lwpid\":").append(lwpid);
-	sb.append(",\"utime\":").append(utime);
-	sb.append(",\"nutime\":").append(nutime);
-	sb.append(",\"stime\":").append(stime);
-	sb.append(",\"nstime\":").append(nstime);
-	sb.append("}");
+	sb.append("{\"pid\":").append(pid)
+	    .append(",\"lwpid\":").append(lwpid)
+	    .append(",\"utime\":").append(utime)
+	    .append(",\"nutime\":").append(nutime)
+	    .append(",\"stime\":").append(stime)
+	    .append(",\"nstime\":").append(nstime)
+	    .append('}');
 	return sb.toString();
     }
 }

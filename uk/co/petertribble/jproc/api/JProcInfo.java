@@ -273,26 +273,26 @@ public class JProcInfo implements Serializable {
      */
     public String toJSON() {
 	StringBuilder sb = new StringBuilder(256);
-	sb.append("{\"fname\":\"").append(pr_fname).append("\"");
-	sb.append(",\"pid\":").append(pr_pid);
-	sb.append(",\"ppid\":").append(pr_ppid);
-	sb.append(",\"uid\":").append(pr_uid);
-	sb.append(",\"euid\":").append(pr_euid);
-	sb.append(",\"gid\":").append(pr_gid);
-	sb.append(",\"egid\":").append(pr_egid);
-	sb.append(",\"nlwp\":").append(pr_nlwp);
-	sb.append(",\"size\":").append(pr_size);
-	sb.append(",\"rssize\":").append(pr_rssize);
-	sb.append(",\"stime\":").append(stime);
-	sb.append(",\"etime\":").append(etime);
-	sb.append(",\"ntime\":").append(ntime);
-	sb.append(",\"ectime\":").append(ectime);
-	sb.append(",\"nctime\":").append(nctime);
-	sb.append(",\"taskid\":").append(pr_taskid);
-	sb.append(",\"projid\":").append(pr_projid);
-	sb.append(",\"zoneid\":").append(pr_zoneid);
-	sb.append(",\"contract\":").append(pr_contract);
-	sb.append("}");
+	sb.append("{\"fname\":\"").append(pr_fname)
+	    .append("\",\"pid\":").append(pr_pid)
+	    .append(",\"ppid\":").append(pr_ppid)
+	    .append(",\"uid\":").append(pr_uid)
+	    .append(",\"euid\":").append(pr_euid)
+	    .append(",\"gid\":").append(pr_gid)
+	    .append(",\"egid\":").append(pr_egid)
+	    .append(",\"nlwp\":").append(pr_nlwp)
+	    .append(",\"size\":").append(pr_size)
+	    .append(",\"rssize\":").append(pr_rssize)
+	    .append(",\"stime\":").append(stime)
+	    .append(",\"etime\":").append(etime)
+	    .append(",\"ntime\":").append(ntime)
+	    .append(",\"ectime\":").append(ectime)
+	    .append(",\"nctime\":").append(nctime)
+	    .append(",\"taskid\":").append(pr_taskid)
+	    .append(",\"projid\":").append(pr_projid)
+	    .append(",\"zoneid\":").append(pr_zoneid)
+	    .append(",\"contract\":").append(pr_contract)
+	    .append('}');
 	return sb.toString();
     }
 }
