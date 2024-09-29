@@ -49,7 +49,7 @@ public class JProcClient {
 	try {
 	    config.setServerURL(pcc.getServerURL());
 	} catch (MalformedURLException mue) {
-	    throw new JProcException("Malformed URL.");
+	    throw new JProcException("Malformed URL.", mue);
 	}
 	initClient(config);
     }

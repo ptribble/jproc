@@ -46,7 +46,7 @@ public class JProcException extends RuntimeException {
 	super(s);
     }
     /**
-     * Construct a new JProcException with the givendetail message and cause.
+     * Construct a new JProcException with the given detail message and cause.
      *
      * @param s  the detail message
      * @param cause  the underlying cause for this JProcException
