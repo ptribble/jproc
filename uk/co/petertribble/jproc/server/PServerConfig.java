@@ -44,12 +44,6 @@ public class PServerConfig {
     private boolean registermdns;
 
     /**
-     * Construct a default PServerConfig. The default port is set to 8080
-     */
-    public PServerConfig() {
-    }
-
-    /**
      * Configure a PServerConfig from a configuration file.
      *
      * @param f the file to be read containing the configuration
@@ -76,7 +70,7 @@ public class PServerConfig {
      * @return true if this object is configured
      */
     public boolean isConfigured() {
-	return (port != 0);
+	return port != 0;
     }
 
     /**

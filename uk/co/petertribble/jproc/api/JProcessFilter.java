@@ -37,7 +37,6 @@ public class JProcessFilter {
 
     private Set <JProcess> addedProcesses;
     private Set <JProcess> deletedProcesses;
-    private Set <JProcess> newProcesses;
     private Set <JProcess> currentProcesses;
 
     private int szone = -1;
@@ -201,8 +200,7 @@ public class JProcessFilter {
 	if (spid < 0) {
 	    Set <JProcess> matchProcesses = new HashSet <JProcess> ();
 	    jps.update();
-	    newProcesses = jps.getProcesses();
-	    for (JProcess jp : newProcesses) {
+	    for (JProcess jp : jps.getProcesses()) {
 		if (matchFilter(jp)) {
 		    matchProcesses.add(jp);
 		}
@@ -238,7 +236,7 @@ public class JProcessFilter {
 	if (staskid > -1 && jpi.gettaskid() != staskid) {
 	    return false;
 	}
-	if (sprojid > -1 && jpi.getprojid() != sprojid) {
+	if (sprojid > -1 && jpi.getprojid() != sprojid) { //NOPMD
 	    return false;
 	}
 	return true;

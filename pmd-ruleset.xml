@@ -11,6 +11,20 @@
 
 
     <rule ref="category/java/security.xml"/>
+    <rule ref="rulesets/java/quickstart.xml">
+      <exclude name="CompareObjectsWithEquals"/>
+      <exclude name="EmptyCatchBlock"/>
+      <exclude name="SwitchStmtsShouldHaveDefault"/>
+      <exclude name="LocalVariableNamingConventions"/>
+      <exclude name="FormalParameterNamingConventions"/>
+      <exclude name="ClassNamingConventions"/>
+      <exclude name="ReturnEmptyCollectionRatherThanNull"/>
+      <exclude name="UncommentedEmptyConstructor"/>
+      <exclude name="UseUtilityClass"/>
+      <exclude name="LambdaCanBeMethodReference"/>
+      <exclude name="ClassWithOnlyPrivateConstructorsShouldBeFinal"/>
+      <exclude name="UnsynchronizedStaticFormatter"/>
+    </rule>
     <rule ref="category/java/performance.xml">
      <exclude name="AvoidInstantiatingObjectsInLoops"/>
      <exclude name="TooFewBranchesForASwitchStatement"/>

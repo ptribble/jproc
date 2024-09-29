@@ -39,7 +39,7 @@ import javax.swing.tree.TreeNode;
 public class PTree {
 
     private SortedMap <Integer, ProcessTreeNode> nodemap;
-    private SortedMap <Integer, JProcess> pmap;
+    private SortedMap <Integer, JProcess> pmap; //NOPMD
 
     /**
      * Run the ptree demo, printing a tree of all processes.
