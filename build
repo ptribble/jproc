@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# SPDX-License-Identifier: CDDL-1.0
+#
 # build jproc
 #
 # Usage:
@@ -176,7 +178,7 @@ jprest.war)
 	;;
 esac
 
-XFLAGS="-Xlint -Xlint:-serial"
+XFLAGS="-Xlint -Xlint:-serial -Xlint:-rawtypes"
 
 if [ -x /opt/onbld/bin/jstyle ]; then
 	/opt/onbld/bin/jstyle `find uk/co/petertribble -name '*.java'`
