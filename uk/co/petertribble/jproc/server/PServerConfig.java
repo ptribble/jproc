@@ -156,7 +156,7 @@ public class PServerConfig {
      *
      * @return true if the server should register itself in mdns
      */
-    public boolean getRegister() {
+    public boolean shouldRegister() {
 	return registermdns;
     }
 

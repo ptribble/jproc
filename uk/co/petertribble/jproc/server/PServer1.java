@@ -60,7 +60,7 @@ public class PServer1 {
 	    serverConfig.setContentLengthOptional(false);
 
 	    webServer.start();
-	    if (psc.getRegister()) {
+	    if (psc.shouldRegister()) {
 		registerService(psc);
 	    }
 	} catch (Exception e) {
