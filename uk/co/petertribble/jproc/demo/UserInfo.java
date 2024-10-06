@@ -85,7 +85,7 @@ public class UserInfo extends JPdemo implements ActionListener {
 
 	addInfoPanel(mainPanel, VERSION);
 
-	zoneSelectionItems = new HashSet <JCheckBoxMenuItem> ();
+	zoneSelectionItems = new HashSet<>();
 	if (jps.getZones().size() > 1) {
 	    addZoneMenu(jps);
 	}

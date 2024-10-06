@@ -62,14 +62,14 @@ public final class LWPusageTableModel extends AbstractTableModel {
 	this.jp = jp;
 
 	// initialize the column mapping list
-	colMap = new ArrayList <Integer> ();
+	colMap = new ArrayList<>();
 	for (int i = 0; i < columnNames.length; i++) {
 	    colMap.add(i);
 	}
 
 	// initialize the data objects
-	vp = new ArrayList <JLwp> ();
-	vpu = new ArrayList <JProcUsage> ();
+	vp = new ArrayList<>();
+	vpu = new ArrayList<>();
 	for (JLwp p : jproc.getLwps(jp)) {
 	    JProcUsage jpu = jproc.getUsage(p);
 	    if (jpu != null) {
@@ -94,7 +94,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
 	if (nlwp == null) {
 	    throw new NoSuchProcessException();
 	}
-	List <JLwp> nvp = new ArrayList <JLwp> (nlwp);
+	List <JLwp> nvp = new ArrayList<>(nlwp);
 	// ignore existing threads
 	nvp.removeAll(vp);
 	// add any new threads - removes handled below

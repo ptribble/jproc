@@ -86,7 +86,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
     }
 
     private void buildtree() {
-	nodemap = new TreeMap <Integer, ProcessTreeNode> ();
+	nodemap = new TreeMap<>();
 	// create a node for each process
 	for (JProcess p : jpf.getProcesses()) {
 	    nodemap.put(p.getPid(), new ProcessTreeNode(p));
@@ -208,7 +208,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	    /*
 	     * A Set of processes that are orphaned and need reparenting.
 	     */
-	    Set <JProcess> orphans = new HashSet <JProcess> ();
+	    Set <JProcess> orphans = new HashSet<>();
 	    /*
 	     * First add new nodes to the map.
 	     */

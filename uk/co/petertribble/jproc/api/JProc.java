@@ -50,10 +50,10 @@ public class JProc {
      * you convert from name to id once, and do a lot of work using the id,
      * but that the id is converted many times to a name for presentation.
      */
-    private Map <Integer, String> uMap = new HashMap <Integer, String> ();
-    private Map <Integer, String> gMap = new HashMap <Integer, String> ();
-    private Map <Integer, String> projMap = new HashMap <Integer, String> ();
-    private Map <Integer, String> zMap = new HashMap <Integer, String> ();
+    private Map <Integer, String> uMap = new HashMap<>();
+    private Map <Integer, String> gMap = new HashMap<>();
+    private Map <Integer, String> projMap = new HashMap<>();
+    private Map <Integer, String> zMap = new HashMap<>();
 
     /**
      * Create a new JProc object, that can be queried for information about

@@ -61,8 +61,8 @@ public class JProcessFilter {
     public JProcessFilter(JProcessSet jps) {
 	this.jps = jps;
 	currentProcesses = jps.getProcesses();
-	addedProcesses = new HashSet <JProcess> ();
-	deletedProcesses = new HashSet <JProcess> ();
+	addedProcesses = new HashSet<>();
+	deletedProcesses = new HashSet<>();
     }
 
     /**
@@ -74,10 +74,10 @@ public class JProcessFilter {
      */
     public JProcessFilter(JProcess jp) {
 	spid = 1;
-	currentProcesses = new HashSet <JProcess> ();
+	currentProcesses = new HashSet<>();
 	currentProcesses.add(jp);
-	addedProcesses = new HashSet <JProcess> ();
-	deletedProcesses = new HashSet <JProcess> ();
+	addedProcesses = new HashSet<>();
+	deletedProcesses = new HashSet<>();
     }
 
     /**
@@ -198,16 +198,16 @@ public class JProcessFilter {
      */
     public boolean update() {
 	if (spid < 0) {
-	    Set <JProcess> matchProcesses = new HashSet <JProcess> ();
+	    Set <JProcess> matchProcesses = new HashSet<>();
 	    jps.update();
 	    for (JProcess jp : jps.getProcesses()) {
 		if (matchFilter(jp)) {
 		    matchProcesses.add(jp);
 		}
 	    }
-	    addedProcesses = new HashSet <JProcess> (matchProcesses);
+	    addedProcesses = new HashSet<>(matchProcesses);
 	    addedProcesses.removeAll(currentProcesses);
-	    deletedProcesses = new HashSet <JProcess> (currentProcesses);
+	    deletedProcesses = new HashSet<>(currentProcesses);
 	    deletedProcesses.removeAll(matchProcesses);
 	    currentProcesses = matchProcesses;
 	}

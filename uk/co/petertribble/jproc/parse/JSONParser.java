@@ -50,7 +50,7 @@ public class JSONParser {
     }
 
     private static Set <JProcess> getProcesses(JSONArray ja) {
-	Set <JProcess> nprocesses = new HashSet <JProcess> ();
+	Set <JProcess> nprocesses = new HashSet<>();
 	try {
 	    for (int i = 0; i < ja.length(); i++) {
 		JSONObject jo = ja.getJSONObject(i);
@@ -80,7 +80,7 @@ public class JSONParser {
     }
 
     private static Set <JLwp> getLwps(JSONArray ja) {
-	Set <JLwp> nlwps = new HashSet <JLwp> ();
+	Set <JLwp> nlwps = new HashSet<>();
 	try {
 	    for (int i = 0; i < ja.length(); i++) {
 		JSONObject jo = ja.getJSONObject(i);

@@ -56,7 +56,7 @@ public class NativeJProc extends ProcessInterface {
      */
     @Override
     public Set <JProcess> getProcesses() {
-	Set <JProcess> pset = new HashSet <JProcess> ();
+	Set <JProcess> pset = new HashSet<>();
 	for (String s : fproc.list()) {
 	    int pid = Integer.parseInt(s);
 	    JProcInfo jpi = getInfo(pid);
@@ -83,7 +83,7 @@ public class NativeJProc extends ProcessInterface {
 	if (lwpids == null) {
 	    return null;
 	}
-	Set <JLwp> lset = new HashSet <JLwp> ();
+	Set <JLwp> lset = new HashSet<>();
 	for (String s : lwpids) {
 	    lset.add(new JLwp(pid, Integer.parseInt(s)));
 	}

@@ -98,8 +98,8 @@ public class PTree {
     }
 
     private void buildtree(JProc jp) {
-	pmap = new TreeMap <Integer, JProcess> ();
-	nodemap = new TreeMap <Integer, ProcessTreeNode> ();
+	pmap = new TreeMap<>();
+	nodemap = new TreeMap<>();
 	// create a node for each process
 	for (JProcess p : jp.getProcesses()) {
 	    pmap.put(p.getPid(), p);

@@ -60,15 +60,15 @@ public final class PSusageTableModel extends AbstractTableModel {
 	this.jproc = jproc;
 
 	// initialize the column mapping list
-	colMap = new ArrayList <Integer> ();
+	colMap = new ArrayList<>();
 	for (int i = 0; i < columnNames.length; i++) {
 	    colMap.add(i);
 	}
 
 	// initialize the data objects
-	vp = new ArrayList <JProcess> ();
-	vpu = new ArrayList <JProcUsage> ();
-	vpi = new ArrayList <JProcInfo> ();
+	vp = new ArrayList<>();
+	vpu = new ArrayList<>();
+	vpi = new ArrayList<>();
 	for (JProcess p : jpf.getProcesses()) {
 	    JProcUsage psu_new = jproc.getUsage(p);
 	    JProcInfo psi_new = jproc.getInfo(p);

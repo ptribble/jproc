@@ -93,7 +93,7 @@ public class ZoneProcessInfoFrame extends JFrame implements ActionListener {
 	JMenu columnMenu = new JMenu(JProcResources.getString("COLUMN.MENU"));
 	columnMenu.setMnemonic(KeyEvent.VK_C);
 	Map <String, JCheckBoxMenuItem> columnMap =
-	    new HashMap <String, JCheckBoxMenuItem> ();
+	    new HashMap<>();
 	for (String s : jpip.columns()) {
 	    JCheckBoxMenuItem jmi = new JCheckBoxMenuItem(s);
 	    jmi.setSelected(true);

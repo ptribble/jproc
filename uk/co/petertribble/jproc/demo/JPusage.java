@@ -91,15 +91,15 @@ public class JPusage extends JPdemo implements ActionListener {
 
 	addInfoPanel(mainPanel, VERSION);
 
-	userSelectionItems = new HashSet <JCheckBoxMenuItem> ();
+	userSelectionItems = new HashSet<>();
 	addUserMenu();
 
-	zoneSelectionItems = new HashSet <JCheckBoxMenuItem> ();
+	zoneSelectionItems = new HashSet<>();
 	if (jps.getZones().size() > 1) {
 	    addZoneMenu();
 	}
 
-	columnSelectionItems = new HashSet <JCheckBoxMenuItem> ();
+	columnSelectionItems = new HashSet<>();
 
 	addColumnMenu();
 
@@ -153,8 +153,7 @@ public class JPusage extends JPdemo implements ActionListener {
     private void addColumnMenu() {
 	JMenu columnMenu = new JMenu(JProcResources.getString("COLUMN.MENU"));
 	columnMenu.setMnemonic(KeyEvent.VK_C);
-	Map <String, JCheckBoxMenuItem> columnMap =
-	    new HashMap <String, JCheckBoxMenuItem> ();
+	Map <String, JCheckBoxMenuItem> columnMap = new HashMap<>();
 	for (String s : jpup.columns()) {
 	    JCheckBoxMenuItem jmi = new JCheckBoxMenuItem(s);
 	    jmi.setSelected(true);

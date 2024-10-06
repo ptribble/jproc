@@ -54,8 +54,8 @@ public class JProcessSet {
     public JProcessSet(JProc jproc) {
 	this.jproc = jproc;
 	currentProcesses = jproc.getProcesses();
-	addedProcesses = new HashSet <JProcess> ();
-	deletedProcesses = new HashSet <JProcess> ();
+	addedProcesses = new HashSet<>();
+	deletedProcesses = new HashSet<>();
     }
 
     /**
@@ -66,9 +66,9 @@ public class JProcessSet {
      */
     public boolean update() {
 	Set <JProcess> newProcesses = jproc.getProcesses();
-	addedProcesses = new HashSet <JProcess> (newProcesses);
+	addedProcesses = new HashSet<>(newProcesses);
 	addedProcesses.removeAll(currentProcesses);
-	deletedProcesses = new HashSet <JProcess> (currentProcesses);
+	deletedProcesses = new HashSet<>(currentProcesses);
 	deletedProcesses.removeAll(newProcesses);
 	currentProcesses.addAll(addedProcesses);
 	currentProcesses.removeAll(deletedProcesses);
@@ -119,7 +119,7 @@ public class JProcessSet {
      * @return The Set of current users.
      */
     public Set <String> getUsers(Set <JProcess> processes) {
-	Set <String> users = new HashSet <String> ();
+	Set <String> users = new HashSet<>();
 	for (JProcess jp : processes) {
 	    users.add(jproc.getUserName(jp.getCachedInfo().getuid()));
 	}
@@ -143,7 +143,7 @@ public class JProcessSet {
      * @return The Set of current zones.
      */
     public Set <String> getZones(Set <JProcess> processes) {
-	Set <String> zones = new HashSet <String> ();
+	Set <String> zones = new HashSet<>();
 	for (JProcess jp : processes) {
 	    zones.add(jproc.getZoneName(jp.getCachedInfo().getzoneid()));
 	}
@@ -167,7 +167,7 @@ public class JProcessSet {
      * @return The Set of current task ids.
      */
     public Set <Integer> getTasks(Set <JProcess> processes) {
-	Set <Integer> tasks = new HashSet <Integer> ();
+	Set <Integer> tasks = new HashSet<>();
 	for (JProcess jp : processes) {
 	    tasks.add(jp.getCachedInfo().gettaskid());
 	}
@@ -191,7 +191,7 @@ public class JProcessSet {
      * @return The Set of current project ids.
      */
     public Set <Integer> getProjects(Set <JProcess> processes) {
-	Set <Integer> projects = new HashSet <Integer> ();
+	Set <Integer> projects = new HashSet<>();
 	for (JProcess jp : processes) {
 	    projects.add(jp.getCachedInfo().getprojid());
 	}

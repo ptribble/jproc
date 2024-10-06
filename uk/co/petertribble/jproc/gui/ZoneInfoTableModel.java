@@ -59,14 +59,14 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	this.jproc = jproc;
 
 	// initialize the column mapping list
-	colMap = new ArrayList <Integer> ();
+	colMap = new ArrayList<>();
 	for (int i = 0; i < columnNames.length; i++) {
 	    colMap.add(i);
 	}
 
 	// initialize the data objects
-	vp = new ArrayList <JProcess> ();
-	vpi = new ArrayList <JProcInfo> ();
+	vp = new ArrayList<>();
+	vpi = new ArrayList<>();
 	for (JProcess p : jpf.getProcesses()) {
 	    JProcInfo psi_new = jproc.getInfo(p);
 	    if (psi_new != null) {
@@ -75,7 +75,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	    }
 	}
 
-	zoneids = new ArrayList <Integer> ();
+	zoneids = new ArrayList<>();
     }
 
     /**
@@ -118,7 +118,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	}
 	Iterator <JProcess> ip = vp.iterator();
 	int i = 0;
-	Set <Integer> zones = new TreeSet <Integer> ();
+	Set <Integer> zones = new TreeSet<>();
 	while (ip.hasNext()) {
 	    JProcess jp = ip.next();
 	    /*
