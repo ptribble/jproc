@@ -1,11 +1,13 @@
 #!/bin/sh
 #
+# SPDX-License-Identifier: CDDL-1.0
+#
 # run the jproc utilities
 #
 
-JPDIR=`dirname $0`
+JPDIR=$(dirname "$0")
 LIBDIR=${JPDIR}/lib
-ARCHLIBDIR=${LIBDIR}/`/usr/bin/isainfo -k`
+ARCHLIBDIR=${LIBDIR}/$(/usr/bin/isainfo -k)
 JARLIBDIR=${LIBDIR}/java
 JAVA=/usr/bin/java
 
@@ -116,7 +118,7 @@ case $SUBCOMMAND in
 # EXPERIMENTAL
 #
 'jmxclient')
-    ${JLOC}/bin/jconsole -J-Djava.class.path=${JLOC}/lib/jconsole.jar:${JLOC}/lib/tools.jar:${JPAPIJAR}
+    ${JLOC}/bin/jconsole -J-Djava.class.path=${JLOC}/lib/jconsole.jar:${JLOC}/lib/tools.jar:"${JPAPIJAR}"
     exit 0
     ;;
 
@@ -137,4 +139,4 @@ esac
 #
 # launch the class specified
 #
-LD_LIBRARY_PATH=${ARCHLIBDIR} $JAVA ${JFLAGS} -Dswing.aatext=true -cp ${ALLJARS} ${JPCLASS} $*
+LD_LIBRARY_PATH=${ARCHLIBDIR} $JAVA ${JFLAGS} -Dswing.aatext=true -cp ${ALLJARS} ${JPCLASS} "$@"

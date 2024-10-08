@@ -42,9 +42,9 @@
 PATH=/usr/jdk/instances/jdk1.8.0/bin:$PATH
 export PATH
 
-JPDIR=`dirname $0`
+JPDIR=$(dirname "$0")
 LIBDIR=${JPDIR}/lib
-ARCHLIBDIR=${LIBDIR}/`/usr/bin/isainfo -k`
+ARCHLIBDIR=${LIBDIR}/$(/usr/bin/isainfo -k)
 JARLIBDIR=${LIBDIR}/java
 
 JSONJAR=${JARLIBDIR}/json-20240303.jar
@@ -81,23 +81,23 @@ jni|-jni)
 doc|-doc)
 	rm -fr javadoc
 	mkdir javadoc
-	javadoc -Xdoclint:all -d javadoc -classpath .:$BUILDJARS uk.co.petertribble.jproc.api uk.co.petertribble.jproc.gui uk.co.petertribble.jproc.demo
+	javadoc -Xdoclint:all -d javadoc -classpath .:"$BUILDJARS" uk.co.petertribble.jproc.api uk.co.petertribble.jproc.gui uk.co.petertribble.jproc.demo
 	exit 0
 	;;
 clean|-clean)
-	rm -f `find uk/co -name '*.class'`
-	rm -f `find . -type f -name '*~'`
+	rm -f $(find uk/co -name '*.class')
+	rm -f $(find . -type f -name '*~')
 	rm -fr javadoc
 	rm -f jproc.war
 	rm -f jprest.war
 	exit 0
 	;;
 pmd|-pmd)
-	if [ ! -d ${HOME}/.pmd ]; then
-	    mkdir -p ${HOME}/.pmd
+	if [ ! -d "${HOME}/.pmd" ]; then
+	    mkdir -p "${HOME}/.pmd"
 	fi
 	pmd check --cache "${PMDCACHE}" -d uk -R ${PMDRULES} --use-version java-1.8 --aux-classpath $(echo lib/java/* | sed 's= =:=g') 2>/dev/null
-	pmd check --cache ${PMDCACHE}.html -d help/*.html  -R category/html/bestpractices.xml 2>/dev/null
+	pmd check --cache "${PMDCACHE}.html" -d help/*.html  -R category/html/bestpractices.xml 2>/dev/null
 	exit 0
 	;;
 spotbugs)
@@ -112,10 +112,10 @@ packages)
 	sed s:INSTALLED=false:INSTALLED=true: jproc > jproc.installed
 	./mkproto i386 $2 > prototype.i386
 	./mkproto sparc $2 > prototype.sparc
-	pkgmk -d /tmp -f prototype.i386 -r `pwd` TRIBjproc
+	pkgmk -d /tmp -f prototype.i386 -r $(pwd) TRIBjproc
 	pkgtrans -s /tmp /tmp/TRIBjproc-i386.pkg TRIBjproc
 	rm -fr /tmp/TRIBjproc
-	pkgmk -d /tmp -f prototype.sparc -r `pwd` TRIBjproc
+	pkgmk -d /tmp -f prototype.sparc -r $(pwd) TRIBjproc
 	pkgtrans -s /tmp /tmp/TRIBjproc-sparc.pkg TRIBjproc
 	rm -fr /tmp/TRIBjproc
 	ls -l /tmp/TRIBjproc-sparc.pkg /tmp/TRIBjproc-i386.pkg
@@ -126,7 +126,7 @@ packages)
 	;;
 jproc.war)
 	mkdir war
-	cd war
+	cd war || exit 1
 	mkdir -p WEB-INF/lib
 	mkdir -p org/apache/xmlrpc/webserver
 	cp -p ../properties/PServer1.properties org/apache/xmlrpc/webserver/XmlRpcServlet.properties
@@ -146,7 +146,7 @@ jprest.war)
 	    echo "Unable to find jersey, exiting..."
 	    exit 1
 	fi
-	cd jersey
+	cd jersey || exit 1
 	if [ ! -f "${JAXRSJAR}" ]; then
 	    echo "Unable to find javax.ws.rs jar, exiting..."
 	    exit 1
@@ -154,7 +154,7 @@ jprest.war)
 	javac ${XFLAGS} -classpath ../lib/java/jproc.jar:${JAXRSJAR} uk/co/petertribble/jprest/*.java
 	cd ..
 	mkdir war
-	cd war
+	cd war || exit
 	mkdir -p WEB-INF/lib org/apache/xmlrpc/webserver
 	mkdir -p WEB-INF/lib
 	mkdir -p org/apache/xmlrpc/webserver
@@ -181,23 +181,23 @@ esac
 XFLAGS="-Xlint -Xlint:-serial -Xlint:-rawtypes"
 
 if [ -x /opt/onbld/bin/jstyle ]; then
-	/opt/onbld/bin/jstyle `find uk/co/petertribble -name '*.java'`
+	/opt/onbld/bin/jstyle $(find uk/co/petertribble -name '*.java')
 fi
 
-javac ${XFLAGS} -classpath .:${BUILDJARS} uk/co/petertribble/jproc/api/*.java uk/co/petertribble/jproc/demo/*.java uk/co/petertribble/jproc/gui/*.java uk/co/petertribble/jproc/server/*.java uk/co/petertribble/jproc/client/*.java uk/co/petertribble/jproc/parse/*.java
+javac ${XFLAGS} -classpath .:"${BUILDJARS}" uk/co/petertribble/jproc/api/*.java uk/co/petertribble/jproc/demo/*.java uk/co/petertribble/jproc/gui/*.java uk/co/petertribble/jproc/server/*.java uk/co/petertribble/jproc/client/*.java uk/co/petertribble/jproc/parse/*.java
 
 #
 # compiling 64-bit objects is just plain funky
 #
-case `isainfo -k` in
+case $(isainfo -k) in
 amd64)
-    cc -Kpic -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
+    cc -Kpic -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o "${ARCHLIBDIR}"/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
     ;;
 sparcv9)
-    cc -xcode=pic13 -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o ${ARCHLIBDIR}/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
+    cc -xcode=pic13 -shared -m64 -I/usr/java/include -I/usr/java/include/solaris -h libproc_jni.so -lproject -o "${ARCHLIBDIR}"/libproc_jni.so uk_co_petertribble_jproc_api_NativeJProc.c
     ;;
 esac
 
-jar -cmf jproc.manifest ${JPJAR} help/*.html help/CDDL.txt properties/*.properties `find uk/co -name '*.class'`
+jar -cmf jproc.manifest "${JPJAR}" help/*.html help/CDDL.txt properties/*.properties $(find uk/co -name '*.class')
 
-jar -cf ${JPAPIJAR} `find uk/co/petertribble/jproc/api -name '*.class'`
+jar -cf "${JPAPIJAR}" $(find uk/co/petertribble/jproc/api -name '*.class')
