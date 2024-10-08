@@ -81,7 +81,7 @@ jni|-jni)
 doc|-doc)
 	rm -fr javadoc
 	mkdir javadoc
-	javadoc -d javadoc -classpath .:$BUILDJARS uk.co.petertribble.jproc.api uk.co.petertribble.jproc.gui uk.co.petertribble.jproc.demo
+	javadoc -Xdoclint:all -d javadoc -classpath .:$BUILDJARS uk.co.petertribble.jproc.api uk.co.petertribble.jproc.gui uk.co.petertribble.jproc.demo
 	exit 0
 	;;
 clean|-clean)
