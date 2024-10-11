@@ -33,6 +33,8 @@ import uk.co.petertribble.jproc.client.*;
  */
 public class JPTree extends JPdemo {
 
+    private static final long serialVersionUID = 1L;
+
     private JPTreePanel jpt;
 
     private static final String VERSION = "JPTree version 1.0";

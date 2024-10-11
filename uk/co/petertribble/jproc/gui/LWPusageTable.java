@@ -39,6 +39,8 @@ import java.util.List;
  */
 public class LWPusageTable extends JTable implements ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     private LWPusageTableModel ftm;
     private DefaultTableCellRenderer timeColumnRenderer;
     private Timer timer;
@@ -63,6 +65,7 @@ public class LWPusageTable extends JTable implements ActionListener {
 	 */
 	timeColumnRenderer =
 	    new DefaultTableCellRenderer() {
+		private static final long serialVersionUID = 1L;
 		@Override
 		public void setValue(Object value) {
 		    // We know it's a Double, we wrote the model

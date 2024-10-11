@@ -35,6 +35,8 @@ import uk.co.petertribble.jproc.api.JProcess;
  */
 public class LWPusageFrame extends JFrame {
 
+    private static final long serialVersionUID = 1L;
+
     LWPusageTable lup;
 
     /**

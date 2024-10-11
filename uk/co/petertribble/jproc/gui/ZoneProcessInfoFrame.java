@@ -36,6 +36,8 @@ import javax.swing.*;
  */
 public class ZoneProcessInfoFrame extends JFrame implements ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     JPinfoTable jpip;
 
     /**

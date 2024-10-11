@@ -39,6 +39,8 @@ import javax.swing.*;
  */
 public class UserInfo extends JPdemo implements ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     private JProc jproc;
     private UserInfoTable jpip;
 

@@ -29,6 +29,8 @@ package uk.co.petertribble.jproc.api;
  */
 public class NoSuchProcessException extends Exception {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * Create a new NoSuchProcessException, with no message text.
      */

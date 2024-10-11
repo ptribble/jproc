@@ -36,6 +36,8 @@ import uk.co.petertribble.jproc.api.*;
  */
 public final class PSinfoTableModel extends AbstractTableModel {
 
+    private static final long serialVersionUID = 1L;
+
     private String[] columnNames = { "COMMAND", "pid", "ppid", "USER", "GROUP",
 		"nlwp", "SZ", "RSS", "START", "TIME", "TASK", "PROJ", "ZONE",
 		"CT"};

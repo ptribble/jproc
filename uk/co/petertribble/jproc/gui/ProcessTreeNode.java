@@ -33,6 +33,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
  */
 public class ProcessTreeNode extends DefaultMutableTreeNode {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * Construct a new ProcessTreeNode.
      *

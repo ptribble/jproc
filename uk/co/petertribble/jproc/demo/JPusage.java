@@ -41,6 +41,8 @@ import javax.swing.*;
  */
 public class JPusage extends JPdemo implements ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     private JProc jproc;
     private JProcessSet jps;
     private JPusageTable jpup;

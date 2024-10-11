@@ -34,6 +34,8 @@ import javax.swing.table.*;
  */
 public final class ProcessExitedTableModel extends AbstractTableModel {
 
+    private static final long serialVersionUID = 1L;
+
     @Override
     public int getColumnCount() {
 	return 1;

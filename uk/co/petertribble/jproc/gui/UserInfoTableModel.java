@@ -37,6 +37,8 @@ import uk.co.petertribble.jproc.api.*;
  */
 public final class UserInfoTableModel extends AbstractTableModel {
 
+    private static final long serialVersionUID = 1L;
+
     private String[] columnNames = { "USER", "NPROC", "nlwp", "SZ", "RSS",
 				"TIME"};
 

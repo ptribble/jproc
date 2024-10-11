@@ -30,6 +30,8 @@ package uk.co.petertribble.jproc.api;
  */
 public class JProcException extends RuntimeException {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * Create a new JProcException, with no message text.
      */

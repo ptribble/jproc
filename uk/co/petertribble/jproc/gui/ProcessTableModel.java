@@ -32,6 +32,8 @@ import uk.co.petertribble.jproc.api.*;
  */
 public final class ProcessTableModel extends AbstractTableModel {
 
+    private static final long serialVersionUID = 1L;
+
     private String[] columnNames = { "Property", "Value", "Change" };
 
     private JProcess process;

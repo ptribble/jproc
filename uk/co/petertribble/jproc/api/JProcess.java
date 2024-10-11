@@ -31,6 +31,8 @@ import java.io.Serializable;
  */
 public class JProcess implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private int pid;
     private JProcInfo info;
 

@@ -38,6 +38,8 @@ import javax.swing.table.*;
  */
 public class UserInfoTable extends JTable implements ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     JProc jproc;
     UserInfoTableModel ftm;
     TableSorter sortedModel;
@@ -69,6 +71,7 @@ public class UserInfoTable extends JTable implements ActionListener {
 	 */
 	sizeColumnRenderer =
 	    new DefaultTableCellRenderer() {
+	    private static final long serialVersionUID = 1L;
 		@Override
 		public void setValue(Object value) {
 		    // We know it's a Long, we wrote the model, but to be safe
@@ -79,6 +82,7 @@ public class UserInfoTable extends JTable implements ActionListener {
 	sizeColumnRenderer.setHorizontalAlignment(JLabel.RIGHT);
 	timeColumnRenderer =
 	    new DefaultTableCellRenderer() {
+		private static final long serialVersionUID = 1L;
 		@Override
 		public void setValue(Object value) {
 		    // We know it's a Double, we wrote the model

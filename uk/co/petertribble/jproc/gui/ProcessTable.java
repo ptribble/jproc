@@ -39,6 +39,8 @@ import java.awt.event.ActionEvent;
  */
 public class ProcessTable extends JTable implements ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     private ProcessTableModel ptm;
     private DefaultTableCellRenderer sizeRenderer;
     private DefaultTableCellRenderer timeRenderer;
@@ -127,6 +129,7 @@ public class ProcessTable extends JTable implements ActionListener {
      * format.
      */
     public class SizeRenderer extends DefaultTableCellRenderer {
+	private static final long serialVersionUID = 1L;
 	@Override
 	public void setValue(Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
@@ -140,6 +143,7 @@ public class ProcessTable extends JTable implements ActionListener {
      * format.
      */
     public class TimeRenderer extends DefaultTableCellRenderer {
+	private static final long serialVersionUID = 1L;
 	@Override
 	public void setValue(Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe

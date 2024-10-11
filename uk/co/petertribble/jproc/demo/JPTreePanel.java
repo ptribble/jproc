@@ -46,6 +46,8 @@ import java.awt.event.ActionEvent;
 public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     private JProc jproc;
     private JProcessFilter jpf;
     private ProcessTable pt;

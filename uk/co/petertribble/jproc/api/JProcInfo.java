@@ -32,6 +32,8 @@ import java.io.Serializable;
  */
 public class JProcInfo implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private int pr_nlwp;
     private int pr_pid;
     private int pr_ppid;

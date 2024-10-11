@@ -36,6 +36,8 @@ import javax.swing.*;
  */
 public class UserProcessInfoFrame extends JFrame implements ActionListener {
 
+    private static final long serialVersionUID = 1L;
+
     JPinfoTable jpip;
 
     /**

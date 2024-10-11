@@ -37,6 +37,8 @@ import uk.co.petertribble.jproc.api.*;
  */
 public final class LWPusageTableModel extends AbstractTableModel {
 
+    private static final long serialVersionUID = 1L;
+
     /*
      * The columns we can show.
      */
