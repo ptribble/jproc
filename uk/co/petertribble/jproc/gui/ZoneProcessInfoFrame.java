@@ -58,7 +58,7 @@ public class ZoneProcessInfoFrame extends JFrame implements ActionListener {
 	JMenuBar jm = new JMenuBar();
 	setJMenuBar(jm);
 
-	addWindowListener(new winExit());
+	addWindowListener(new WindowExit());
 	setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         jpip = new JPinfoTable(jproc, jpf, interval);
@@ -126,7 +126,7 @@ public class ZoneProcessInfoFrame extends JFrame implements ActionListener {
     /**
      * On closure, stop the table updating.
      */
-    class winExit extends WindowAdapter {
+    class WindowExit extends WindowAdapter {
 	@Override
 	public void windowClosing(WindowEvent we) {
 	    jpip.stopLoop();

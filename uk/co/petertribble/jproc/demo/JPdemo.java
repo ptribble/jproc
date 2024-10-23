@@ -149,7 +149,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
 
 	jm = new JMenuBar();
 	setJMenuBar(jm);
-	addWindowListener(new winExit());
+	addWindowListener(new WindowExit());
 	addFileMenu();
 	addSleepMenu();
 	addHelpMenu();
@@ -257,7 +257,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
 		+ JProcResources.getString("SLEEP.SEC"));
     }
 
-    class winExit extends WindowAdapter {
+    class WindowExit extends WindowAdapter {
 	@Override
 	public void windowClosing(WindowEvent we) {
 	    if (standalone) {

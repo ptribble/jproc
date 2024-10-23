@@ -17,7 +17,6 @@
       <exclude name="SwitchStmtsShouldHaveDefault"/>
       <exclude name="LocalVariableNamingConventions"/>
       <exclude name="FormalParameterNamingConventions"/>
-      <exclude name="ClassNamingConventions"/>
       <exclude name="ReturnEmptyCollectionRatherThanNull"/>
       <exclude name="UncommentedEmptyConstructor"/>
       <exclude name="UseUtilityClass"/>

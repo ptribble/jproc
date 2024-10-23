@@ -51,7 +51,7 @@ public class LWPusageFrame extends JFrame {
 	setTitle(JProcResources.getString("THREAD.TITLE") + " " + jp.getPid());
 	setLayout(new BorderLayout());
 
-	addWindowListener(new winExit());
+	addWindowListener(new WindowExit());
 	setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 	lup = new LWPusageTable(jproc, jp, interval);
@@ -66,7 +66,7 @@ public class LWPusageFrame extends JFrame {
     /**
      * On closure, stop the table updating.
      */
-    class winExit extends WindowAdapter {
+    class WindowExit extends WindowAdapter {
 	@Override
 	public void windowClosing(WindowEvent we) {
 	    lup.stopLoop();
