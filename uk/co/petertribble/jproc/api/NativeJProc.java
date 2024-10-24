@@ -243,5 +243,5 @@ public class NativeJProc extends ProcessInterface {
      * Caches all the methodids once, for efficiency and guaranteed code
      * coverage.
      */
-    private native static void cacheids();
+    private static native void cacheids();
 }
