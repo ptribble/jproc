@@ -140,7 +140,7 @@ public class PTree {
 
     private void printit(ProcessTreeNode ptn, String indent) {
 	printone(ptn.getProcess(), indent);
-	for (Enumeration e = ptn.children(); e.hasMoreElements(); ) {
+	for (Enumeration e = ptn.children(); e.hasMoreElements();) {
 	    printit((ProcessTreeNode) e.nextElement(), indent + "  ");
 	}
     }

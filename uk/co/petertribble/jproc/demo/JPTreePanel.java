@@ -237,7 +237,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 		/*
 		 * Record this node's child processes so we can reparent them.
 		 */
-		for (Enumeration e1 = tn.children(); e1.hasMoreElements(); ) {
+		for (Enumeration e1 = tn.children(); e1.hasMoreElements();) {
 		    orphans.add(((ProcessTreeNode) e1.nextElement())
 				.getProcess());
 		}
