@@ -183,8 +183,8 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	jup.removeColumn("COMMAND");
 	up.add(jup.getTableHeader(), BorderLayout.NORTH);
 	up.setBorder(BorderFactory.createTitledBorder(
-		"information for process " + jp.getPid() +
-		" " + jpi.getfname()));
+		"information for process " + jp.getPid()
+		+ " " + jpi.getfname()));
 	up.add(jup);
 	ppanel.add(up, BorderLayout.NORTH);
 	lup = new LWPusageTable(jproc, jp, interval);

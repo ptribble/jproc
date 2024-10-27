@@ -133,8 +133,8 @@ public class ProcessTable extends JTable implements ActionListener {
 	@Override
 	public void setValue(Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
-	    setText(value instanceof Long ?
-		    PrettyFormat.memscale((Long) value) : "");
+	    setText(value instanceof Long
+		    ? PrettyFormat.memscale((Long) value) : "");
 	}
     }
 
@@ -147,8 +147,8 @@ public class ProcessTable extends JTable implements ActionListener {
 	@Override
 	public void setValue(Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
-	    setText(value instanceof Double ?
-		    PrettyFormat.timescale((Double) value) : "");
+	    setText(value instanceof Double
+		    ? PrettyFormat.timescale((Double) value) : "");
 	}
     }
 

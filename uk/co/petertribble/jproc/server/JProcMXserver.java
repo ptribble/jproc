@@ -32,7 +32,10 @@ import javax.management.JMException;
  *
  * @author Peter Tribble
  */
-public class JProcMXserver {
+public final class JProcMXserver {
+
+    private JProcMXserver() {
+    }
 
     /**
      * Start a standalone JMX server.

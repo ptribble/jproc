@@ -104,11 +104,13 @@ public class PServerConfig {
 	    Enumeration<NetworkInterface> nets =
 		NetworkInterface.getNetworkInterfaces();
 	    for (NetworkInterface netIf : Collections.list(nets)) {
-		if (netIf.isUp() && netIf.supportsMulticast() && !netIf.isLoopback() && !netIf.isVirtual()) {
-		    Enumeration<InetAddress> inetAddresses = netIf.getInetAddresses();
-		    for (InetAddress inetAddr : Collections.list(inetAddresses)) {
-			if (!inetAddr.isLinkLocalAddress()) {
-			    return inetAddr;
+		if (netIf.isUp() && netIf.supportsMulticast()
+		        && !netIf.isLoopback() && !netIf.isVirtual()) {
+		    Enumeration<InetAddress> inetAddresses
+			= netIf.getInetAddresses();
+		    for (InetAddress iAddr : Collections.list(inetAddresses)) {
+			if (!iAddr.isLinkLocalAddress()) {
+			    return iAddr;
 			}
 		    }
 		}
@@ -121,11 +123,13 @@ public class PServerConfig {
 	    Enumeration<NetworkInterface> nets =
 		NetworkInterface.getNetworkInterfaces();
 	    for (NetworkInterface netIf : Collections.list(nets)) {
-		if (netIf.isUp() && netIf.supportsMulticast() && !netIf.isLoopback()) {
-		    Enumeration<InetAddress> inetAddresses = netIf.getInetAddresses();
-		    for (InetAddress inetAddr : Collections.list(inetAddresses)) {
-			if (!inetAddr.isLinkLocalAddress()) {
-			    return inetAddr;
+		if (netIf.isUp() && netIf.supportsMulticast()
+		        && !netIf.isLoopback()) {
+		    Enumeration<InetAddress> inetAddresses
+			= netIf.getInetAddresses();
+		    for (InetAddress iAddr : Collections.list(inetAddresses)) {
+			if (!iAddr.isLinkLocalAddress()) {
+			    return iAddr;
 			}
 		    }
 		}

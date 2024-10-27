@@ -32,7 +32,7 @@ import java.util.Set;
  */
 public class JProcMX implements JProcMXMBean {
 
-    private static final JProc jproc = new JProc();
+    private static final JProc JPROC = new JProc();
 
     /**
      * Return a Set of all the processes.
@@ -41,11 +41,11 @@ public class JProcMX implements JProcMXMBean {
      */
     @Override
     public Set <JProcess> getProcesses() {
-	return jproc.getProcesses();
+	return JPROC.getProcesses();
     }
 
     @Override
     public JProcess getProcess(int pid) {
-	return new JProcess(pid, jproc.getInfo(pid));
+	return new JProcess(pid, JPROC.getInfo(pid));
     }
 }

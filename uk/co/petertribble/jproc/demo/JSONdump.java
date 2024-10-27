@@ -31,6 +31,9 @@ import uk.co.petertribble.jproc.api.*;
  */
 public final class JSONdump {
 
+    private JSONdump() {
+    }
+
     /**
      * Create the application.
      *

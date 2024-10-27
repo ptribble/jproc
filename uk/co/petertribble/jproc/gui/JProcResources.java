@@ -29,9 +29,9 @@ import java.util.ResourceBundle;
  *
  * @author Peter Tribble
  */
-public class JProcResources {
+public final class JProcResources {
 
-    private static final ResourceBundle jprocres =
+    private static final ResourceBundle JPROCRES =
 			ResourceBundle.getBundle("properties/jproc");
 
     private JProcResources() {
@@ -46,6 +46,6 @@ public class JProcResources {
      * @return The matching String from the resource bundle.
      */
     public static String getString(String key) {
-	return jprocres.getString(key);
+	return JPROCRES.getString(key);
     }
 }

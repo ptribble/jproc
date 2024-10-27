@@ -69,8 +69,8 @@ public class LWPusageTable extends JTable implements ActionListener {
 		@Override
 		public void setValue(Object value) {
 		    // We know it's a Double, we wrote the model
-		    setText(value instanceof Double ?
-			    PrettyFormat.timescale((Double) value) : "");
+		    setText(value instanceof Double
+			    ? PrettyFormat.timescale((Double) value) : "");
 	    }
 	};
 	timeColumnRenderer.setHorizontalAlignment(JLabel.RIGHT);

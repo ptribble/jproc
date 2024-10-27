@@ -146,8 +146,8 @@ public class PTree {
     }
 
     private void printone(JProcess p, String indent) {
-	System.out.println(indent + p.getPid() + " " +
-			p.getCachedInfo().getfname());
+	System.out.println(indent + p.getPid() + " "
+			+ p.getCachedInfo().getfname());
     }
 
     /**

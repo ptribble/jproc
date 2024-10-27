@@ -31,8 +31,12 @@ import org.json.*;
  *
  * @author Peter Tribble
  */
-public class JSONParser {
+public final class JSONParser {
 
+    private JSONParser() {
+    }
+
+    /**
     /**
      * Parse the supplied String (in JSON format) and return the encoded
      * Set of processes.

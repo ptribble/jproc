@@ -31,16 +31,16 @@ import java.util.Date;
  *
  * @author Peter Tribble
  */
-public class PrettyFormat {
+public final class PrettyFormat {
 
-    private static final double kscale = 1024.0;
-    private static final double kmax = 10000.0;
-    private static final char[] names = { 'K', 'M', 'G', 'T', 'P', 'E' };
-    private static final DecimalFormat df = new DecimalFormat("##0");
-    private static final DecimalFormat dfs = new DecimalFormat("##0.0");
-    private static final DecimalFormat dft = new DecimalFormat("00");
-    private static final DateFormat dt = DateFormat.getDateTimeInstance();
-    private static final DateFormat dtt = DateFormat.getTimeInstance();
+    private static final double KSCALE = 1024.0;
+    private static final double KMAX = 10000.0;
+    private static final char[] NAMES = { 'K', 'M', 'G', 'T', 'P', 'E' };
+    private static final DecimalFormat DF = new DecimalFormat("##0");
+    private static final DecimalFormat DFS = new DecimalFormat("##0.0");
+    private static final DecimalFormat DFT = new DecimalFormat("00");
+    private static final DateFormat DT = DateFormat.getDateTimeInstance();
+    private static final DateFormat DTT = DateFormat.getTimeInstance();
 
     /*
      * Hide the constructor.
@@ -77,11 +77,11 @@ public class PrettyFormat {
 	 * The input is in K, so start from there
 	 */
 	int i = 0;
-	while (lvalue > kmax && i < 5) {
-	    lvalue = lvalue/kscale;
+	while (lvalue > KMAX && i < 5) {
+	    lvalue = lvalue/KSCALE;
 	    i++;
 	}
-	return df.format(lvalue) + names[i];
+	return DF.format(lvalue) + NAMES[i];
     }
 
     /**
@@ -96,15 +96,15 @@ public class PrettyFormat {
      */
     public static String timescale(double d) {
 	if (d < 10.0) {
-	    return dfs.format(d) + "s";
+	    return DFS.format(d) + "s";
 	}
 	if (d < 60.0) {
-	    return df.format(d) + "s";
+	    return DF.format(d) + "s";
 	}
 	long secs = (long) d;
 	long ssecs = secs % 60;
 	long mins = (secs - ssecs) /60;
-	return df.format(mins) + "m" + dft.format(ssecs) + "s";
+	return DF.format(mins) + "m" + DFT.format(ssecs) + "s";
     }
 
     /**
@@ -120,8 +120,8 @@ public class PrettyFormat {
      */
     public static String date(long l) {
 	long then = l*1000;
-	return System.currentTimeMillis() - then < 86400000 ?
-	    dtt.format(new Date(then)) :
-	    dt.format(new Date(then));
+	return System.currentTimeMillis() - then < 86400000
+	    ? DTT.format(new Date(then))
+	    : DT.format(new Date(then));
     }
 }
