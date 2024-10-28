@@ -27,7 +27,8 @@ import java.text.DateFormat;
 import java.util.Date;
 
 /**
- * A class for generating human-readable output.
+ * Utility methods to convert raw numbers into more aesthetically pleasing
+ * human readable output.
  *
  * @author Peter Tribble
  */
@@ -42,7 +43,7 @@ public final class PrettyFormat {
     private static final DateFormat DT = DateFormat.getDateTimeInstance();
     private static final DateFormat DTT = DateFormat.getTimeInstance();
 
-    /*
+    /**
      * Hide the constructor.
      */
     private PrettyFormat() {
@@ -50,8 +51,12 @@ public final class PrettyFormat {
 
     /**
      * Return a human readable version of the input number, with
-     * an extra letter to denote k/m/g/t/p/e. The number is scaled
+     * an extra letter to denote K/M/G/T/P/E. The number is scaled
      * by 1024 as many times as necessary.
+     *
+     * @param l The input number to be scaled
+     *
+     * @return A scaled textual representation of the input value
      */
     public static String memscale(Long l) {
 	return (l == null) ? memscale(0.0) : memscale(l.longValue());
@@ -59,8 +64,12 @@ public final class PrettyFormat {
 
     /**
      * Return a human readable version of the input number, with
-     * an extra letter to denote k/m/g/t/p/e. The number is scaled
+     * an extra letter to denote K/M/G/T/P/E. The number is scaled
      * by 1024 as many times as necessary.
+     *
+     * @param l The input number to be scaled
+     *
+     * @return A scaled textual representation of the input value
      */
     public static String memscale(long l) {
 	return memscale((double) l);
@@ -70,6 +79,10 @@ public final class PrettyFormat {
      * Return a human readable version of the input number, with
      * an extra letter to denote K/M/G/T/P/E. The number is scaled
      * by 1024 as many times as necessary.
+     *
+     * @param l The input number to be scaled
+     *
+     * @return A scaled textual representation of the input value
      */
     public static String memscale(double l) {
 	double lvalue = l;
@@ -86,6 +99,10 @@ public final class PrettyFormat {
 
     /**
      * Return a human readable version of the elapsed time.
+     *
+     * @param d The input time to be scaled
+     *
+     * @return A scaled textual representation of the input time
      */
     public static String timescale(Double d) {
 	return (d == null) ? timescale(0.0) : timescale(d.doubleValue());
@@ -93,6 +110,10 @@ public final class PrettyFormat {
 
     /**
      * Return a human readable version of the elapsed time.
+     *
+     * @param d The input time to be scaled
+     *
+     * @return A scaled textual representation of the input time
      */
     public static String timescale(double d) {
 	if (d < 10.0) {
@@ -103,12 +124,17 @@ public final class PrettyFormat {
 	}
 	long secs = (long) d;
 	long ssecs = secs % 60;
-	long mins = (secs - ssecs) /60;
+	long mins = (secs - ssecs)/60;
 	return DF.format(mins) + "m" + DFT.format(ssecs) + "s";
     }
 
     /**
-     * Return a human readable version of the date.
+     * Return a human readable version of the date. We pass the time in
+     * seconds.
+     *
+     * @param l The date or time in seconds to be converted
+     *
+     * @return A scaled textual representation of the input date
      */
     public static String date(Long l) {
 	return (l == null) ? "-" : date(l.longValue());
@@ -117,6 +143,10 @@ public final class PrettyFormat {
     /**
      * Return a human readable version of the date. We pass the time in
      * seconds.
+     *
+     * @param l The date or time in seconds to be converted
+     *
+     * @return A scaled textual representation of the input date
      */
     public static String date(long l) {
 	long then = l*1000;
