@@ -50,5 +50,4 @@
       <exclude name="SystemPrintln"/>
       <exclude name="UseVarargs"/>
     </rule>
-    <exclude-pattern>.*/org/tribblix/illuminate/pkgview/TableSorter.*</exclude-pattern>
 </ruleset>
