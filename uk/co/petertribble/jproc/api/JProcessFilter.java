@@ -35,9 +35,9 @@ public class JProcessFilter {
 
     private JProcessSet jps;
 
-    private Set <JProcess> addedProcesses;
-    private Set <JProcess> deletedProcesses;
-    private Set <JProcess> currentProcesses;
+    private Set<JProcess> addedProcesses;
+    private Set<JProcess> deletedProcesses;
+    private Set<JProcess> currentProcesses;
 
     private int szone = -1;
     private int suid = -1;
@@ -168,7 +168,7 @@ public class JProcessFilter {
      *
      * @return The Set of JProcesses added in the last update.
      */
-    public Set <JProcess> getAddedProcesses() {
+    public Set<JProcess> getAddedProcesses() {
 	return addedProcesses;
     }
 
@@ -177,7 +177,7 @@ public class JProcessFilter {
      *
      * @return The Set of JProcesses deleted in the last update.
      */
-    public Set <JProcess> getDeletedProcesses() {
+    public Set<JProcess> getDeletedProcesses() {
 	return deletedProcesses;
     }
 
@@ -186,7 +186,7 @@ public class JProcessFilter {
      *
      * @return The current Set of JProcesses managed by this JProcessSet.
      */
-    public Set <JProcess> getProcesses() {
+    public Set<JProcess> getProcesses() {
 	return currentProcesses;
     }
 
@@ -198,7 +198,7 @@ public class JProcessFilter {
      */
     public boolean update() {
 	if (spid < 0) {
-	    Set <JProcess> matchProcesses = new HashSet<>();
+	    Set<JProcess> matchProcesses = new HashSet<>();
 	    jps.update();
 	    for (JProcess jp : jps.getProcesses()) {
 		if (matchFilter(jp)) {

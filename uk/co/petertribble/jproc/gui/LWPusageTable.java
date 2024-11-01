@@ -110,7 +110,7 @@ public class LWPusageTable extends JTable implements ActionListener {
      *
      * @return a List of column names
      */
-    public List <String> columns() {
+    public List<String> columns() {
 	return ftm.columns();
     }
 

@@ -43,12 +43,12 @@ public final class PSusageTableModel extends AbstractTableModel {
 		"OUBLK", "MSND", "MRCV", "SIGS", "VCTX", "ICTX", "SYSC",
 		"IOCH"};
 
-    private List <Integer> colMap;
+    private List<Integer> colMap;
 
     private JProcessFilter jpf;
-    private List <JProcess> vp;
-    private List <JProcUsage> vpu;
-    private List <JProcInfo> vpi;
+    private List<JProcess> vp;
+    private List<JProcUsage> vpu;
+    private List<JProcInfo> vpi;
     private JProc jproc;
 
     /**
@@ -140,7 +140,7 @@ public final class PSusageTableModel extends AbstractTableModel {
 		}
 	    }
 	}
-	Iterator <JProcess> ip = vp.iterator();
+	Iterator<JProcess> ip = vp.iterator();
 	int i = 0;
 	while (ip.hasNext()) {
 	    JProcess jp = ip.next();
@@ -188,7 +188,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      *
      * @return a List of column names
      */
-    public List <String> columns() {
+    public List<String> columns() {
 	return Arrays.asList(columnNames);
     }
 
@@ -198,7 +198,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      * @param s the name of the column to be removed
      */
     public void removeColumn(String s) {
-	Iterator <Integer> iter = colMap.iterator();
+	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
 	    if (columnNames[iter.next()].equals(s)) {
 		iter.remove();
@@ -220,7 +220,7 @@ public final class PSusageTableModel extends AbstractTableModel {
 	    }
 	}
 	int imap = 0;
-	Iterator <Integer> iter = colMap.iterator();
+	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
 	    if (iter.next() < icol) {
 		imap++;

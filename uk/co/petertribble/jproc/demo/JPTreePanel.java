@@ -59,7 +59,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
     private JPanel ppanel;
     private DefaultTreeModel dtm;
 
-    private SortedMap <Integer, ProcessTreeNode> nodemap;
+    private SortedMap<Integer, ProcessTreeNode> nodemap;
 
     /**
      * Create a new JPTreePanel.
@@ -210,7 +210,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	    /*
 	     * A Set of processes that are orphaned and need reparenting.
 	     */
-	    Set <JProcess> orphans = new HashSet<>();
+	    Set<JProcess> orphans = new HashSet<>();
 	    /*
 	     * First add new nodes to the map.
 	     */

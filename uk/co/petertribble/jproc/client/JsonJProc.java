@@ -53,7 +53,7 @@ public class JsonJProc extends ProcessInterface {
      * @return A Set of all the processes running on the system.
      */
     @Override
-    public Set <JProcess> getProcesses() {
+    public Set<JProcess> getProcesses() {
 	try {
 	    String m = client.execute("getProcesses");
 	    return JSONParser.getProcesses(m);
@@ -71,7 +71,7 @@ public class JsonJProc extends ProcessInterface {
      * @return A Set of JLwp objects representing the lwps in this process.
      */
     @Override
-    public Set <JLwp> getLwps(int pid) {
+    public Set<JLwp> getLwps(int pid) {
 	try {
 	    String m = client.execute("getLwps",
 					new String[] {Integer.toString(pid)});

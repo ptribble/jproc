@@ -46,12 +46,12 @@ public final class LWPusageTableModel extends AbstractTableModel {
 		"MAJF", "NSWAP", "INBLK", "OUBLK", "MSND", "MRCV", "SIGS",
 		"VCTX", "ICTX", "SYSC", "IOCH"};
 
-    private List <Integer> colMap;
+    private List<Integer> colMap;
 
     private JProc jproc;
     private JProcess jp;
-    private List <JLwp> vp;
-    private List <JProcUsage> vpu;
+    private List<JLwp> vp;
+    private List<JProcUsage> vpu;
 
     /**
      * Create a Table Model for the given process.
@@ -89,14 +89,14 @@ public final class LWPusageTableModel extends AbstractTableModel {
      */
     public void updateJprocess() throws NoSuchProcessException {
 	// update the thread list
-	Set <JLwp> nlwp = jproc.getLwps(jp);
+	Set<JLwp> nlwp = jproc.getLwps(jp);
 	/*
 	 * If the process exits, nlwp will be null.
 	 */
 	if (nlwp == null) {
 	    throw new NoSuchProcessException();
 	}
-	List <JLwp> nvp = new ArrayList<>(nlwp);
+	List<JLwp> nvp = new ArrayList<>(nlwp);
 	// ignore existing threads
 	nvp.removeAll(vp);
 	// add any new threads - removes handled below
@@ -105,7 +105,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
 	    vpu.add(new JProcUsage());
 	}
 
-	Iterator <JLwp> ip = vp.iterator();
+	Iterator<JLwp> ip = vp.iterator();
 	int i = 0;
 	while (ip.hasNext()) {
 	    JLwp jlwp = ip.next();
@@ -148,7 +148,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
      *
      * @return a List of column names
      */
-    public List <String> columns() {
+    public List<String> columns() {
 	return Arrays.asList(columnNames);
     }
 
@@ -158,7 +158,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
      * @param s the name of the column to be removed
      */
     public void removeColumn(String s) {
-	Iterator <Integer> iter = colMap.iterator();
+	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
 	    if (columnNames[iter.next()].equals(s)) {
 		iter.remove();
@@ -180,7 +180,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
 	    }
 	}
 	int imap = 0;
-	Iterator <Integer> iter = colMap.iterator();
+	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
 	    if (iter.next() < icol) {
 		imap++;

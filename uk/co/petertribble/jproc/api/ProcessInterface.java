@@ -37,7 +37,7 @@ public abstract class ProcessInterface {
      *
      * @return A Set of all the processes running on the system.
      */
-    public abstract Set <JProcess> getProcesses();
+    public abstract Set<JProcess> getProcesses();
 
     /**
      * Return a Set of JLwp objects representing the lwps in this process.
@@ -47,7 +47,7 @@ public abstract class ProcessInterface {
      *
      * @return A Set of JLwp objects representing the lwps in this process.
      */
-    public abstract Set <JLwp> getLwps(int pid);
+    public abstract Set<JLwp> getLwps(int pid);
 
     /**
      * Retrieves status of a process.

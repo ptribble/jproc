@@ -104,7 +104,7 @@ public class PClientConfig {
      */
     public PClientConfig(File f) {
 	if (f.exists()) {
-	    Map <String, String> m =
+	    Map<String, String> m =
 		JumbleUtils.stringToPropMap(JumbleFile.getStringContents(f),
 					"\n");
 	    url_string = m.get("URL");

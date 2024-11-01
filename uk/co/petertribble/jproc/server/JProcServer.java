@@ -62,7 +62,7 @@ public class JProcServer {
      * @return a JSON encoded array of lwps
      */
     public String getLwps(int pid) {
-	Set <JLwp> lwps = JPROC.getLwps(pid);
+	Set<JLwp> lwps = JPROC.getLwps(pid);
 	if (lwps == null) {
 	    return "";
 	}

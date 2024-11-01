@@ -35,9 +35,9 @@ public class JProcessSet {
 
     private JProc jproc;
 
-    private Set <JProcess> addedProcesses;
-    private Set <JProcess> deletedProcesses;
-    private Set <JProcess> currentProcesses;
+    private Set<JProcess> addedProcesses;
+    private Set<JProcess> deletedProcesses;
+    private Set<JProcess> currentProcesses;
 
     /**
      * Creates a JProcessSet that includes all processes.
@@ -65,7 +65,7 @@ public class JProcessSet {
      * @return true if the process list has changed, otherwise false
      */
     public boolean update() {
-	Set <JProcess> newProcesses = jproc.getProcesses();
+	Set<JProcess> newProcesses = jproc.getProcesses();
 	addedProcesses = new HashSet<>(newProcesses);
 	addedProcesses.removeAll(currentProcesses);
 	deletedProcesses = new HashSet<>(currentProcesses);
@@ -80,7 +80,7 @@ public class JProcessSet {
      *
      * @return The Set of JProcesses added in the last update.
      */
-    public Set <JProcess> getAddedProcesses() {
+    public Set<JProcess> getAddedProcesses() {
 	return addedProcesses;
     }
 
@@ -89,7 +89,7 @@ public class JProcessSet {
      *
      * @return The Set of JProcesses deleted in the last update.
      */
-    public Set <JProcess> getDeletedProcesses() {
+    public Set<JProcess> getDeletedProcesses() {
 	return deletedProcesses;
     }
 
@@ -98,7 +98,7 @@ public class JProcessSet {
      *
      * @return The current Set of JProcesses managed by this JProcessSet.
      */
-    public Set <JProcess> getProcesses() {
+    public Set<JProcess> getProcesses() {
 	return currentProcesses;
     }
 
@@ -107,7 +107,7 @@ public class JProcessSet {
      *
      * @return The Set of current users.
      */
-    public Set <String> getUsers() {
+    public Set<String> getUsers() {
 	return getUsers(getProcesses());
     }
 
@@ -118,8 +118,8 @@ public class JProcessSet {
      *
      * @return The Set of current users.
      */
-    public Set <String> getUsers(Set <JProcess> processes) {
-	Set <String> users = new HashSet<>();
+    public Set<String> getUsers(Set<JProcess> processes) {
+	Set<String> users = new HashSet<>();
 	for (JProcess jp : processes) {
 	    users.add(jproc.getUserName(jp.getCachedInfo().getuid()));
 	}
@@ -131,7 +131,7 @@ public class JProcessSet {
      *
      * @return The Set of current zones.
      */
-    public Set <String> getZones() {
+    public Set<String> getZones() {
 	return getZones(getProcesses());
     }
 
@@ -142,8 +142,8 @@ public class JProcessSet {
      *
      * @return The Set of current zones.
      */
-    public Set <String> getZones(Set <JProcess> processes) {
-	Set <String> zones = new HashSet<>();
+    public Set<String> getZones(Set<JProcess> processes) {
+	Set<String> zones = new HashSet<>();
 	for (JProcess jp : processes) {
 	    zones.add(jproc.getZoneName(jp.getCachedInfo().getzoneid()));
 	}
@@ -155,7 +155,7 @@ public class JProcessSet {
      *
      * @return The Set of current tasks.
      */
-    public Set <Integer> getTasks() {
+    public Set<Integer> getTasks() {
 	return getTasks(getProcesses());
     }
 
@@ -166,8 +166,8 @@ public class JProcessSet {
      *
      * @return The Set of current task ids.
      */
-    public Set <Integer> getTasks(Set <JProcess> processes) {
-	Set <Integer> tasks = new HashSet<>();
+    public Set<Integer> getTasks(Set<JProcess> processes) {
+	Set<Integer> tasks = new HashSet<>();
 	for (JProcess jp : processes) {
 	    tasks.add(jp.getCachedInfo().gettaskid());
 	}
@@ -179,7 +179,7 @@ public class JProcessSet {
      *
      * @return The Set of current tasks.
      */
-    public Set <Integer> getProjects() {
+    public Set<Integer> getProjects() {
 	return getProjects(getProcesses());
     }
 
@@ -190,8 +190,8 @@ public class JProcessSet {
      *
      * @return The Set of current project ids.
      */
-    public Set <Integer> getProjects(Set <JProcess> processes) {
-	Set <Integer> projects = new HashSet<>();
+    public Set<Integer> getProjects(Set<JProcess> processes) {
+	Set<Integer> projects = new HashSet<>();
 	for (JProcess jp : processes) {
 	    projects.add(jp.getCachedInfo().getprojid());
 	}

@@ -50,10 +50,10 @@ public class JProc {
      * you convert from name to id once, and do a lot of work using the id,
      * but that the id is converted many times to a name for presentation.
      */
-    private Map <Integer, String> uMap = new HashMap<>();
-    private Map <Integer, String> gMap = new HashMap<>();
-    private Map <Integer, String> projMap = new HashMap<>();
-    private Map <Integer, String> zMap = new HashMap<>();
+    private Map<Integer, String> uMap = new HashMap<>();
+    private Map<Integer, String> gMap = new HashMap<>();
+    private Map<Integer, String> projMap = new HashMap<>();
+    private Map<Integer, String> zMap = new HashMap<>();
 
     /**
      * Create a new JProc object, that can be queried for information about
@@ -94,7 +94,7 @@ public class JProc {
      *
      * @return A Set of all the processes running on the system.
      */
-    public Set <JProcess> getProcesses() {
+    public Set<JProcess> getProcesses() {
 	return njp.getProcesses();
     }
 
@@ -106,7 +106,7 @@ public class JProc {
      *
      * @return A Set of JLwp objects representing the lwps in this process.
      */
-    public Set <JLwp> getLwps(JProcess jp) {
+    public Set<JLwp> getLwps(JProcess jp) {
 	return getLwps(jp.getPid());
     }
 
@@ -118,7 +118,7 @@ public class JProc {
      *
      * @return A Set of JLwp objects representing the lwps in this process.
      */
-    public Set <JLwp> getLwps(int pid) {
+    public Set<JLwp> getLwps(int pid) {
 	return njp.getLwps(pid);
     }
 

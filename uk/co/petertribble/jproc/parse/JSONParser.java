@@ -45,7 +45,7 @@ public final class JSONParser {
      *
      * @return The Set of JProcesses encoded by the supplied String.
      */
-    public static Set <JProcess> getProcesses(String s) {
+    public static Set<JProcess> getProcesses(String s) {
 	try {
 	    return getProcesses(new JSONArray(s));
 	} catch (JSONException jse) {
@@ -53,8 +53,8 @@ public final class JSONParser {
 	}
     }
 
-    private static Set <JProcess> getProcesses(JSONArray ja) {
-	Set <JProcess> nprocesses = new HashSet<>();
+    private static Set<JProcess> getProcesses(JSONArray ja) {
+	Set<JProcess> nprocesses = new HashSet<>();
 	try {
 	    for (int i = 0; i < ja.length(); i++) {
 		JSONObject jo = ja.getJSONObject(i);
@@ -75,7 +75,7 @@ public final class JSONParser {
      *
      * @return The Set of JLwp encoded by the supplied String.
      */
-    public static Set <JLwp> getLwps(String s) {
+    public static Set<JLwp> getLwps(String s) {
 	try {
 	    return getLwps(new JSONArray(s));
 	} catch (JSONException jse) {
@@ -83,8 +83,8 @@ public final class JSONParser {
 	}
     }
 
-    private static Set <JLwp> getLwps(JSONArray ja) {
-	Set <JLwp> nlwps = new HashSet<>();
+    private static Set<JLwp> getLwps(JSONArray ja) {
+	Set<JLwp> nlwps = new HashSet<>();
 	try {
 	    for (int i = 0; i < ja.length(); i++) {
 		JSONObject jo = ja.getJSONObject(i);

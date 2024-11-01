@@ -42,11 +42,11 @@ public final class PSinfoTableModel extends AbstractTableModel {
 		"nlwp", "SZ", "RSS", "START", "TIME", "TASK", "PROJ", "ZONE",
 		"CT"};
 
-    private List <Integer> colMap;
+    private List<Integer> colMap;
 
     private JProcessFilter jpf;
-    private List <JProcess> vp;
-    private List <JProcInfo> vpi;
+    private List<JProcess> vp;
+    private List<JProcInfo> vpi;
     private JProc jproc;
 
     /**
@@ -152,7 +152,7 @@ public final class PSinfoTableModel extends AbstractTableModel {
 		}
 	    }
 	}
-	Iterator <JProcess> ip = vp.iterator();
+	Iterator<JProcess> ip = vp.iterator();
 	int i = 0;
 	while (ip.hasNext()) {
 	    JProcess jp = ip.next();
@@ -197,7 +197,7 @@ public final class PSinfoTableModel extends AbstractTableModel {
      *
      * @return a List of column names
      */
-    public List <String> columns() {
+    public List<String> columns() {
 	return Arrays.asList(columnNames);
     }
 
@@ -207,7 +207,7 @@ public final class PSinfoTableModel extends AbstractTableModel {
      * @param s the name of the column to be removed
      */
     public void removeColumn(String s) {
-	Iterator <Integer> iter = colMap.iterator();
+	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
 	    if (columnNames[iter.next()].equals(s)) {
 		iter.remove();
@@ -229,7 +229,7 @@ public final class PSinfoTableModel extends AbstractTableModel {
 	    }
 	}
 	int imap = 0;
-	Iterator <Integer> iter = colMap.iterator();
+	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
 	    if (iter.next() < icol) {
 		imap++;

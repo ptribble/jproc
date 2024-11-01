@@ -42,13 +42,13 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
     private String[] columnNames = { "ZONE", "NPROC", "nlwp", "SZ", "RSS",
 				"TIME"};
 
-    private List <Integer> colMap;
+    private List<Integer> colMap;
 
     private JProcessFilter jpf;
-    private List <JProcess> vp;
-    private List <JProcInfo> vpi;
+    private List<JProcess> vp;
+    private List<JProcInfo> vpi;
     private JProc jproc;
-    private List <Integer> zoneids;
+    private List<Integer> zoneids;
 
     /**
      * Create a Table Model from the given Set of JProcesses.
@@ -118,9 +118,9 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 		}
 	    }
 	}
-	Iterator <JProcess> ip = vp.iterator();
+	Iterator<JProcess> ip = vp.iterator();
 	int i = 0;
-	Set <Integer> zones = new TreeSet<>();
+	Set<Integer> zones = new TreeSet<>();
 	while (ip.hasNext()) {
 	    JProcess jp = ip.next();
 	    /*

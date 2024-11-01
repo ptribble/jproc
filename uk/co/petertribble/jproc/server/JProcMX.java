@@ -40,7 +40,7 @@ public class JProcMX implements JProcMXMBean {
      * @return a Set of all the processes
      */
     @Override
-    public Set <JProcess> getProcesses() {
+    public Set<JProcess> getProcesses() {
 	return JPROC.getProcesses();
     }
 

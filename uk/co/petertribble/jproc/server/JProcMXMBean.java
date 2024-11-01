@@ -37,7 +37,7 @@ public interface JProcMXMBean {
      *
      * @return a Set of all the processes
      */
-    Set <JProcess> getProcesses();
+    Set<JProcess> getProcesses();
 
     /**
      * Return a given process.

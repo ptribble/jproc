@@ -48,10 +48,10 @@ public class JPinfo extends JPdemo implements ActionListener {
     private JPinfoTable jpip;
 
     private JCheckBoxMenuItem allUserItem;
-    private Set <JCheckBoxMenuItem> userSelectionItems;
+    private Set<JCheckBoxMenuItem> userSelectionItems;
     private JCheckBoxMenuItem allZoneItem;
-    private Set <JCheckBoxMenuItem> zoneSelectionItems;
-    private Set <JCheckBoxMenuItem> columnSelectionItems;
+    private Set<JCheckBoxMenuItem> zoneSelectionItems;
+    private Set<JCheckBoxMenuItem> columnSelectionItems;
 
     private static final String VERSION = "JPinfo version 1.0";
 
@@ -96,7 +96,7 @@ public class JPinfo extends JPdemo implements ActionListener {
 	userSelectionItems = new HashSet<>();
 	addUserMenu();
 
-	zoneSelectionItems = new HashSet <>();
+	zoneSelectionItems = new HashSet<>();
 	if (jps.getZones().size() > 1) {
 	    addZoneMenu();
 	}
@@ -155,7 +155,7 @@ public class JPinfo extends JPdemo implements ActionListener {
     private void addColumnMenu() {
 	JMenu columnMenu = new JMenu(JProcResources.getString("COLUMN.MENU"));
 	columnMenu.setMnemonic(KeyEvent.VK_C);
-	Map <String, JCheckBoxMenuItem> columnMap = new HashMap<>();
+	Map<String, JCheckBoxMenuItem> columnMap = new HashMap<>();
 	for (String s : jpip.columns()) {
 	    JCheckBoxMenuItem jmi = new JCheckBoxMenuItem(s);
 	    jmi.setSelected(true);
