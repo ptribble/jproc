@@ -23,7 +23,6 @@
 package uk.co.petertribble.jproc.client;
 
 import uk.co.petertribble.jumble.JumbleUtils;
-import uk.co.petertribble.jumble.JumbleFile;
 import java.io.File;
 import java.util.Map;
 import java.net.URL;
@@ -104,9 +103,7 @@ public class PClientConfig {
      */
     public PClientConfig(File f) {
 	if (f.exists()) {
-	    Map<String, String> m =
-		JumbleUtils.stringToPropMap(JumbleFile.getStringContents(f),
-					"\n");
+	    Map<String, String> m = JumbleUtils.fileToPropMap(f);
 	    url_string = m.get("URL");
 	    username = m.get("User");
 	    userpass = m.get("Pass");
