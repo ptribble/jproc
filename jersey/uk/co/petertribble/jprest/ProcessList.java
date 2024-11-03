@@ -6,15 +6,15 @@ import uk.co.petertribble.jproc.api.*;
 
 public class ProcessList {
 
-    static final JProc jproc = new JProc();
+    static final JProc JPROC = new JProc();
 
     @GET
     @Produces("application/json")
     public String getProcesses() {
 	StringBuilder sb = new StringBuilder();
 	sb.append('[');
-	for (JProcess jp : jproc.getProcesses()) {
-	    sb.append(jproc.getInfo(jp).toJSON()).append(",\n");
+	for (JProcess jp : JPROC.getProcesses()) {
+	    sb.append(JPROC.getInfo(jp).toJSON()).append(",\n");
 	}
 	sb.append(']');
 	return sb.toString();

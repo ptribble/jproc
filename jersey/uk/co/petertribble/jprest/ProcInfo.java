@@ -6,12 +6,12 @@ import uk.co.petertribble.jproc.api.*;
 
 public class ProcInfo {
 
-    static final JProc jproc = new JProc();
+    static final JProc JPROC = new JProc();
 
     @GET
     @Produces("application/json")
     public String getInfo(@PathParam("pid") String pid) {
-	JProcInfo jpi = jproc.getInfo(Integer.valueOf(pid));
+	JProcInfo jpi = JPROC.getInfo(Integer.valueOf(pid));
 	return (jpi == null) ? "" : jpi.toJSON();
     }
 }

@@ -6,13 +6,13 @@ import uk.co.petertribble.jproc.api.*;
 
 public class LwpInfo {
 
-    static final JProc jproc = new JProc();
+    static final JProc JPROC = new JProc();
 
     @GET
     @Produces("application/json")
     public String getLwpInfo(@PathParam("pid") String pid,
 			    @PathParam("lwpid") String lwpid) {
-	JProcLwpInfo jpi = jproc.getInfo(Integer.valueOf(pid),
+	JProcLwpInfo jpi = JPROC.getInfo(Integer.valueOf(pid),
 					 Integer.valueOf(lwpid));
 	return (jpi == null) ? "" : jpi.toJSON();
     }

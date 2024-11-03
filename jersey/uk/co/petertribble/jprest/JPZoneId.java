@@ -6,11 +6,11 @@ import uk.co.petertribble.jproc.api.*;
 
 public class JPZoneId {
 
-    static final JProc jproc = new JProc();
+    static final JProc JPROC = new JProc();
 
     @GET
     @Produces("application/json")
     public String getZoneId(@PathParam("zone") String zone) {
-	return Integer.toString(jproc.getZoneId(zone));
+	return Integer.toString(JPROC.getZoneId(zone));
     }
 }

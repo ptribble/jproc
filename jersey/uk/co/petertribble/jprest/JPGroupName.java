@@ -6,11 +6,11 @@ import uk.co.petertribble.jproc.api.*;
 
 public class JPGroupName {
 
-    static final JProc jproc = new JProc();
+    static final JProc JPROC = new JProc();
 
     @GET
     @Produces("application/json")
     public String getGroupName(@PathParam("gid") String gid) {
-	return jproc.getGroupName(Integer.valueOf(gid));
+	return JPROC.getGroupName(Integer.valueOf(gid));
     }
 }

@@ -6,11 +6,11 @@ import uk.co.petertribble.jproc.api.*;
 
 public class JPUserName {
 
-    static final JProc jproc = new JProc();
+    static final JProc JPROC = new JProc();
 
     @GET
     @Produces("application/json")
     public String getUserName(@PathParam("uid") String uid) {
-	return jproc.getUserName(Integer.valueOf(uid));
+	return JPROC.getUserName(Integer.valueOf(uid));
     }
 }

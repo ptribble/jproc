@@ -7,12 +7,12 @@ import java.util.Set;
 
 public class LwpList {
 
-    static final JProc jproc = new JProc();
+    static final JProc JPROC = new JProc();
 
     @GET
     @Produces("application/json")
     public String getLwps(@PathParam("pid") String pid) {
-	Set <JLwp> lwps = jproc.getLwps(Integer.valueOf(pid));
+	Set<JLwp> lwps = JPROC.getLwps(Integer.valueOf(pid));
 	if (lwps == null) {
 	    return "";
 	}

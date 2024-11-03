@@ -6,12 +6,12 @@ import uk.co.petertribble.jproc.api.*;
 
 public class ProcUsage {
 
-    static final JProc jproc = new JProc();
+    static final JProc JPROC = new JProc();
 
     @GET
     @Produces("application/json")
     public String getUsage(@PathParam("pid") String pid) {
-	JProcUsage jpu = jproc.getUsage(Integer.valueOf(pid));
+	JProcUsage jpu = JPROC.getUsage(Integer.valueOf(pid));
 	return (jpu == null) ? "" : jpu.toJSON();
     }
 }

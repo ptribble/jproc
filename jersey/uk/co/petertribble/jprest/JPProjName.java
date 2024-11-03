@@ -6,11 +6,11 @@ import uk.co.petertribble.jproc.api.*;
 
 public class JPProjName {
 
-    static final JProc jproc = new JProc();
+    static final JProc JPROC = new JProc();
 
     @GET
     @Produces("application/json")
     public String getProjectName(@PathParam("projid") String projid) {
-	return jproc.getProjectName(Integer.valueOf(projid));
+	return JPROC.getProjectName(Integer.valueOf(projid));
     }
 }
