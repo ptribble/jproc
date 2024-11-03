@@ -108,7 +108,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
     }
 
     /**
-     * Start regular up[dates of the panel.
+     * Start regular updates of the panel.
      */
     public void startLoop() {
 	if (delay > 0) {
