@@ -39,7 +39,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
 
-    private String[] columnNames = { "ZONE", "NPROC", "nlwp", "SZ", "RSS",
+    private String[] columnNames = {"ZONE", "NPROC", "nlwp", "SZ", "RSS",
 				"TIME"};
 
     private List<Integer> colMap;

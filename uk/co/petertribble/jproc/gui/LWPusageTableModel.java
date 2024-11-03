@@ -42,7 +42,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
     /*
      * The columns we can show.
      */
-    private String[] columnNames = { "LWP", "RTIME", "UTIME", "STIME", "MINF",
+    private String[] columnNames = {"LWP", "RTIME", "UTIME", "STIME", "MINF",
 		"MAJF", "NSWAP", "INBLK", "OUBLK", "MSND", "MRCV", "SIGS",
 		"VCTX", "ICTX", "SYSC", "IOCH"};
 

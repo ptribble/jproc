@@ -36,7 +36,7 @@ public final class PrettyFormat {
 
     private static final double KSCALE = 1024.0;
     private static final double KMAX = 10000.0;
-    private static final char[] NAMES = { 'K', 'M', 'G', 'T', 'P', 'E' };
+    private static final char[] NAMES = {'K', 'M', 'G', 'T', 'P', 'E'};
     private static final DecimalFormat DF = new DecimalFormat("##0");
     private static final DecimalFormat DFS = new DecimalFormat("##0.0");
     private static final DecimalFormat DFT = new DecimalFormat("00");

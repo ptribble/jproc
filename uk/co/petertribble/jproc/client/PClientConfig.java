@@ -55,7 +55,7 @@ public class PClientConfig {
     /**
      * An array of the names of available client-server protocols.
      */
-    public static final String[] PROTOCOLS = { "XML-RPC", "REST" };
+    public static final String[] PROTOCOLS = {"XML-RPC", "REST"};
 
     private String url_string;
     private String username;

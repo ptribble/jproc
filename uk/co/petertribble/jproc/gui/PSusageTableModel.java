@@ -38,7 +38,7 @@ public final class PSusageTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
 
-    private String[] columnNames = { "COMMAND", "pid", "USER", "nlwp",
+    private String[] columnNames = {"COMMAND", "pid", "USER", "nlwp",
 		"RTIME", "UTIME", "STIME", "MINF", "MAJF", "NSWAP", "INBLK",
 		"OUBLK", "MSND", "MRCV", "SIGS", "VCTX", "ICTX", "SYSC",
 		"IOCH"};
