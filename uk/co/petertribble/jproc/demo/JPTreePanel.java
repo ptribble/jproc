@@ -183,7 +183,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	jup.removeColumn("COMMAND");
 	up.add(jup.getTableHeader(), BorderLayout.NORTH);
 	up.setBorder(BorderFactory.createTitledBorder(
-		"information for process " + jp.getPid()
+		"process " + jp.getPid()
 		+ " " + jpi.getfname()));
 	up.add(jup);
 	ppanel.add(up, BorderLayout.NORTH);
@@ -194,7 +194,7 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	lup.removeColumn("MRCV");
 	JPanel tp = new JPanel(new BorderLayout());
 	tp.add(new JScrollPane(lup));
-	tp.setBorder(BorderFactory.createTitledBorder("thread information"));
+	tp.setBorder(BorderFactory.createTitledBorder("threads"));
 	ppanel.add(tp);
 	ppanel.validate();
     }
