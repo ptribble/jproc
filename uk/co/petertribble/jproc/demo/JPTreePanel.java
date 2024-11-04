@@ -50,7 +50,6 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 
     private JProc jproc;
     private JProcessFilter jpf;
-    private ProcessTable pt;
     private JPinfoTable jup;
     private LWPusageTable lup;
     private int interval;
@@ -117,9 +116,6 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	    }
 	    timer.start();
 	}
-	if (pt != null) {
-	    pt.startLoop();
-	}
 	if (jup != null) {
 	    jup.startLoop();
 	}
@@ -134,9 +130,6 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
     public void stopLoop() {
 	// just stop the child panels, leave the main loop running so we keep
 	// updating the process list
-	if (pt != null) {
-	    pt.stopLoop();
-	}
 	if (jup != null) {
 	    jup.stopLoop();
 	}
@@ -158,9 +151,6 @@ public class JPTreePanel extends JPanel implements TreeSelectionListener,
 	    if (timer != null) {
 		timer.setDelay(delay);
 	    }
-	}
-	if (pt != null) {
-	    pt.setDelay(i);
 	}
 	if (jup != null) {
 	    jup.setDelay(i);
