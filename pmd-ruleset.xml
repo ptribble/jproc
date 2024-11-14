@@ -14,7 +14,7 @@
     <rule ref="rulesets/java/quickstart.xml">
       <exclude name="CompareObjectsWithEquals"/>
       <exclude name="EmptyCatchBlock"/>
-      <exclude name="SwitchStmtsShouldHaveDefault"/>
+      <exclude name="NonExhaustiveSwitch"/>
       <exclude name="LocalVariableNamingConventions"/>
       <exclude name="FormalParameterNamingConventions"/>
       <exclude name="ReturnEmptyCollectionRatherThanNull"/>
@@ -31,7 +31,7 @@
     </rule>
     <rule ref="category/java/performance.xml">
       <exclude name="AvoidInstantiatingObjectsInLoops"/>
-      <exclude name="TooFewBranchesForASwitchStatement"/>
+      <exclude name="TooFewBranchesForSwitch"/>
       <exclude name="UseStringBufferForStringAppends"/>
     </rule>
     <rule ref="category/java/errorprone.xml">
@@ -46,7 +46,7 @@
       <exclude name="ReturnEmptyCollectionRatherThanNull"/>
     </rule>
     <rule ref="category/java/bestpractices.xml">
-      <exclude name="SwitchStmtsShouldHaveDefault"/>
+      <exclude name="NonExhaustiveSwitch"/>
       <exclude name="SystemPrintln"/>
       <exclude name="UseVarargs"/>
     </rule>
