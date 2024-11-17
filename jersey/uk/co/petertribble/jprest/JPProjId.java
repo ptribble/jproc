@@ -8,9 +8,16 @@ public class JPProjId {
 
     static final JProc JPROC = new JProc();
 
+    /**
+     * Get the project id for the given project name.
+     *
+     * @param project the project name to convert into a project id
+     *
+     * @return the numerical project id, as a String
+     */
     @GET
     @Produces("application/json")
-    public String getProjectName(@PathParam("username") String project) {
+    public String getProjectId(@PathParam("username") String project) {
 	return Integer.toString(JPROC.getProjectId(project));
     }
 }

@@ -8,6 +8,13 @@ public class ProcUsage {
 
     static final JProc JPROC = new JProc();
 
+    /**
+     * Get the usage of the given pid.
+     *
+     * @param pid the pid to report usage of, as a String
+     *
+     * @return a JSON formatted JProcUsage for the given pid
+     */
     @GET
     @Produces("application/json")
     public String getUsage(@PathParam("pid") String pid) {

@@ -8,6 +8,13 @@ public class ProcInfo {
 
     static final JProc JPROC = new JProc();
 
+    /**
+     * Get info about the given process.
+     *
+     * @param pid the pid to report usage of, as a String
+     *
+     * @return a JSON formatted JProcInfo for the given process
+     */
     @GET
     @Produces("application/json")
     public String getInfo(@PathParam("pid") String pid) {

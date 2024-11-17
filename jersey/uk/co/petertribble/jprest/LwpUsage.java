@@ -8,6 +8,14 @@ public class LwpUsage {
 
     static final JProc JPROC = new JProc();
 
+    /**
+     * Get the usage of the given lwp.
+     *
+     * @param pid the pid to report usage of, as a String
+     * @param lwpid the lwpid to report usage of, as a String
+     *
+     * @return a JSON formatted JProcUsage for the given lwp
+     */
     @GET
     @Produces("application/json")
     public String getLwpUsage(@PathParam("pid") String pid,

@@ -8,6 +8,11 @@ public class ProcessList {
 
     static final JProc JPROC = new JProc();
 
+    /**
+     * Get a list of processes.
+     *
+     * @return a JSON formatted list of JProcInfo
+     */
     @GET
     @Produces("application/json")
     public String getProcesses() {
