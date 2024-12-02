@@ -95,7 +95,7 @@ pmd|-pmd)
 	    mkdir -p "${HOME}/.pmd"
 	fi
 	pmd check --cache "${PMDCACHE}" -d uk -R ${PMDRULES} --use-version java-1.8 --aux-classpath $(echo lib/java/* | sed 's= =:=g') 2>/dev/null
-	(cd jersey || exit 0; pmd check --cache "${PMDCACHE}" -d uk -R ../${PMDRULES} --use-version java-1.8 --aux-classpath ../lib/java/jproc.jar:${JAXRSJAR} 2>/dev/null)
+	(cd jersey || exit 1; pmd check --cache "${PMDCACHE}" -d uk -R ../${PMDRULES} --use-version java-1.8 --aux-classpath ../lib/java/jproc.jar:${JAXRSJAR} 2>/dev/null)
 	pmd check --cache "${PMDCACHE}.html" -d help/*.html  -R category/html/bestpractices.xml 2>/dev/null
 	exit 0
 	;;
@@ -153,7 +153,7 @@ jprest.war)
 	javac ${XFLAGS} -classpath ../lib/java/jproc.jar:${JAXRSJAR} uk/co/petertribble/jprest/*.java
 	cd ..
 	mkdir war
-	cd war || exit
+	cd war || exit 1
 	mkdir -p WEB-INF/lib org/apache/xmlrpc/webserver
 	mkdir -p WEB-INF/lib
 	mkdir -p org/apache/xmlrpc/webserver
