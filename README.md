@@ -1,4 +1,4 @@
-JProc - a java jni interface to Solaris/OpenSolaris process information
+JProc - a java jni interface to Solaris/illumos process information
 using the procfs filesystem.
 
 
@@ -22,19 +22,15 @@ which processes can be visualized, let me know.
 peter.tribble@gmail.com
 
 
-JProc is licensed under CDDL, just like the bulk of OpenSolaris - see
+JProc is licensed under the CDDL, just like the bulk of OpenSolaris - see
 the file CDDL.txt
 
 JProc incorporates a couple of sets of utility classes. See
 http://www.petertribble.co.uk/Solaris/jingle.html
 http://www.petertribble.co.uk/Solaris/jumble.html
 
-The SpringUtilities and TableSorter classes are lifted straight from
-the Swing tutorial. (The latter isn't needed for Java 6, but I regard
-Java 5 support as important.)
-
 This product includes software developed at
-The Apache Software Foundation (http://www.apache.org/).
+The Apache Software Foundation (https://www.apache.org/).
 
 Specifically, Apache XML-RPC, Copyright 1999-2009 The Apache Software
 Foundation, and Apache HttpComponents Client, Copyright 1999-2012 The
