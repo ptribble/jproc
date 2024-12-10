@@ -73,7 +73,7 @@ public class JProcInfo implements Serializable {
      * @param etime  execution time
      * @param ntime  execution time, nanosecond part
      * @param ectime  reaped children execution time
-     * @param nctime  repaed children execution time, nanosecond part
+     * @param nctime  reaped children execution time, nanosecond part
      * @param pr_taskid  task id
      * @param pr_projid  project id
      * @param pr_zoneid  zone id
