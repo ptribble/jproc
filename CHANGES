@@ -1,3 +1,5 @@
+Migrate to Apache HttpClient 5 (classic mode)
+
 Add option to build a RESTful service using Jersey
 
 Update the JSON jar (from https://github.com/stleary/JSON-java)

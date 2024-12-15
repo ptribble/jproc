@@ -50,7 +50,7 @@ JPAPIJAR=${JARLIBDIR}/jproc-api.jar
 ALLJARS=${JSONJAR}:${JINGLEJAR}:${JUMBLEJAR}:${JPJAR}
 DEMOPKG="uk.co.petertribble.jproc.demo"
 SERVERJARS=${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-server-3.1.3.jar:${JARLIBDIR}/commons-logging-1.1.1.jar:${JARLIBDIR}/ws-commons-util-1.0.2.jar:${JARLIBDIR}/jmdns-3.5.9.jar:${JARLIBDIR}/slf4j-api-2.0.13.jar
-HTTPJARS=${JARLIBDIR}/httpclient-4.5.14.jar:${JARLIBDIR}/httpcore-4.4.16.jar:${JARLIBDIR}/commons-codec-1.11.jar
+HTTPJARS=${JARLIBDIR}/httpclient5-5.4.1.jar:${JARLIBDIR}/httpcore5-5.3.1.jar:${JARLIBDIR}/httpcore5-h2-5.3.1.jar:${JARLIBDIR}/commons-codec-1.11.jar
 CLIENTJARS=${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-client-3.1.3.jar:${JARLIBDIR}/commons-logging-1.1.1.jar:${JARLIBDIR}/ws-commons-util-1.0.2.jar:${JARLIBDIR}/jmdns-3.5.9.jar:${JARLIBDIR}/slf4j-api-2.0.13.jar
 
 #
