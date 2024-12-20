@@ -20,21 +20,17 @@ PKGTYPE="standalone"
 echo "i pkginfo=./pkginfo.${MYARCH}"
 
 if [ "X$2" = "Xdeps" ]; then
-  HCVERS="4.2.3"
-  HCPKGVER="423"
+  HCVERS="5"
   XMLVERS="3.1.3"
   XMLPKGVER="313"
   PKGTYPE="withdeps"
 cat > depend <<EOF
-P TRIBapache-hc-client-${HCPKGVER}
+P TRIBapache-httpclient5
 P TRIBapache-xmlrpc-${XMLPKGVER}
 EOF
   echo "i depend=./depend"
 fi
 
-#
-# as of Java 8, there's only a 64-bit JVM
-#
 case $MYARCH in
 i386)
 	echo "f none /${LIBDIR}/amd64/${JLIB}=lib/amd64/${JLIB} 0755 ${OWNER}"
@@ -54,7 +50,7 @@ echo "f none /usr/share/jproc/README=./README.md 0644 ${OWNER}"
 
 #
 # if depending on installed packages, then:
-#   commons* http* come from TRIBapache-hc-client-###
+#   http* come from TRIBapache-httpclient5
 #   ws-commons* xmlrpc* come from TRIBapache-xmlrpc-###
 #
 if [ "X$PKGTYPE" = "Xstandalone" ]; then
@@ -64,7 +60,7 @@ if [ "X$PKGTYPE" = "Xstandalone" ]; then
 	echo "f none /${JARDIR}/${pname}=${path} 0644 ${OWNER}"
   done
 else
-  for path in lib/java/commons* lib/java/http*
+  for path in lib/java/http*
   do
 	pname=${path##*/}
 	echo "s none /${JARDIR}/${pname}=../httpcomponents-client-${HCVERS}/${pname}"
