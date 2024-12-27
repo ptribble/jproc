@@ -83,7 +83,7 @@ public class JProcLwpStatus {
      * @return the user time of this lwp
      */
     public double getutime() {
-	return (double) utime + ((double) nutime)/1000000000.0;
+	return (double) utime + ((double) nutime) / 1000000000.0;
     }
 
     /**
@@ -93,7 +93,7 @@ public class JProcLwpStatus {
      * @return the system time of this lwp
      */
     public double getstime() {
-	return (double) stime + ((double) nstime)/1000000000.0;
+	return (double) stime + ((double) nstime) / 1000000000.0;
     }
 
     /**

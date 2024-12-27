@@ -84,7 +84,7 @@ public class JProcStatus {
      * @return the user time consumed by this process
      */
     public double getutime() {
-	return (double) utime + ((double) nutime)/1000000000.0;
+	return (double) utime + ((double) nutime) / 1000000000.0;
     }
 
     /**
@@ -94,7 +94,7 @@ public class JProcStatus {
      * @return the system time consumed by this process
      */
     public double getstime() {
-	return (double) stime + ((double) nstime)/1000000000.0;
+	return (double) stime + ((double) nstime) / 1000000000.0;
     }
 
     /**
@@ -104,7 +104,7 @@ public class JProcStatus {
      * @return the user time of this processes children
      */
     public double getcutime() {
-	return (double) cutime + ((double) ncutime)/1000000000.0;
+	return (double) cutime + ((double) ncutime) / 1000000000.0;
     }
 
     /**
@@ -114,7 +114,7 @@ public class JProcStatus {
      * @return the system time of this processes children
      */
     public double getcstime() {
-	return (double) cstime + ((double) ncstime)/1000000000.0;
+	return (double) cstime + ((double) ncstime) / 1000000000.0;
     }
 
     /**

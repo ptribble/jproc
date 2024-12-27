@@ -113,7 +113,7 @@ public class PServerConfig {
 		    }
 		}
 	    }
-        } catch (SocketException se) {}
+        } catch (SocketException se) { }
 	/*
 	 * If we're still here, try again, allowing virtual interfaces.
 	 */
@@ -132,7 +132,7 @@ public class PServerConfig {
 		    }
 		}
 	    }
-        } catch (SocketException se) {}
+        } catch (SocketException se) { }
 	/*
 	 * And if that didn't work blindly return 0.0.0.0 (all interfaces)
 	 *
@@ -148,7 +148,7 @@ public class PServerConfig {
 	     * really resolve to localhost.
 	     */
 	    ia = InetAddress.getByAddress(new byte[]{0, 0, 0, 0});
-	} catch (UnknownHostException uhe) {}
+	} catch (UnknownHostException uhe) { }
 	return ia;
     }
 

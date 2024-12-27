@@ -75,13 +75,13 @@ public class PServer1 {
 	try {
 	    jmdns = JmDNS.create(psc.getInetAddress());
 	    ServiceInfo serviceInfo = ServiceInfo.create("_jproc._tcp.local.",
-		    "JProc/"+psc.getHostname(),
+		    "JProc/" + psc.getHostname(),
 		    psc.getPort(),
 		    "path=/");
             jmdns.registerService(serviceInfo);
 	    Thread exitHook = new Thread(() -> this.unRegisterService());
 	    Runtime.getRuntime().addShutdownHook(exitHook);
-	    System.out.println("Service registered on "+psc.getInetAddress());
+	    System.out.println("Service registered on " + psc.getInetAddress());
 	} catch (IOException e) {
             System.err.println(e.getMessage());
         }
@@ -113,7 +113,7 @@ public class PServer1 {
 	    if ("-m".equals(args[i])) {
 		psc.setRegister(true);
 	    } else if ("-p".equals(args[i])) {
-		if (i+1 < args.length) {
+		if (i + 1 < args.length) {
 		    i++;
 		    try {
 			psc.setPort(Integer.parseInt(args[i]));
@@ -124,7 +124,7 @@ public class PServer1 {
 		    usage();
 		}
 	    } else if ("-f".equals(args[i])) {
-		if (i+1 < args.length) {
+		if (i + 1 < args.length) {
 		    i++;
 		    File f = new File(args[i]);
 		    if (f.exists()) {

@@ -102,6 +102,6 @@ public class JLwp {
      */
     @Override
     public int hashCode() {
-	return lwpid + 31*pid;
+	return lwpid + 31 * pid;
     }
 }

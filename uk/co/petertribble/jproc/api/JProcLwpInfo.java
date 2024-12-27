@@ -89,7 +89,7 @@ public class JProcLwpInfo {
      * @return the execution time of the lwp
      */
     public double gettime() {
-	return (double) etime + ((double) ntime)/1000000000.0;
+	return (double) etime + ((double) ntime) / 1000000000.0;
     }
 
     /**

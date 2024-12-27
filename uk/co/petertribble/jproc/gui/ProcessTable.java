@@ -56,7 +56,7 @@ public class ProcessTable extends JTable implements ActionListener {
      * @param interval the initial update interval in seconds
      */
     public ProcessTable(JProc jproc, JProcess process, int interval) {
-	delay = interval*1000;
+	delay = interval * 1000;
 	ptm = new ProcessTableModel(jproc, process);
 	setModel(ptm);
 	sizeRenderer = new SizeRenderer();
@@ -98,7 +98,7 @@ public class ProcessTable extends JTable implements ActionListener {
 	if (interval <= 0) {
 	    stopLoop();
 	} else {
-	    delay = interval*1000;
+	    delay = interval * 1000;
 	    if (timer != null) {
 		timer.setDelay(delay);
 	    }
@@ -154,10 +154,10 @@ public class ProcessTable extends JTable implements ActionListener {
 
     @Override
     public TableCellRenderer getCellRenderer(int row, int col) {
-	if ((row == 1||row == 2) &&(col == 1||col == 2)) {
+	if ((row == 1 || row == 2) && (col == 1 || col == 2)) {
 	    return sizeRenderer;
 	}
-	if ((row == 3||row == 4) &&(col == 1||col == 2)) {
+	if ((row == 3 || row == 4) && (col == 1 || col == 2)) {
 	    return timeRenderer;
 	}
 	return super.getCellRenderer(row, col);

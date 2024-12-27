@@ -125,7 +125,7 @@ public class PTree {
 	    ProcessTreeNode ptn = nodemap.get(p.getPid());
 	    TreeNode[] ppath = ptn.getPath();
 	    String indent = "";
-	    for (int i = 0; i < ppath.length -1; i++) {
+	    for (int i = 0; i < ppath.length - 1; i++) {
 		ProcessTreeNode ptn2 = (ProcessTreeNode) ppath[i];
 		printone(ptn2.getProcess(), indent);
 		indent = indent + "  ";

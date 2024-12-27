@@ -79,7 +79,7 @@ public class LWPusageTable extends JTable implements ActionListener {
 	sortedModel.setTableHeader(getTableHeader());
 
 	// set up for regular updates
-	delay = interval*1000;
+	delay = interval * 1000;
 	update();
 	startLoop();
     }
@@ -96,13 +96,13 @@ public class LWPusageTable extends JTable implements ActionListener {
     private void setRenderers() {
 	try {
 	    getColumn("STIME").setCellRenderer(timeColumnRenderer);
-	} catch (IllegalArgumentException iae) {}
+	} catch (IllegalArgumentException iae) { }
 	try {
 	    getColumn("UTIME").setCellRenderer(timeColumnRenderer);
-	} catch (IllegalArgumentException iae) {}
+	} catch (IllegalArgumentException iae) { }
 	try {
 	    getColumn("RTIME").setCellRenderer(timeColumnRenderer);
-	} catch (IllegalArgumentException iae) {}
+	} catch (IllegalArgumentException iae) { }
     }
 
     /**
@@ -166,7 +166,7 @@ public class LWPusageTable extends JTable implements ActionListener {
 	if (interval <= 0) {
 	    stopLoop();
 	} else {
-	    delay = interval*1000;
+	    delay = interval * 1000;
 	    if (timer != null) {
 		timer.setDelay(delay);
 	    }

@@ -115,13 +115,13 @@ public class UserInfoTable extends JTable implements ActionListener {
     private void setRenderers() {
 	try {
 	    getColumn("TIME").setCellRenderer(timeColumnRenderer);
-	} catch (IllegalArgumentException iae) {}
+	} catch (IllegalArgumentException iae) { }
 	try {
 	    getColumn("SZ").setCellRenderer(sizeColumnRenderer);
-	} catch (IllegalArgumentException iae) {}
+	} catch (IllegalArgumentException iae) { }
 	try {
 	    getColumn("RSS").setCellRenderer(sizeColumnRenderer);
-	} catch (IllegalArgumentException iae) {}
+	} catch (IllegalArgumentException iae) { }
     }
 
     /**
@@ -146,7 +146,7 @@ public class UserInfoTable extends JTable implements ActionListener {
     public void startLoop() {
 	if (interval > 0) {
 	    if (timer == null) {
-		timer = new Timer(interval*1000, this);
+		timer = new Timer(interval * 1000, this);
 	    }
 	    timer.start();
 	}
@@ -174,7 +174,7 @@ public class UserInfoTable extends JTable implements ActionListener {
 	} else {
 	    this.interval = interval;
 	    if (timer != null) {
-		timer.setDelay(interval*1000);
+		timer.setDelay(interval * 1000);
 	    }
 	}
     }

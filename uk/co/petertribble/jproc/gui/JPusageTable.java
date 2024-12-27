@@ -104,13 +104,13 @@ public class JPusageTable extends JTable implements ActionListener {
     private void setRenderers() {
 	try {
 	    getColumn("STIME").setCellRenderer(timeColumnRenderer);
-	} catch (IllegalArgumentException iae) {}
+	} catch (IllegalArgumentException iae) { }
 	try {
 	    getColumn("UTIME").setCellRenderer(timeColumnRenderer);
-	} catch (IllegalArgumentException iae) {}
+	} catch (IllegalArgumentException iae) { }
 	try {
 	    getColumn("RTIME").setCellRenderer(timeColumnRenderer);
-	} catch (IllegalArgumentException iae) {}
+	} catch (IllegalArgumentException iae) { }
     }
 
     /**
@@ -180,7 +180,7 @@ public class JPusageTable extends JTable implements ActionListener {
     public void startLoop() {
 	if (interval > 0) {
 	    if (timer == null) {
-		timer = new Timer(interval*1000, this);
+		timer = new Timer(interval * 1000, this);
 	    }
 	    timer.start();
 	}
@@ -208,7 +208,7 @@ public class JPusageTable extends JTable implements ActionListener {
 	} else {
 	    this.interval = interval;
 	    if (timer != null) {
-		timer.setDelay(interval*1000);
+		timer.setDelay(interval * 1000);
 	    }
 	}
     }
