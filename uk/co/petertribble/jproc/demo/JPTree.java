@@ -23,7 +23,7 @@
 package uk.co.petertribble.jproc.demo;
 
 import uk.co.petertribble.jproc.api.*;
-import uk.co.petertribble.jproc.client.*;
+import uk.co.petertribble.jproc.client.PClientConfig;
 
 /**
  * An example of the use of the JProc api to give a graphical display of the

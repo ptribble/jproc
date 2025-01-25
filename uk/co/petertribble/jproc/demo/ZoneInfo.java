@@ -23,14 +23,17 @@
 package uk.co.petertribble.jproc.demo;
 
 import uk.co.petertribble.jproc.api.*;
-import uk.co.petertribble.jproc.client.*;
+import uk.co.petertribble.jproc.client.PClientConfig;
 import uk.co.petertribble.jproc.gui.ZoneInfoTable;
 import uk.co.petertribble.jproc.gui.JProcResources;
 import java.util.Set;
 import java.util.HashSet;
 import java.awt.BorderLayout;
 import java.awt.event.*;
-import javax.swing.*;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JMenu;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 /**
  * A process view rather like top, displaying usage aggregated by zone.

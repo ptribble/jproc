@@ -22,7 +22,11 @@
 
 package uk.co.petertribble.jproc.gui;
 
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.JTable;
+import javax.swing.Timer;
 import java.awt.BorderLayout;
 import java.awt.event.*;
 import uk.co.petertribble.jproc.api.JProc;

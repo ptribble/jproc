@@ -22,7 +22,9 @@
 
 package uk.co.petertribble.jproc.gui;
 
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.Timer;
 import java.awt.BorderLayout;
 import uk.co.petertribble.jproc.api.*;
 import uk.co.petertribble.jingle.TableSorter;

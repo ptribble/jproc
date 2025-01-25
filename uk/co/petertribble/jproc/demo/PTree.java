@@ -26,7 +26,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.Enumeration;
 import uk.co.petertribble.jproc.api.*;
-import uk.co.petertribble.jproc.client.*;
+import uk.co.petertribble.jproc.client.PClientConfig;
 import uk.co.petertribble.jproc.gui.ProcessTreeNode;
 import javax.swing.tree.TreeNode;
 
