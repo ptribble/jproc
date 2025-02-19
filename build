@@ -11,11 +11,11 @@
 # ./build
 #    Builds all the java classes, and recompiles the native library.
 #
-# ./build -jni
+# ./build jni
 #    (Re)Creates the jni header file. Only needed if the native interface
 #    changes, which it shouldn't very often
 #
-# ./build -doc
+# ./build javadoc
 #    Generates the javadoc
 #
 # ./build clean
@@ -73,18 +73,18 @@ JERSEYDIR="../jaxrs-ri"
 JAXRSJAR="../${JERSEYDIR}/api/jakarta.ws.rs-api-2.1.6.jar"
 
 case $1 in
-jni|-jni)
+jni)
 	javac uk/co/petertribble/jproc/api/NativeJProc.java
 	javah -jni uk.co.petertribble.jproc.api.NativeJProc
 	exit 0
 	;;
-doc|-doc)
+javadoc)
 	rm -fr javadoc
 	mkdir javadoc
-	javadoc -Xdoclint:all -d javadoc -classpath .:"$BUILDJARS" uk.co.petertribble.jproc.api uk.co.petertribble.jproc.gui uk.co.petertribble.jproc.demo
+	javadoc -Xdoclint:all -d javadoc -classpath .:"$BUILDJARS" uk.co.petertribble.jproc.api uk.co.petertribble.jproc.client uk.co.petertribble.jproc.demo uk.co.petertribble.jproc.gui uk.co.petertribble.jproc.parse uk.co.petertribble.jproc.server uk.co.petertribble.jproc.util
 	exit 0
 	;;
-clean|-clean)
+clean)
 	rm -f $(find uk/co -name '*.class')
 	rm -f $(find . -type f -name '*~')
 	rm -fr javadoc
@@ -92,7 +92,7 @@ clean|-clean)
 	rm -f jprest.war
 	exit 0
 	;;
-pmd|-pmd)
+pmd)
 	if [ ! -d "${HOME}/.pmd" ]; then
 	    mkdir -p "${HOME}/.pmd"
 	fi
