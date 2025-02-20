@@ -34,7 +34,7 @@ import javax.swing.table.*;
  *
  * @author Peter Tribble
  */
-public class ZoneInfoTable extends JTable implements ActionListener {
+public final class ZoneInfoTable extends JTable implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 

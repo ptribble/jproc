@@ -36,7 +36,7 @@ import java.util.List;
  *
  * @author Peter Tribble
  */
-public class JPinfoTable extends JTable implements ActionListener {
+public final class JPinfoTable extends JTable implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 

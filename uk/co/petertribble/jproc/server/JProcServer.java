@@ -32,7 +32,7 @@ import java.util.Set;
  *
  * @author Peter Tribble
  */
-public class JProcServer {
+public final class JProcServer {
 
     private static final JProc JPROC = new JProc();
 

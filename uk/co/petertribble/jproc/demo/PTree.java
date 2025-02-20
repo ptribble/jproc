@@ -34,7 +34,7 @@ import javax.swing.tree.TreeNode;
  *
  * @author Peter Tribble
  */
-public class PTree {
+public final class PTree {
 
     private SortedMap<Integer, ProcessTreeNode> nodemap;
     private SortedMap<Integer, JProcess> pmap; //NOPMD

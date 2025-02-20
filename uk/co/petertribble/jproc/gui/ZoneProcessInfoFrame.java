@@ -32,7 +32,8 @@ import javax.swing.*;
  *
  * @author Peter Tribble
  */
-public class ZoneProcessInfoFrame extends JFrame implements ActionListener {
+public final class ZoneProcessInfoFrame extends JFrame
+    implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 

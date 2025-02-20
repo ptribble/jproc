@@ -35,7 +35,7 @@ import javax.jmdns.ServiceInfo;
  *
  * @author Peter Tribble
  */
-public class PServer1 {
+public final class PServer1 {
 
     // global so can be called at shutdown
     private JmDNS jmdns;

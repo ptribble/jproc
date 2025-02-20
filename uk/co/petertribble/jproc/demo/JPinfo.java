@@ -40,7 +40,7 @@ import javax.swing.JScrollPane;
  *
  * @author Peter Tribble
  */
-public class JPinfo extends JPdemo implements ActionListener {
+public final class JPinfo extends JPdemo implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 

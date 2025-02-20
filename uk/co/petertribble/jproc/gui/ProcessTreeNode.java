@@ -29,7 +29,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
  * @author Peter Tribble
  * @version 1.0
  */
-public class ProcessTreeNode extends DefaultMutableTreeNode {
+public final class ProcessTreeNode extends DefaultMutableTreeNode {
 
     private static final long serialVersionUID = 1L;
 

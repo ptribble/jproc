@@ -29,7 +29,7 @@ import uk.co.petertribble.jproc.client.PClientConfig;
  *
  * @author Peter Tribble
  */
-public class JPTree extends JPdemo {
+public final class JPTree extends JPdemo {
 
     private static final long serialVersionUID = 1L;
 

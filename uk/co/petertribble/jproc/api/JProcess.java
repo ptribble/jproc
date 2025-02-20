@@ -27,7 +27,7 @@ import java.io.Serializable;
  *
  * @author Peter Tribble
  */
-public class JProcess implements Serializable {
+public final class JProcess implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

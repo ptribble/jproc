@@ -35,7 +35,7 @@ import java.util.Map;
  *
  * @author Peter Tribble
  */
-public class PServerConfig {
+public final class PServerConfig {
 
     private int port = 8080;
     private boolean registermdns;

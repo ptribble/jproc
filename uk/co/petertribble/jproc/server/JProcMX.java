@@ -28,7 +28,7 @@ import java.util.Set;
  *
  * @author Peter Tribble
  */
-public class JProcMX implements JProcMXMBean {
+public final class JProcMX implements JProcMXMBean {
 
     private static final JProc JPROC = new JProc();
 

@@ -37,7 +37,7 @@ import java.util.List;
  *
  * @author Peter Tribble
  */
-public class LWPusageTable extends JTable implements ActionListener {
+public final class LWPusageTable extends JTable implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 

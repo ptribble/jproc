@@ -38,7 +38,7 @@ import javax.swing.JScrollPane;
  *
  * @author Peter Tribble
  */
-public class ZoneInfo extends JPdemo implements ActionListener {
+public final class ZoneInfo extends JPdemo implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 

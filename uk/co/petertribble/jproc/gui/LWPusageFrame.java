@@ -31,7 +31,7 @@ import uk.co.petertribble.jproc.api.JProcess;
  *
  * @author Peter Tribble
  */
-public class LWPusageFrame extends JFrame {
+public final class LWPusageFrame extends JFrame {
 
     private static final long serialVersionUID = 1L;
 

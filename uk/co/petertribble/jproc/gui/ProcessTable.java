@@ -37,7 +37,7 @@ import java.awt.event.ActionEvent;
  *
  * @author Peter Tribble
  */
-public class ProcessTable extends JTable implements ActionListener {
+public final class ProcessTable extends JTable implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
@@ -128,7 +128,7 @@ public class ProcessTable extends JTable implements ActionListener {
      * A custom renderer that displays size information in human readable
      * format.
      */
-    public class SizeRenderer extends DefaultTableCellRenderer {
+    public final class SizeRenderer extends DefaultTableCellRenderer {
 	private static final long serialVersionUID = 1L;
 	@Override
 	public void setValue(Object value) {
@@ -142,7 +142,7 @@ public class ProcessTable extends JTable implements ActionListener {
      * A custom renderer that displays time information in human readable
      * format.
      */
-    public class TimeRenderer extends DefaultTableCellRenderer {
+    public final class TimeRenderer extends DefaultTableCellRenderer {
 	private static final long serialVersionUID = 1L;
 	@Override
 	public void setValue(Object value) {

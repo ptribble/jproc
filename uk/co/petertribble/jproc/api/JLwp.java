@@ -25,7 +25,7 @@ package uk.co.petertribble.jproc.api;
  *
  * @author Peter Tribble
  */
-public class JLwp {
+public final class JLwp {
 
     private int pid;
     private int lwpid;

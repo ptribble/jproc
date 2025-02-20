@@ -41,7 +41,7 @@ import java.awt.event.ActionEvent;
  *
  * @author Peter Tribble
  */
-public class JPTreePanel extends JPanel implements TreeSelectionListener,
+public final class JPTreePanel extends JPanel implements TreeSelectionListener,
 	ActionListener {
 
     private static final long serialVersionUID = 1L;

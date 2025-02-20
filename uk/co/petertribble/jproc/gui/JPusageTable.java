@@ -40,7 +40,7 @@ import java.util.List;
  *
  * @author Peter Tribble
  */
-public class JPusageTable extends JTable implements ActionListener {
+public final class JPusageTable extends JTable implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
