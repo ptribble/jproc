@@ -110,12 +110,12 @@ public final class LWPusageTableModel extends AbstractTableModel {
 	    /*
 	     * The JLwps are updated here, so we can detect if they exit.
 	     */
-	    JProcUsage psu_new = jproc.getUsage(jlwp);
-	    if (psu_new == null) {
+	    JProcUsage njpu = jproc.getUsage(jlwp);
+	    if (njpu == null) {
 		ip.remove();
 		vpu.remove(i);
 	    } else {
-		vpu.set(i, psu_new);
+		vpu.set(i, njpu);
 		++i;
 	    }
 	}

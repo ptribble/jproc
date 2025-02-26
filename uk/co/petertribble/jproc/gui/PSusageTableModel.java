@@ -70,12 +70,12 @@ public final class PSusageTableModel extends AbstractTableModel {
 	vpu = new ArrayList<>();
 	vpi = new ArrayList<>();
 	for (JProcess p : jpf.getProcesses()) {
-	    JProcUsage psu_new = jproc.getUsage(p);
-	    JProcInfo psi_new = jproc.getInfo(p);
-	    if (psu_new != null && psi_new != null) {
+	    JProcUsage njpu = jproc.getUsage(p);
+	    JProcInfo njpi = jproc.getInfo(p);
+	    if (njpu != null && njpi != null) {
 		vp.add(p);
-		vpu.add(psu_new);
-		vpi.add(psi_new);
+		vpu.add(njpu);
+		vpi.add(njpi);
 	    }
 	}
     }
@@ -147,15 +147,15 @@ public final class PSusageTableModel extends AbstractTableModel {
 	     * disappear. Most process removals will be handled above, but
 	     * there's still a brief window.
 	     */
-	    JProcUsage psu_new = jproc.getUsage(jp);
-	    JProcInfo psi_new = jproc.getInfo(jp);
-	    if (psu_new == null || psi_new == null) {
+	    JProcUsage njpu = jproc.getUsage(jp);
+	    JProcInfo njpi = jproc.getInfo(jp);
+	    if (njpu == null || njpi == null) {
 		ip.remove();
 		vpu.remove(i);
 		vpi.remove(i);
 	    } else {
-		vpu.set(i, psu_new);
-		vpi.set(i, psi_new);
+		vpu.set(i, njpu);
+		vpi.set(i, njpi);
 		++i;
 	    }
 	}

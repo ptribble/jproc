@@ -68,10 +68,10 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	vp = new ArrayList<>();
 	vpi = new ArrayList<>();
 	for (JProcess p : jpf.getProcesses()) {
-	    JProcInfo psi_new = jproc.getInfo(p);
-	    if (psi_new != null) {
+	    JProcInfo jpi = jproc.getInfo(p);
+	    if (jpi != null) {
 		vp.add(p);
-		vpi.add(psi_new);
+		vpi.add(jpi);
 	    }
 	}
 
@@ -126,13 +126,13 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	     * disappear. Most process removals will be handled above, but
 	     * there's still a brief window.
 	     */
-	    JProcInfo psi_new = jproc.getInfo(jp);
-	    if (psi_new == null) {
+	    JProcInfo jpi = jproc.getInfo(jp);
+	    if (jpi == null) {
 		ip.remove();
 		vpi.remove(i);
 	    } else {
-		vpi.set(i, psi_new);
-		zones.add(psi_new.getzoneid());
+		vpi.set(i, jpi);
+		zones.add(jpi.getzoneid());
 		++i;
 	    }
 	}

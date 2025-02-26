@@ -67,10 +67,10 @@ public final class PSinfoTableModel extends AbstractTableModel {
 	vp = new ArrayList<>();
 	vpi = new ArrayList<>();
 	for (JProcess p : jpf.getProcesses()) {
-	    JProcInfo psi_new = jproc.getInfo(p);
-	    if (psi_new != null) {
+	    JProcInfo njpi = jproc.getInfo(p);
+	    if (njpi != null) {
 		vp.add(p);
-		vpi.add(psi_new);
+		vpi.add(njpi);
 	    }
 	}
     }
@@ -159,12 +159,12 @@ public final class PSinfoTableModel extends AbstractTableModel {
 	     * disappear. Most process removals will be handled above, but
 	     * there's still a brief window.
 	     */
-	    JProcInfo psi_new = jproc.getInfo(jp);
-	    if (psi_new == null) {
+	    JProcInfo njpi = jproc.getInfo(jp);
+	    if (njpi == null) {
 		ip.remove();
 		vpi.remove(i);
 	    } else {
-		vpi.set(i, psi_new);
+		vpi.set(i, njpi);
 		++i;
 	    }
 	}
