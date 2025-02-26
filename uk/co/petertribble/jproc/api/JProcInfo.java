@@ -32,25 +32,25 @@ public class JProcInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private int pr_nlwp;
-    private int pr_pid;
-    private int pr_ppid;
-    private int pr_uid;
-    private int pr_euid;
-    private int pr_gid;
-    private int pr_egid;
-    private long pr_size;
-    private long pr_rssize;
+    private int prNlwp;
+    private int prPid;
+    private int prPpid;
+    private int prUid;
+    private int prEuid;
+    private int prGid;
+    private int prEgid;
+    private long prSize;
+    private long prRssize;
     private long stime;
     private long etime;
     private long ntime;
     private long ectime;
     private long nctime;
-    private int pr_taskid;
-    private int pr_projid;
-    private int pr_zoneid;
-    private int pr_contract;
-    private String pr_fname;
+    private int prTaskid;
+    private int prProjid;
+    private int prZoneid;
+    private int prContract;
+    private String prFname;
 
     /**
      * Populate this object with data. This routine should never be called
@@ -58,51 +58,51 @@ public class JProcInfo implements Serializable {
      *
      * FIXME pr_pgid pr_sid
      *
-     * @param pr_pid  the process id
-     * @param pr_ppid  process id of parent
-     * @param pr_uid  real user id
-     * @param pr_euid  effective user id
-     * @param pr_gid  real group id
-     * @param pr_egid  effective group id
-     * @param pr_nlwp  number of active lwps in the process
-     * @param pr_size  size of process image in Kbytes
-     * @param pr_rssize  resident set size in Kbytes
+     * @param prPid  the process id
+     * @param prPpid  process id of parent
+     * @param prUid  real user id
+     * @param prEuid  effective user id
+     * @param prGid  real group id
+     * @param prEgid  effective group id
+     * @param prNlwp  number of active lwps in the process
+     * @param prSize  size of process image in Kbytes
+     * @param prRssize  resident set size in Kbytes
      * @param stime  start time
      * @param etime  execution time
      * @param ntime  execution time, nanosecond part
      * @param ectime  reaped children execution time
      * @param nctime  reaped children execution time, nanosecond part
-     * @param pr_taskid  task id
-     * @param pr_projid  project id
-     * @param pr_zoneid  zone id
-     * @param pr_contract  process contract
-     * @param pr_fname  name of execed file
+     * @param prTaskid  task id
+     * @param prProjid  project id
+     * @param prZoneid  zone id
+     * @param prContract  process contract
+     * @param prFname  name of execed file
      */
-    public void insert(int pr_pid, int pr_ppid, int pr_uid, int pr_euid,
-			int pr_gid, int pr_egid, int pr_nlwp,
-			long pr_size, long pr_rssize, long stime,
+    public void insert(int prPid, int prPpid, int prUid, int prEuid,
+			int prGid, int prEgid, int prNlwp,
+			long prSize, long prRssize, long stime,
 			long etime, long ntime, long ectime, long nctime,
-			int pr_taskid, int pr_projid, int pr_zoneid,
-			int pr_contract, String pr_fname) {
-	this.pr_pid = pr_pid;
-	this.pr_ppid = pr_ppid;
-	this.pr_uid = pr_uid;
-	this.pr_euid = pr_euid;
-	this.pr_gid = pr_gid;
-	this.pr_egid = pr_egid;
-	this.pr_nlwp = pr_nlwp;
-	this.pr_size = pr_size;
-	this.pr_rssize = pr_rssize;
+			int prTaskid, int prProjid, int prZoneid,
+			int prContract, String prFname) {
+	this.prPid = prPid;
+	this.prPpid = prPpid;
+	this.prUid = prUid;
+	this.prEuid = prEuid;
+	this.prGid = prGid;
+	this.prEgid = prEgid;
+	this.prNlwp = prNlwp;
+	this.prSize = prSize;
+	this.prRssize = prRssize;
 	this.stime = stime;
 	this.etime = etime;
 	this.ntime = ntime;
 	this.ectime = ectime;
 	this.nctime = nctime;
-	this.pr_taskid = pr_taskid;
-	this.pr_projid = pr_projid;
-	this.pr_zoneid = pr_zoneid;
-	this.pr_contract = pr_contract;
-	this.pr_fname = pr_fname;
+	this.prTaskid = prTaskid;
+	this.prProjid = prProjid;
+	this.prZoneid = prZoneid;
+	this.prContract = prContract;
+	this.prFname = prFname;
     }
 
     /*
@@ -115,7 +115,7 @@ public class JProcInfo implements Serializable {
      * @return the process id
      */
     public int getpid() {
-	return pr_pid;
+	return prPid;
     }
 
     /**
@@ -124,7 +124,7 @@ public class JProcInfo implements Serializable {
      * @return the parent process id
      */
     public int getppid() {
-	return pr_ppid;
+	return prPpid;
     }
 
     /**
@@ -133,7 +133,7 @@ public class JProcInfo implements Serializable {
      * @return the real userid
      */
     public int getuid() {
-	return pr_uid;
+	return prUid;
     }
 
     /**
@@ -142,7 +142,7 @@ public class JProcInfo implements Serializable {
      * @return the effective userid
      */
     public int geteuid() {
-	return pr_euid;
+	return prEuid;
     }
 
     /**
@@ -151,7 +151,7 @@ public class JProcInfo implements Serializable {
      * @return the real group id
      */
     public int getgid() {
-	return pr_gid;
+	return prGid;
     }
 
     /**
@@ -160,7 +160,7 @@ public class JProcInfo implements Serializable {
      * @return the effective group id
      */
     public int getegid() {
-	return pr_egid;
+	return prEgid;
     }
 
     /**
@@ -169,7 +169,7 @@ public class JProcInfo implements Serializable {
      * @return the number of lwps in the process
      */
     public int getnlwp() {
-	return pr_nlwp;
+	return prNlwp;
     }
 
     /**
@@ -178,7 +178,7 @@ public class JProcInfo implements Serializable {
      * @return the process size in Kbytes
      */
     public long getsize() {
-	return pr_size;
+	return prSize;
     }
 
     /**
@@ -187,7 +187,7 @@ public class JProcInfo implements Serializable {
      * @return the resident size in Kbytes
      */
     public long getrssize() {
-	return pr_rssize;
+	return prRssize;
     }
 
     /**
@@ -226,7 +226,7 @@ public class JProcInfo implements Serializable {
      * @return the task id of the process
      */
     public int gettaskid() {
-	return pr_taskid;
+	return prTaskid;
     }
 
     /**
@@ -235,7 +235,7 @@ public class JProcInfo implements Serializable {
      * @return the project id of the process
      */
     public int getprojid() {
-	return pr_projid;
+	return prProjid;
     }
 
     /**
@@ -244,7 +244,7 @@ public class JProcInfo implements Serializable {
      * @return the zone id of the process
      */
     public int getzoneid() {
-	return pr_zoneid;
+	return prZoneid;
     }
 
     /**
@@ -253,7 +253,7 @@ public class JProcInfo implements Serializable {
      * @return the process contract
      */
     public int getcontract() {
-	return pr_contract;
+	return prContract;
     }
 
     /**
@@ -262,7 +262,7 @@ public class JProcInfo implements Serializable {
      * @return the name of the execed file
      */
     public String getfname() {
-	return pr_fname;
+	return prFname;
     }
 
     /**
@@ -273,25 +273,25 @@ public class JProcInfo implements Serializable {
      */
     public String toJSON() {
 	StringBuilder sb = new StringBuilder(256);
-	sb.append("{\"fname\":\"").append(pr_fname)
-	    .append("\",\"pid\":").append(pr_pid)
-	    .append(",\"ppid\":").append(pr_ppid)
-	    .append(",\"uid\":").append(pr_uid)
-	    .append(",\"euid\":").append(pr_euid)
-	    .append(",\"gid\":").append(pr_gid)
-	    .append(",\"egid\":").append(pr_egid)
-	    .append(",\"nlwp\":").append(pr_nlwp)
-	    .append(",\"size\":").append(pr_size)
-	    .append(",\"rssize\":").append(pr_rssize)
+	sb.append("{\"fname\":\"").append(prFname)
+	    .append("\",\"pid\":").append(prPid)
+	    .append(",\"ppid\":").append(prPpid)
+	    .append(",\"uid\":").append(prUid)
+	    .append(",\"euid\":").append(prEuid)
+	    .append(",\"gid\":").append(prGid)
+	    .append(",\"egid\":").append(prEgid)
+	    .append(",\"nlwp\":").append(prNlwp)
+	    .append(",\"size\":").append(prSize)
+	    .append(",\"rssize\":").append(prRssize)
 	    .append(",\"stime\":").append(stime)
 	    .append(",\"etime\":").append(etime)
 	    .append(",\"ntime\":").append(ntime)
 	    .append(",\"ectime\":").append(ectime)
 	    .append(",\"nctime\":").append(nctime)
-	    .append(",\"taskid\":").append(pr_taskid)
-	    .append(",\"projid\":").append(pr_projid)
-	    .append(",\"zoneid\":").append(pr_zoneid)
-	    .append(",\"contract\":").append(pr_contract)
+	    .append(",\"taskid\":").append(prTaskid)
+	    .append(",\"projid\":").append(prProjid)
+	    .append(",\"zoneid\":").append(prZoneid)
+	    .append(",\"contract\":").append(prContract)
 	    .append('}');
 	return sb.toString();
     }

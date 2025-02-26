@@ -55,7 +55,7 @@ public class PClientConfig {
      */
     public static final String[] PROTOCOLS = {"XML-RPC", "REST"};
 
-    private String url_string;
+    private String urlString;
     private String username;
     private String userpass;
     private int protocol;
@@ -82,7 +82,7 @@ public class PClientConfig {
      * @param protocol  specifies the communication protocol
      */
     public PClientConfig(String s, int protocol) {
-	url_string = s;
+	urlString = s;
 	this.protocol = protocol;
     }
 
@@ -102,7 +102,7 @@ public class PClientConfig {
     public PClientConfig(File f) {
 	if (f.exists()) {
 	    Map<String, String> m = JumbleUtils.fileToPropMap(f);
-	    url_string = m.get("URL");
+	    urlString = m.get("URL");
 	    username = m.get("User");
 	    userpass = m.get("Pass");
 	    String sproto = m.get("Protocol");
@@ -120,7 +120,7 @@ public class PClientConfig {
      * useful.
      */
     public boolean isConfigured() {
-	return url_string != null && !"".equals(url_string);
+	return urlString != null && !"".equals(urlString);
     }
 
     /**
@@ -131,7 +131,7 @@ public class PClientConfig {
      * @return the url to connect to, as a String
      */
     public String remoteURL() {
-	return url_string;
+	return urlString;
     }
 
     /**
@@ -186,7 +186,7 @@ public class PClientConfig {
      * @param s  the server to connect to.
      */
     public void setServerURL(String s) {
-	url_string = s;
+	urlString = s;
     }
 
     /**
