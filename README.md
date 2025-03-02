@@ -23,7 +23,7 @@ peter.tribble@gmail.com
 
 
 JProc is licensed under the CDDL, just like the bulk of OpenSolaris - see
-the file CDDL.txt
+the file LICENSE-CDDL.txt (also as help/CDDL.txt) for details
 
 JProc incorporates a couple of sets of utility classes. See
 http://www.petertribble.co.uk/Solaris/jingle.html
@@ -34,5 +34,5 @@ The Apache Software Foundation (https://www.apache.org/).
 
 Specifically, Apache XML-RPC, Copyright 1999-2009 The Apache Software
 Foundation, and Apache HttpComponents Client, Copyright 1999-2012 The
-Apache Software Foundation. See the file APACHE-LICENSE.txt for the
+Apache Software Foundation. See the file LICENSE-APACHE.txt for the
 details of the license for these products.
