@@ -152,7 +152,7 @@ jprest.war)
 	    echo "Unable to find javax.ws.rs jar, exiting..."
 	    exit 1
 	fi
-	javac ${XFLAGS} -classpath ../lib/java/jproc.jar:${JAXRSJAR} uk/co/petertribble/jprest/*.java
+	javac -Xlint -Xlint:-rawtypes -classpath ../lib/java/jproc.jar:${JAXRSJAR} uk/co/petertribble/jprest/*.java
 	cd ..
 	mkdir war
 	cd war || exit 1
@@ -179,9 +179,7 @@ jprest.war)
 	;;
 esac
 
-XFLAGS="-Xlint -Xlint:-rawtypes"
-
-javac ${XFLAGS} -classpath .:"${BUILDJARS}" uk/co/petertribble/jproc/api/*.java uk/co/petertribble/jproc/demo/*.java uk/co/petertribble/jproc/gui/*.java uk/co/petertribble/jproc/server/*.java uk/co/petertribble/jproc/client/*.java uk/co/petertribble/jproc/parse/*.java
+javac -Xlint -Xlint:-rawtypes -classpath .:"${BUILDJARS}" uk/co/petertribble/jproc/api/*.java uk/co/petertribble/jproc/demo/*.java uk/co/petertribble/jproc/gui/*.java uk/co/petertribble/jproc/server/*.java uk/co/petertribble/jproc/client/*.java uk/co/petertribble/jproc/parse/*.java
 
 #
 # compiling 64-bit objects is just plain funky
