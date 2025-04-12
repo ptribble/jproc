@@ -26,8 +26,8 @@ Run
 
 ./build jproc.war
 
-which will create a file jproc.war. You need to deploy that  (for tomcat 8
-or 9, just copy it into the webapps directory; for tomcat 10 or later, create
+which will create a file jproc.war. You need to deploy that  (for tomcat 9,
+just copy it into the webapps directory; for tomcat 10 or later, create
 a webapps-javaee directory and put the war file in there and it will be
 automatically converted), and then start your servlet container so that it
 can find libproc_jni.so (for example, set LD_LIBRARY_PATH so it points to
