@@ -40,13 +40,13 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
     private String[] columnNames = {"ZONE", "NPROC", "nlwp", "SZ", "RSS",
 				"TIME"};
 
-    private List<Integer> colMap;
+    private transient List<Integer> colMap;
 
     private JProcessFilter jpf;
-    private List<JProcess> vp;
-    private List<JProcInfo> vpi;
+    private transient List<JProcess> vp;
+    private transient List<JProcInfo> vpi;
     private JProc jproc;
-    private List<Integer> zoneids;
+    private transient List<Integer> zoneids;
 
     /**
      * Create a Table Model from the given Set of JProcesses.

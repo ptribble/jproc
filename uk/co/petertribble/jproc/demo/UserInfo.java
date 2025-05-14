@@ -46,7 +46,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
     private UserInfoTable jpip;
 
     private JCheckBoxMenuItem allZoneItem;
-    private Set<JCheckBoxMenuItem> zoneSelectionItems;
+    private transient Set<JCheckBoxMenuItem> zoneSelectionItems;
 
     private static final String VERSION = "UserInfo version 1.0";
 

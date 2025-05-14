@@ -40,11 +40,11 @@ public final class PSinfoTableModel extends AbstractTableModel {
 		"nlwp", "SZ", "RSS", "START", "TIME", "TASK", "PROJ", "ZONE",
 		"CT"};
 
-    private List<Integer> colMap;
+    private transient List<Integer> colMap;
 
     private JProcessFilter jpf;
-    private List<JProcess> vp;
-    private List<JProcInfo> vpi;
+    private transient List<JProcess> vp;
+    private transient List<JProcInfo> vpi;
     private JProc jproc;
 
     /**

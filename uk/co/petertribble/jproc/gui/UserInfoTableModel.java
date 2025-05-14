@@ -40,13 +40,13 @@ public final class UserInfoTableModel extends AbstractTableModel {
     private String[] columnNames = {"USER", "NPROC", "nlwp", "SZ", "RSS",
 				"TIME"};
 
-    private List<Integer> colMap;
+    private transient List<Integer> colMap;
 
     private JProcessFilter jpf;
-    private List<JProcess> vp;
-    private List<JProcInfo> vpi;
+    private transient List<JProcess> vp;
+    private transient List<JProcInfo> vpi;
     private JProc jproc;
-    private List<Integer> userids;
+    private transient List<Integer> userids;
 
     /**
      * Create a Table Model from the given Set of JProcesses.

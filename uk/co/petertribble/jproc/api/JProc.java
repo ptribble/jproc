@@ -20,6 +20,7 @@
 
 package uk.co.petertribble.jproc.api;
 
+import java.io.Serializable;
 import java.util.Set;
 import java.util.Map;
 import java.util.HashMap;
@@ -33,7 +34,9 @@ import uk.co.petertribble.jproc.client.JsonJProc;
  *
  * @author Peter Tribble
  */
-public class JProc {
+public class JProc implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     /*
      * An underlying ProcessInterface to query for process information.
@@ -48,10 +51,10 @@ public class JProc {
      * you convert from name to id once, and do a lot of work using the id,
      * but that the id is converted many times to a name for presentation.
      */
-    private Map<Integer, String> uMap = new HashMap<>();
-    private Map<Integer, String> gMap = new HashMap<>();
-    private Map<Integer, String> projMap = new HashMap<>();
-    private Map<Integer, String> zMap = new HashMap<>();
+    private transient Map<Integer, String> uMap = new HashMap<>();
+    private transient Map<Integer, String> gMap = new HashMap<>();
+    private transient Map<Integer, String> projMap = new HashMap<>();
+    private transient Map<Integer, String> zMap = new HashMap<>();
 
     /**
      * Create a new JProc object, that can be queried for information about

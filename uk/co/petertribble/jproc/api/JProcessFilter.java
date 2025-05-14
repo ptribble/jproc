@@ -20,6 +20,7 @@
 
 package uk.co.petertribble.jproc.api;
 
+import java.io.Serializable;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -29,13 +30,15 @@ import java.util.HashSet;
  *
  * @author Peter Tribble
  */
-public class JProcessFilter {
+public class JProcessFilter implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private JProcessSet jps;
 
-    private Set<JProcess> addedProcesses;
-    private Set<JProcess> deletedProcesses;
-    private Set<JProcess> currentProcesses;
+    private transient Set<JProcess> addedProcesses;
+    private transient Set<JProcess> deletedProcesses;
+    private transient Set<JProcess> currentProcesses;
 
     private int szone = -1;
     private int suid = -1;

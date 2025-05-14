@@ -56,7 +56,7 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
     private JPanel ppanel;
     private DefaultTreeModel dtm;
 
-    private SortedMap<Integer, ProcessTreeNode> nodemap;
+    private transient SortedMap<Integer, ProcessTreeNode> nodemap;
 
     /**
      * Create a new JPTreePanel.

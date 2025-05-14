@@ -20,6 +20,7 @@
 
 package uk.co.petertribble.jproc.api;
 
+import java.io.Serializable;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -29,13 +30,15 @@ import java.util.HashSet;
  *
  * @author Peter Tribble
  */
-public class JProcessSet {
+public class JProcessSet implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private JProc jproc;
 
-    private Set<JProcess> addedProcesses;
-    private Set<JProcess> deletedProcesses;
-    private Set<JProcess> currentProcesses;
+    private transient Set<JProcess> addedProcesses;
+    private transient Set<JProcess> deletedProcesses;
+    private transient Set<JProcess> currentProcesses;
 
     /**
      * Creates a JProcessSet that includes all processes.

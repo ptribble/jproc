@@ -44,12 +44,12 @@ public final class LWPusageTableModel extends AbstractTableModel {
 		"MAJF", "NSWAP", "INBLK", "OUBLK", "MSND", "MRCV", "SIGS",
 		"VCTX", "ICTX", "SYSC", "IOCH"};
 
-    private List<Integer> colMap;
+    private transient List<Integer> colMap;
 
     private JProc jproc;
     private JProcess jp;
-    private List<JLwp> vp;
-    private List<JProcUsage> vpu;
+    private transient List<JLwp> vp;
+    private transient List<JProcUsage> vpu;
 
     /**
      * Create a Table Model for the given process.

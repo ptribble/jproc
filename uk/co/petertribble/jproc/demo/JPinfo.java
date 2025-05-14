@@ -49,10 +49,10 @@ public final class JPinfo extends JPdemo implements ActionListener {
     private JPinfoTable jpip;
 
     private JCheckBoxMenuItem allUserItem;
-    private Set<JCheckBoxMenuItem> userSelectionItems;
+    private transient Set<JCheckBoxMenuItem> userSelectionItems;
     private JCheckBoxMenuItem allZoneItem;
-    private Set<JCheckBoxMenuItem> zoneSelectionItems;
-    private Set<JCheckBoxMenuItem> columnSelectionItems;
+    private transient Set<JCheckBoxMenuItem> zoneSelectionItems;
+    private transient Set<JCheckBoxMenuItem> columnSelectionItems;
 
     private static final String VERSION = "JPinfo version 1.0";
 

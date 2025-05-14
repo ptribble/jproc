@@ -46,7 +46,7 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
     private ZoneInfoTable jpip;
 
     private JCheckBoxMenuItem allUserItem;
-    private Set<JCheckBoxMenuItem> userSelectionItems;
+    private transient Set<JCheckBoxMenuItem> userSelectionItems;
 
     private static final String VERSION = "ZoneInfo version 1.0";
 

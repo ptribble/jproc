@@ -41,12 +41,12 @@ public final class PSusageTableModel extends AbstractTableModel {
 		"OUBLK", "MSND", "MRCV", "SIGS", "VCTX", "ICTX", "SYSC",
 		"IOCH"};
 
-    private List<Integer> colMap;
+    private transient List<Integer> colMap;
 
     private JProcessFilter jpf;
-    private List<JProcess> vp;
-    private List<JProcUsage> vpu;
-    private List<JProcInfo> vpi;
+    private transient List<JProcess> vp;
+    private transient List<JProcUsage> vpu;
+    private transient List<JProcInfo> vpi;
     private JProc jproc;
 
     /**
