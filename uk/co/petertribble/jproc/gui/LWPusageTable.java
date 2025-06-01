@@ -41,9 +41,21 @@ public final class LWPusageTable extends JTable implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The underlying data model.
+     */
     private LWPusageTableModel ftm;
+    /**
+     * A custom renderer for times.
+     */
     private DefaultTableCellRenderer timeColumnRenderer;
+    /**
+     * A Timer to update the display in a loop.
+     */
     private Timer timer;
+    /**
+     * The update interval for the table.
+     */
     private int delay = 1000;
 
     /**

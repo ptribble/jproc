@@ -37,6 +37,9 @@ public final class ZoneProcessInfoFrame extends JFrame
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The panel embedded in this frame.
+     */
     JPinfoTable jpip;
 
     /**

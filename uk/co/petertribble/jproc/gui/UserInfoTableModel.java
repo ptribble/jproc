@@ -37,14 +37,20 @@ public final class UserInfoTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
 
-    private String[] columnNames = {"USER", "NPROC", "nlwp", "SZ", "RSS",
-				"TIME"};
+    private static final String[] COLNAMES = {"USER", "NPROC", "nlwp", "SZ",
+				"RSS", "TIME"};
 
     private transient List<Integer> colMap;
 
+    /**
+     * The filter to select the processes to be displayed.
+     */
     private JProcessFilter jpf;
     private transient List<JProcess> vp;
     private transient List<JProcInfo> vpi;
+    /**
+     * The JProc to query for data.
+     */
     private JProc jproc;
     private transient List<Integer> userids;
 
@@ -60,7 +66,7 @@ public final class UserInfoTableModel extends AbstractTableModel {
 
 	// initialize the column mapping list
 	colMap = new ArrayList<>();
-	for (int i = 0; i < columnNames.length; i++) {
+	for (int i = 0; i < COLNAMES.length; i++) {
 	    colMap.add(i);
 	}
 
@@ -173,7 +179,7 @@ public final class UserInfoTableModel extends AbstractTableModel {
 
     @Override
     public String getColumnName(int col) {
-	return columnNames[mapColumn(col)];
+	return COLNAMES[mapColumn(col)];
     }
 
     /*

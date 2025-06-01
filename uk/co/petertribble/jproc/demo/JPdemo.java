@@ -90,6 +90,9 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      */
     protected JMenu jmh;
 
+    /**
+     * An informational label.
+     */
     private JLabel infoLabel;
 
     /**
@@ -97,8 +100,17 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      */
     protected static final int DEFAULT_INTERVAL = 5;
 
+    /**
+     * The name of this demo.
+     */
     private String demoname;
+    /**
+     * The update interval for the demo.
+     */
     private int interval;
+    /**
+     * Whether this is a standalone or child demo.
+     */
     boolean standalone;
 
     /**

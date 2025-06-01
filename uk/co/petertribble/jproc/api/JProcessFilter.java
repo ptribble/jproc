@@ -34,17 +34,38 @@ public class JProcessFilter implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The set of processes matched by this filter.
+     */
     private JProcessSet jps;
 
     private transient Set<JProcess> addedProcesses;
     private transient Set<JProcess> deletedProcesses;
     private transient Set<JProcess> currentProcesses;
 
+    /**
+     * A zone id to filter.
+     */
     private int szone = -1;
+    /**
+     * A user id to filter.
+     */
     private int suid = -1;
+    /**
+     * A process id to filter.
+     */
     private int spid = -1;
+    /**
+     * A contract id to filter.
+     */
     private int sctid = -1;
+    /**
+     * A task id to filter.
+     */
     private int staskid = -1;
+    /**
+     * A project id to filter.
+     */
     private int sprojid = -1;
 
     /**

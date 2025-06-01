@@ -32,24 +32,81 @@ public class JProcInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The number of active lwps of this process.
+     */
     private int prNlwp;
+    /**
+     * The process id of this process.
+     */
     private int prPid;
+    /**
+     * The parent process id of this process.
+     */
     private int prPpid;
+    /**
+     * The uid of this process.
+     */
     private int prUid;
+    /**
+     * The effective uid of this process.
+     */
     private int prEuid;
+    /**
+     * The gid of this process.
+     */
     private int prGid;
+    /**
+     * The effective gid of this process.
+     */
     private int prEgid;
+    /**
+     * The size of this process.
+     */
     private long prSize;
+    /**
+     * The resident set size of this process.
+     */
     private long prRssize;
+    /**
+     * The start time of this process.
+     */
     private long stime;
+    /**
+     * The cpu used by this process (seconds part).
+     */
     private long etime;
+    /**
+     * The cpu used by this process (nanoseconds part).
+     */
     private long ntime;
+    /**
+     * The cpu used by this process and children (seconds part).
+     */
     private long ectime;
+    /**
+     * The cpu used by this process and children (nanoseconds part).
+     */
     private long nctime;
+    /**
+     * The task id of this process.
+     */
     private int prTaskid;
+    /**
+     * The project of this process.
+     */
     private int prProjid;
+    /**
+     * The zone id of this process.
+     */
     private int prZoneid;
+    /**
+     * The contract id of this process.
+     */
     private int prContract;
+    /**
+     * The name of file executed for this process.
+     */
     private String prFname;
 
     /**

@@ -44,14 +44,38 @@ public final class JPinfo extends JPdemo implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The JProc to query for data.
+     */
     private JProc jproc;
+    /**
+     * The set of processes to be displayed.
+     */
     private JProcessSet jps;
+    /**
+     * The table embedded in this demo.
+     */
     private JPinfoTable jpip;
 
+    /**
+     * A menu item to select all users.
+     */
     private JCheckBoxMenuItem allUserItem;
+    /**
+     * Menu items to select specific users.
+     */
     private transient Set<JCheckBoxMenuItem> userSelectionItems;
+    /**
+     * A menu item to select all zones.
+     */
     private JCheckBoxMenuItem allZoneItem;
+    /**
+     * Menu items to select specific zones.
+     */
     private transient Set<JCheckBoxMenuItem> zoneSelectionItems;
+    /**
+     * Menu items to select specific columns.
+     */
     private transient Set<JCheckBoxMenuItem> columnSelectionItems;
 
     private static final String VERSION = "JPinfo version 1.0";

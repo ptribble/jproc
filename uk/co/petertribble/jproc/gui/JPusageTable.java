@@ -44,12 +44,30 @@ public final class JPusageTable extends JTable implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The JProc to query for data.
+     */
     JProc jproc;
+    /**
+     * The underlying data model.
+     */
     PSusageTableModel ftm;
+    /**
+     * The sorted view of the data.
+     */
     TableSorter sortedModel;
+    /**
+     * A custom renderer for times.
+     */
     private DefaultTableCellRenderer timeColumnRenderer;
 
+    /**
+     * A Timer to update the display in a loop.
+     */
     private Timer timer;
+    /**
+     * The update interval for the table.
+     */
     int interval;
 
     /**

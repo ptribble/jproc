@@ -35,6 +35,9 @@ public final class LWPusageFrame extends JFrame {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The table embedded in this frame.
+     */
     LWPusageTable lup;
 
     /**

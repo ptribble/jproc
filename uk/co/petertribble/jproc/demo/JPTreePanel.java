@@ -46,14 +46,41 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The JProc to query for data.
+     */
     private JProc jproc;
+    /**
+     * The filter to select the processes to be displayed.
+     */
     private JProcessFilter jpf;
+    /**
+     * A table to display process information.
+     */
     private JPinfoTable jup;
+    /**
+     * A table to display lwp information.
+     */
     private LWPusageTable lup;
+    /**
+     * The update interval for the table.
+     */
     private int interval;
+    /**
+     * A Timer to update the display in a loop.
+     */
     private Timer timer;
+    /**
+     * The update interval for the table.
+     */
     private int delay = 1000;
+    /**
+     * A holder panel.
+     */
     private JPanel ppanel;
+    /**
+     * A model containing the process tree.
+     */
     private DefaultTreeModel dtm;
 
     private transient SortedMap<Integer, ProcessTreeNode> nodemap;

@@ -40,13 +40,19 @@ public final class LWPusageTableModel extends AbstractTableModel {
     /*
      * The columns we can show.
      */
-    private String[] columnNames = {"LWP", "RTIME", "UTIME", "STIME", "MINF",
-		"MAJF", "NSWAP", "INBLK", "OUBLK", "MSND", "MRCV", "SIGS",
-		"VCTX", "ICTX", "SYSC", "IOCH"};
+    private static final String[] COLNAMES = {"LWP", "RTIME", "UTIME", "STIME",
+		"MINF", "MAJF", "NSWAP", "INBLK", "OUBLK", "MSND", "MRCV",
+		"SIGS", "VCTX", "ICTX", "SYSC", "IOCH"};
 
     private transient List<Integer> colMap;
 
+    /**
+     * The JProc to query for data.
+     */
     private JProc jproc;
+    /**
+     * The JProcess to display.
+     */
     private JProcess jp;
     private transient List<JLwp> vp;
     private transient List<JProcUsage> vpu;
@@ -63,7 +69,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
 
 	// initialize the column mapping list
 	colMap = new ArrayList<>();
-	for (int i = 0; i < columnNames.length; i++) {
+	for (int i = 0; i < COLNAMES.length; i++) {
 	    colMap.add(i);
 	}
 
@@ -147,7 +153,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
      * @return a List of column names
      */
     public List<String> columns() {
-	return Arrays.asList(columnNames);
+	return Arrays.asList(COLNAMES);
     }
 
     /**
@@ -158,7 +164,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
     public void removeColumn(String s) {
 	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
-	    if (columnNames[iter.next()].equals(s)) {
+	    if (COLNAMES[iter.next()].equals(s)) {
 		iter.remove();
 	    }
 	}
@@ -172,8 +178,8 @@ public final class LWPusageTableModel extends AbstractTableModel {
      */
     public void addColumn(String s) {
 	int icol = 0;
-	for (int i = 0; i < columnNames.length; i++) {
-	    if (columnNames[i].equals(s)) {
+	for (int i = 0; i < COLNAMES.length; i++) {
+	    if (COLNAMES[i].equals(s)) {
 		icol = i;
 	    }
 	}
@@ -190,7 +196,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
 
     @Override
     public String getColumnName(int col) {
-	return columnNames[mapColumn(col)];
+	return COLNAMES[mapColumn(col)];
     }
 
     /**

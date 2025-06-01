@@ -42,10 +42,22 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The JProc to query for data.
+     */
     private JProc jproc;
+    /**
+     * The table embedded in this demo.
+     */
     private ZoneInfoTable jpip;
 
+    /**
+     * A menu item to select all users.
+     */
     private JCheckBoxMenuItem allUserItem;
+    /**
+     * Menu items to select specific users.
+     */
     private transient Set<JCheckBoxMenuItem> userSelectionItems;
 
     private static final String VERSION = "ZoneInfo version 1.0";

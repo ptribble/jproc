@@ -42,10 +42,22 @@ public final class UserInfo extends JPdemo implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The JProc to query for data.
+     */
     private JProc jproc;
+    /**
+     * The table embedded in this demo.
+     */
     private UserInfoTable jpip;
 
+    /**
+     * A menu item to select all zones.
+     */
     private JCheckBoxMenuItem allZoneItem;
+    /**
+     * Menu items to select specific zones.
+     */
     private transient Set<JCheckBoxMenuItem> zoneSelectionItems;
 
     private static final String VERSION = "UserInfo version 1.0";

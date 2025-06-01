@@ -33,6 +33,9 @@ public final class JPTree extends JPdemo {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The tree panel embedded in this demo.
+     */
     private JPTreePanel jpt;
 
     private static final String VERSION = "JPTree version 1.0";

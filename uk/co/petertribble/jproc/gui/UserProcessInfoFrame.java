@@ -37,6 +37,9 @@ public final class UserProcessInfoFrame extends JFrame
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The table embedded in this frame.
+     */
     JPinfoTable jpip;
 
     /**

@@ -41,11 +41,26 @@ public final class ProcessTable extends JTable implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The underlying data model.
+     */
     private ProcessTableModel ptm;
+    /**
+     * A custom renderer for sizes.
+     */
     private DefaultTableCellRenderer sizeRenderer;
+    /**
+     * A custom renderer for times.
+     */
     private DefaultTableCellRenderer timeRenderer;
 
+    /**
+     * A Timer to update the display in a loop.
+     */
     private Timer timer;
+    /**
+     * The update interval for the table.
+     */
     private int delay;
 
     /**

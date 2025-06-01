@@ -40,14 +40,38 @@ public final class JPinfoTable extends JTable implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The JProc to query for data.
+     */
     JProc jproc;
+    /**
+     * The underlying data model.
+     */
     PSinfoTableModel ftm;
+    /**
+     * The sorted view of the data.
+     */
     TableSorter sortedModel;
+    /**
+     * A custom renderer for sizes.
+     */
     private DefaultTableCellRenderer sizeColumnRenderer;
+    /**
+     * A custom renderer for times.
+     */
     private DefaultTableCellRenderer timeColumnRenderer;
+    /**
+     * A custom renderer for dates.
+     */
     private DefaultTableCellRenderer dateColumnRenderer;
 
+    /**
+     * A Timer to update the display in a loop.
+     */
     private Timer timer;
+    /**
+     * The update interval for the table.
+     */
     int interval;
 
     /**

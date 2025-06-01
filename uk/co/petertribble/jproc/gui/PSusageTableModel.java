@@ -36,17 +36,23 @@ public final class PSusageTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
 
-    private String[] columnNames = {"COMMAND", "pid", "USER", "nlwp",
+    private static final String[] COLNAMES = {"COMMAND", "pid", "USER", "nlwp",
 		"RTIME", "UTIME", "STIME", "MINF", "MAJF", "NSWAP", "INBLK",
 		"OUBLK", "MSND", "MRCV", "SIGS", "VCTX", "ICTX", "SYSC",
 		"IOCH"};
 
     private transient List<Integer> colMap;
 
+    /**
+     * The filter to select the processes to be displayed.
+     */
     private JProcessFilter jpf;
     private transient List<JProcess> vp;
     private transient List<JProcUsage> vpu;
     private transient List<JProcInfo> vpi;
+    /**
+     * The JProc to query for data.
+     */
     private JProc jproc;
 
     /**
@@ -61,7 +67,7 @@ public final class PSusageTableModel extends AbstractTableModel {
 
 	// initialize the column mapping list
 	colMap = new ArrayList<>();
-	for (int i = 0; i < columnNames.length; i++) {
+	for (int i = 0; i < COLNAMES.length; i++) {
 	    colMap.add(i);
 	}
 
@@ -187,7 +193,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      * @return a List of column names
      */
     public List<String> columns() {
-	return Arrays.asList(columnNames);
+	return Arrays.asList(COLNAMES);
     }
 
     /**
@@ -198,7 +204,7 @@ public final class PSusageTableModel extends AbstractTableModel {
     public void removeColumn(String s) {
 	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
-	    if (columnNames[iter.next()].equals(s)) {
+	    if (COLNAMES[iter.next()].equals(s)) {
 		iter.remove();
 	    }
 	}
@@ -212,8 +218,8 @@ public final class PSusageTableModel extends AbstractTableModel {
      */
     public void addColumn(String s) {
 	int icol = 0;
-	for (int i = 0; i < columnNames.length; i++) {
-	    if (columnNames[i].equals(s)) {
+	for (int i = 0; i < COLNAMES.length; i++) {
+	    if (COLNAMES[i].equals(s)) {
 		icol = i;
 	    }
 	}
@@ -241,7 +247,7 @@ public final class PSusageTableModel extends AbstractTableModel {
 
     @Override
     public String getColumnName(int col) {
-	return columnNames[mapColumn(col)];
+	return COLNAMES[mapColumn(col)];
     }
 
     /**

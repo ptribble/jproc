@@ -34,6 +34,9 @@ public class JProcessSet implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The JProc to query for data.
+     */
     private JProc jproc;
 
     private transient Set<JProcess> addedProcesses;

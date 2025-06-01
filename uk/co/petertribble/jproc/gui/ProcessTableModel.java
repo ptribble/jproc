@@ -32,21 +32,59 @@ public final class ProcessTableModel extends AbstractTableModel {
 
     private static final long serialVersionUID = 1L;
 
-    private String[] columnNames = {"Property", "Value", "Change"};
+    private static final String[] COLNAMES
+	= {"Property", "Value", "Change"};
+    private static final String[] ROWNAMES
+	= {"Threads", "Size", "RSS", "Time", "CTime"};
 
+    /**
+     * The JProcess to display.
+     */
     private JProcess process;
+    /**
+     * The JProc to query for data.
+     */
     private JProc jproc;
 
-    private String[] rowNames = {"Threads", "Size", "RSS", "Time", "CTime"};
+    /**
+     * The number of lwps in a process.
+     */
     private int nlwp;
+    /**
+     * The size of a process.
+     */
     private long size;
+    /**
+     * The RSS of a process.
+     */
     private long rssize;
+    /**
+     * The cpu time used by a process.
+     */
     private double time;
+    /**
+     * The cpu time used by a process and reaped children.
+     */
     private double ctime;
+    /**
+     * The change in number of lwps in a process.
+     */
     private int dnlwp;
+    /**
+     * The change in size of a process.
+     */
     private long dsize;
+    /**
+     * The change in RSS of a process.
+     */
     private long drssize;
+    /**
+     * The change in cpu time used by a process.
+     */
     private double dtime;
+    /**
+     * The change in cpu time used by a process and reaped children.
+     */
     private double dctime;
 
     /**
@@ -86,17 +124,17 @@ public final class ProcessTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-	return columnNames.length;
+	return COLNAMES.length;
     }
 
     @Override
     public int getRowCount() {
-	return rowNames.length;
+	return ROWNAMES.length;
     }
 
     @Override
     public String getColumnName(int col) {
-	return columnNames[col];
+	return COLNAMES[col];
     }
 
     /**
@@ -105,7 +143,7 @@ public final class ProcessTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int row, int col) {
 	if (col == 0) {
-	    return rowNames[row];
+	    return ROWNAMES[row];
 	} else if (col == 2) {
 	    if (row == 0) {
 		return dnlwp;

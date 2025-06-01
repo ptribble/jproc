@@ -38,7 +38,7 @@ public class JProc implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /*
+    /**
      * An underlying ProcessInterface to query for process information.
      */
     private ProcessInterface njp;

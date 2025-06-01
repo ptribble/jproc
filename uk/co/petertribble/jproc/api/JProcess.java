@@ -31,7 +31,13 @@ public final class JProcess implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The pid of this process.
+     */
     private int pid;
+    /**
+     * The underlying JProcInfo for this process.
+     */
     private JProcInfo info;
 
     /**
