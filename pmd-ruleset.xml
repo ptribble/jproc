@@ -23,6 +23,7 @@
       <exclude name="LambdaCanBeMethodReference"/>
       <exclude name="ClassWithOnlyPrivateConstructorsShouldBeFinal"/>
       <exclude name="UnsynchronizedStaticFormatter"/>
+      <exclude name="PreserveStackTrace"/>
     </rule>
     <rule ref="category/java/multithreading.xml">
       <exclude name="UnsynchronizedStaticFormatter"/>
@@ -49,5 +50,6 @@
       <exclude name="NonExhaustiveSwitch"/>
       <exclude name="SystemPrintln"/>
       <exclude name="UseVarargs"/>
+      <exclude name="PreserveStackTrace"/>
     </rule>
 </ruleset>
