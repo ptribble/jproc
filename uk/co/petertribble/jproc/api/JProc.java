@@ -41,7 +41,7 @@ public class JProc implements Serializable {
     /**
      * An underlying ProcessInterface to query for process information.
      */
-    private ProcessInterface njp;
+    private transient ProcessInterface njp;
 
     /*
      * Maps to cache id to name lookups, to avoid going into native code
