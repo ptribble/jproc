@@ -32,7 +32,6 @@
     </rule>
     <rule ref="category/java/performance.xml">
       <exclude name="AvoidInstantiatingObjectsInLoops"/>
-      <exclude name="TooFewBranchesForSwitch"/>
       <exclude name="UseStringBufferForStringAppends"/>
     </rule>
     <rule ref="category/java/errorprone.xml">

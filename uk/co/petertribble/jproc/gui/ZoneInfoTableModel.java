@@ -273,12 +273,13 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 
     @Override
     public Class<?> getColumnClass(int c) {
-	switch (mapColumn(c)) {
-	    case 0:
-		return String.class;
-	    case 5:
-		return Double.class;
+	int mcol = mapColumn(c);
+	if (mcol == 0) {
+	    return String.class;
+	} else if (mcol == 5) {
+	    return Double.class;
+	} else {
+	    return Long.class;
 	}
-	return Long.class;
     }
 }
