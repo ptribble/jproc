@@ -19,7 +19,6 @@
       <exclude name="FormalParameterNamingConventions"/>
       <exclude name="ReturnEmptyCollectionRatherThanNull"/>
       <exclude name="UncommentedEmptyConstructor"/>
-      <exclude name="UseUtilityClass"/>
       <exclude name="LambdaCanBeMethodReference"/>
       <exclude name="ClassWithOnlyPrivateConstructorsShouldBeFinal"/>
       <exclude name="UnsynchronizedStaticFormatter"/>
