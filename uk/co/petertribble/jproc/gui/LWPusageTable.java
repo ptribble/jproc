@@ -48,7 +48,7 @@ public final class LWPusageTable extends JTable implements ActionListener {
     /**
      * A custom renderer for times.
      */
-    private DefaultTableCellRenderer timeColumnRenderer;
+    private DefaultTableCellRenderer timeColRenderer;
     /**
      * A Timer to update the display in a loop.
      */
@@ -75,7 +75,7 @@ public final class LWPusageTable extends JTable implements ActionListener {
 	/*
 	 * Create modified cell renderers for the time columns
 	 */
-	timeColumnRenderer =
+	timeColRenderer =
 	    new DefaultTableCellRenderer() {
 		private static final long serialVersionUID = 1L;
 		@Override
@@ -85,7 +85,7 @@ public final class LWPusageTable extends JTable implements ActionListener {
 			    ? PrettyFormat.timescale((Double) value) : "");
 	    }
 	};
-	timeColumnRenderer.setHorizontalAlignment(JLabel.RIGHT);
+	timeColRenderer.setHorizontalAlignment(JLabel.RIGHT);
 	setRenderers();
 
 	sortedModel.setTableHeader(getTableHeader());
@@ -107,13 +107,13 @@ public final class LWPusageTable extends JTable implements ActionListener {
      */
     private void setRenderers() {
 	try {
-	    getColumn("STIME").setCellRenderer(timeColumnRenderer);
+	    getColumn("STIME").setCellRenderer(timeColRenderer);
 	} catch (IllegalArgumentException iae) { }
 	try {
-	    getColumn("UTIME").setCellRenderer(timeColumnRenderer);
+	    getColumn("UTIME").setCellRenderer(timeColRenderer);
 	} catch (IllegalArgumentException iae) { }
 	try {
-	    getColumn("RTIME").setCellRenderer(timeColumnRenderer);
+	    getColumn("RTIME").setCellRenderer(timeColRenderer);
 	} catch (IllegalArgumentException iae) { }
     }
 

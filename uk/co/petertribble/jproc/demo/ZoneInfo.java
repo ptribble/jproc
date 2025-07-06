@@ -58,7 +58,7 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
     /**
      * Menu items to select specific users.
      */
-    private transient Set<JCheckBoxMenuItem> userSelectionItems;
+    private transient Set<JCheckBoxMenuItem> userMenuItems;
 
     private static final String VERSION = "ZoneInfo version 1.0";
 
@@ -100,7 +100,7 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
 
 	addInfoPanel(mainPanel, VERSION);
 
-	userSelectionItems = new HashSet<>();
+	userMenuItems = new HashSet<>();
 	if (jps.getUsers().size() > 1) {
 	    addUserMenu(jps);
 	}
@@ -127,7 +127,7 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
 	    JCheckBoxMenuItem jmi = new JCheckBoxMenuItem(s);
 	    jmi.addActionListener(this);
 	    userMenu.add(jmi);
-	    userSelectionItems.add(jmi);
+	    userMenuItems.add(jmi);
 	}
 	jm.add(userMenu);
     }
@@ -136,7 +136,7 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
 	boolean selected = jmi.isSelected();
 	if (jmi == allUserItem) {
 	    if (selected) {
-		for (JCheckBoxMenuItem jcbmi : userSelectionItems) {
+		for (JCheckBoxMenuItem jcbmi : userMenuItems) {
 		    jcbmi.setSelected(false);
 		}
 		jpip.unSetUser();
@@ -151,7 +151,7 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
 	     * If we've selected a user, unselect everything else.
 	     */
 	    if (selected) {
-		for (JCheckBoxMenuItem jcbmi : userSelectionItems) {
+		for (JCheckBoxMenuItem jcbmi : userMenuItems) {
 		    if (jcbmi != jmi) {
 			jcbmi.setSelected(false);
 		    }
@@ -182,7 +182,7 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
 	if (e.getSource() == allUserItem) {
 	    handleUser((JCheckBoxMenuItem) e.getSource());
 	}
-	if (userSelectionItems.contains(e.getSource())) {
+	if (userMenuItems.contains(e.getSource())) {
 	    handleUser((JCheckBoxMenuItem) e.getSource());
 	}
     }

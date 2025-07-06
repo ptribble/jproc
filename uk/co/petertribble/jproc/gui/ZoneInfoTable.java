@@ -53,11 +53,11 @@ public final class ZoneInfoTable extends JTable implements ActionListener {
     /**
      * A custom renderer for sizes.
      */
-    private DefaultTableCellRenderer sizeColumnRenderer;
+    private DefaultTableCellRenderer sizeColRenderer;
     /**
      * A custom renderer for times.
      */
-    private DefaultTableCellRenderer timeColumnRenderer;
+    private DefaultTableCellRenderer timeColRenderer;
 
     /**
      * A Timer to update the display in a loop.
@@ -88,7 +88,7 @@ public final class ZoneInfoTable extends JTable implements ActionListener {
 	 * Create modified cell renderers for the memory, time, and start
 	 * columns
 	 */
-	sizeColumnRenderer =
+	sizeColRenderer =
 	    new DefaultTableCellRenderer() {
 		private static final long serialVersionUID = 1L;
 		@Override
@@ -98,8 +98,8 @@ public final class ZoneInfoTable extends JTable implements ActionListener {
 			    ? PrettyFormat.memscale((Long) value) : "");
 	    }
 	};
-	sizeColumnRenderer.setHorizontalAlignment(JLabel.RIGHT);
-	timeColumnRenderer =
+	sizeColRenderer.setHorizontalAlignment(JLabel.RIGHT);
+	timeColRenderer =
 	    new DefaultTableCellRenderer() {
 		private static final long serialVersionUID = 1L;
 		@Override
@@ -109,7 +109,7 @@ public final class ZoneInfoTable extends JTable implements ActionListener {
 			    ? PrettyFormat.timescale((Double) value) : "");
 	    }
 	};
-	timeColumnRenderer.setHorizontalAlignment(JLabel.RIGHT);
+	timeColRenderer.setHorizontalAlignment(JLabel.RIGHT);
 
 	setRenderers();
 
@@ -133,13 +133,13 @@ public final class ZoneInfoTable extends JTable implements ActionListener {
      */
     private void setRenderers() {
 	try {
-	    getColumn("TIME").setCellRenderer(timeColumnRenderer);
+	    getColumn("TIME").setCellRenderer(timeColRenderer);
 	} catch (IllegalArgumentException iae) { }
 	try {
-	    getColumn("SZ").setCellRenderer(sizeColumnRenderer);
+	    getColumn("SZ").setCellRenderer(sizeColRenderer);
 	} catch (IllegalArgumentException iae) { }
 	try {
-	    getColumn("RSS").setCellRenderer(sizeColumnRenderer);
+	    getColumn("RSS").setCellRenderer(sizeColRenderer);
 	} catch (IllegalArgumentException iae) { }
     }
 

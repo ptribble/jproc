@@ -64,7 +64,7 @@ public final class JPusage extends JPdemo implements ActionListener {
     /**
      * Menu items to select specific users.
      */
-    private transient Set<JCheckBoxMenuItem> userSelectionItems;
+    private transient Set<JCheckBoxMenuItem> userMenuItems;
     /**
      * A menu item to select all zones.
      */
@@ -72,11 +72,11 @@ public final class JPusage extends JPdemo implements ActionListener {
     /**
      * Menu items to select specific zones.
      */
-    private transient Set<JCheckBoxMenuItem> zoneSelectionItems;
+    private transient Set<JCheckBoxMenuItem> zoneMenuItems;
     /**
      * Menu items to select specific columns.
      */
-    private transient Set<JCheckBoxMenuItem> columnSelectionItems;
+    private transient Set<JCheckBoxMenuItem> columnMenuItems;
 
     private static final String VERSION = "JPusage version 1.0";
 
@@ -118,15 +118,15 @@ public final class JPusage extends JPdemo implements ActionListener {
 
 	addInfoPanel(mainPanel, VERSION);
 
-	userSelectionItems = new HashSet<>();
+	userMenuItems = new HashSet<>();
 	addUserMenu();
 
-	zoneSelectionItems = new HashSet<>();
+	zoneMenuItems = new HashSet<>();
 	if (jps.getZones().size() > 1) {
 	    addZoneMenu();
 	}
 
-	columnSelectionItems = new HashSet<>();
+	columnMenuItems = new HashSet<>();
 
 	addColumnMenu();
 
@@ -152,7 +152,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	    JCheckBoxMenuItem jmi = new JCheckBoxMenuItem(s);
 	    jmi.addActionListener(this);
 	    userMenu.add(jmi);
-	    userSelectionItems.add(jmi);
+	    userMenuItems.add(jmi);
 	}
 	jm.add(userMenu);
     }
@@ -186,7 +186,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	    jmi.setSelected(true);
 	    jmi.addActionListener(this);
 	    columnMenu.add(jmi);
-	    columnSelectionItems.add(jmi);
+	    columnMenuItems.add(jmi);
 	    columnMap.put(s, jmi);
 	}
 	removeColumn(columnMap.get("RTIME"));
@@ -214,7 +214,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	    JCheckBoxMenuItem jmi = new JCheckBoxMenuItem(s);
 	    jmi.addActionListener(this);
 	    zoneMenu.add(jmi);
-	    zoneSelectionItems.add(jmi);
+	    zoneMenuItems.add(jmi);
 	}
 	jm.add(zoneMenu);
     }
@@ -223,7 +223,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	boolean selected = jmi.isSelected();
 	if (jmi == allUserItem) {
 	    if (selected) {
-		for (JCheckBoxMenuItem jcbmi : userSelectionItems) {
+		for (JCheckBoxMenuItem jcbmi : userMenuItems) {
 		    jcbmi.setSelected(false);
 		}
 		jpup.unSetUser();
@@ -238,7 +238,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	     * If we've selected a user, unselect everything else.
 	     */
 	    if (selected) {
-		for (JCheckBoxMenuItem jcbmi : userSelectionItems) {
+		for (JCheckBoxMenuItem jcbmi : userMenuItems) {
 		    if (jcbmi != jmi) {
 			jcbmi.setSelected(false);
 		    }
@@ -256,7 +256,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	boolean selected = jmi.isSelected();
 	if (jmi == allZoneItem) {
 	    if (selected) {
-		for (JCheckBoxMenuItem jcbmi : zoneSelectionItems) {
+		for (JCheckBoxMenuItem jcbmi : zoneMenuItems) {
 		    jcbmi.setSelected(false);
 		}
 		jpup.unSetZone();
@@ -271,7 +271,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	     * If we've selected a zone, unselect everything else.
 	     */
 	    if (selected) {
-		for (JCheckBoxMenuItem jcbmi : zoneSelectionItems) {
+		for (JCheckBoxMenuItem jcbmi : zoneMenuItems) {
 		    if (jcbmi != jmi) {
 			jcbmi.setSelected(false);
 		    }
@@ -310,16 +310,16 @@ public final class JPusage extends JPdemo implements ActionListener {
 	if (e.getSource() == allUserItem) {
 	    handleUser((JCheckBoxMenuItem) e.getSource());
 	}
-	if (userSelectionItems.contains(e.getSource())) {
+	if (userMenuItems.contains(e.getSource())) {
 	    handleUser((JCheckBoxMenuItem) e.getSource());
 	}
 	if (e.getSource() == allZoneItem) {
 	    handleZone((JCheckBoxMenuItem) e.getSource());
 	}
-	if (zoneSelectionItems.contains(e.getSource())) {
+	if (zoneMenuItems.contains(e.getSource())) {
 	    handleZone((JCheckBoxMenuItem) e.getSource());
 	}
-	if (columnSelectionItems.contains(e.getSource())) {
+	if (columnMenuItems.contains(e.getSource())) {
 	    handleColumn((JCheckBoxMenuItem) e.getSource());
 	}
     }

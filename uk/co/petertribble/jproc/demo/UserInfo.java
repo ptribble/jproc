@@ -58,7 +58,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
     /**
      * Menu items to select specific zones.
      */
-    private transient Set<JCheckBoxMenuItem> zoneSelectionItems;
+    private transient Set<JCheckBoxMenuItem> zoneMenuItems;
 
     private static final String VERSION = "UserInfo version 1.0";
 
@@ -100,7 +100,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
 
 	addInfoPanel(mainPanel, VERSION);
 
-	zoneSelectionItems = new HashSet<>();
+	zoneMenuItems = new HashSet<>();
 	if (jps.getZones().size() > 1) {
 	    addZoneMenu(jps);
 	}
@@ -127,7 +127,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
 	    JCheckBoxMenuItem jmi = new JCheckBoxMenuItem(s);
 	    jmi.addActionListener(this);
 	    zoneMenu.add(jmi);
-	    zoneSelectionItems.add(jmi);
+	    zoneMenuItems.add(jmi);
 	}
 	jm.add(zoneMenu);
     }
@@ -136,7 +136,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
 	boolean selected = jmi.isSelected();
 	if (jmi == allZoneItem) {
 	    if (selected) {
-		for (JCheckBoxMenuItem jcbmi : zoneSelectionItems) {
+		for (JCheckBoxMenuItem jcbmi : zoneMenuItems) {
 		    jcbmi.setSelected(false);
 		}
 		jpip.unSetZone();
@@ -151,7 +151,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
 	     * If we've selected a zone, unselect everything else.
 	     */
 	    if (selected) {
-		for (JCheckBoxMenuItem jcbmi : zoneSelectionItems) {
+		for (JCheckBoxMenuItem jcbmi : zoneMenuItems) {
 		    if (jcbmi != jmi) {
 			jcbmi.setSelected(false);
 		    }
@@ -182,7 +182,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
 	if (e.getSource() == allZoneItem) {
 	    handleZone((JCheckBoxMenuItem) e.getSource());
 	}
-	if (zoneSelectionItems.contains(e.getSource())) {
+	if (zoneMenuItems.contains(e.getSource())) {
 	    handleZone((JCheckBoxMenuItem) e.getSource());
 	}
     }
