@@ -126,7 +126,7 @@ public class JProcUsage {
      * @return the elapsed time of this process or lwp
      */
     public double getrtime() {
-	return (double) rtime + ((double) nrtime) / 1000000000.0;
+	return rtime + nrtime / 1000000000.0;
     }
 
     /**
@@ -135,7 +135,7 @@ public class JProcUsage {
      * @return the user time of this process or lwp
      */
     public double getutime() {
-	return (double) utime + ((double) nutime) / 1000000000.0;
+	return utime + nutime / 1000000000.0;
     }
 
     /**
@@ -144,7 +144,7 @@ public class JProcUsage {
      * @return the system time of this process or lwp
      */
     public double getstime() {
-	return (double) stime + ((double) nstime) / 1000000000.0;
+	return stime + nstime / 1000000000.0;
     }
 
     /**

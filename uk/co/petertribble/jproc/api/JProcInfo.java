@@ -264,7 +264,7 @@ public class JProcInfo implements Serializable {
      * @return the execution time of the process
      */
     public double gettime() {
-	return (double) etime + ((double) ntime) / 1000000000.0;
+	return etime + ntime / 1000000000.0;
     }
 
     /**
@@ -274,7 +274,7 @@ public class JProcInfo implements Serializable {
      * @return the execution time of reaped children of this process
      */
     public double getctime() {
-	return (double) ectime + ((double) nctime) / 1000000000.0;
+	return ectime + nctime / 1000000000.0;
     }
 
     /**
