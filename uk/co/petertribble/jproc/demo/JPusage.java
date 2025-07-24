@@ -49,7 +49,7 @@ public final class JPusage extends JPdemo implements ActionListener {
      */
     private JProc jproc;
     /**
-     * The set of processes to diaplay.
+     * The set of processes to display.
      */
     private JProcessSet jps;
     /**
