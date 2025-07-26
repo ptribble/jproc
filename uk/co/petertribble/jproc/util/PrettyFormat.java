@@ -21,8 +21,11 @@
 package uk.co.petertribble.jproc.util;
 
 import java.text.DecimalFormat;
-import java.text.DateFormat;
-import java.util.Date;
+import java.time.format.DateTimeFormatter;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.TimeZone;
 
 /**
  * Utility methods to convert raw numbers into more aesthetically pleasing
@@ -38,8 +41,11 @@ public final class PrettyFormat {
     private static final DecimalFormat DF = new DecimalFormat("##0");
     private static final DecimalFormat DFS = new DecimalFormat("##0.0");
     private static final DecimalFormat DFT = new DecimalFormat("00");
-    private static final DateFormat DT = DateFormat.getDateTimeInstance();
-    private static final DateFormat DTT = DateFormat.getTimeInstance();
+    private static final DateTimeFormatter DT =
+	DateTimeFormatter.ofPattern("MMM d, H:mm");
+    private static final DateTimeFormatter DTT =
+	DateTimeFormatter.ofPattern("H:mm:ss");
+    private static final ZoneId ZID = TimeZone.getDefault().toZoneId();
 
     /**
      * Hide the constructor.
@@ -148,8 +154,9 @@ public final class PrettyFormat {
      */
     public static String date(long l) {
 	long then = l * 1000;
+	Instant ndate = Instant.ofEpochMilli(then);
 	return System.currentTimeMillis() - then < 86400000
-	    ? DTT.format(new Date(then))
-	    : DT.format(new Date(then));
+	    ? DTT.format(LocalDateTime.ofInstant(ndate, ZID))
+	    : DT.format(LocalDateTime.ofInstant(ndate, ZID));
     }
 }
