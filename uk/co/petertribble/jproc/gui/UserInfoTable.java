@@ -25,7 +25,6 @@ import java.awt.BorderLayout;
 import java.awt.event.*;
 import uk.co.petertribble.jproc.api.JProc;
 import uk.co.petertribble.jproc.api.JProcessFilter;
-import uk.co.petertribble.jingle.TableSorter;
 import uk.co.petertribble.jproc.util.PrettyFormat;
 import javax.swing.table.*;
 
@@ -46,10 +45,6 @@ public final class UserInfoTable extends JTable implements ActionListener {
      * The underlying data model.
      */
     UserInfoTableModel ftm;
-    /**
-     * The sorted view of the data.
-     */
-    TableSorter sortedModel;
     /**
      * A custom renderer for sizes.
      */
@@ -81,8 +76,8 @@ public final class UserInfoTable extends JTable implements ActionListener {
 	setLayout(new BorderLayout());
 
 	ftm = new UserInfoTableModel(jproc, jpf);
-	sortedModel = new TableSorter(ftm);
-	setModel(sortedModel);
+	setModel(ftm);
+	setAutoCreateRowSorter(true);
 
 	/*
 	 * Create modified cell renderers for the memory, time, and start
@@ -112,8 +107,6 @@ public final class UserInfoTable extends JTable implements ActionListener {
 	timeColRenderer.setHorizontalAlignment(JLabel.RIGHT);
 
 	setRenderers();
-
-	sortedModel.setTableHeader(getTableHeader());
 
 	addMouseListener((MouseListener) new PopupListener());
 
@@ -221,7 +214,7 @@ public final class UserInfoTable extends JTable implements ActionListener {
 	// show processes for user in this row
 	private void showPopup(MouseEvent e) {
 	    if (e.isPopupTrigger()) {
-		int uid = ftm.getUser(sortedModel.modelIndex(
+		int uid = ftm.getUser(convertRowIndexToModel(
 				rowAtPoint(e.getPoint())));
 		createPopupMenu(uid).show(e.getComponent(), e.getX(), e.getY());
 	    }

@@ -26,7 +26,6 @@ import java.awt.event.*;
 import uk.co.petertribble.jproc.api.JProc;
 import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.JProcessFilter;
-import uk.co.petertribble.jingle.TableSorter;
 import uk.co.petertribble.jproc.util.PrettyFormat;
 import javax.swing.table.*;
 import java.util.List;
@@ -48,10 +47,6 @@ public final class JPinfoTable extends JTable implements ActionListener {
      * The underlying data model.
      */
     PSinfoTableModel ftm;
-    /**
-     * The sorted view of the data.
-     */
-    TableSorter sortedModel;
     /**
      * A custom renderer for sizes.
      */
@@ -87,8 +82,8 @@ public final class JPinfoTable extends JTable implements ActionListener {
 	setLayout(new BorderLayout());
 
 	ftm = new PSinfoTableModel(jproc, jpf);
-	sortedModel = new TableSorter(ftm);
-	setModel(sortedModel);
+	setModel(ftm);
+	setAutoCreateRowSorter(true);
 
 	/*
 	 * Create modified cell renderers for the memory, time, and start
@@ -129,8 +124,6 @@ public final class JPinfoTable extends JTable implements ActionListener {
 	dateColRenderer.setHorizontalAlignment(JLabel.RIGHT);
 
 	setRenderers();
-
-	sortedModel.setTableHeader(getTableHeader());
 
 	addMouseListener((MouseListener) new PopupListener());
 
@@ -301,7 +294,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
 
 	private void showPopup(MouseEvent e) {
 	    if (e.isPopupTrigger()) {
-		JProcess jp = ftm.getProcess(sortedModel.modelIndex(
+		JProcess jp = ftm.getProcess(convertRowIndexToModel(
 				rowAtPoint(e.getPoint())));
 		createPopupMenu(jp).show(e.getComponent(), e.getX(), e.getY());
 	    }

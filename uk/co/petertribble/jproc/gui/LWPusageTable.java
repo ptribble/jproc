@@ -25,7 +25,6 @@ import javax.swing.JTable;
 import javax.swing.Timer;
 import java.awt.BorderLayout;
 import uk.co.petertribble.jproc.api.*;
-import uk.co.petertribble.jingle.TableSorter;
 import uk.co.petertribble.jproc.util.PrettyFormat;
 import javax.swing.table.*;
 import java.awt.event.ActionListener;
@@ -69,8 +68,8 @@ public final class LWPusageTable extends JTable implements ActionListener {
 	setLayout(new BorderLayout());
 
 	ftm = new LWPusageTableModel(jproc, jp);
-	TableSorter sortedModel = new TableSorter(ftm);
-	setModel(sortedModel);
+	setModel(ftm);
+	setAutoCreateRowSorter(true);
 
 	/*
 	 * Create modified cell renderers for the time columns
@@ -87,8 +86,6 @@ public final class LWPusageTable extends JTable implements ActionListener {
 	};
 	timeColRenderer.setHorizontalAlignment(JLabel.RIGHT);
 	setRenderers();
-
-	sortedModel.setTableHeader(getTableHeader());
 
 	// set up for regular updates
 	delay = interval * 1000;
