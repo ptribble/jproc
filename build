@@ -107,6 +107,7 @@ spotbugs)
 	#
 	./build
 	spotbugs -auxclasspath $(echo lib/java/* | sed 's= =:=g') uk
+	rm -f $(find uk/co -name '*.class')
 	exit 0
 	;;
 packages)
@@ -196,3 +197,5 @@ esac
 jar -cmf jproc.manifest "${JPJAR}" help/*.html help/CDDL.txt properties/*.properties $(find uk/co -name '*.class')
 
 jar -cf "${JPAPIJAR}" $(find uk/co/petertribble/jproc/api -name '*.class')
+
+rm -f $(find uk/co -name '*.class')
