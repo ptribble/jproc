@@ -1,2 +1,2 @@
 Main-Class: uk.co.petertribble.jproc.demo.JPinfo
-Class-Path: jingle.jar jumble.jar json-20240303.jar
+Class-Path: jingle.jar jumble.jar openjson-1.0.13.jar

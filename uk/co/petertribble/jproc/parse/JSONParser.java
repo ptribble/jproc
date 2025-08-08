@@ -22,7 +22,7 @@ package uk.co.petertribble.jproc.parse;
 
 import uk.co.petertribble.jproc.api.*;
 import java.util.*;
-import org.json.*;
+import com.github.openjson.*;
 
 /**
  * Read in JSON serialized proc output and parse it.

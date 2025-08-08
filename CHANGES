@@ -1,3 +1,6 @@
+Switch to openjson https://github.com/openjson/openjson which has a much
+clearer license
+
 Update HttpClient to 5.5
 
 Migrate to Apache HttpClient 5 (classic mode)

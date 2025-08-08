@@ -47,7 +47,7 @@ LIBDIR=${JPDIR}/lib
 ARCHLIBDIR=${LIBDIR}/$(/usr/bin/isainfo -k)
 JARLIBDIR=${LIBDIR}/java
 
-JSONJAR=${JARLIBDIR}/json-20240303.jar
+JSONJAR=${JARLIBDIR}/openjson-1.0.13.jar
 JINGLEJAR=${JARLIBDIR}/jingle.jar
 JUMBLEJAR=${JARLIBDIR}/jumble.jar
 JPJAR=${JARLIBDIR}/jproc.jar
