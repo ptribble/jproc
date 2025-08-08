@@ -72,7 +72,7 @@ else
 	pname=${path##*/}
 	echo "f none /${JARDIR}/${pname}=${path} 0644 ${OWNER}"
   done
-  for path in lib/java/ws-commons* lib/java/xmlrpc*
+  for path in lib/java/*commons* lib/java/xmlrpc*
   do
 	pname=${path##*/}
 	echo "s none /${JARDIR}/${pname}=../apache-xmlrpc-${XMLVERS}/${pname}"
