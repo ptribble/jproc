@@ -36,3 +36,7 @@ Specifically, Apache XML-RPC, Copyright 1999-2009 The Apache Software
 Foundation, and Apache HttpComponents Client, Copyright 1999-2012 The
 Apache Software Foundation. See the file LICENSES/Apache-2.0.txt for the
 details of the license for these products.
+
+JProc incorporates openjson https://github.com/openjson/openjson
+See the file LICENSES/Apache-2.0.txt for the details of the license
+for openjson.
