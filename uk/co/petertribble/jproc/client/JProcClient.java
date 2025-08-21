@@ -49,21 +49,6 @@ public class JProcClient {
 	} catch (MalformedURLException mue) {
 	    throw new JProcException("Malformed URL.", mue);
 	}
-	initClient(config);
-    }
-
-    /**
-     * Create a JProc client that communicates with a server using the XML-RPC
-     * protocol.
-     *
-     * @param config  Holds the configuration with details of how to contact
-     * the server.
-     */
-    public JProcClient(XmlRpcClientConfigImpl config) {
-	initClient(config);
-    }
-
-    private void initClient(XmlRpcClientConfigImpl config) {
 	config.setEnabledForExtensions(true);
 	client = new XmlRpcClient();
 	client.setConfig(config);
