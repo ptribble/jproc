@@ -43,23 +43,22 @@ public final class PServer1 {
     /**
      * Constructs a PServer1 object.
      *
-     * @param psc the configuration to be applied
+     * @param config the configuration to be applied
      */
-    public PServer1(PServerConfig psc) {
+    public PServer1(PServerConfig config) {
 	try {
-	    WebServer webServer = new WebServer(psc.getPort());
+	    WebServer webServer = new WebServer(config.getPort());
 	    XmlRpcServer xmlRpcServer = webServer.getXmlRpcServer();
 	    PropertyHandlerMapping phm = new PropertyHandlerMapping();
-	    phm.load(Thread.currentThread().getContextClassLoader(),
-                   "properties/PServer1.properties");
+	    phm.addHandler("JProcServer", JProcServer.class);
 	    xmlRpcServer.setHandlerMapping(phm);
 	    XmlRpcServerConfigImpl serverConfig =
 		(XmlRpcServerConfigImpl) xmlRpcServer.getConfig();
 	    serverConfig.setContentLengthOptional(false);
 
 	    webServer.start();
-	    if (psc.shouldRegister()) {
-		registerService(psc);
+	    if (config.shouldRegister()) {
+		registerService(config);
 	    }
 	} catch (Exception e) {
 	    System.err.println("Server failed to start!");
@@ -69,17 +68,18 @@ public final class PServer1 {
     /*
      * Register this server in mdns, with the type "_jproc._tcp"
      */
-    private void registerService(PServerConfig psc) {
+    private void registerService(PServerConfig config) {
 	try {
-	    jmdns = JmDNS.create(psc.getInetAddress());
+	    jmdns = JmDNS.create(config.getInetAddress());
 	    ServiceInfo serviceInfo = ServiceInfo.create("_jproc._tcp.local.",
-		    "JProc/" + psc.getHostname(),
-		    psc.getPort(),
+		    "JProc/" + config.getHostname(),
+		    config.getPort(),
 		    "path=/");
             jmdns.registerService(serviceInfo);
 	    Thread exitHook = new Thread(() -> this.unRegisterService());
 	    Runtime.getRuntime().addShutdownHook(exitHook);
-	    System.out.println("Service registered on " + psc.getInetAddress());
+	    System.out.println("Service registered on "
+			       + config.getInetAddress());
 	} catch (IOException e) {
             System.err.println(e.getMessage());
         }
@@ -105,16 +105,16 @@ public final class PServer1 {
      * @param args command line arguments
      */
     public static void main(String[] args) {
-	PServerConfig psc = new PServerConfig();
+	PServerConfig config = new PServerConfig();
 	int i = 0;
 	while (i < args.length) {
 	    if ("-m".equals(args[i])) {
-		psc.setRegister(true);
+		config.setRegister(true);
 	    } else if ("-p".equals(args[i])) {
 		if (i + 1 < args.length) {
 		    i++;
 		    try {
-			psc.setPort(Integer.parseInt(args[i]));
+			config.setPort(Integer.parseInt(args[i]));
 		    } catch (NumberFormatException nfe) {
 			usage();
 		    }
@@ -126,7 +126,7 @@ public final class PServer1 {
 		    i++;
 		    File f = new File(args[i]);
 		    if (f.exists()) {
-			psc.parseConfig(f);
+			config.parseConfig(f);
 		    } else {
 			usage();
 		    }
@@ -138,6 +138,6 @@ public final class PServer1 {
 	    }
 	    i++;
 	}
-	new PServer1(psc);
+	new PServer1(config);
     }
 }
