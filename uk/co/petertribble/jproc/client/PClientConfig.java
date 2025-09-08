@@ -34,7 +34,7 @@ import java.net.MalformedURLException;
  *
  * @author Peter Tribble
  */
-public class PClientConfig {
+public final class PClientConfig {
 
     /**
      * Represents an XML-RPC client/server configuration.
@@ -71,7 +71,7 @@ public class PClientConfig {
     /**
      * Create a PClientConfig that is configured to connect to a given url.
      *
-     * @param s  the textual url of the server to connect to
+     * @param s the textual url of the server to connect to
      */
     public PClientConfig(String s) {
 	this(s, CLIENT_XMLRPC);
@@ -80,8 +80,8 @@ public class PClientConfig {
     /**
      * Create a PClientConfig that is configured to connect to a given url.
      *
-     * @param s  the textual url of the server to connect to
-     * @param protocol  specifies the communication protocol
+     * @param s the textual url of the server to connect to
+     * @param protocol specifies the communication protocol
      */
     public PClientConfig(String s, int protocol) {
 	urlString = s;
@@ -99,7 +99,7 @@ public class PClientConfig {
      * Pass a password to use for authentication
      * Protocol an integer representing the communication protocol
      *
-     * @param f  the File to read the configuration from.
+     * @param f the File to read the configuration from.
      */
     public PClientConfig(File f) {
 	if (f.exists()) {
@@ -119,7 +119,7 @@ public class PClientConfig {
      * useful.
      *
      * @return whether this PClientConfig has enough configuration to be
-     * useful.
+     * useful
      */
     public boolean isConfigured() {
 	return urlString != null && !"".equals(urlString);
@@ -141,7 +141,7 @@ public class PClientConfig {
      *
      * @see #getUser
      *
-     * @param username  the username to connect as.
+     * @param username the username to connect as
      */
     public void setUser(String username) {
 	this.username = username;
@@ -152,7 +152,7 @@ public class PClientConfig {
      *
      * @see #setUser
      *
-     * @return  the username to connect as.
+     * @return the username to connect as
      */
     public String getUser() {
 	return username;
@@ -163,7 +163,7 @@ public class PClientConfig {
      *
      * @see #getPass
      *
-     * @param userpass  the password to use for authentication.
+     * @param userpass the password to use for authentication
      */
     public void setPass(String userpass) {
 	this.userpass = userpass;
@@ -174,7 +174,7 @@ public class PClientConfig {
      *
      * @see #setPass
      *
-     * @return  the password to use for authentication.
+     * @return the password to use for authentication
      */
     public String getPass() {
 	return userpass;
@@ -185,7 +185,7 @@ public class PClientConfig {
      *
      * @see #getServerURL
      *
-     * @param s  the server to connect to.
+     * @param s the server to connect to
      */
     public void setServerURL(String s) {
 	urlString = s;
@@ -196,7 +196,7 @@ public class PClientConfig {
      *
      * @see #getProtocol
      *
-     * @param protocol  an integer representing the communication protocol
+     * @param protocol an integer representing the communication protocol
      */
     public void setProtocol(int protocol) {
 	this.protocol = protocol;
@@ -220,7 +220,7 @@ public class PClientConfig {
      *
      * @throws MalformedURLException if the URL is invalid
      *
-     * @return  the URL of the server to connect to.
+     * @return the URL of the server to connect to
      */
     public URL getServerURL() throws MalformedURLException {
 	try {
