@@ -37,7 +37,7 @@ public class JPGroupId {
      */
     @GET
     @Produces("application/json")
-    public String getGroupId(@PathParam("group") String group) {
+    public String getGroupId(@PathParam("group") final String group) {
 	return Integer.toString(JPROC.getGroupId(group));
     }
 }

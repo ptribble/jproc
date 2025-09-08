@@ -45,7 +45,7 @@ public final class PServer1 {
      *
      * @param config the configuration to be applied
      */
-    public PServer1(PServerConfig config) {
+    public PServer1(final PServerConfig config) {
 	try {
 	    WebServer webServer = new WebServer(config.getPort());
 	    XmlRpcServer xmlRpcServer = webServer.getXmlRpcServer();
@@ -68,7 +68,7 @@ public final class PServer1 {
     /*
      * Register this server in mdns, with the type "_jproc._tcp"
      */
-    private void registerService(PServerConfig config) {
+    private void registerService(final PServerConfig config) {
 	try {
 	    jmdns = JmDNS.create(config.getInetAddress());
 	    ServiceInfo serviceInfo = ServiceInfo.create("_jproc._tcp.local.",
@@ -104,7 +104,7 @@ public final class PServer1 {
      *
      * @param args command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 	PServerConfig config = new PServerConfig();
 	int i = 0;
 	while (i < args.length) {

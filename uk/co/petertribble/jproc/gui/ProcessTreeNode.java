@@ -38,7 +38,7 @@ public final class ProcessTreeNode extends DefaultMutableTreeNode {
      *
      * @param process the JProcess to be represented by this node
      */
-    public ProcessTreeNode(JProcess process) {
+    public ProcessTreeNode(final JProcess process) {
 	super(process);
     }
 

@@ -60,7 +60,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
      * @param jproc a JProc object
      * @param jpf a JProcessFilter describing the list of processes to show
      */
-    public ZoneInfoTableModel(JProc jproc, JProcessFilter jpf) {
+    public ZoneInfoTableModel(final JProc jproc, final JProcessFilter jpf) {
 	this.jpf = jpf;
 	this.jproc = jproc;
 
@@ -89,7 +89,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
      *
      * @param uid The userid to show.
      */
-    public void setUser(int uid) {
+    public void setUser(final int uid) {
 	jpf.setUser(uid);
 	updateJprocess();
     }
@@ -162,7 +162,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
      * to display a subset of the columns, or change the order, without
      * changing the subsequent methods.
      */
-    private int mapColumn(int col) {
+    private int mapColumn(final int col) {
 	return colMap.get(col);
     }
 
@@ -173,12 +173,12 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
      *
      * @return the zoneid of the given row
      */
-    public int getZone(int row) {
+    public int getZone(final int row) {
 	return zoneids.get(row);
     }
 
     @Override
-    public String getColumnName(int col) {
+    public String getColumnName(final int col) {
 	return COLNAMES[mapColumn(col)];
     }
 
@@ -191,7 +191,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
      * be revised if performance is inadequate.
      */
 
-    private long aggrNPROC(int uid) {
+    private long aggrNPROC(final int uid) {
 	long np = 0;
 	for (JProcInfo jpi : vpi) {
 	    if (jpi.getzoneid() == uid) {
@@ -201,7 +201,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	return np;
     }
 
-    private long aggrNLWP(int uid) {
+    private long aggrNLWP(final int uid) {
 	long nlwp = 0;
 	for (JProcInfo jpi : vpi) {
 	    if (jpi.getzoneid() == uid) {
@@ -211,7 +211,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	return nlwp;
     }
 
-    private long aggrSIZE(int uid) {
+    private long aggrSIZE(final int uid) {
 	long size = 0;
 	for (JProcInfo jpi : vpi) {
 	    if (jpi.getzoneid() == uid) {
@@ -221,7 +221,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	return size;
     }
 
-    private long aggrRSS(int uid) {
+    private long aggrRSS(final int uid) {
 	long rss = 0;
 	for (JProcInfo jpi : vpi) {
 	    if (jpi.getzoneid() == uid) {
@@ -231,7 +231,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
 	return rss;
     }
 
-    private double aggrTIME(int uid) {
+    private double aggrTIME(final int uid) {
 	double time = 0;
 	for (JProcInfo jpi : vpi) {
 	    if (jpi.getzoneid() == uid) {
@@ -245,7 +245,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
      * Return the appropriate data.
      */
     @Override
-    public Object getValueAt(int row, int icol) {
+    public Object getValueAt(final int row, final int icol) {
 	int col = mapColumn(icol);
 	int uid = zoneids.get(row);
 	if (col == 0) {
@@ -272,7 +272,7 @@ public final class ZoneInfoTableModel extends AbstractTableModel {
     }
 
     @Override
-    public Class<?> getColumnClass(int c) {
+    public Class<?> getColumnClass(final int c) {
 	int mcol = mapColumn(c);
 	if (mcol == 0) {
 	    return String.class;

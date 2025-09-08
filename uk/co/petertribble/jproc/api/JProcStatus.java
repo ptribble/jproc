@@ -52,9 +52,11 @@ public class JProcStatus {
      * @param cstime  sum of child sys time
      * @param ncstime  sum of child sys time, nanosecond part
      */
-    public void insert(int pid,
-			long utime, long nutime, long stime, long nstime,
-			long cutime, long ncutime, long cstime, long ncstime) {
+    public void insert(final int pid,
+		       final long utime, final long nutime,
+		       final long stime, final long nstime,
+		       final long cutime, final long ncutime,
+		       final long cstime, final long ncstime) {
 	this.pid = pid;
 	this.utime = utime;
 	this.nutime = nutime;

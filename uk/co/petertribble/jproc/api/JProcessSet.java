@@ -55,7 +55,7 @@ public class JProcessSet implements Serializable {
      *
      * @param jproc a JProc object.
      */
-    public JProcessSet(JProc jproc) {
+    public JProcessSet(final JProc jproc) {
 	this.jproc = jproc;
 	currentProcesses = jproc.getProcesses();
 	addedProcesses = new HashSet<>();
@@ -122,7 +122,7 @@ public class JProcessSet implements Serializable {
      *
      * @return The Set of current users.
      */
-    public Set<String> getUsers(Set<JProcess> processes) {
+    public Set<String> getUsers(final Set<JProcess> processes) {
 	Set<String> users = new HashSet<>();
 	for (JProcess jp : processes) {
 	    users.add(jproc.getUserName(jp.getCachedInfo().getuid()));
@@ -146,7 +146,7 @@ public class JProcessSet implements Serializable {
      *
      * @return The Set of current zones.
      */
-    public Set<String> getZones(Set<JProcess> processes) {
+    public Set<String> getZones(final Set<JProcess> processes) {
 	Set<String> zones = new HashSet<>();
 	for (JProcess jp : processes) {
 	    zones.add(jproc.getZoneName(jp.getCachedInfo().getzoneid()));
@@ -170,7 +170,7 @@ public class JProcessSet implements Serializable {
      *
      * @return The Set of current task ids.
      */
-    public Set<Integer> getTasks(Set<JProcess> processes) {
+    public Set<Integer> getTasks(final Set<JProcess> processes) {
 	Set<Integer> tasks = new HashSet<>();
 	for (JProcess jp : processes) {
 	    tasks.add(jp.getCachedInfo().gettaskid());
@@ -194,7 +194,7 @@ public class JProcessSet implements Serializable {
      *
      * @return The Set of current project ids.
      */
-    public Set<Integer> getProjects(Set<JProcess> processes) {
+    public Set<Integer> getProjects(final Set<JProcess> processes) {
 	Set<Integer> projects = new HashSet<>();
 	for (JProcess jp : processes) {
 	    projects.add(jp.getCachedInfo().getprojid());

@@ -47,7 +47,8 @@ public final class LWPusageFrame extends JFrame {
      * @param jp The JProcess to display
      * @param interval the display update interval, in seconds
      */
-    public LWPusageFrame(JProc jproc, JProcess jp, int interval) {
+    public LWPusageFrame(final JProc jproc, final JProcess jp,
+			 final int interval) {
 
 	setTitle(JProcResources.getString("THREAD.TITLE") + " " + jp.getPid());
 	setLayout(new BorderLayout());
@@ -69,7 +70,7 @@ public final class LWPusageFrame extends JFrame {
      */
     class WindowExit extends WindowAdapter {
 	@Override
-	public void windowClosing(WindowEvent we) {
+	public void windowClosing(final WindowEvent we) {
 	    lup.stopLoop();
 	}
     }

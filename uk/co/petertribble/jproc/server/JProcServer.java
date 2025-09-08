@@ -59,7 +59,7 @@ public final class JProcServer {
      *
      * @return a JSON encoded array of lwps
      */
-    public String getLwps(int pid) {
+    public String getLwps(final int pid) {
 	Set<JLwp> lwps = JPROC.getLwps(pid);
 	if (lwps == null) {
 	    return "";
@@ -80,7 +80,7 @@ public final class JProcServer {
      *
      * @return a JSON String containing info on the given pid
      */
-    public String getInfo(int pid) {
+    public String getInfo(final int pid) {
 	JProcInfo jpi = JPROC.getInfo(pid);
 	return (jpi == null) ? "" : jpi.toJSON();
     }
@@ -93,7 +93,7 @@ public final class JProcServer {
      *
      * @return a JSON String containing info on the given pid
      */
-    public String getLwpInfo(int pid, int lwpid) {
+    public String getLwpInfo(final int pid, final int lwpid) {
 	JProcLwpInfo jpi = JPROC.getInfo(pid, lwpid);
 	return (jpi == null) ? "" : jpi.toJSON();
     }
@@ -105,7 +105,7 @@ public final class JProcServer {
      *
      * @return a JSON String containing the status of the given pid
      */
-    public String getStatus(int pid) {
+    public String getStatus(final int pid) {
 	JProcStatus jps = JPROC.getStatus(pid);
 	return (jps == null) ? "" : jps.toJSON();
     }
@@ -118,7 +118,7 @@ public final class JProcServer {
      *
      * @return a JSON String containing the status of the given pid
      */
-    public String getLwpStatus(int pid, int lwpid) {
+    public String getLwpStatus(final int pid, final int lwpid) {
 	JProcLwpStatus jps = JPROC.getStatus(pid, lwpid);
 	return (jps == null) ? "" : jps.toJSON();
     }
@@ -130,7 +130,7 @@ public final class JProcServer {
      *
      * @return a JSON String containing the usage details of the given pid
      */
-    public String getUsage(int pid) {
+    public String getUsage(final int pid) {
 	JProcUsage jpu = JPROC.getUsage(pid);
 	return (jpu == null) ? "" : jpu.toJSON();
     }
@@ -144,7 +144,7 @@ public final class JProcServer {
      * @return a JSON String containing the usage details of the given pid and
      * lwp
      */
-    public String getLwpUsage(int pid, int lwpid) {
+    public String getLwpUsage(final int pid, final int lwpid) {
 	JProcUsage jpu = JPROC.getUsage(pid, lwpid);
 	return (jpu == null) ? "" : jpu.toJSON();
     }
@@ -156,7 +156,7 @@ public final class JProcServer {
      *
      * @return The user name, or the user id if no user matches.
      */
-    public String getUserName(int uid) {
+    public String getUserName(final int uid) {
 	return JPROC.getUserName(uid);
     }
 
@@ -167,7 +167,7 @@ public final class JProcServer {
      *
      * @return The user id, or -1 if no user matches.
      */
-    public int getUserId(String username) {
+    public int getUserId(final String username) {
 	return JPROC.getUserId(username);
     }
 
@@ -178,7 +178,7 @@ public final class JProcServer {
      *
      * @return The group name, or the groupid if no group matches.
      */
-    public String getGroupName(int gid) {
+    public String getGroupName(final int gid) {
 	return JPROC.getGroupName(gid);
     }
 
@@ -189,7 +189,7 @@ public final class JProcServer {
      *
      * @return The group id, or -1 if no group matches.
      */
-    public int getGroupId(String group) {
+    public int getGroupId(final String group) {
 	return JPROC.getGroupId(group);
     }
 
@@ -200,7 +200,7 @@ public final class JProcServer {
      *
      * @return The project name, or the project id if no project matches.
      */
-    public String getProjectName(int projid) {
+    public String getProjectName(final int projid) {
 	return JPROC.getProjectName(projid);
     }
 
@@ -211,7 +211,7 @@ public final class JProcServer {
      *
      * @return The project id, or -1 if no project matches.
      */
-    public int getProjectId(String project) {
+    public int getProjectId(final String project) {
 	return JPROC.getProjectId(project);
     }
 
@@ -222,7 +222,7 @@ public final class JProcServer {
      *
      * @return The zone name, or the zone id if no zone matches.
      */
-    public String getZoneName(int zoneid) {
+    public String getZoneName(final int zoneid) {
 	return JPROC.getZoneName(zoneid);
     }
 
@@ -233,7 +233,7 @@ public final class JProcServer {
      *
      * @return The zone id, or -1 if no zone matches.
      */
-    public int getZoneId(String zone) {
+    public int getZoneId(final String zone) {
 	return JPROC.getZoneId(zone);
     }
 }

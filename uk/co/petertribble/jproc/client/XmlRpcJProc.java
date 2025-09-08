@@ -40,7 +40,7 @@ public class XmlRpcJProc extends ProcessInterface {
      *
      * @param pcc a PClientConfig containing client configuration
      */
-    public XmlRpcJProc(PClientConfig pcc) {
+    public XmlRpcJProc(final PClientConfig pcc) {
 	super();
 	client = new JProcClient(pcc);
     }
@@ -69,7 +69,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * @return A Set of JLwp objects representing the lwps in this process.
      */
     @Override
-    public Set<JLwp> getLwps(int pid) {
+    public Set<JLwp> getLwps(final int pid) {
 	try {
 	    String m = (String) client.execute("getLwps",
 					new Object[] {pid});
@@ -88,7 +88,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * if the process does not exist
      */
     @Override
-    public JProcStatus getStatus(int pid) {
+    public JProcStatus getStatus(final int pid) {
 	try {
 	    String m = (String) client.execute("getStatus", new Object[] {pid});
 	    return JSONParser.getStatus(m);
@@ -107,7 +107,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * if the process or lwp does not exist
      */
     @Override
-    public JProcLwpStatus getLwpStatus(int pid, int lwpid) {
+    public JProcLwpStatus getLwpStatus(final int pid, final int lwpid) {
 	try {
 	    String m = (String) client.execute("getLwpStatus",
 					new Object[] {pid, lwpid});
@@ -126,7 +126,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * if the process does not exist
      */
     @Override
-    public JProcInfo getInfo(int pid) {
+    public JProcInfo getInfo(final int pid) {
 	try {
 	    String m = (String) client.execute("getInfo", new Object[] {pid});
 	    return JSONParser.getInfo(m);
@@ -145,7 +145,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * if the process or lwp does not exist
      */
     @Override
-    public JProcLwpInfo getLwpInfo(int pid, int lwpid) {
+    public JProcLwpInfo getLwpInfo(final int pid, final int lwpid) {
 	try {
 	    String m = (String) client.execute("getLwpInfo",
 					new Object[] {pid, lwpid});
@@ -164,7 +164,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * if the process does not exist
      */
     @Override
-    public JProcUsage getUsage(int pid) {
+    public JProcUsage getUsage(final int pid) {
 	try {
 	    String m = (String) client.execute("getUsage", new Object[] {pid});
 	    return JSONParser.getUsage(m);
@@ -183,7 +183,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * if the process or lwp does not exist
      */
     @Override
-    public JProcUsage getLwpUsage(int pid, int lwpid) {
+    public JProcUsage getLwpUsage(final int pid, final int lwpid) {
 	try {
 	    String m = (String) client.execute("getLwpUsage",
 					new Object[] {pid, lwpid});
@@ -201,7 +201,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * @return The user name, or null if no user matches.
      */
     @Override
-    public String getUserName(int uid) {
+    public String getUserName(final int uid) {
 	try {
 	    return (String) client.execute("getUserName", new Object[] {uid});
 	} catch (XmlRpcException e) {
@@ -217,7 +217,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * @return The userid, or -1 if no user matches.
      */
     @Override
-    public int getUserId(String username) {
+    public int getUserId(final String username) {
 	try {
 	    return (Integer) client.execute("getUserId",
 					new Object[] {username});
@@ -234,7 +234,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * @return The group name, or null if no group matches.
      */
     @Override
-    public String getGroupName(int gid) {
+    public String getGroupName(final int gid) {
 	try {
 	    return (String) client.execute("getGroupName", new Object[] {gid});
 	} catch (XmlRpcException e) {
@@ -250,7 +250,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * @return The groupid, or -1 if no group matches.
      */
     @Override
-    public int getGroupId(String group) {
+    public int getGroupId(final String group) {
 	try {
 	    return (Integer) client.execute("getGroupId", new Object[] {group});
 	} catch (XmlRpcException e) {
@@ -266,7 +266,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * @return The project name, or null if no project matches.
      */
     @Override
-    public String getProjectName(int projid) {
+    public String getProjectName(final int projid) {
 	try {
 	    return (String) client.execute("getProjectName",
 					new Object[] {projid});
@@ -283,7 +283,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * @return The project id, or -1 if no project matches.
      */
     @Override
-    public int getProjectId(String project) {
+    public int getProjectId(final String project) {
 	try {
 	    return (Integer) client.execute("getProjectId",
 					new Object[] {project});
@@ -300,7 +300,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * @return The zone name, or null if no zone matches.
      */
     @Override
-    public String getZoneName(int zoneid) {
+    public String getZoneName(final int zoneid) {
 	try {
 	    return (String) client.execute("getZoneName",
 					new Object[] {zoneid});
@@ -317,7 +317,7 @@ public class XmlRpcJProc extends ProcessInterface {
      * @return The zone id, or -1 if no zone matches.
      */
     @Override
-    public int getZoneId(String zone) {
+    public int getZoneId(final String zone) {
 	try {
 	    return (Integer) client.execute("getZoneId", new Object[] {zone});
 	} catch (XmlRpcException e) {

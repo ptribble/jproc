@@ -37,7 +37,7 @@ public class ProcStatus {
      */
     @GET
     @Produces("application/json")
-    public String getStatus(@PathParam("pid") String pid) {
+    public String getStatus(@PathParam("pid") final String pid) {
 	JProcStatus jps = JPROC.getStatus(Integer.valueOf(pid));
 	return (jps == null) ? "" : jps.toJSON();
     }

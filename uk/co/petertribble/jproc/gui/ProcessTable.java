@@ -70,7 +70,8 @@ public final class ProcessTable extends JTable implements ActionListener {
      * @param process the JProcess to display
      * @param interval the initial update interval in seconds
      */
-    public ProcessTable(JProc jproc, JProcess process, int interval) {
+    public ProcessTable(final JProc jproc, final JProcess process,
+			final int interval) {
 	delay = interval * 1000;
 	ptm = new ProcessTableModel(jproc, process);
 	setModel(ptm);
@@ -109,7 +110,7 @@ public final class ProcessTable extends JTable implements ActionListener {
      *
      * @param interval the desired delay, in seconds
      */
-    public void setDelay(int interval) {
+    public void setDelay(final int interval) {
 	if (interval <= 0) {
 	    stopLoop();
 	} else {
@@ -135,7 +136,7 @@ public final class ProcessTable extends JTable implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	update();
     }
 
@@ -146,7 +147,7 @@ public final class ProcessTable extends JTable implements ActionListener {
     public final class SizeRenderer extends DefaultTableCellRenderer {
 	private static final long serialVersionUID = 1L;
 	@Override
-	public void setValue(Object value) {
+	public void setValue(final Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
 	    setText(value instanceof Long
 		    ? PrettyFormat.memscale((Long) value) : "");
@@ -160,7 +161,7 @@ public final class ProcessTable extends JTable implements ActionListener {
     public final class TimeRenderer extends DefaultTableCellRenderer {
 	private static final long serialVersionUID = 1L;
 	@Override
-	public void setValue(Object value) {
+	public void setValue(final Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
 	    setText(value instanceof Double
 		    ? PrettyFormat.timescale((Double) value) : "");
@@ -168,7 +169,7 @@ public final class ProcessTable extends JTable implements ActionListener {
     }
 
     @Override
-    public TableCellRenderer getCellRenderer(int row, int col) {
+    public TableCellRenderer getCellRenderer(final int row, final int col) {
 	if ((row == 1 || row == 2) && (col == 1 || col == 2)) {
 	    return sizeRenderer;
 	}

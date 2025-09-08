@@ -118,7 +118,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      *
      * @param demoname  a String used as the demo title.
      */
-    public JPdemo(String demoname) {
+    public JPdemo(final String demoname) {
 	this(demoname, DEFAULT_INTERVAL, true);
     }
 
@@ -129,7 +129,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      * @param standalone  a boolean, true if the demo is a standalone
      * application.
      */
-    public JPdemo(String demoname, boolean standalone) {
+    public JPdemo(final String demoname, final boolean standalone) {
 	this(demoname, DEFAULT_INTERVAL, standalone);
     }
 
@@ -139,7 +139,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      * @param demoname  a String used as the demo title.
      * @param interval  the update delay in seconds.
      */
-    public JPdemo(String demoname, int interval) {
+    public JPdemo(final String demoname, final int interval) {
 	this(demoname, interval, true);
     }
 
@@ -151,7 +151,8 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      * @param standalone  a boolean, true if the demo is a standalone
      * application.
      */
-    public JPdemo(String demoname, int interval, boolean standalone) {
+    public JPdemo(final String demoname, final int interval,
+		  final boolean standalone) {
 	super(demoname);
 	this.demoname = demoname;
 	this.interval = interval;
@@ -248,7 +249,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      * @param mainPanel  a JPanel object to add the informational panel to.
      * @param sinfo  a String used as text in the informational panel.
      */
-    public void addInfoPanel(JPanel mainPanel, String sinfo) {
+    public void addInfoPanel(final JPanel mainPanel, final String sinfo) {
 	JPanel infoPanel = new JPanel(new BorderLayout());
 	infoLabel = new JLabel();
 	setLabelDelay(DEFAULT_INTERVAL);
@@ -262,14 +263,14 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      *
      * @param i The update delay in seconds
      */
-    protected void setLabelDelay(int i) {
+    protected void setLabelDelay(final int i) {
 	infoLabel.setText(JProcResources.getString("SLEEP.UPDATE") + " " + i
 		+ JProcResources.getString("SLEEP.SEC"));
     }
 
     class WindowExit extends WindowAdapter {
 	@Override
-	public void windowClosing(WindowEvent we) {
+	public void windowClosing(final WindowEvent we) {
 	    if (standalone) {
 		System.exit(0);
 	    } else {
@@ -305,7 +306,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      * @param e the ActionEvent which will trigger this action
      */
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	if (e.getSource() == exitItem) {
 	    if (standalone) {
 		System.exit(0);

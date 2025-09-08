@@ -42,7 +42,7 @@ public class JProcClient {
      * @param pcc  Holds the configuration with details of how to contact the
      * server.
      */
-    public JProcClient(PClientConfig pcc) {
+    public JProcClient(final PClientConfig pcc) {
 	XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
 	try {
 	    config.setServerURL(pcc.getServerURL());
@@ -66,7 +66,7 @@ public class JProcClient {
      * @throws  XmlRpcException An exception, passed up from XML-RPC if the
      * remote procedure call failed.
      */
-    public Object execute(String method) throws XmlRpcException {
+    public Object execute(final String method) throws XmlRpcException {
 	return client.execute("JProcServer." + method, new Object[0]);
     }
 
@@ -84,7 +84,8 @@ public class JProcClient {
      * @throws  XmlRpcException An exception, passed up from XML-RPC if the
      * remote procedure call failed.
      */
-    public Object execute(String method, Object[] args) throws XmlRpcException {
+    public Object execute(final String method, final Object[] args)
+		throws XmlRpcException {
 	return client.execute("JProcServer." + method, args);
     }
 }

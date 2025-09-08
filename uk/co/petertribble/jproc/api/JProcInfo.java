@@ -135,12 +135,15 @@ public class JProcInfo implements Serializable {
      * @param prContract  process contract
      * @param prFname  name of execed file
      */
-    public void insert(int prPid, int prPpid, int prUid, int prEuid,
-			int prGid, int prEgid, int prNlwp,
-			long prSize, long prRssize, long stime,
-			long etime, long ntime, long ectime, long nctime,
-			int prTaskid, int prProjid, int prZoneid,
-			int prContract, String prFname) {
+    public void insert(final int prPid, final int prPpid,
+		       final int prUid, final int prEuid,
+		       final int prGid, final int prEgid, final int prNlwp,
+		       final long prSize, final long prRssize,
+		       final long stime, final long etime, final long ntime,
+		       final long ectime, final long nctime,
+		       final int prTaskid, final int prProjid,
+		       final int prZoneid, final int prContract,
+		       final String prFname) {
 	this.prPid = prPid;
 	this.prPpid = prPpid;
 	this.prUid = prUid;

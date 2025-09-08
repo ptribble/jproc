@@ -41,7 +41,7 @@ public class NoSuchProcessException extends Exception {
      *
      * @param s the text of the exception
      */
-    public NoSuchProcessException(String s) {
+    public NoSuchProcessException(final String s) {
 	super(s);
     }
 }

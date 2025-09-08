@@ -37,7 +37,7 @@ public class ProcInfo {
      */
     @GET
     @Produces("application/json")
-    public String getInfo(@PathParam("pid") String pid) {
+    public String getInfo(@PathParam("pid") final String pid) {
 	JProcInfo jpi = JPROC.getInfo(Integer.valueOf(pid));
 	return (jpi == null) ? "" : jpi.toJSON();
     }

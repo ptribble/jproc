@@ -45,7 +45,7 @@ public final class ProcessExitedTableModel extends AbstractTableModel {
     }
 
     @Override
-    public String getColumnName(int col) {
+    public String getColumnName(final int col) {
 	return "Status";
     }
 
@@ -53,12 +53,12 @@ public final class ProcessExitedTableModel extends AbstractTableModel {
      * Return the appropriate data.
      */
     @Override
-    public Object getValueAt(int row, int col) {
+    public Object getValueAt(final int row, final int col) {
 	return "Process has exited";
     }
 
     @Override
-    public Class<?> getColumnClass(int c) {
+    public Class<?> getColumnClass(final int c) {
 	return String.class;
     }
 }

@@ -38,8 +38,8 @@ public class LwpInfo {
      */
     @GET
     @Produces("application/json")
-    public String getLwpInfo(@PathParam("pid") String pid,
-			    @PathParam("lwpid") String lwpid) {
+    public String getLwpInfo(@PathParam("pid") final String pid,
+			    @PathParam("lwpid") final String lwpid) {
 	JProcLwpInfo jpi = JPROC.getInfo(Integer.valueOf(pid),
 					 Integer.valueOf(lwpid));
 	return (jpi == null) ? "" : jpi.toJSON();

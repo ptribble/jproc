@@ -36,7 +36,7 @@ public final class JLwp {
      * @param pid  The process id of the containing process.
      * @param lwpid  The lwpid of the lwp.
      */
-    public JLwp(int pid, int lwpid) {
+    public JLwp(final int pid, final int lwpid) {
 	this.pid = pid;
 	this.lwpid = lwpid;
     }
@@ -83,7 +83,7 @@ public final class JLwp {
      * and lwpid as this {@code JLwp}.
      */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
 	if (o instanceof JLwp) {
 	    JLwp jlwp = (JLwp) o;
 	    return pid == jlwp.getPid() && lwpid == jlwp.getLWPid();

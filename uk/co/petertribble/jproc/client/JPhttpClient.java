@@ -42,7 +42,7 @@ public class JPhttpClient {
      * @param pcc holds the configuration with details of how to contact the
      * server
      */
-    public JPhttpClient(PClientConfig pcc) {
+    public JPhttpClient(final PClientConfig pcc) {
 	baseURL = pcc.remoteURL();
 	if (!baseURL.endsWith("/")) {
 	    baseURL = baseURL + "/";
@@ -59,7 +59,7 @@ public class JPhttpClient {
      *
      * @throws IOException if there was a problem communicating with the server
      */
-    public String execute(String method) throws IOException {
+    public String execute(final String method) throws IOException {
 	return doGet(method);
     }
 
@@ -74,7 +74,8 @@ public class JPhttpClient {
      *
      * @throws IOException if there was a problem communicating with the server
      */
-    public String execute(String method, String[] args) throws IOException {
+    public String execute(final String method, final String[] args)
+		throws IOException {
 	StringBuilder sb = new StringBuilder();
 	sb.append(method);
 	for (String s : args) {
@@ -83,7 +84,7 @@ public class JPhttpClient {
 	return doGet(sb.toString());
     }
 
-    private String doGet(String request) throws IOException {
+    private String doGet(final String request) throws IOException {
 	return httpclient.execute(new HttpGet(baseURL + request),
 					new BasicHttpClientResponseHandler());
     }

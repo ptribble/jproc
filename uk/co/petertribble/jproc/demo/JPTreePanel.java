@@ -92,7 +92,8 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
      * @param jpf a filter defining the processes to be shown
      * @param interval the initial update interval, in seconds
      */
-    public JPTreePanel(JProc jproc, JProcessFilter jpf, int interval) {
+    public JPTreePanel(final JProc jproc, final JProcessFilter jpf,
+		       final int interval) {
 	this.jproc = jproc;
 	this.jpf = jpf;
 	this.interval = interval;
@@ -168,7 +169,7 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
      *
      * @param i The new update delay in seconds
      */
-    public void setDelay(int i) {
+    public void setDelay(final int i) {
 	if (interval <= 0) {
 	    stopLoop();
 	} else {
@@ -185,7 +186,7 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
 	}
     }
 
-    private void showProcess(ProcessTreeNode ptn) {
+    private void showProcess(final ProcessTreeNode ptn) {
 	stopLoop();
 	ppanel.removeAll();
 	JPanel up = new JPanel(new BorderLayout());
@@ -215,7 +216,7 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	updateJprocess();
     }
 
@@ -304,7 +305,7 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
 
     // handle TreeSelectionListener events
     @Override
-    public void valueChanged(TreeSelectionEvent e) {
+    public void valueChanged(final TreeSelectionEvent e) {
 	TreePath tpth = e.getNewLeadSelectionPath();
 	if (tpth != null) {
 	    showProcess((ProcessTreeNode) tpth.getLastPathComponent());

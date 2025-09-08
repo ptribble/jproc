@@ -37,7 +37,7 @@ public class JPUserId {
      */
     @GET
     @Produces("application/json")
-    public String getUserId(@PathParam("username") String username) {
+    public String getUserId(@PathParam("username") final String username) {
 	return Integer.toString(JPROC.getUserId(username));
     }
 }

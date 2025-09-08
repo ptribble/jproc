@@ -63,7 +63,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
      * @param jproc a JProc object to query for process information
      * @param jp a JProcess to display
      */
-    public LWPusageTableModel(JProc jproc, JProcess jp) {
+    public LWPusageTableModel(final JProc jproc, final JProcess jp) {
 	this.jproc = jproc;
 	this.jp = jp;
 
@@ -143,7 +143,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
      * to display a subset of the columns, or change the order, without
      * changing the subsequent methods.
      */
-    private int mapColumn(int col) {
+    private int mapColumn(final int col) {
 	return colMap.get(col);
     }
 
@@ -161,7 +161,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
      *
      * @param s the name of the column to be removed
      */
-    public void removeColumn(String s) {
+    public void removeColumn(final String s) {
 	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
 	    if (COLNAMES[iter.next()].equals(s)) {
@@ -176,7 +176,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
      *
      * @param s the name of the column to be added
      */
-    public void addColumn(String s) {
+    public void addColumn(final String s) {
 	int icol = 0;
 	for (int i = 0; i < COLNAMES.length; i++) {
 	    if (COLNAMES[i].equals(s)) {
@@ -195,7 +195,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
     }
 
     @Override
-    public String getColumnName(int col) {
+    public String getColumnName(final int col) {
 	return COLNAMES[mapColumn(col)];
     }
 
@@ -203,7 +203,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
      * Return the appropriate data.
      */
     @Override
-    public Object getValueAt(int row, int icol) {
+    public Object getValueAt(final int row, final int icol) {
 	int col = mapColumn(icol);
 	JProcUsage jpu = vpu.get(row);
 	if (col == 0) {
@@ -258,7 +258,7 @@ public final class LWPusageTableModel extends AbstractTableModel {
     }
 
     @Override
-    public Class<?> getColumnClass(int c) {
+    public Class<?> getColumnClass(final int c) {
 	switch (mapColumn(c)) {
 	    case 0:
 		return Integer.class;

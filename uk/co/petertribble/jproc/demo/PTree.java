@@ -51,7 +51,7 @@ public final class PTree {
      *
      * @param pcc a PClientConfig containing client configuration
      */
-    public PTree(PClientConfig pcc) {
+    public PTree(final PClientConfig pcc) {
 	this(new JProc(pcc));
     }
 
@@ -60,7 +60,7 @@ public final class PTree {
      *
      * @param pid the process id to display
      */
-    public PTree(int pid) {
+    public PTree(final int pid) {
 	this(new JProc(), pid);
     }
 
@@ -70,7 +70,7 @@ public final class PTree {
      * @param pcc a PClientConfig containing client configuration
      * @param pid the process id to display
      */
-    public PTree(PClientConfig pcc, int pid) {
+    public PTree(final PClientConfig pcc, final int pid) {
 	this(new JProc(pcc), pid);
     }
 
@@ -79,7 +79,7 @@ public final class PTree {
      *
      * @param jp a JProc to query for process information
      */
-    public PTree(JProc jp) {
+    public PTree(final JProc jp) {
 	buildtree(jp);
 	printit((ProcessTreeNode) nodemap.get(nodemap.firstKey()).getRoot());
     }
@@ -90,12 +90,12 @@ public final class PTree {
      * @param jp a JProc to query for process information
      * @param pid the process id to display
      */
-    public PTree(JProc jp, int pid) {
+    public PTree(final JProc jp, final int pid) {
 	buildtree(jp);
 	printit(pmap.get(pid));
     }
 
-    private void buildtree(JProc jp) {
+    private void buildtree(final JProc jp) {
 	pmap = new TreeMap<>();
 	nodemap = new TreeMap<>();
 	// create a node for each process
@@ -118,7 +118,7 @@ public final class PTree {
      * This prints the entire tree below this process, but just the direct
      * ancestors. Fortunately the TreeNode api gives us that information.
      */
-    private void printit(JProcess p) {
+    private void printit(final JProcess p) {
 	if (p != null) {
 	    ProcessTreeNode ptn = nodemap.get(p.getPid());
 	    TreeNode[] ppath = ptn.getPath();
@@ -132,18 +132,18 @@ public final class PTree {
 	}
     }
 
-    private void printit(ProcessTreeNode ptn) {
+    private void printit(final ProcessTreeNode ptn) {
 	printit(ptn, "");
     }
 
-    private void printit(ProcessTreeNode ptn, String indent) {
+    private void printit(final ProcessTreeNode ptn, final String indent) {
 	printone(ptn.getProcess(), indent);
 	for (Enumeration e = ptn.children(); e.hasMoreElements();) {
 	    printit((ProcessTreeNode) e.nextElement(), indent + "  ");
 	}
     }
 
-    private void printone(JProcess p, String indent) {
+    private void printone(final JProcess p, final String indent) {
 	System.out.println(indent + p.getPid() + " "
 			+ p.getCachedInfo().getfname());
     }
@@ -153,7 +153,7 @@ public final class PTree {
      *
      * @param args  Command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 	if (args.length == 0) {
 	    new PTree();
 	} else if (args.length == 1) {

@@ -43,7 +43,7 @@ public final class JProcResources {
      *
      * @return The matching String from the resource bundle.
      */
-    public static String getString(String key) {
+    public static String getString(final String key) {
 	return JPROCRES.getString(key);
     }
 }

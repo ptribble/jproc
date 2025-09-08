@@ -37,7 +37,7 @@ public class ProcUsage {
      */
     @GET
     @Produces("application/json")
-    public String getUsage(@PathParam("pid") String pid) {
+    public String getUsage(@PathParam("pid") final String pid) {
 	JProcUsage jpu = JPROC.getUsage(Integer.valueOf(pid));
 	return (jpu == null) ? "" : jpu.toJSON();
     }

@@ -92,7 +92,7 @@ public final class JPusage extends JPdemo implements ActionListener {
      *
      * @param pcc a PClientConfig containing client configuration
      */
-    public JPusage(PClientConfig pcc) {
+    public JPusage(final PClientConfig pcc) {
 	this(new JProc(pcc), true);
     }
 
@@ -102,7 +102,7 @@ public final class JPusage extends JPdemo implements ActionListener {
      * @param jproc a JProc object to query for process information
      * @param standalone  a boolean, true if the demo is a standalone
      */
-    public JPusage(JProc jproc, boolean standalone) {
+    public JPusage(final JProc jproc, final boolean standalone) {
 	super("JPusage", standalone);
 	this.jproc = jproc;
 
@@ -161,7 +161,7 @@ public final class JPusage extends JPdemo implements ActionListener {
     /*
      * Hide the named column.
      */
-    private void removeColumn(JCheckBoxMenuItem jmi) {
+    private void removeColumn(final JCheckBoxMenuItem jmi) {
 	jmi.setSelected(false);
 	jpup.removeColumn(jmi.getText());
     }
@@ -169,7 +169,7 @@ public final class JPusage extends JPdemo implements ActionListener {
     /*
      * Show the named column.
      */
-    private void addColumn(JCheckBoxMenuItem jmi) {
+    private void addColumn(final JCheckBoxMenuItem jmi) {
 	jmi.setSelected(true);
 	jpup.addColumn(jmi.getText());
     }
@@ -219,7 +219,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	jm.add(zoneMenu);
     }
 
-    private void handleUser(JCheckBoxMenuItem jmi) {
+    private void handleUser(final JCheckBoxMenuItem jmi) {
 	boolean selected = jmi.isSelected();
 	if (jmi == allUserItem) {
 	    if (selected) {
@@ -252,7 +252,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	}
     }
 
-    private void handleZone(JCheckBoxMenuItem jmi) {
+    private void handleZone(final JCheckBoxMenuItem jmi) {
 	boolean selected = jmi.isSelected();
 	if (jmi == allZoneItem) {
 	    if (selected) {
@@ -285,7 +285,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	}
     }
 
-    private void handleColumn(JCheckBoxMenuItem jmi) {
+    private void handleColumn(final JCheckBoxMenuItem jmi) {
 	if (jmi.isSelected()) {
 	    addColumn(jmi);
 	} else {
@@ -299,13 +299,13 @@ public final class JPusage extends JPdemo implements ActionListener {
     }
 
     @Override
-    public void setDelay(int i) {
+    public void setDelay(final int i) {
 	jpup.setDelay(i);
 	setLabelDelay(i);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	super.actionPerformed(e);
 	if (e.getSource() == allUserItem) {
 	    handleUser((JCheckBoxMenuItem) e.getSource());
@@ -329,7 +329,7 @@ public final class JPusage extends JPdemo implements ActionListener {
      *
      * @param args command line arguments, ignored
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 	if (args.length == 0) {
 	    new JPusage();
 	} else if (args.length == 2) {

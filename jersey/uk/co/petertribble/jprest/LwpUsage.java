@@ -38,8 +38,8 @@ public class LwpUsage {
      */
     @GET
     @Produces("application/json")
-    public String getLwpUsage(@PathParam("pid") String pid,
-			    @PathParam("lwpid") String lwpid) {
+    public String getLwpUsage(@PathParam("pid") final String pid,
+			    @PathParam("lwpid") final String lwpid) {
 	JProcUsage jpu = JPROC.getUsage(Integer.valueOf(pid),
 					Integer.valueOf(lwpid));
 	return (jpu == null) ? "" : jpu.toJSON();

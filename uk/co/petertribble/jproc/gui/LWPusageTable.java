@@ -64,7 +64,8 @@ public final class LWPusageTable extends JTable implements ActionListener {
      * @param jp the process to be shown
      * @param interval the initial update interval, in seconds
      */
-    public LWPusageTable(JProc jproc, JProcess jp, int interval) {
+    public LWPusageTable(final JProc jproc, final JProcess jp,
+			 final int interval) {
 	setLayout(new BorderLayout());
 
 	ftm = new LWPusageTableModel(jproc, jp);
@@ -78,7 +79,7 @@ public final class LWPusageTable extends JTable implements ActionListener {
 	    new DefaultTableCellRenderer() {
 		private static final long serialVersionUID = 1L;
 		@Override
-		public void setValue(Object value) {
+		public void setValue(final Object value) {
 		    // We know it's a Double, we wrote the model
 		    setText(value instanceof Double
 			    ? PrettyFormat.timescale((Double) value) : "");
@@ -128,7 +129,7 @@ public final class LWPusageTable extends JTable implements ActionListener {
      *
      * @param s the name of the column to be removed
      */
-    public void removeColumn(String s) {
+    public void removeColumn(final String s) {
 	ftm.removeColumn(s);
 	setRenderers();
     }
@@ -138,7 +139,7 @@ public final class LWPusageTable extends JTable implements ActionListener {
      *
      * @param s the name of the column to be added
      */
-    public void addColumn(String s) {
+    public void addColumn(final String s) {
 	ftm.addColumn(s);
 	setRenderers();
     }
@@ -171,7 +172,7 @@ public final class LWPusageTable extends JTable implements ActionListener {
      *
      * @param interval the desired delay, in seconds
      */
-    public void setDelay(int interval) {
+    public void setDelay(final int interval) {
 	if (interval <= 0) {
 	    stopLoop();
 	} else {
@@ -197,7 +198,7 @@ public final class LWPusageTable extends JTable implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	update();
     }
 }

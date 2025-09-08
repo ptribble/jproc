@@ -70,7 +70,7 @@ public class JProc implements Serializable {
      *
      * @param njp a ProcessInterface to query for process information
      */
-    public JProc(NativeJProc njp) {
+    public JProc(final NativeJProc njp) {
 	this.njp = njp;
     }
 
@@ -80,7 +80,7 @@ public class JProc implements Serializable {
      *
      * @param pcc  The configuration specifying how to contact the server.
      */
-    public JProc(PClientConfig pcc) {
+    public JProc(final PClientConfig pcc) {
 	if (pcc.getProtocol() == PClientConfig.CLIENT_XMLRPC) {
 	    njp = new XmlRpcJProc(pcc);
 	} else if (pcc.getProtocol() == PClientConfig.CLIENT_REST) {
@@ -107,7 +107,7 @@ public class JProc implements Serializable {
      *
      * @return A Set of JLwp objects representing the lwps in this process.
      */
-    public Set<JLwp> getLwps(JProcess jp) {
+    public Set<JLwp> getLwps(final JProcess jp) {
 	return getLwps(jp.getPid());
     }
 
@@ -119,7 +119,7 @@ public class JProc implements Serializable {
      *
      * @return A Set of JLwp objects representing the lwps in this process.
      */
-    public Set<JLwp> getLwps(int pid) {
+    public Set<JLwp> getLwps(final int pid) {
 	return njp.getLwps(pid);
     }
 
@@ -133,7 +133,7 @@ public class JProc implements Serializable {
      * if available, or null if it is not available or the process no
      * longer exists.
      */
-    public JProcStatus getStatus(JProcess jp) {
+    public JProcStatus getStatus(final JProcess jp) {
 	return getStatus(jp.getPid());
     }
 
@@ -147,7 +147,7 @@ public class JProc implements Serializable {
      * if available, or null if it is not available or the process no
      * longer exists.
      */
-    public JProcStatus getStatus(int pid) {
+    public JProcStatus getStatus(final int pid) {
 	return njp.getStatus(pid);
     }
 
@@ -160,7 +160,7 @@ public class JProc implements Serializable {
      * @return A JProcLwpStatus object containing the status of the given
      * lwp, or null if the process or lwp no longer exists.
      */
-    public JProcLwpStatus getStatus(JLwp jlwp) {
+    public JProcLwpStatus getStatus(final JLwp jlwp) {
 	return getStatus(jlwp.getPid(), jlwp.getLWPid());
     }
 
@@ -174,7 +174,7 @@ public class JProc implements Serializable {
      * @return A JProcLwpStatus object containing the status of the given
      * lwp, or null if the process or lwp no longer exists.
      */
-    public JProcLwpStatus getStatus(int pid, int lwpid) {
+    public JProcLwpStatus getStatus(final int pid, final int lwpid) {
 	return njp.getLwpStatus(pid, lwpid);
     }
 
@@ -186,7 +186,7 @@ public class JProc implements Serializable {
      * @return A JProcInfo object containing information about this process,
      * or null if this process no longer exists.
      */
-    public JProcInfo getInfo(JProcess jp) {
+    public JProcInfo getInfo(final JProcess jp) {
 	JProcInfo jpi = njp.getInfo(jp.getPid());
 	jp.updateInfo(jpi);
 	return jpi;
@@ -200,7 +200,7 @@ public class JProc implements Serializable {
      * @return A JProcInfo object containing information about this process,
      * or null if this process no longer exists.
      */
-    public JProcInfo getInfo(int pid) {
+    public JProcInfo getInfo(final int pid) {
 	return njp.getInfo(pid);
     }
 
@@ -212,7 +212,7 @@ public class JProc implements Serializable {
      * @return A JProcLwpInfo object containing information about this lwp,
      * or null if this process or lwp no longer exists.
      */
-    public JProcLwpInfo getInfo(JLwp jlwp) {
+    public JProcLwpInfo getInfo(final JLwp jlwp) {
 	return getInfo(jlwp.getPid(), jlwp.getLWPid());
     }
 
@@ -225,7 +225,7 @@ public class JProc implements Serializable {
      * @return A JProcLwpInfo object containing information about this lwp,
      * or null if this process or lwp no longer exists.
      */
-    public JProcLwpInfo getInfo(int pid, int lwpid) {
+    public JProcLwpInfo getInfo(final int pid, final int lwpid) {
 	return njp.getLwpInfo(pid, lwpid);
     }
 
@@ -237,7 +237,7 @@ public class JProc implements Serializable {
      * @return A JProcUsage object containing usage information about this
      * process, or null if this process no longer exists.
      */
-    public JProcUsage getUsage(JProcess jp) {
+    public JProcUsage getUsage(final JProcess jp) {
 	return getUsage(jp.getPid());
     }
 
@@ -249,7 +249,7 @@ public class JProc implements Serializable {
      * @return A JProcUsage object containing usage information about this
      * process, or null if this process no longer exists.
      */
-    public JProcUsage getUsage(int pid) {
+    public JProcUsage getUsage(final int pid) {
 	return njp.getUsage(pid);
     }
 
@@ -261,7 +261,7 @@ public class JProc implements Serializable {
      * @return A JProcUsage object containing usage information about this
      * lwp, or null if this process or lwp no longer exists.
      */
-    public JProcUsage getUsage(JLwp jlwp) {
+    public JProcUsage getUsage(final JLwp jlwp) {
 	return getUsage(jlwp.getPid(), jlwp.getLWPid());
     }
 
@@ -274,7 +274,7 @@ public class JProc implements Serializable {
      * @return A JProcUsage object containing usage information about this
      * lwp, or null if this process or lwp no longer exists.
      */
-    public JProcUsage getUsage(int pid, int lwpid) {
+    public JProcUsage getUsage(final int pid, final int lwpid) {
 	return njp.getLwpUsage(pid, lwpid);
     }
 
@@ -286,7 +286,7 @@ public class JProc implements Serializable {
      *
      * @return The user name, or the userid if no username matches.
      */
-    public String getUserName(int uid) {
+    public String getUserName(final int uid) {
 	if (!uMap.containsKey(uid)) {
 	    String name = njp.getUserName(uid);
 	    uMap.put(uid, (name == null) ? Integer.toString(uid) : name);
@@ -301,7 +301,7 @@ public class JProc implements Serializable {
      *
      * @return The user id, or -1 if no user matches.
      */
-    public int getUserId(String username) {
+    public int getUserId(final String username) {
 	return njp.getUserId(username);
     }
 
@@ -313,7 +313,7 @@ public class JProc implements Serializable {
      *
      * @return The group name, or the groupid if no group matches.
      */
-    public String getGroupName(int gid) {
+    public String getGroupName(final int gid) {
 	if (!gMap.containsKey(gid)) {
 	    String name = njp.getGroupName(gid);
 	    gMap.put(gid, (name == null) ? Integer.toString(gid) : name);
@@ -328,7 +328,7 @@ public class JProc implements Serializable {
      *
      * @return The group id, or -1 if no group matches.
      */
-    public int getGroupId(String group) {
+    public int getGroupId(final String group) {
 	return njp.getGroupId(group);
     }
 
@@ -340,7 +340,7 @@ public class JProc implements Serializable {
      *
      * @return The project name, or the project id if no project matches.
      */
-    public String getProjectName(int projid) {
+    public String getProjectName(final int projid) {
 	if (!projMap.containsKey(projid)) {
 	    String name = njp.getProjectName(projid);
 	    projMap.put(projid,
@@ -356,7 +356,7 @@ public class JProc implements Serializable {
      *
      * @return The project id, or -1 if no project matches.
      */
-    public int getProjectId(String project) {
+    public int getProjectId(final String project) {
 	return njp.getProjectId(project);
     }
 
@@ -368,7 +368,7 @@ public class JProc implements Serializable {
      *
      * @return The zone name, or the zone id if no zone matches.
      */
-    public String getZoneName(int zoneid) {
+    public String getZoneName(final int zoneid) {
 	if (!zMap.containsKey(zoneid)) {
 	    String name = njp.getZoneName(zoneid);
 	    zMap.put(zoneid, (name == null) ? Integer.toString(zoneid) : name);
@@ -383,7 +383,7 @@ public class JProc implements Serializable {
      *
      * @return The zone id, or -1 if no zone matches.
      */
-    public int getZoneId(String zone) {
+    public int getZoneId(final String zone) {
 	return njp.getZoneId(zone);
     }
 }

@@ -74,7 +74,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
      *
      * @param pcc a PClientConfig containing client configuration
      */
-    public UserInfo(PClientConfig pcc) {
+    public UserInfo(final PClientConfig pcc) {
 	this(new JProc(pcc), true);
     }
 
@@ -84,7 +84,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
      * @param jproc a JProc object to query for process information
      * @param standalone  a boolean, true if the demo is a standalone
      */
-    public UserInfo(JProc jproc, boolean standalone) {
+    public UserInfo(final JProc jproc, final boolean standalone) {
 	super("UserInfo", standalone);
 	this.jproc = jproc;
 
@@ -115,7 +115,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
      *
      * FIXME: dynamically update the menu as zones come and go.
      */
-    private void addZoneMenu(JProcessSet jps) {
+    private void addZoneMenu(final JProcessSet jps) {
 	JMenu zoneMenu = new JMenu(JProcResources.getString("ZONE.MENU"));
 	zoneMenu.setMnemonic(KeyEvent.VK_Z);
 	allZoneItem = new JCheckBoxMenuItem(
@@ -132,7 +132,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
 	jm.add(zoneMenu);
     }
 
-    private void handleZone(JCheckBoxMenuItem jmi) {
+    private void handleZone(final JCheckBoxMenuItem jmi) {
 	boolean selected = jmi.isSelected();
 	if (jmi == allZoneItem) {
 	    if (selected) {
@@ -171,13 +171,13 @@ public final class UserInfo extends JPdemo implements ActionListener {
     }
 
     @Override
-    public void setDelay(int i) {
+    public void setDelay(final int i) {
 	jpip.setDelay(i);
 	setLabelDelay(i);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	super.actionPerformed(e);
 	if (e.getSource() == allZoneItem) {
 	    handleZone((JCheckBoxMenuItem) e.getSource());
@@ -192,7 +192,7 @@ public final class UserInfo extends JPdemo implements ActionListener {
      *
      * @param args command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 	if (args.length == 0) {
 	    new UserInfo();
 	} else if (args.length == 2) {

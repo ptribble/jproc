@@ -80,7 +80,7 @@ public class JProcessFilter implements Serializable {
      *
      * @param jps A JProcessSet.
      */
-    public JProcessFilter(JProcessSet jps) {
+    public JProcessFilter(final JProcessSet jps) {
 	this.jps = jps;
 	currentProcesses = jps.getProcesses();
 	addedProcesses = new HashSet<>();
@@ -94,7 +94,7 @@ public class JProcessFilter implements Serializable {
      *
      * @param jp A JProcess.
      */
-    public JProcessFilter(JProcess jp) {
+    public JProcessFilter(final JProcess jp) {
 	spid = 1;
 	currentProcesses = new HashSet<>();
 	currentProcesses.add(jp);
@@ -107,7 +107,7 @@ public class JProcessFilter implements Serializable {
      *
      * @param zoneid The zoneid of the zone.
      */
-    public void setZone(int zoneid) {
+    public void setZone(final int zoneid) {
 	szone = zoneid;
     }
 
@@ -124,7 +124,7 @@ public class JProcessFilter implements Serializable {
      *
      * @param ctid The desired contract id.
      */
-    public void setContract(int ctid) {
+    public void setContract(final int ctid) {
 	sctid = ctid;
     }
 
@@ -141,7 +141,7 @@ public class JProcessFilter implements Serializable {
      *
      * @param projid The desired project id.
      */
-    public void setProject(int projid) {
+    public void setProject(final int projid) {
 	sprojid = projid;
     }
 
@@ -158,7 +158,7 @@ public class JProcessFilter implements Serializable {
      *
      * @param taskid The desired task id.
      */
-    public void setTask(int taskid) {
+    public void setTask(final int taskid) {
 	staskid = taskid;
     }
 
@@ -174,7 +174,7 @@ public class JProcessFilter implements Serializable {
      *
      * @param userid The userid.
      */
-    public void setUser(int userid) {
+    public void setUser(final int userid) {
 	suid = userid;
     }
 
@@ -240,7 +240,7 @@ public class JProcessFilter implements Serializable {
      * Match a JProcess against the filter. Uses the cached JProcInfo
      * to avoid unnecessary excursions into native code.
      */
-    private boolean matchFilter(JProcess jp) {
+    private boolean matchFilter(final JProcess jp) {
 	JProcInfo jpi = jp.getCachedInfo();
 	// if null, process doesn't exist, so we definitely don't want it
 	if (jpi == null) {

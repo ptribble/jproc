@@ -93,7 +93,7 @@ public final class ProcessTableModel extends AbstractTableModel {
      * @param jproc  a JProc object to query for process information
      * @param process the JProcess to display
      */
-    public ProcessTableModel(JProc jproc, JProcess process) {
+    public ProcessTableModel(final JProc jproc, final JProcess process) {
 	this.jproc = jproc;
 	this.process = process;
     }
@@ -133,7 +133,7 @@ public final class ProcessTableModel extends AbstractTableModel {
     }
 
     @Override
-    public String getColumnName(int col) {
+    public String getColumnName(final int col) {
 	return COLNAMES[col];
     }
 
@@ -141,7 +141,7 @@ public final class ProcessTableModel extends AbstractTableModel {
      * Return the appropriate data.
      */
     @Override
-    public Object getValueAt(int row, int col) {
+    public Object getValueAt(final int row, final int col) {
 	if (col == 0) {
 	    return ROWNAMES[row];
 	} else if (col == 2) {
@@ -173,7 +173,7 @@ public final class ProcessTableModel extends AbstractTableModel {
     }
 
     @Override
-    public Class<?> getColumnClass(int c) {
+    public Class<?> getColumnClass(final int c) {
 	return getValueAt(0, c).getClass();
     }
 }

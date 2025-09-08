@@ -37,7 +37,7 @@ public class JPProjName {
      */
     @GET
     @Produces("application/json")
-    public String getProjectName(@PathParam("projid") String projid) {
+    public String getProjectName(@PathParam("projid") final String projid) {
 	return JPROC.getProjectName(Integer.valueOf(projid));
     }
 }

@@ -61,7 +61,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      * @param jproc a JProc object to query for process information
      * @param jpf a JProcessFilter describing the list of processes to show
      */
-    public PSusageTableModel(JProc jproc, JProcessFilter jpf) {
+    public PSusageTableModel(final JProc jproc, final JProcessFilter jpf) {
 	this.jpf = jpf;
 	this.jproc = jproc;
 
@@ -91,7 +91,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      *
      * @param uid The user id to show.
      */
-    public void setUser(int uid) {
+    public void setUser(final int uid) {
 	jpf.setUser(uid);
 	updateJprocess();
     }
@@ -109,7 +109,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      *
      * @param uid The zone id to show.
      */
-    public void setZone(int uid) {
+    public void setZone(final int uid) {
 	jpf.setZone(uid);
 	updateJprocess();
     }
@@ -183,7 +183,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      * to display a subset of the columns, or change the order, without
      * changing the subsequent methods.
      */
-    private int mapColumn(int col) {
+    private int mapColumn(final int col) {
 	return colMap.get(col);
     }
 
@@ -201,7 +201,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      *
      * @param s the name of the column to be removed
      */
-    public void removeColumn(String s) {
+    public void removeColumn(final String s) {
 	Iterator<Integer> iter = colMap.iterator();
 	while (iter.hasNext()) {
 	    if (COLNAMES[iter.next()].equals(s)) {
@@ -216,7 +216,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      *
      * @param s the name of the column to be added
      */
-    public void addColumn(String s) {
+    public void addColumn(final String s) {
 	int icol = 0;
 	for (int i = 0; i < COLNAMES.length; i++) {
 	    if (COLNAMES[i].equals(s)) {
@@ -241,12 +241,12 @@ public final class PSusageTableModel extends AbstractTableModel {
      *
      * @return the JProcess at the given row
      */
-    public JProcess getProcess(int row) {
+    public JProcess getProcess(final int row) {
 	return vp.get(row);
     }
 
     @Override
-    public String getColumnName(int col) {
+    public String getColumnName(final int col) {
 	return COLNAMES[mapColumn(col)];
     }
 
@@ -254,7 +254,7 @@ public final class PSusageTableModel extends AbstractTableModel {
      * Return the appropriate data.
      */
     @Override
-    public Object getValueAt(int row, int icol) {
+    public Object getValueAt(final int row, final int icol) {
 	int col = mapColumn(icol);
 	JProcUsage jpu = vpu.get(row);
 	JProcInfo jpi = vpi.get(row);
@@ -318,7 +318,7 @@ public final class PSusageTableModel extends AbstractTableModel {
     }
 
     @Override
-    public Class<?> getColumnClass(int c) {
+    public Class<?> getColumnClass(final int c) {
 	switch (mapColumn(c)) {
 	    case 0:
 	    case 2:

@@ -49,7 +49,8 @@ public final class UserProcessInfoFrame extends JFrame
      * @param uid the userid to show processes for
      * @param interval the display update interval, in seconds
      */
-    public UserProcessInfoFrame(JProc jproc, int uid, int interval) {
+    public UserProcessInfoFrame(final JProc jproc, final int uid,
+				final int interval) {
 	setTitle(JProcResources.getString("USER.TITLE") + " "
 		+ jproc.getUserName(uid));
 	setLayout(new BorderLayout());
@@ -77,7 +78,7 @@ public final class UserProcessInfoFrame extends JFrame
     /*
      * Hide the named column.
      */
-    private void removeColumn(JCheckBoxMenuItem jmi) {
+    private void removeColumn(final JCheckBoxMenuItem jmi) {
 	jmi.setSelected(false);
 	jpip.removeColumn(jmi.getText());
     }
@@ -85,7 +86,7 @@ public final class UserProcessInfoFrame extends JFrame
     /*
      * Show the named column.
      */
-    private void addColumn(JCheckBoxMenuItem jmi) {
+    private void addColumn(final JCheckBoxMenuItem jmi) {
 	jmi.setSelected(true);
 	jpip.addColumn(jmi.getText());
     }
@@ -93,7 +94,7 @@ public final class UserProcessInfoFrame extends JFrame
     /*
      * Construct a menu allowing the user to select/unselect columns.
      */
-    private void addColumnMenu(JMenuBar jm) {
+    private void addColumnMenu(final JMenuBar jm) {
 	JMenu columnMenu = new JMenu(JProcResources.getString("COLUMN.MENU"));
 	columnMenu.setMnemonic(KeyEvent.VK_C);
 	Map<String, JCheckBoxMenuItem> columnMap = new HashMap<>();
@@ -111,7 +112,7 @@ public final class UserProcessInfoFrame extends JFrame
 	jm.add(columnMenu);
     }
 
-    private void handleColumn(JCheckBoxMenuItem jmi) {
+    private void handleColumn(final JCheckBoxMenuItem jmi) {
 	if (jmi.isSelected()) {
 	    addColumn(jmi);
 	} else {
@@ -120,7 +121,7 @@ public final class UserProcessInfoFrame extends JFrame
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	handleColumn((JCheckBoxMenuItem) e.getSource());
     }
 
@@ -129,7 +130,7 @@ public final class UserProcessInfoFrame extends JFrame
      */
     class WindowExit extends WindowAdapter {
 	@Override
-	public void windowClosing(WindowEvent we) {
+	public void windowClosing(final WindowEvent we) {
 	    jpip.stopLoop();
 	}
     }

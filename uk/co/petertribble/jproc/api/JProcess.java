@@ -46,7 +46,7 @@ public final class JProcess implements Serializable {
      * @param pid  The process id of the process.
      * @param info A JprocInfo object with basic information about the process.
      */
-    public JProcess(int pid, JProcInfo info) {
+    public JProcess(final int pid, final JProcInfo info) {
 	this.pid = pid;
 	this.info = info;
     }
@@ -66,7 +66,7 @@ public final class JProcess implements Serializable {
      * @param info A new JProcInfo object containing updated information
      * about this process.
      */
-    public void updateInfo(JProcInfo info) {
+    public void updateInfo(final JProcInfo info) {
 	this.info = info;
     }
 
@@ -91,7 +91,7 @@ public final class JProcess implements Serializable {
      * as this {@code JProcess}.
      */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
 	if (o instanceof JProcess) {
 	    JProcess jp = (JProcess) o;
 	    return pid == jp.getPid();

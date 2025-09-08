@@ -37,7 +37,7 @@ public class JPZoneName {
      */
     @GET
     @Produces("application/json")
-    public String getZoneName(@PathParam("zoneid") String zoneid) {
+    public String getZoneName(@PathParam("zoneid") final String zoneid) {
 	return JPROC.getZoneName(Integer.valueOf(zoneid));
     }
 }

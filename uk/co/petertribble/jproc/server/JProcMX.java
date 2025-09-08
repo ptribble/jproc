@@ -43,7 +43,7 @@ public final class JProcMX implements JProcMXMBean {
     }
 
     @Override
-    public JProcess getProcess(int pid) {
+    public JProcess getProcess(final int pid) {
 	return new JProcess(pid, JPROC.getInfo(pid));
     }
 }

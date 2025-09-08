@@ -43,7 +43,7 @@ public final class JSONParser {
      *
      * @return The Set of JProcesses encoded by the supplied String.
      */
-    public static Set<JProcess> getProcesses(String s) {
+    public static Set<JProcess> getProcesses(final String s) {
 	try {
 	    return getProcesses(new JSONArray(s));
 	} catch (JSONException jse) {
@@ -51,7 +51,7 @@ public final class JSONParser {
 	}
     }
 
-    private static Set<JProcess> getProcesses(JSONArray ja) {
+    private static Set<JProcess> getProcesses(final JSONArray ja) {
 	Set<JProcess> nprocesses = new HashSet<>();
 	try {
 	    for (int i = 0; i < ja.length(); i++) {
@@ -73,7 +73,7 @@ public final class JSONParser {
      *
      * @return The Set of JLwp encoded by the supplied String.
      */
-    public static Set<JLwp> getLwps(String s) {
+    public static Set<JLwp> getLwps(final String s) {
 	try {
 	    return getLwps(new JSONArray(s));
 	} catch (JSONException jse) {
@@ -81,7 +81,7 @@ public final class JSONParser {
 	}
     }
 
-    private static Set<JLwp> getLwps(JSONArray ja) {
+    private static Set<JLwp> getLwps(final JSONArray ja) {
 	Set<JLwp> nlwps = new HashSet<>();
 	try {
 	    for (int i = 0; i < ja.length(); i++) {
@@ -102,7 +102,7 @@ public final class JSONParser {
      *
      * @return The JProcStatus encoded by the supplied String.
      */
-    public static JProcStatus getStatus(String s) {
+    public static JProcStatus getStatus(final String s) {
 	try {
 	    return getStatus(new JSONObject(s));
 	} catch (JSONException jse) {
@@ -119,7 +119,7 @@ public final class JSONParser {
 	}
     }
 
-    private static JProcStatus getStatus(JSONObject jo) {
+    private static JProcStatus getStatus(final JSONObject jo) {
 	JProcStatus jps = new JProcStatus();
 	try {
 	    jps.insert(jo.getInt("lwpid"),
@@ -141,7 +141,7 @@ public final class JSONParser {
      *
      * @return The JProcUsage encoded by the supplied String.
      */
-    public static JProcUsage getUsage(String s) {
+    public static JProcUsage getUsage(final String s) {
 	try {
 	    return getUsage(new JSONObject(s));
 	} catch (JSONException jse) {
@@ -158,7 +158,7 @@ public final class JSONParser {
 	}
     }
 
-    private static JProcUsage getUsage(JSONObject jo) {
+    private static JProcUsage getUsage(final JSONObject jo) {
 	JProcUsage jpu = new JProcUsage();
 	try {
 	    jpu.insert(jo.getInt("lwpid"), jo.getInt("count"),
@@ -186,7 +186,7 @@ public final class JSONParser {
      *
      * @return The JProcInfo encoded by the supplied String.
      */
-    public static JProcInfo getInfo(String s) {
+    public static JProcInfo getInfo(final String s) {
 	try {
 	    return getInfo(new JSONObject(s));
 	} catch (JSONException jse) {
@@ -203,7 +203,7 @@ public final class JSONParser {
 	}
     }
 
-    private static JProcInfo getInfo(JSONObject jo) {
+    private static JProcInfo getInfo(final JSONObject jo) {
 	JProcInfo jpi = new JProcInfo();
 	try {
 	    jpi.insert(jo.getInt("pid"), jo.getInt("ppid"),
@@ -231,7 +231,7 @@ public final class JSONParser {
      *
      * @return The JProcLwpStatus encoded by the supplied String.
      */
-    public static JProcLwpStatus getLwpStatus(String s) {
+    public static JProcLwpStatus getLwpStatus(final String s) {
 	try {
 	    return getLwpStatus(new JSONObject(s));
 	} catch (JSONException jse) {
@@ -248,7 +248,7 @@ public final class JSONParser {
 	}
     }
 
-    private static JProcLwpStatus getLwpStatus(JSONObject jo) {
+    private static JProcLwpStatus getLwpStatus(final JSONObject jo) {
 	JProcLwpStatus jpls = new JProcLwpStatus();
 	try {
 	    jpls.insert(jo.getInt("pid"), jo.getInt("lwpid"),
@@ -268,7 +268,7 @@ public final class JSONParser {
      *
      * @return The JProcLwpInfo encoded by the supplied String.
      */
-    public static JProcLwpInfo getLwpInfo(String s) {
+    public static JProcLwpInfo getLwpInfo(final String s) {
 	try {
 	    return getLwpInfo(new JSONObject(s));
 	} catch (JSONException jse) {
@@ -285,7 +285,7 @@ public final class JSONParser {
 	}
     }
 
-    private static JProcLwpInfo getLwpInfo(JSONObject jo) {
+    private static JProcLwpInfo getLwpInfo(final JSONObject jo) {
 	JProcLwpInfo jpli = new JProcLwpInfo();
 	try {
 	    jpli.insert(jo.getInt("pid"), jo.getInt("lwpid"),

@@ -38,7 +38,7 @@ public class LwpList {
      */
     @GET
     @Produces("application/json")
-    public String getLwps(@PathParam("pid") String pid) {
+    public String getLwps(@PathParam("pid") final String pid) {
 	Set<JLwp> lwps = JPROC.getLwps(Integer.valueOf(pid));
 	if (lwps == null) {
 	    return "";

@@ -75,7 +75,7 @@ public class NativeJProc extends ProcessInterface {
      * @return A Set of JLwp objects representing the lwps in this process.
      */
     @Override
-    public Set<JLwp> getLwps(int pid) {
+    public Set<JLwp> getLwps(final int pid) {
 	File pf = new File("/proc/" + Integer.toString(pid) + "/lwp");
 	String[] lwpids = pf.list();
 	if (lwpids == null) {

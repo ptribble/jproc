@@ -38,8 +38,8 @@ public class LwpStatus {
      */
     @GET
     @Produces("application/json")
-    public String getLwpStatus(@PathParam("pid") String pid,
-			    @PathParam("lwpid") String lwpid) {
+    public String getLwpStatus(@PathParam("pid") final String pid,
+			    @PathParam("lwpid") final String lwpid) {
 	JProcLwpStatus jps = JPROC.getStatus(Integer.valueOf(pid),
 					  Integer.valueOf(lwpid));
 	return (jps == null) ? "" : jps.toJSON();

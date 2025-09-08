@@ -74,12 +74,15 @@ public class JProcUsage {
      * @param sysc    system calls
      * @param ioch    chars read and written
      */
-    public void insert(int lwpid, int count, long rtime, long nrtime,
-			long utime, long nutime, long stime,
-			long nstime,
-			long minf, long majf, long nswap, long inblk,
-			long oublk, long msnd, long mrcv, long sigs,
-			long vctx, long ictx, long sysc, long ioch) {
+    public void insert(final int lwpid, final int count,
+		       final long rtime, final long nrtime,
+		       final long utime, final long nutime,
+		       final long stime, final long nstime,
+		       final long minf, final long majf,
+		       final long nswap, final long inblk,
+		       final long oublk, final long msnd, final long mrcv,
+		       final long sigs, final long vctx, final long ictx,
+		       final long sysc, final long ioch) {
 	this.lwpid = lwpid;
 	this.count = count;
 	this.rtime = rtime;

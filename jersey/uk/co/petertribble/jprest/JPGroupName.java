@@ -37,7 +37,7 @@ public class JPGroupName {
      */
     @GET
     @Produces("application/json")
-    public String getGroupName(@PathParam("gid") String gid) {
+    public String getGroupName(@PathParam("gid") final String gid) {
 	return JPROC.getGroupName(Integer.valueOf(gid));
     }
 }

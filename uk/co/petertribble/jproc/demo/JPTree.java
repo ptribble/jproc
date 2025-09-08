@@ -52,7 +52,7 @@ public final class JPTree extends JPdemo {
      *
      * @param pcc a PClientConfig containing client configuration
      */
-    public JPTree(PClientConfig pcc) {
+    public JPTree(final PClientConfig pcc) {
 	this(new JProc(pcc), true);
     }
 
@@ -62,7 +62,7 @@ public final class JPTree extends JPdemo {
      * @param jproc a JProc object
      * @param standalone whether this is a standalone application
      */
-    public JPTree(JProc jproc, boolean standalone) {
+    public JPTree(final JProc jproc, final boolean standalone) {
 	super("JPTree", standalone);
 
         jpt = new JPTreePanel(jproc, new JProcessFilter(new JProcessSet(jproc)),
@@ -83,7 +83,7 @@ public final class JPTree extends JPdemo {
     }
 
     @Override
-    public void setDelay(int i) {
+    public void setDelay(final int i) {
 	jpt.setDelay(i);
 	setLabelDelay(i);
     }
@@ -93,7 +93,7 @@ public final class JPTree extends JPdemo {
      *
      * @param args  Command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 	if (args.length == 0) {
 	    new JPTree();
 	} else if (args.length == 2) {

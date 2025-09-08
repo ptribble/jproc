@@ -76,7 +76,8 @@ public final class JPinfoTable extends JTable implements ActionListener {
      * @param jpf a filter defining the processes to be shown
      * @param interval the initial update interval, in seconds
      */
-    public JPinfoTable(JProc jproc, JProcessFilter jpf, int interval) {
+    public JPinfoTable(final JProc jproc, final JProcessFilter jpf,
+		       final int interval) {
 	this.jproc = jproc;
 	this.interval = interval;
 	setLayout(new BorderLayout());
@@ -93,7 +94,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
 	    new DefaultTableCellRenderer() {
 		private static final long serialVersionUID = 1L;
 		@Override
-		public void setValue(Object value) {
+		public void setValue(final Object value) {
 		    // We know it's a Long, we wrote the model
 		    setText(value instanceof Long
 			    ? PrettyFormat.memscale((Long) value) : "");
@@ -104,7 +105,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
 	    new DefaultTableCellRenderer() {
 		private static final long serialVersionUID = 1L;
 		@Override
-		public void setValue(Object value) {
+		public void setValue(final Object value) {
 		    // We know it's a Double, we wrote the model
 		    setText(value instanceof Double
 			    ? PrettyFormat.timescale((Double) value) : "");
@@ -115,7 +116,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
 	    new DefaultTableCellRenderer() {
 		private static final long serialVersionUID = 1L;
 		@Override
-		public void setValue(Object value) {
+		public void setValue(final Object value) {
 		    // We know it's a Long, we wrote the model
 		    setText(value instanceof Long
 			    ? PrettyFormat.date((Long) value) : "");
@@ -170,7 +171,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
      *
      * @param s the name of the column to be removed
      */
-    public void removeColumn(String s) {
+    public void removeColumn(final String s) {
 	ftm.removeColumn(s);
 	setRenderers();
     }
@@ -180,7 +181,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
      *
      * @param s the name of the column to be added
      */
-    public void addColumn(String s) {
+    public void addColumn(final String s) {
 	ftm.addColumn(s);
 	setRenderers();
     }
@@ -190,7 +191,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
      *
      * @param uid The user id to show.
      */
-    public void setUser(int uid) {
+    public void setUser(final int uid) {
 	ftm.setUser(uid);
     }
 
@@ -206,7 +207,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
      *
      * @param uid The zone id to show.
      */
-    public void setZone(int uid) {
+    public void setZone(final int uid) {
 	ftm.setZone(uid);
     }
 
@@ -222,7 +223,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
      *
      * @param ctid The desired contract id.
      */
-    public void setContract(int ctid) {
+    public void setContract(final int ctid) {
 	ftm.setContract(ctid);
     }
 
@@ -261,7 +262,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
      *
      * @param interval the desired delay, in seconds
      */
-    public void setDelay(int interval) {
+    public void setDelay(final int interval) {
 	if (interval <= 0) {
 	    stopLoop();
 	} else {
@@ -273,7 +274,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	ftm.updateJprocess();
     }
 
@@ -283,16 +284,16 @@ public final class JPinfoTable extends JTable implements ActionListener {
     class PopupListener extends MouseAdapter {
 
 	@Override
-	public void mousePressed(MouseEvent e) {
+	public void mousePressed(final MouseEvent e) {
 	    showPopup(e);
 	}
 
 	@Override
-	public void mouseReleased(MouseEvent e) {
+	public void mouseReleased(final MouseEvent e) {
 	    showPopup(e);
 	}
 
-	private void showPopup(MouseEvent e) {
+	private void showPopup(final MouseEvent e) {
 	    if (e.isPopupTrigger()) {
 		JProcess jp = ftm.getProcess(convertRowIndexToModel(
 				rowAtPoint(e.getPoint())));
@@ -314,7 +315,7 @@ public final class JPinfoTable extends JTable implements ActionListener {
 		JProcResources.getString("THREAD.MENU") + " " + jp.getPid());
 	showChartItem.addActionListener(new ActionListener() {
 	    @Override
-	    public void actionPerformed(ActionEvent e) {
+	    public void actionPerformed(final ActionEvent e) {
 		new LWPusageFrame(jproc, jp, interval);
 	    }
 	});

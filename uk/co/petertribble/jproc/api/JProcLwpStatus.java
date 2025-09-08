@@ -46,8 +46,9 @@ public class JProcLwpStatus {
      * @param stime  process sys cpu time
      * @param nstime  process sys cpu time, nanosecond part
      */
-    public void insert(int pid, int lwpid,
-			long utime, long nutime, long stime, long nstime) {
+    public void insert(final int pid, final int lwpid,
+		       final long utime, final long nutime,
+		       final long stime, final long nstime) {
 	this.pid = pid;
 	this.lwpid = lwpid;
 	this.utime = utime;

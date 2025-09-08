@@ -44,7 +44,8 @@ public class JProcLwpInfo {
      * @param etime  execution time
      * @param ntime  execution time, nanosecond part
      */
-    public void insert(int pid, int lwpid, long stime, long etime, long ntime) {
+    public void insert(final int pid, final int lwpid,
+		       final long stime, final long etime, final long ntime) {
 	this.pid = pid;
 	this.lwpid = lwpid;
 	this.stime = stime;

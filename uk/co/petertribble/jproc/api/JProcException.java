@@ -42,7 +42,7 @@ public class JProcException extends RuntimeException {
      *
      * @param s  the detail message
      */
-    public JProcException(String s) {
+    public JProcException(final String s) {
 	super(s);
     }
     /**
@@ -51,7 +51,7 @@ public class JProcException extends RuntimeException {
      * @param s  the detail message
      * @param cause  the underlying cause for this JProcException
      */
-    public JProcException(String s, Throwable cause) {
+    public JProcException(final String s, final Throwable cause) {
 	super(s, cause);
     }
 }
