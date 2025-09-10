@@ -55,9 +55,8 @@ JINGLEJAR=${JARLIBDIR}/jingle.jar
 JUMBLEJAR=${JARLIBDIR}/jumble.jar
 JPJAR=${JARLIBDIR}/jproc.jar
 JPAPIJAR=${JARLIBDIR}/jproc-api.jar
-HTTPJARS=${JARLIBDIR}/httpclient5-5.5.jar:${JARLIBDIR}/httpcore5-5.3.4.jar
 REMOTEJARS=${JARLIBDIR}/xmlrpc-common-3.1.3.jar:${JARLIBDIR}/xmlrpc-server-3.1.3.jar:${JARLIBDIR}/xmlrpc-client-3.1.3.jar:${JARLIBDIR}/jmdns-3.5.9.jar
-BUILDJARS=${JSONJAR}:${JINGLEJAR}:${JUMBLEJAR}:${REMOTEJARS}:${HTTPJARS}
+BUILDJARS=${JSONJAR}:${JINGLEJAR}:${JUMBLEJAR}:${REMOTEJARS}
 
 #
 # run

@@ -21,10 +21,11 @@
 package uk.co.petertribble.jproc.client;
 
 import java.io.IOException;
-import org.apache.hc.client5.http.classic.HttpClient;
-import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.client5.http.impl.classic.BasicHttpClientResponseHandler;
-import org.apache.hc.client5.http.impl.classic.HttpClients;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandlers;
 
 /**
  * A class providing access to a remote JProc server via REST.
@@ -47,7 +48,7 @@ public class JPhttpClient {
 	if (!baseURL.endsWith("/")) {
 	    baseURL = baseURL + "/";
 	}
-	httpclient = HttpClients.createDefault();
+	httpclient = HttpClient.newHttpClient();
     }
 
     /**
@@ -85,7 +86,15 @@ public class JPhttpClient {
     }
 
     private String doGet(final String request) throws IOException {
-	return httpclient.execute(new HttpGet(baseURL + request),
-					new BasicHttpClientResponseHandler());
+	HttpRequest hrequest = HttpRequest.newBuilder()
+	    .uri(URI.create(baseURL + request))
+	    .build();
+	try {
+	    HttpResponse<String> response
+		= httpclient.send(hrequest, BodyHandlers.ofString());
+	    return response.body();
+	} catch (InterruptedException ie) {
+	    return "";
+	}
     }
 }
