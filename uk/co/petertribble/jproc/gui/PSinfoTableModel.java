@@ -56,8 +56,8 @@ public final class PSinfoTableModel extends AbstractTableModel {
     /**
      * Create a Table Model from the given Set of JProcesses.
      *
-     * @param jproc  a JProc object
-     * @param jpf  A JProcessFilter describing the list of processes to show
+     * @param jproc a JProc object
+     * @param jpf a JProcessFilter describing the list of processes to show
      */
     public PSinfoTableModel(final JProc jproc, final JProcessFilter jpf) {
 	this.jpf = jpf;

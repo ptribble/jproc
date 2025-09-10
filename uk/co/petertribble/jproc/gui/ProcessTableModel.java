@@ -90,7 +90,7 @@ public final class ProcessTableModel extends AbstractTableModel {
     /**
      * Create a new ProcessTableModel.
      *
-     * @param jproc  a JProc object to query for process information
+     * @param jproc a JProc object to query for process information
      * @param process the JProcess to display
      */
     public ProcessTableModel(final JProc jproc, final JProcess process) {

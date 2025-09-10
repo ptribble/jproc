@@ -39,7 +39,7 @@ public class JProcClient {
      * Create a JProc client that communicates with a server using the XML-RPC
      * protocol.
      *
-     * @param pcc  Holds the configuration with details of how to contact the
+     * @param pcc the configuration with details of how to contact the
      * server.
      */
     public JProcClient(final PClientConfig pcc) {
@@ -57,13 +57,13 @@ public class JProcClient {
     /**
      * Execute the given method on a remote JProc server.
      *
-     * @param method  The name of the method to execute.
+     * @param method the name of the method to execute.
      *
-     * @return  The result of the remote method execution. The type depends
+     * @return the result of the remote method execution. The type depends
      * on the method called, and is defined by the server, although the XML-RPC
      * layer changes the return types.
      *
-     * @throws  XmlRpcException An exception, passed up from XML-RPC if the
+     * @throws XmlRpcException An exception, passed up from XML-RPC if the
      * remote procedure call failed.
      */
     public Object execute(final String method) throws XmlRpcException {
@@ -73,15 +73,15 @@ public class JProcClient {
     /**
      * Execute the given method on a remote JProc server.
      *
-     * @param method  The name of the method to execute.
-     * @param args  An array of parameters to pass as arguments to the
+     * @param method the name of the method to execute.
+     * @param args an array of parameters to pass as arguments to the
      *  method call.
      *
-     * @return  The result of the remote method execution. The type depends
+     * @return the result of the remote method execution. The type depends
      * on the method called, and is defined by the server, although the XML-RPC
      * layer changes the return types.
      *
-     * @throws  XmlRpcException An exception, passed up from XML-RPC if the
+     * @throws XmlRpcException An exception, passed up from XML-RPC if the
      * remote procedure call failed.
      */
     public Object execute(final String method, final Object[] args)

@@ -78,7 +78,7 @@ public class JProc implements Serializable {
      * Create a new JProc object, that can be queried for information about
      * processes.
      *
-     * @param pcc  The configuration specifying how to contact the server.
+     * @param pcc the configuration specifying how to contact the server
      */
     public JProc(final PClientConfig pcc) {
 	if (pcc.getProtocol() == PClientConfig.CLIENT_XMLRPC) {

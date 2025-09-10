@@ -116,7 +116,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Constructs a JPdemo object.
      *
-     * @param demoname  a String used as the demo title.
+     * @param demoname a String used as the demo title.
      */
     public JPdemo(final String demoname) {
 	this(demoname, DEFAULT_INTERVAL, true);
@@ -125,8 +125,8 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Constructs a JPdemo object.
      *
-     * @param demoname  a String used as the demo title.
-     * @param standalone  a boolean, true if the demo is a standalone
+     * @param demoname a String used as the demo title.
+     * @param standalone a boolean, true if the demo is a standalone
      * application.
      */
     public JPdemo(final String demoname, final boolean standalone) {
@@ -136,8 +136,8 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Constructs a JPdemo object.
      *
-     * @param demoname  a String used as the demo title.
-     * @param interval  the update delay in seconds.
+     * @param demoname a String used as the demo title.
+     * @param interval the update delay in seconds.
      */
     public JPdemo(final String demoname, final int interval) {
 	this(demoname, interval, true);
@@ -146,9 +146,9 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Constructs a JPdemo object.
      *
-     * @param demoname  a String used as the demo title.
-     * @param interval  the update delay in seconds.
-     * @param standalone  a boolean, true if the demo is a standalone
+     * @param demoname a String used as the demo title.
+     * @param interval the update delay in seconds.
+     * @param standalone a boolean, true if the demo is a standalone
      * application.
      */
     public JPdemo(final String demoname, final int interval,
@@ -246,8 +246,8 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      * Add an informational panel. Shows some text and the current update
      * interval.
      *
-     * @param mainPanel  a JPanel object to add the informational panel to.
-     * @param sinfo  a String used as text in the informational panel.
+     * @param mainPanel a JPanel object to add the informational panel to.
+     * @param sinfo a String used as text in the informational panel.
      */
     public void addInfoPanel(final JPanel mainPanel, final String sinfo) {
 	JPanel infoPanel = new JPanel(new BorderLayout());
@@ -261,7 +261,7 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Set the text on the information to show the current update delay.
      *
-     * @param i The update delay in seconds
+     * @param i the update delay in seconds
      */
     protected void setLabelDelay(final int i) {
 	infoLabel.setText(JProcResources.getString("SLEEP.UPDATE") + " " + i

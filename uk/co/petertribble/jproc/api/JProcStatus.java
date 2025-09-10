@@ -42,15 +42,15 @@ public class JProcStatus {
      * Populate this object with data. This routine should never be called
      * by clients, and is only for the JNI layer to interface with.
      *
-     * @param pid  the process id
-     * @param utime  process user cpu time
-     * @param nutime  process user cpu time, nanosecond part
-     * @param stime  process sys cpu time
-     * @param nstime  process sys cpu time, nanosecond part
-     * @param cutime  sum of child user time
-     * @param ncutime  sum of child user time, nanosecond part
-     * @param cstime  sum of child sys time
-     * @param ncstime  sum of child sys time, nanosecond part
+     * @param pid the process id
+     * @param utime process user cpu time
+     * @param nutime process user cpu time, nanosecond part
+     * @param stime process sys cpu time
+     * @param nstime process sys cpu time, nanosecond part
+     * @param cutime sum of child user time
+     * @param ncutime sum of child user time, nanosecond part
+     * @param cstime sum of child sys time
+     * @param ncstime sum of child sys time, nanosecond part
      */
     public void insert(final int pid,
 		       final long utime, final long nutime,

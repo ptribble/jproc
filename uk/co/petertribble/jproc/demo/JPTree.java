@@ -91,7 +91,7 @@ public final class JPTree extends JPdemo {
     /**
      * Invoke the JPTree demo from the command line.
      *
-     * @param args  Command line arguments
+     * @param args command line arguments
      */
     public static void main(final String[] args) {
 	if (args.length == 0) {

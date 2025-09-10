@@ -38,11 +38,11 @@ public class JProcLwpInfo {
      * Populate this object with data. This routine should never be called
      * by clients, and is only for the JNI layer to interface with.
      *
-     * @param pid  the process id
-     * @param lwpid  the lwp id
-     * @param stime  start time
-     * @param etime  execution time
-     * @param ntime  execution time, nanosecond part
+     * @param pid the process id
+     * @param lwpid the lwp id
+     * @param stime start time
+     * @param etime execution time
+     * @param ntime execution time, nanosecond part
      */
     public void insert(final int pid, final int lwpid,
 		       final long stime, final long etime, final long ntime) {

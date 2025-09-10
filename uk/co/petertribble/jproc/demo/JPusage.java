@@ -100,7 +100,7 @@ public final class JPusage extends JPdemo implements ActionListener {
      * Create a new JPusage application.
      *
      * @param jproc a JProc object to query for process information
-     * @param standalone  a boolean, true if the demo is a standalone
+     * @param standalone a boolean, true if the demo is a standalone
      */
     public JPusage(final JProc jproc, final boolean standalone) {
 	super("JPusage", standalone);

@@ -100,7 +100,7 @@ public final class JPinfo extends JPdemo implements ActionListener {
      * Create a new JPinfo application.
      *
      * @param jproc a JProc object to query for process information
-     * @param standalone  a boolean, true if the demo is a standalone
+     * @param standalone a boolean, true if the demo is a standalone
      */
     public JPinfo(final JProc jproc, final boolean standalone) {
 	super("JPinfo", standalone);

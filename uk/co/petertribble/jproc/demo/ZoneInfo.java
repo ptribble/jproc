@@ -82,7 +82,7 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
      * Create a new ZoneInfo application.
      *
      * @param jproc a JProc object to query for process information
-     * @param standalone  a boolean, true if the demo is a standalone
+     * @param standalone a boolean, true if the demo is a standalone
      */
     public ZoneInfo(final JProc jproc, final boolean standalone) {
 	super("ZoneInfo", standalone);

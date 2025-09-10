@@ -115,25 +115,25 @@ public class JProcInfo implements Serializable {
      *
      * FIXME pr_pgid pr_sid
      *
-     * @param prPid  the process id
-     * @param prPpid  process id of parent
-     * @param prUid  real user id
-     * @param prEuid  effective user id
-     * @param prGid  real group id
-     * @param prEgid  effective group id
-     * @param prNlwp  number of active lwps in the process
-     * @param prSize  size of process image in Kbytes
-     * @param prRssize  resident set size in Kbytes
-     * @param stime  start time
-     * @param etime  execution time
-     * @param ntime  execution time, nanosecond part
-     * @param ectime  reaped children execution time
-     * @param nctime  reaped children execution time, nanosecond part
-     * @param prTaskid  task id
-     * @param prProjid  project id
-     * @param prZoneid  zone id
-     * @param prContract  process contract
-     * @param prFname  name of execed file
+     * @param prPid the process id
+     * @param prPpid process id of parent
+     * @param prUid real user id
+     * @param prEuid effective user id
+     * @param prGid real group id
+     * @param prEgid effective group id
+     * @param prNlwp number of active lwps in the process
+     * @param prSize size of process image in Kbytes
+     * @param prRssize resident set size in Kbytes
+     * @param stime start time
+     * @param etime execution time
+     * @param ntime execution time, nanosecond part
+     * @param ectime reaped children execution time
+     * @param nctime reaped children execution time, nanosecond part
+     * @param prTaskid task id
+     * @param prProjid project id
+     * @param prZoneid zone id
+     * @param prContract process contract
+     * @param prFname name of execed file
      */
     public void insert(final int prPid, final int prPpid,
 		       final int prUid, final int prEuid,

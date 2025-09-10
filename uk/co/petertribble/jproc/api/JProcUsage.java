@@ -53,26 +53,26 @@ public class JProcUsage {
      * Populate this object with data. This routine should never be called
      * by clients, and is only for the JNI layer to interface with.
      *
-     * @param lwpid   lwp id.  0: process or defunc
-     * @param count   number of contributing lwp
-     * @param rtime   total lwp real (elapsed) time - seconds
-     * @param nrtime  total lwp real (elapsed) time - nanoseconds
-     * @param utime   user level cpu time - seconds
-     * @param nutime  user level cpu time - nanoseconds
-     * @param stime   system call cpu time - seconds
-     * @param nstime  system call cpu time - nanoseconds
-     * @param minf    minor page faults
-     * @param majf    major page faults
-     * @param nswap   swaps
-     * @param inblk   input blocks
-     * @param oublk   output blocks
-     * @param msnd    messages sent
-     * @param mrcv    messages received
-     * @param sigs    signals received
-     * @param vctx    voluntary context switches
-     * @param ictx    involuntary context switches
-     * @param sysc    system calls
-     * @param ioch    chars read and written
+     * @param lwpid lwp id.  0: process or defunc
+     * @param count number of contributing lwp
+     * @param rtime total lwp real (elapsed) time - seconds
+     * @param nrtime total lwp real (elapsed) time - nanoseconds
+     * @param utime user level cpu time - seconds
+     * @param nutime user level cpu time - nanoseconds
+     * @param stime system call cpu time - seconds
+     * @param nstime system call cpu time - nanoseconds
+     * @param minf minor page faults
+     * @param majf major page faults
+     * @param nswap swaps
+     * @param inblk input blocks
+     * @param oublk output blocks
+     * @param msnd messages sent
+     * @param mrcv messages received
+     * @param sigs signals received
+     * @param vctx voluntary context switches
+     * @param ictx involuntary context switches
+     * @param sysc system calls
+     * @param ioch chars read and written
      */
     public void insert(final int lwpid, final int count,
 		       final long rtime, final long nrtime,

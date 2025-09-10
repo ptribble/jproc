@@ -82,7 +82,7 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the processes added in the last update.
      *
-     * @return The Set of JProcesses added in the last update.
+     * @return the Set of JProcesses added in the last update.
      */
     public Set<JProcess> getAddedProcesses() {
 	return addedProcesses;
@@ -91,7 +91,7 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the processes deleted in the last update.
      *
-     * @return The Set of JProcesses deleted in the last update.
+     * @return the Set of JProcesses deleted in the last update.
      */
     public Set<JProcess> getDeletedProcesses() {
 	return deletedProcesses;
@@ -100,7 +100,7 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the current processes.
      *
-     * @return The current Set of JProcesses managed by this JProcessSet.
+     * @return the current Set of JProcesses managed by this JProcessSet.
      */
     public Set<JProcess> getProcesses() {
 	return currentProcesses;
@@ -109,7 +109,7 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the current users.
      *
-     * @return The Set of current users.
+     * @return the Set of current users.
      */
     public Set<String> getUsers() {
 	return getUsers(getProcesses());
@@ -118,9 +118,9 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the current users.
      *
-     * @param processes  A Set of processes.
+     * @param processes a Set of processes.
      *
-     * @return The Set of current users.
+     * @return the Set of current users.
      */
     public Set<String> getUsers(final Set<JProcess> processes) {
 	Set<String> users = new HashSet<>();
@@ -133,7 +133,7 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the current zones.
      *
-     * @return The Set of current zones.
+     * @return the Set of current zones.
      */
     public Set<String> getZones() {
 	return getZones(getProcesses());
@@ -142,9 +142,9 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the current zones.
      *
-     * @param processes  A Set of processes.
+     * @param processes a Set of processes.
      *
-     * @return The Set of current zones.
+     * @return the Set of current zones.
      */
     public Set<String> getZones(final Set<JProcess> processes) {
 	Set<String> zones = new HashSet<>();
@@ -157,7 +157,7 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the current tasks.
      *
-     * @return The Set of current tasks.
+     * @return the Set of current tasks.
      */
     public Set<Integer> getTasks() {
 	return getTasks(getProcesses());
@@ -166,9 +166,9 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the current tasks.
      *
-     * @param processes  A Set of processes.
+     * @param processes a Set of processes.
      *
-     * @return The Set of current task ids.
+     * @return the Set of current task ids.
      */
     public Set<Integer> getTasks(final Set<JProcess> processes) {
 	Set<Integer> tasks = new HashSet<>();
@@ -181,7 +181,7 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the current projects.
      *
-     * @return The Set of current tasks.
+     * @return the Set of current tasks.
      */
     public Set<Integer> getProjects() {
 	return getProjects(getProcesses());
@@ -190,9 +190,9 @@ public class JProcessSet implements Serializable {
     /**
      * Returns the current projects.
      *
-     * @param processes  A Set of processes.
+     * @param processes a Set of processes.
      *
-     * @return The Set of current project ids.
+     * @return the Set of current project ids.
      */
     public Set<Integer> getProjects(final Set<JProcess> processes) {
 	Set<Integer> projects = new HashSet<>();

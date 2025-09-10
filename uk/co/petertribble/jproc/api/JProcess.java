@@ -43,8 +43,8 @@ public final class JProcess implements Serializable {
     /**
      * Create a new JProcess object, representing a Solaris process.
      *
-     * @param pid  The process id of the process.
-     * @param info A JprocInfo object with basic information about the process.
+     * @param pid the process id of the process.
+     * @param info a JprocInfo object with basic information about the process.
      */
     public JProcess(final int pid, final JProcInfo info) {
 	this.pid = pid;
@@ -63,7 +63,7 @@ public final class JProcess implements Serializable {
     /**
      * Update the Information on this process.
      *
-     * @param info A new JProcInfo object containing updated information
+     * @param info a new JProcInfo object containing updated information
      * about this process.
      */
     public void updateInfo(final JProcInfo info) {
@@ -75,7 +75,7 @@ public final class JProcess implements Serializable {
      * avoid native code lookups, and is designed for filtering purposes where
      * data like ids are reasonably static.
      *
-     * @return A JProcInfo object containing information about this process.
+     * @return a JProcInfo object containing information about this process.
      */
     public JProcInfo getCachedInfo() {
 	return info;
@@ -85,7 +85,7 @@ public final class JProcess implements Serializable {
      * Returns whether the requested Object is equal to this JProcess. Equality
      * implies that the Object is a JProcess and has the same pid.
      *
-     * @param o The object to be tested for equality.
+     * @param o the object to be tested for equality.
      *
      * @return true if the object is a {@code JProcess} with the same pid
      * as this {@code JProcess}.

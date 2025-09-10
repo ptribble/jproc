@@ -40,7 +40,7 @@ public class JProcException extends RuntimeException {
     /**
      * Create a new JProcException, with the given detail message.
      *
-     * @param s  the detail message
+     * @param s the detail message
      */
     public JProcException(final String s) {
 	super(s);
@@ -48,8 +48,8 @@ public class JProcException extends RuntimeException {
     /**
      * Construct a new JProcException with the given detail message and cause.
      *
-     * @param s  the detail message
-     * @param cause  the underlying cause for this JProcException
+     * @param s the detail message
+     * @param cause the underlying cause for this JProcException
      */
     public JProcException(final String s, final Throwable cause) {
 	super(s, cause);
