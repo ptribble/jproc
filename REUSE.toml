@@ -1,0 +1,46 @@
+version = 1
+
+[[annotations]]
+path = [ "README.md", "CHANGES", "README.SERVER" ]
+SPDX-FileCopyrightText = "2025 Peter Tribble"
+SPDX-License-Identifier = "CDDL-1.0"
+
+[[annotations]]
+path = [ "jproc.manifest", "properties/jproc.properties", "pkginfo.*" ]
+SPDX-FileCopyrightText = "2025 Peter Tribble"
+SPDX-License-Identifier = "CDDL-1.0"
+
+[[annotations]]
+path = [ "help/*", "jersey/*", "WEB-INF/*" ]
+SPDX-FileCopyrightText = "2025 Peter Tribble"
+SPDX-License-Identifier = "CDDL-1.0"
+
+[[annotations]]
+path = [ "lib/*/libproc_jni.so" ]
+SPDX-FileCopyrightText = "2025 Peter Tribble"
+SPDX-License-Identifier = "CDDL-1.0"
+
+[[annotations]]
+path = [ "lib/java/jingle.jar", "lib/java/jumble.jar", "lib/java/jproc.jar", "lib/java/jproc-api.jar" ]
+SPDX-FileCopyrightText = "2025 Peter Tribble"
+SPDX-License-Identifier = "CDDL-1.0"
+
+[[annotations]]
+path = [ "lib/java/xmlrpc-*.jar", "lib/java/commons-logging-*.jar", "lib/java/ws-commons-util-*.jar" ]
+SPDX-FileCopyrightText = "1999-2009 The Apache Software Foundation"
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = [ "lib/java/slf4j-api-*.jar" ]
+SPDX-FileCopyrightText = "(c) 2004-2025 QOS.ch"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = [ "lib/java/jmdns-*.jar" ]
+SPDX-FileCopyrightText = "JmDNS"
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = [ "lib/java/openjson-*.jar" ]
+SPDX-FileCopyrightText = "(C) 2010 The Android Open Source Project"
+SPDX-License-Identifier = "Apache-2.0"
