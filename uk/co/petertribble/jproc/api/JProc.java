@@ -68,10 +68,10 @@ public class JProc implements Serializable {
      * Create a new JProc object, that can be queried for information about
      * processes.
      *
-     * @param njp a ProcessInterface to query for process information
+     * @param njproc a ProcessInterface to query for process information
      */
-    public JProc(final NativeJProc njp) {
-	this.njp = njp;
+    public JProc(final NativeJProc njproc) {
+	njp = njproc;
     }
 
     /**

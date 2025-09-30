@@ -58,12 +58,12 @@ public final class PSusageTableModel extends AbstractTableModel {
     /**
      * Create a Table Model from the given Set of JProcesses.
      *
-     * @param jproc a JProc object to query for process information
-     * @param jpf a JProcessFilter describing the list of processes to show
+     * @param njproc a JProc object to query for process information
+     * @param njpf a JProcessFilter describing the list of processes to show
      */
-    public PSusageTableModel(final JProc jproc, final JProcessFilter jpf) {
-	this.jpf = jpf;
-	this.jproc = jproc;
+    public PSusageTableModel(final JProc njproc, final JProcessFilter njpf) {
+	jpf = njpf;
+	jproc = njproc;
 
 	// initialize the column mapping list
 	colMap = new ArrayList<>();

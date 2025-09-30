@@ -53,56 +53,56 @@ public class JProcUsage {
      * Populate this object with data. This routine should never be called
      * by clients, and is only for the JNI layer to interface with.
      *
-     * @param lwpid lwp id.  0: process or defunc
-     * @param count number of contributing lwp
-     * @param rtime total lwp real (elapsed) time - seconds
-     * @param nrtime total lwp real (elapsed) time - nanoseconds
-     * @param utime user level cpu time - seconds
-     * @param nutime user level cpu time - nanoseconds
-     * @param stime system call cpu time - seconds
-     * @param nstime system call cpu time - nanoseconds
-     * @param minf minor page faults
-     * @param majf major page faults
-     * @param nswap swaps
-     * @param inblk input blocks
-     * @param oublk output blocks
-     * @param msnd messages sent
-     * @param mrcv messages received
-     * @param sigs signals received
-     * @param vctx voluntary context switches
-     * @param ictx involuntary context switches
-     * @param sysc system calls
-     * @param ioch chars read and written
+     * @param ilwpid lwp id.  0: process or defunc
+     * @param icount number of contributing lwp
+     * @param irtime total lwp real (elapsed) time - seconds
+     * @param inrtime total lwp real (elapsed) time - nanoseconds
+     * @param iutime user level cpu time - seconds
+     * @param inutime user level cpu time - nanoseconds
+     * @param istime system call cpu time - seconds
+     * @param instime system call cpu time - nanoseconds
+     * @param iminf minor page faults
+     * @param imajf major page faults
+     * @param inswap swaps
+     * @param iinblk input blocks
+     * @param ioublk output blocks
+     * @param imsnd messages sent
+     * @param imrcv messages received
+     * @param isigs signals received
+     * @param ivctx voluntary context switches
+     * @param iictx involuntary context switches
+     * @param isysc system calls
+     * @param iioch chars read and written
      */
-    public void insert(final int lwpid, final int count,
-		       final long rtime, final long nrtime,
-		       final long utime, final long nutime,
-		       final long stime, final long nstime,
-		       final long minf, final long majf,
-		       final long nswap, final long inblk,
-		       final long oublk, final long msnd, final long mrcv,
-		       final long sigs, final long vctx, final long ictx,
-		       final long sysc, final long ioch) {
-	this.lwpid = lwpid;
-	this.count = count;
-	this.rtime = rtime;
-	this.nrtime = nrtime;
-	this.utime = utime;
-	this.nutime = nutime;
-	this.stime = stime;
-	this.nstime = nstime;
-	this.minf = minf;
-	this.majf = majf;
-	this.nswap = nswap;
-	this.inblk = inblk;
-	this.oublk = oublk;
-	this.msnd = msnd;
-	this.mrcv = mrcv;
-	this.sigs = sigs;
-	this.vctx = vctx;
-	this.ictx = ictx;
-	this.sysc = sysc;
-	this.ioch = ioch;
+    public void insert(final int ilwpid, final int icount,
+		       final long irtime, final long inrtime,
+		       final long iutime, final long inutime,
+		       final long istime, final long instime,
+		       final long iminf, final long imajf,
+		       final long inswap, final long iinblk,
+		       final long ioublk, final long imsnd, final long imrcv,
+		       final long isigs, final long ivctx, final long iictx,
+		       final long isysc, final long iioch) {
+	lwpid = ilwpid;
+	count = icount;
+	rtime = irtime;
+	nrtime = inrtime;
+	utime = iutime;
+	nutime = inutime;
+	stime = istime;
+	nstime = instime;
+	minf = iminf;
+	majf = imajf;
+	nswap = inswap;
+	inblk = iinblk;
+	oublk = ioublk;
+	msnd = imsnd;
+	mrcv = imrcv;
+	sigs = isigs;
+	vctx = ivctx;
+	ictx = iictx;
+	sysc = isysc;
+	ioch = iioch;
     }
 
     /**

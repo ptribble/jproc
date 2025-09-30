@@ -33,12 +33,12 @@ public final class JLwp {
     /**
      * Create a new JLwp object, representing a Solaris lwp.
      *
-     * @param pid the process id of the containing process.
-     * @param lwpid the lwpid of the lwp.
+     * @param npid the process id of the containing process.
+     * @param nlwpid the lwpid of the lwp.
      */
-    public JLwp(final int pid, final int lwpid) {
-	this.pid = pid;
-	this.lwpid = lwpid;
+    public JLwp(final int npid, final int nlwpid) {
+	pid = npid;
+	lwpid = nlwpid;
     }
 
     /**

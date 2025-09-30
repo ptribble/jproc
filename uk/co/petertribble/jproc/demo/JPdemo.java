@@ -116,47 +116,47 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Constructs a JPdemo object.
      *
-     * @param demoname a String used as the demo title.
+     * @param name a String used as the demo title.
      */
-    public JPdemo(final String demoname) {
-	this(demoname, DEFAULT_INTERVAL, true);
+    public JPdemo(final String name) {
+	this(name, DEFAULT_INTERVAL, true);
     }
 
     /**
      * Constructs a JPdemo object.
      *
-     * @param demoname a String used as the demo title.
-     * @param standalone a boolean, true if the demo is a standalone
+     * @param name a String used as the demo title.
+     * @param alone a boolean, true if the demo is a standalone
      * application.
      */
-    public JPdemo(final String demoname, final boolean standalone) {
-	this(demoname, DEFAULT_INTERVAL, standalone);
+    public JPdemo(final String name, final boolean alone) {
+	this(name, DEFAULT_INTERVAL, alone);
     }
 
     /**
      * Constructs a JPdemo object.
      *
-     * @param demoname a String used as the demo title.
-     * @param interval the update delay in seconds.
+     * @param name a String used as the demo title.
+     * @param ninterval the update delay in seconds.
      */
-    public JPdemo(final String demoname, final int interval) {
-	this(demoname, interval, true);
+    public JPdemo(final String name, final int ninterval) {
+	this(name, ninterval, true);
     }
 
     /**
      * Constructs a JPdemo object.
      *
-     * @param demoname a String used as the demo title.
-     * @param interval the update delay in seconds.
-     * @param standalone a boolean, true if the demo is a standalone
+     * @param name a String used as the demo title.
+     * @param ninterval the update delay in seconds.
+     * @param alone a boolean, true if the demo is a standalone
      * application.
      */
-    public JPdemo(final String demoname, final int interval,
-		  final boolean standalone) {
-	super(demoname);
-	this.demoname = demoname;
-	this.interval = interval;
-	this.standalone = standalone;
+    public JPdemo(final String name, final int ninterval,
+		  final boolean alone) {
+	super(name);
+	demoname = name;
+	interval = ninterval;
+	standalone = alone;
 
 	jm = new JMenuBar();
 	setJMenuBar(jm);

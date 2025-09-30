@@ -60,12 +60,12 @@ public final class LWPusageTableModel extends AbstractTableModel {
     /**
      * Create a Table Model for the given process.
      *
-     * @param jproc a JProc object to query for process information
-     * @param jp a JProcess to display
+     * @param njproc a JProc object to query for process information
+     * @param njp a JProcess to display
      */
-    public LWPusageTableModel(final JProc jproc, final JProcess jp) {
-	this.jproc = jproc;
-	this.jp = jp;
+    public LWPusageTableModel(final JProc njproc, final JProcess njp) {
+	jproc = njproc;
+	jp = njp;
 
 	// initialize the column mapping list
 	colMap = new ArrayList<>();

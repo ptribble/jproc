@@ -53,10 +53,10 @@ public class JProcessSet implements Serializable {
     /**
      * Creates a JProcessSet that includes all processes.
      *
-     * @param jproc a JProc object.
+     * @param njproc a JProc object.
      */
-    public JProcessSet(final JProc jproc) {
-	this.jproc = jproc;
+    public JProcessSet(final JProc njproc) {
+	jproc = njproc;
 	currentProcesses = jproc.getProcesses();
 	addedProcesses = new HashSet<>();
 	deletedProcesses = new HashSet<>();

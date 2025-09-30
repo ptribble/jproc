@@ -115,54 +115,54 @@ public class JProcInfo implements Serializable {
      *
      * FIXME pr_pgid pr_sid
      *
-     * @param prPid the process id
-     * @param prPpid process id of parent
-     * @param prUid real user id
-     * @param prEuid effective user id
-     * @param prGid real group id
-     * @param prEgid effective group id
-     * @param prNlwp number of active lwps in the process
-     * @param prSize size of process image in Kbytes
-     * @param prRssize resident set size in Kbytes
-     * @param stime start time
-     * @param etime execution time
-     * @param ntime execution time, nanosecond part
-     * @param ectime reaped children execution time
-     * @param nctime reaped children execution time, nanosecond part
-     * @param prTaskid task id
-     * @param prProjid project id
-     * @param prZoneid zone id
-     * @param prContract process contract
-     * @param prFname name of execed file
+     * @param iprPid the process id
+     * @param iprPpid process id of parent
+     * @param iprUid real user id
+     * @param iprEuid effective user id
+     * @param iprGid real group id
+     * @param iprEgid effective group id
+     * @param iprNlwp number of active lwps in the process
+     * @param iprSize size of process image in Kbytes
+     * @param iprRssize resident set size in Kbytes
+     * @param istime start time
+     * @param ietime execution time
+     * @param intime execution time, nanosecond part
+     * @param iectime reaped children execution time
+     * @param inctime reaped children execution time, nanosecond part
+     * @param iprTaskid task id
+     * @param iprProjid project id
+     * @param iprZoneid zone id
+     * @param iprContract process contract
+     * @param iprFname name of execed file
      */
-    public void insert(final int prPid, final int prPpid,
-		       final int prUid, final int prEuid,
-		       final int prGid, final int prEgid, final int prNlwp,
-		       final long prSize, final long prRssize,
-		       final long stime, final long etime, final long ntime,
-		       final long ectime, final long nctime,
-		       final int prTaskid, final int prProjid,
-		       final int prZoneid, final int prContract,
-		       final String prFname) {
-	this.prPid = prPid;
-	this.prPpid = prPpid;
-	this.prUid = prUid;
-	this.prEuid = prEuid;
-	this.prGid = prGid;
-	this.prEgid = prEgid;
-	this.prNlwp = prNlwp;
-	this.prSize = prSize;
-	this.prRssize = prRssize;
-	this.stime = stime;
-	this.etime = etime;
-	this.ntime = ntime;
-	this.ectime = ectime;
-	this.nctime = nctime;
-	this.prTaskid = prTaskid;
-	this.prProjid = prProjid;
-	this.prZoneid = prZoneid;
-	this.prContract = prContract;
-	this.prFname = prFname;
+    public void insert(final int iprPid, final int iprPpid,
+		       final int iprUid, final int iprEuid,
+		       final int iprGid, final int iprEgid, final int iprNlwp,
+		       final long iprSize, final long iprRssize,
+		       final long istime, final long ietime, final long intime,
+		       final long iectime, final long inctime,
+		       final int iprTaskid, final int iprProjid,
+		       final int iprZoneid, final int iprContract,
+		       final String iprFname) {
+	prPid = iprPid;
+	prPpid = iprPpid;
+	prUid = iprUid;
+	prEuid = iprEuid;
+	prGid = iprGid;
+	prEgid = iprEgid;
+	prNlwp = iprNlwp;
+	prSize = iprSize;
+	prRssize = iprRssize;
+	stime = istime;
+	etime = ietime;
+	ntime = intime;
+	ectime = iectime;
+	nctime = inctime;
+	prTaskid = iprTaskid;
+	prProjid = iprProjid;
+	prZoneid = iprZoneid;
+	prContract = iprContract;
+	prFname = iprFname;
     }
 
     /*

@@ -78,10 +78,10 @@ public class JProcessFilter implements Serializable {
     /**
      * Creates a JProcessFilter.
      *
-     * @param jps A JProcessSet.
+     * @param jpset A JProcessSet.
      */
-    public JProcessFilter(final JProcessSet jps) {
-	this.jps = jps;
+    public JProcessFilter(final JProcessSet jpset) {
+	jps = jpset;
 	currentProcesses = jps.getProcesses();
 	addedProcesses = new HashSet<>();
 	deletedProcesses = new HashSet<>();

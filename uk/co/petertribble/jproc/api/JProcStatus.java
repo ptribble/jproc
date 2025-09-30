@@ -42,30 +42,30 @@ public class JProcStatus {
      * Populate this object with data. This routine should never be called
      * by clients, and is only for the JNI layer to interface with.
      *
-     * @param pid the process id
-     * @param utime process user cpu time
-     * @param nutime process user cpu time, nanosecond part
-     * @param stime process sys cpu time
-     * @param nstime process sys cpu time, nanosecond part
-     * @param cutime sum of child user time
-     * @param ncutime sum of child user time, nanosecond part
-     * @param cstime sum of child sys time
-     * @param ncstime sum of child sys time, nanosecond part
+     * @param ipid the process id
+     * @param iutime process user cpu time
+     * @param inutime process user cpu time, nanosecond part
+     * @param istime process sys cpu time
+     * @param instime process sys cpu time, nanosecond part
+     * @param icutime sum of child user time
+     * @param incutime sum of child user time, nanosecond part
+     * @param icstime sum of child sys time
+     * @param incstime sum of child sys time, nanosecond part
      */
-    public void insert(final int pid,
-		       final long utime, final long nutime,
-		       final long stime, final long nstime,
-		       final long cutime, final long ncutime,
-		       final long cstime, final long ncstime) {
-	this.pid = pid;
-	this.utime = utime;
-	this.nutime = nutime;
-	this.stime = stime;
-	this.nstime = nstime;
-	this.cutime = cutime;
-	this.ncutime = ncutime;
-	this.cstime = cstime;
-	this.ncstime = ncstime;
+    public void insert(final int ipid,
+		       final long iutime, final long inutime,
+		       final long istime, final long instime,
+		       final long icutime, final long incutime,
+		       final long icstime, final long incstime) {
+	pid = ipid;
+	utime = iutime;
+	nutime = inutime;
+	stime = istime;
+	nstime = instime;
+	cutime = icutime;
+	ncutime = incutime;
+	cstime = icstime;
+	ncstime = incstime;
     }
 
     /**

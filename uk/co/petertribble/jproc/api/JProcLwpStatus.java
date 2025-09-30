@@ -39,22 +39,22 @@ public class JProcLwpStatus {
      * Populate this object with data. This routine should never be called
      * by clients, and is only for the JNI layer to interface with.
      *
-     * @param pid the process id
-     * @param lwpid the lwp id
-     * @param utime process user cpu time
-     * @param nutime process user cpu time, nanosecond part
-     * @param stime process sys cpu time
-     * @param nstime process sys cpu time, nanosecond part
+     * @param ipid the process id
+     * @param ilwpid the lwp id
+     * @param iutime process user cpu time
+     * @param inutime process user cpu time, nanosecond part
+     * @param istime process sys cpu time
+     * @param instime process sys cpu time, nanosecond part
      */
-    public void insert(final int pid, final int lwpid,
-		       final long utime, final long nutime,
-		       final long stime, final long nstime) {
-	this.pid = pid;
-	this.lwpid = lwpid;
-	this.utime = utime;
-	this.nutime = nutime;
-	this.stime = stime;
-	this.nstime = nstime;
+    public void insert(final int ipid, final int ilwpid,
+		       final long iutime, final long inutime,
+		       final long istime, final long instime) {
+	pid = ipid;
+	lwpid = ilwpid;
+	utime = iutime;
+	nutime = inutime;
+	stime = istime;
+	nstime = instime;
     }
 
     /**

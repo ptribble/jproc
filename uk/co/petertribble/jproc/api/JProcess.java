@@ -41,14 +41,15 @@ public final class JProcess implements Serializable {
     private JProcInfo info;
 
     /**
-     * Create a new JProcess object, representing a Solaris process.
+     * Create a new JProcess object, representing a process.
      *
-     * @param pid the process id of the process.
-     * @param info a JprocInfo object with basic information about the process.
+     * @param npid the process id of the process.
+     * @param jpinfo a JprocInfo object with basic information about the
+     * process.
      */
-    public JProcess(final int pid, final JProcInfo info) {
-	this.pid = pid;
-	this.info = info;
+    public JProcess(final int npid, final JProcInfo jpinfo) {
+	pid = npid;
+	info = jpinfo;
     }
 
     /**
@@ -63,11 +64,11 @@ public final class JProcess implements Serializable {
     /**
      * Update the Information on this process.
      *
-     * @param info a new JProcInfo object containing updated information
+     * @param jpinfo a new JProcInfo object containing updated information
      * about this process.
      */
-    public void updateInfo(final JProcInfo info) {
-	this.info = info;
+    public void updateInfo(final JProcInfo jpinfo) {
+	info = jpinfo;
     }
 
     /**

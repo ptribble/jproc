@@ -81,11 +81,11 @@ public final class PClientConfig {
      * Create a PClientConfig that is configured to connect to a given url.
      *
      * @param s the textual url of the server to connect to
-     * @param protocol specifies the communication protocol
+     * @param nproto specifies the communication protocol
      */
-    public PClientConfig(final String s, final int protocol) {
+    public PClientConfig(final String s, final int nproto) {
 	urlString = s;
-	this.protocol = protocol;
+	protocol = nproto;
     }
 
     /**
@@ -141,10 +141,10 @@ public final class PClientConfig {
      *
      * @see #getUser
      *
-     * @param username the username to connect as
+     * @param nusername the username to connect as
      */
-    public void setUser(final String username) {
-	this.username = username;
+    public void setUser(final String nusername) {
+	username = nusername;
     }
 
     /**
@@ -163,10 +163,10 @@ public final class PClientConfig {
      *
      * @see #getPass
      *
-     * @param userpass the password to use for authentication
+     * @param nuserpass the password to use for authentication
      */
-    public void setPass(final String userpass) {
-	this.userpass = userpass;
+    public void setPass(final String nuserpass) {
+	userpass = nuserpass;
     }
 
     /**
@@ -196,10 +196,10 @@ public final class PClientConfig {
      *
      * @see #getProtocol
      *
-     * @param protocol an integer representing the communication protocol
+     * @param nproto an integer representing the communication protocol
      */
-    public void setProtocol(final int protocol) {
-	this.protocol = protocol;
+    public void setProtocol(final int nproto) {
+	protocol = nproto;
     }
 
     /**

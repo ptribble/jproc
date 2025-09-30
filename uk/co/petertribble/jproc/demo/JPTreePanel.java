@@ -88,15 +88,15 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
     /**
      * Create a new JPTreePanel.
      *
-     * @param jproc a JProc object to query for process information
-     * @param jpf a filter defining the processes to be shown
-     * @param interval the initial update interval, in seconds
+     * @param njproc a JProc object to query for process information
+     * @param njpf a filter defining the processes to be shown
+     * @param ninterval the initial update interval, in seconds
      */
-    public JPTreePanel(final JProc jproc, final JProcessFilter jpf,
-		       final int interval) {
-	this.jproc = jproc;
-	this.jpf = jpf;
-	this.interval = interval;
+    public JPTreePanel(final JProc njproc, final JProcessFilter njpf,
+		       final int ninterval) {
+	jproc = njproc;
+	jpf = njpf;
+	interval = ninterval;
 
 	setLayout(new BorderLayout());
 	buildtree();

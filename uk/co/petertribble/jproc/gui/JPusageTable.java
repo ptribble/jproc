@@ -68,14 +68,14 @@ public final class JPusageTable extends JTable implements ActionListener {
     /**
      * Create a new JPusageTable.
      *
-     * @param jproc a JProc object to query for process information
+     * @param njproc a JProc object to query for process information
      * @param jpf a filter defining the processes to be shown
-     * @param interval the initial update interval, in seconds
+     * @param ninterval the initial update interval, in seconds
      */
-    public JPusageTable(final JProc jproc, final JProcessFilter jpf,
-			final int interval) {
-	this.jproc = jproc;
-	this.interval = interval;
+    public JPusageTable(final JProc njproc, final JProcessFilter jpf,
+			final int ninterval) {
+	jproc = njproc;
+	interval = ninterval;
 	setLayout(new BorderLayout());
 
 	ftm = new PSusageTableModel(jproc, jpf);
@@ -213,13 +213,13 @@ public final class JPusageTable extends JTable implements ActionListener {
      * If a zero or negative delay is requested, stop the updates
      * and remember the previous delay.
      *
-     * @param interval the desired delay, in seconds
+     * @param ninterval the desired delay, in seconds
      */
-    public void setDelay(final int interval) {
-	if (interval <= 0) {
+    public void setDelay(final int ninterval) {
+	if (ninterval <= 0) {
 	    stopLoop();
 	} else {
-	    this.interval = interval;
+	    interval = ninterval;
 	    if (timer != null) {
 		timer.setDelay(interval * 1000);
 	    }
