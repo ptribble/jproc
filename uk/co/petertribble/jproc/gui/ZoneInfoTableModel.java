@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.Iterator;
-import javax.swing.table.*;
+import javax.swing.table.AbstractTableModel;
 import uk.co.petertribble.jproc.api.*;
 
 /**

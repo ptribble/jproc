@@ -26,7 +26,7 @@ import java.awt.event.*;
 import uk.co.petertribble.jproc.api.JProc;
 import uk.co.petertribble.jproc.api.JProcessFilter;
 import uk.co.petertribble.jproc.util.PrettyFormat;
-import javax.swing.table.*;
+import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  * A panel showing process information rather like top, aggregated by user.

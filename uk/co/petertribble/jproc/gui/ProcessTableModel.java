@@ -14,13 +14,13 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 package uk.co.petertribble.jproc.gui;
 
-import javax.swing.table.*;
+import javax.swing.table.AbstractTableModel;
 import uk.co.petertribble.jproc.api.*;
 
 /**

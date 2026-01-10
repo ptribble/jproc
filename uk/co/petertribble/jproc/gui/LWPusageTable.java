@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -26,7 +26,7 @@ import javax.swing.Timer;
 import java.awt.BorderLayout;
 import uk.co.petertribble.jproc.api.*;
 import uk.co.petertribble.jproc.util.PrettyFormat;
-import javax.swing.table.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
