@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -27,7 +27,8 @@ import java.util.HashSet;
 import java.util.Enumeration;
 import uk.co.petertribble.jproc.api.*;
 import uk.co.petertribble.jproc.gui.*;
-import javax.swing.tree.*;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 import javax.swing.*;
 import java.awt.BorderLayout;
 import javax.swing.event.TreeSelectionListener;
