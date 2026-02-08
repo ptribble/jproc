@@ -20,7 +20,8 @@
 
 package uk.co.petertribble.jproc.demo;
 
-import uk.co.petertribble.jproc.api.*;
+import uk.co.petertribble.jproc.api.JProc;
+import uk.co.petertribble.jproc.api.JProcess;
 
 /**
  * Dump out the process list in JSON format.

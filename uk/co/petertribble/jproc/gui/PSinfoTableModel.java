@@ -25,7 +25,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Arrays;
 import javax.swing.table.AbstractTableModel;
-import uk.co.petertribble.jproc.api.*;
+import uk.co.petertribble.jproc.api.JProc;
+import uk.co.petertribble.jproc.api.JProcess;
+import uk.co.petertribble.jproc.api.JProcessFilter;
+import uk.co.petertribble.jproc.api.JProcInfo;
 
 /**
  * A TableModel to implement prstat.

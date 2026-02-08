@@ -14,13 +14,15 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 package uk.co.petertribble.jproc.demo;
 
-import uk.co.petertribble.jproc.api.*;
+import uk.co.petertribble.jproc.api.JProc;
+import uk.co.petertribble.jproc.api.JProcessFilter;
+import uk.co.petertribble.jproc.api.JProcessSet;
 import uk.co.petertribble.jproc.client.PClientConfig;
 import uk.co.petertribble.jproc.gui.JPinfoTable;
 import uk.co.petertribble.jproc.gui.JProcResources;
@@ -29,7 +31,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
 import java.awt.BorderLayout;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JPanel;

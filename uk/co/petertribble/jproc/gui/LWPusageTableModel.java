@@ -26,7 +26,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Arrays;
 import javax.swing.table.AbstractTableModel;
-import uk.co.petertribble.jproc.api.*;
+import uk.co.petertribble.jproc.api.JLwp;
+import uk.co.petertribble.jproc.api.JProc;
+import uk.co.petertribble.jproc.api.JProcess;
+import uk.co.petertribble.jproc.api.JProcUsage;
+import uk.co.petertribble.jproc.api.NoSuchProcessException;
 
 /**
  * A TableModel to show usage data for the threads in a process.

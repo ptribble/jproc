@@ -26,7 +26,10 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.Iterator;
 import javax.swing.table.AbstractTableModel;
-import uk.co.petertribble.jproc.api.*;
+import uk.co.petertribble.jproc.api.JProc;
+import uk.co.petertribble.jproc.api.JProcess;
+import uk.co.petertribble.jproc.api.JProcessFilter;
+import uk.co.petertribble.jproc.api.JProcInfo;
 
 /**
  * A TableModel to implement a zone summary like prstat.

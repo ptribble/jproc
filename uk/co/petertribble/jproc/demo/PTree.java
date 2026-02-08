@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -23,7 +23,8 @@ package uk.co.petertribble.jproc.demo;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.Enumeration;
-import uk.co.petertribble.jproc.api.*;
+import uk.co.petertribble.jproc.api.JProc;
+import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.client.PClientConfig;
 import uk.co.petertribble.jproc.gui.ProcessTreeNode;
 import javax.swing.tree.TreeNode;

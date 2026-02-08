@@ -14,14 +14,15 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 package uk.co.petertribble.jproc.parse;
 
 import uk.co.petertribble.jproc.api.*;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 import com.github.openjson.*;
 
 /**
