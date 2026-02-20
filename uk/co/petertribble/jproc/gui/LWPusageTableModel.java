@@ -257,6 +257,8 @@ public final class LWPusageTableModel extends AbstractTableModel {
 	    case 15:
 		l = jpu.getioch();
 		break;
+	    default:
+		break;
 	}
 	return Long.valueOf(l);
     }
@@ -270,7 +272,8 @@ public final class LWPusageTableModel extends AbstractTableModel {
 	    case 2:
 	    case 3:
 		return Double.class;
+	    default:
+		return Long.class;
 	}
-	return Long.class;
     }
 }

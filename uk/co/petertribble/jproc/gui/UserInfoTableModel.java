@@ -270,6 +270,8 @@ public final class UserInfoTableModel extends AbstractTableModel {
 	    case 4:
 		l = aggrRSS(uid);
 		break;
+	    default:
+		break;
 	}
 	return Long.valueOf(l);
     }

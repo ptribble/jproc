@@ -309,6 +309,8 @@ public final class PSinfoTableModel extends AbstractTableModel {
 	    case 13:
 		l = jpi.getcontract();
 		break;
+	    default:
+		break;
 	}
 	return Long.valueOf(l);
     }
@@ -323,7 +325,8 @@ public final class PSinfoTableModel extends AbstractTableModel {
 		return String.class;
 	    case 9:
 		return Double.class;
+	    default:
+		return Long.class;
 	}
-	return Long.class;
     }
 }

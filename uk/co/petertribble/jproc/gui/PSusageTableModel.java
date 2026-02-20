@@ -317,6 +317,8 @@ public final class PSusageTableModel extends AbstractTableModel {
 	    case 18:
 		l = jpu.getioch();
 		break;
+	    default:
+		break;
 	}
 	return Long.valueOf(l);
     }
@@ -331,7 +333,8 @@ public final class PSusageTableModel extends AbstractTableModel {
 	    case 5:
 	    case 6:
 		return Double.class;
+	    default:
+		return Long.class;
 	}
-	return Long.class;
     }
 }
