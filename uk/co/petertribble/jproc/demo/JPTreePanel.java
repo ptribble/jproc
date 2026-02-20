@@ -60,11 +60,11 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
     /**
      * The JProc to query for data.
      */
-    private JProc jproc;
+    private final JProc jproc;
     /**
      * The filter to select the processes to be displayed.
      */
-    private JProcessFilter jpf;
+    private final JProcessFilter jpf;
     /**
      * A table to display process information.
      */
@@ -82,17 +82,13 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
      */
     private Timer timer;
     /**
-     * The update interval for the table.
-     */
-    private int delay = 1000;
-    /**
      * A holder panel.
      */
-    private JPanel ppanel;
+    private final JPanel ppanel;
     /**
      * A model containing the process tree.
      */
-    private DefaultTreeModel dtm;
+    private final DefaultTreeModel dtm;
 
     private transient SortedMap<Integer, ProcessTreeNode> nodemap;
 
@@ -147,9 +143,9 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
      * Start regular updates of the panel.
      */
     public void startLoop() {
-	if (delay > 0) {
+	if (interval > 0) {
 	    if (timer == null) {
-		timer = new Timer(delay, this);
+		timer = new Timer(interval * 1000, this);
 	    }
 	    timer.start();
 	}
@@ -181,12 +177,12 @@ public final class JPTreePanel extends JPanel implements TreeSelectionListener,
      * @param i The new update delay in seconds
      */
     public void setDelay(final int i) {
+	interval = i;
 	if (interval <= 0) {
 	    stopLoop();
 	} else {
-	    delay = interval * 1000;
 	    if (timer != null) {
-		timer.setDelay(delay);
+		timer.setDelay(interval * 1000);
 	    }
 	}
 	if (jup != null) {

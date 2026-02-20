@@ -43,11 +43,11 @@ public final class ProcessTableModel extends AbstractTableModel {
     /**
      * The JProcess to display.
      */
-    private JProcess process;
+    private final JProcess process;
     /**
      * The JProc to query for data.
      */
-    private JProc jproc;
+    private final JProc jproc;
 
     /**
      * The number of lwps in a process.

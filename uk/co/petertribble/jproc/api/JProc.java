@@ -51,10 +51,10 @@ public class JProc implements Serializable {
      * you convert from name to id once, and do a lot of work using the id,
      * but that the id is converted many times to a name for presentation.
      */
-    private transient Map<Integer, String> uMap = new HashMap<>();
-    private transient Map<Integer, String> gMap = new HashMap<>();
-    private transient Map<Integer, String> projMap = new HashMap<>();
-    private transient Map<Integer, String> zMap = new HashMap<>();
+    private final transient Map<Integer, String> uMap = new HashMap<>();
+    private final transient Map<Integer, String> gMap = new HashMap<>();
+    private final transient Map<Integer, String> projMap = new HashMap<>();
+    private final transient Map<Integer, String> zMap = new HashMap<>();
 
     /**
      * Create a new JProc object, that can be queried for information about

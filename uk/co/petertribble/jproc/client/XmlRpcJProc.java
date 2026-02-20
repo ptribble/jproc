@@ -39,9 +39,9 @@ import org.apache.xmlrpc.XmlRpcException;
  *
  * @author Peter Tribble
  */
-public class XmlRpcJProc extends ProcessInterface {
+public final class XmlRpcJProc extends ProcessInterface {
 
-    private JProcClient client;
+    private final JProcClient client;
 
     /**
      * Creates a new NativeJProc object.

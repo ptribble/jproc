@@ -43,18 +43,18 @@ public final class PSinfoTableModel extends AbstractTableModel {
 		"GROUP", "nlwp", "SZ", "RSS", "START", "TIME", "TASK", "PROJ",
 		"ZONE", "CT"};
 
-    private transient List<Integer> colMap;
+    private final transient List<Integer> colMap;
 
     /**
      * The filter to select the processes to be displayed.
      */
-    private JProcessFilter jpf;
-    private transient List<JProcess> vp;
-    private transient List<JProcInfo> vpi;
+    private final JProcessFilter jpf;
+    private final transient List<JProcess> vp;
+    private final transient List<JProcInfo> vpi;
     /**
      * The JProc to query for data.
      */
-    private JProc jproc;
+    private final JProc jproc;
 
     /**
      * Create a Table Model from the given Set of JProcesses.

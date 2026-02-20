@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -32,10 +32,10 @@ import java.net.http.HttpResponse.BodyHandlers;
  *
  * @author Peter Tribble
  */
-public class JPhttpClient {
+public final class JPhttpClient {
 
     private String baseURL;
-    private HttpClient httpclient;
+    private final HttpClient httpclient;
 
     /**
      * Create a JProc client that uses REST to communicate with a HTTP server.

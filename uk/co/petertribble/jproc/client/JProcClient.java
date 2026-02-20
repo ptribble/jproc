@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -31,9 +31,9 @@ import java.net.MalformedURLException;
  *
  * @author Peter Tribble
  */
-public class JProcClient {
+public final class JProcClient {
 
-    private XmlRpcClient client;
+    private final XmlRpcClient client;
 
     /**
      * Create a JProc client that communicates with a server using the XML-RPC

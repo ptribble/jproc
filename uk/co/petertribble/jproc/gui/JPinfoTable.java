@@ -58,15 +58,15 @@ public final class JPinfoTable extends JTable implements ActionListener {
     /**
      * A custom renderer for sizes.
      */
-    private DefaultTableCellRenderer sizeColRenderer;
+    private final DefaultTableCellRenderer sizeColRenderer;
     /**
      * A custom renderer for times.
      */
-    private DefaultTableCellRenderer timeColRenderer;
+    private final DefaultTableCellRenderer timeColRenderer;
     /**
      * A custom renderer for dates.
      */
-    private DefaultTableCellRenderer dateColRenderer;
+    private final DefaultTableCellRenderer dateColRenderer;
 
     /**
      * A Timer to update the display in a loop.

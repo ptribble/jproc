@@ -45,11 +45,11 @@ public final class LWPusageTable extends JTable implements ActionListener {
     /**
      * The underlying data model.
      */
-    private LWPusageTableModel ftm;
+    private final LWPusageTableModel ftm;
     /**
      * A custom renderer for times.
      */
-    private DefaultTableCellRenderer timeColRenderer;
+    private final DefaultTableCellRenderer timeColRenderer;
     /**
      * A Timer to update the display in a loop.
      */

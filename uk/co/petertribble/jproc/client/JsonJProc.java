@@ -39,9 +39,9 @@ import uk.co.petertribble.jproc.parse.JSONParser;
  *
  * @author Peter Tribble
  */
-public class JsonJProc extends ProcessInterface {
+public final class JsonJProc extends ProcessInterface {
 
-    private JPhttpClient client;
+    private final JPhttpClient client;
 
     /**
      * Creates a new NativeJProc object.

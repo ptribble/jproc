@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -27,8 +27,8 @@ package uk.co.petertribble.jproc.api;
  */
 public final class JLwp {
 
-    private int pid;
-    private int lwpid;
+    private final int pid;
+    private final int lwpid;
 
     /**
      * Create a new JLwp object, representing a Solaris lwp.

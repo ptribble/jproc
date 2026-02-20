@@ -45,19 +45,19 @@ public final class PSusageTableModel extends AbstractTableModel {
 		"OUBLK", "MSND", "MRCV", "SIGS", "VCTX", "ICTX", "SYSC",
 		"IOCH"};
 
-    private transient List<Integer> colMap;
+    private final transient List<Integer> colMap;
 
     /**
      * The filter to select the processes to be displayed.
      */
-    private JProcessFilter jpf;
-    private transient List<JProcess> vp;
-    private transient List<JProcUsage> vpu;
-    private transient List<JProcInfo> vpi;
+    private final JProcessFilter jpf;
+    private final transient List<JProcess> vp;
+    private final transient List<JProcUsage> vpu;
+    private final transient List<JProcInfo> vpi;
     /**
      * The JProc to query for data.
      */
-    private JProc jproc;
+    private final JProc jproc;
 
     /**
      * Create a Table Model from the given Set of JProcesses.

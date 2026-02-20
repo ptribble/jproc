@@ -58,7 +58,7 @@ public final class JPusageTable extends JTable implements ActionListener {
     /**
      * A custom renderer for times.
      */
-    private DefaultTableCellRenderer timeColRenderer;
+    private final DefaultTableCellRenderer timeColRenderer;
 
     /**
      * A Timer to update the display in a loop.

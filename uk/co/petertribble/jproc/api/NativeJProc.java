@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -30,9 +30,9 @@ import java.util.HashSet;
  *
  * @author Peter Tribble
  */
-public class NativeJProc extends ProcessInterface {
+public final class NativeJProc extends ProcessInterface {
 
-    private File fproc;
+    private final File fproc;
 
     static {
 	System.loadLibrary("proc_jni");

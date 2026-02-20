@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -44,15 +44,15 @@ public final class ProcessTable extends JTable implements ActionListener {
     /**
      * The underlying data model.
      */
-    private ProcessTableModel ptm;
+    private final ProcessTableModel ptm;
     /**
      * A custom renderer for sizes.
      */
-    private DefaultTableCellRenderer sizeRenderer;
+    private final DefaultTableCellRenderer sizeRenderer;
     /**
      * A custom renderer for times.
      */
-    private DefaultTableCellRenderer timeRenderer;
+    private final DefaultTableCellRenderer timeRenderer;
 
     /**
      * A Timer to update the display in a loop.

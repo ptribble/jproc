@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -34,7 +34,7 @@ public final class JProcess implements Serializable {
     /**
      * The pid of this process.
      */
-    private int pid;
+    private final int pid;
     /**
      * The underlying JProcInfo for this process.
      */
