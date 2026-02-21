@@ -133,7 +133,7 @@ public final class ZoneInfo extends JPdemo implements ActionListener {
 	    userMenu.add(jmi);
 	    userMenuItems.add(jmi);
 	}
-	jm.add(userMenu);
+	addMenu(userMenu);
     }
 
     private void handleUser(final JCheckBoxMenuItem jmi) {

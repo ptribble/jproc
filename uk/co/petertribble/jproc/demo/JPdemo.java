@@ -50,60 +50,45 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * A menu item to exit the demo.
      */
-    protected JMenuItem exitItem;
+    private JMenuItem exitItem;
 
     /**
      * A menu item to show some help information.
      */
-    protected JMenuItem helpItem;
+    private JMenuItem helpItem;
 
     /**
      * A menu item to show license information.
      */
-    protected JMenuItem licenseItem;
+    private JMenuItem licenseItem;
 
     /**
      * A menu item to sleep for 1s.
      */
-    protected JRadioButtonMenuItem sleepItem1;
+    private JRadioButtonMenuItem sleepItem1;
 
     /**
      * A menu item to sleep for 2s.
      */
-    protected JRadioButtonMenuItem sleepItem2;
+    private JRadioButtonMenuItem sleepItem2;
 
     /**
      * A menu item to sleep for 5s.
      */
-    protected JRadioButtonMenuItem sleepItem5;
+    private JRadioButtonMenuItem sleepItem5;
 
     /**
      * A menu item to sleep for 10s.
      */
-    protected JRadioButtonMenuItem sleepItem10;
+    private JRadioButtonMenuItem sleepItem10;
 
     /**
      * The menubar common to all demos.
      */
-    protected JMenuBar jm;
+    private JMenuBar jm;
 
     /**
-     * The File and Exit menu.
-     */
-    protected JMenu jme;
-
-    /**
-     * The Sleep menu.
-     */
-    protected JMenu jms;
-
-    /**
-     * The help menu.
-     */
-    protected JMenu jmh;
-
-    /**
-     * An informational label.
+     * A label to show current status.
      */
     private JLabel infoLabel;
 
@@ -137,9 +122,9 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Constructs a JPdemo object.
      *
-     * @param name a String used as the demo title.
+     * @param name a String used as the demo title
      * @param alone a boolean, true if the demo is a standalone
-     * application.
+     * application
      */
     public JPdemo(final String name, final boolean alone) {
 	this(name, DEFAULT_INTERVAL, alone);
@@ -148,8 +133,8 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Constructs a JPdemo object.
      *
-     * @param name a String used as the demo title.
-     * @param ninterval the update delay in seconds.
+     * @param name a String used as the demo title
+     * @param ninterval the update delay in seconds
      */
     public JPdemo(final String name, final int ninterval) {
 	this(name, ninterval, true);
@@ -158,10 +143,10 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Constructs a JPdemo object.
      *
-     * @param name a String used as the demo title.
-     * @param ninterval the update delay in seconds.
+     * @param name a String used as the demo title
+     * @param ninterval the update delay in seconds
      * @param alone a boolean, true if the demo is a standalone
-     * application.
+     * application
      */
     public JPdemo(final String name, final int ninterval,
 		  final boolean alone) {
@@ -181,8 +166,8 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Add the File menu.
      */
-    public void addFileMenu() {
-	jme = new JMenu(JProcResources.getString("FILE.TEXT"));
+    private void addFileMenu() {
+	JMenu jme = new JMenu(JProcResources.getString("FILE.TEXT"));
 	jme.setMnemonic(KeyEvent.VK_F);
 	if (standalone) {
 	    exitItem = new JMenuItem(
@@ -199,10 +184,10 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     }
 
     /**
-     * Add the sleep manu.
+     * Add the sleep menu.
      */
-    public void addSleepMenu() {
-	jms = new JMenu(JProcResources.getString("SLEEP.TEXT"));
+    private void addSleepMenu() {
+	JMenu jms = new JMenu(JProcResources.getString("SLEEP.TEXT"));
 	jms.setMnemonic(KeyEvent.VK_U);
 
 	sleepItem1 = new JRadioButtonMenuItem(
@@ -239,8 +224,8 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     /**
      * Add the Help menu.
      */
-    public void addHelpMenu() {
-	jmh = new JMenu(JProcResources.getString("HELP.TEXT"));
+    private void addHelpMenu() {
+	JMenu jmh = new JMenu(JProcResources.getString("HELP.TEXT"));
 	jmh.setMnemonic(KeyEvent.VK_H);
 	helpItem = new JMenuItem(JProcResources.getString("HELP.ABOUT.TEXT")
 		+ " " + demoname, KeyEvent.VK_A);
@@ -258,8 +243,8 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      * Add an informational panel. Shows some text and the current update
      * interval.
      *
-     * @param mainPanel a JPanel object to add the informational panel to.
-     * @param sinfo a String used as text in the informational panel.
+     * @param mainPanel a JPanel object to add the informational panel to
+     * @param sinfo a String used as text in the informational panel
      */
     public void addInfoPanel(final JPanel mainPanel, final String sinfo) {
 	JPanel infoPanel = new JPanel(new BorderLayout());
@@ -278,6 +263,15 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     protected void setLabelDelay(final int i) {
 	infoLabel.setText(JProcResources.getString("SLEEP.UPDATE") + " " + i
 		+ JProcResources.getString("SLEEP.SEC"));
+    }
+
+    /**
+     * Add a menu.
+     *
+     * @param menu the menu to add
+     */
+    protected void addMenu(final JMenu menu) {
+	jm.add(menu);
     }
 
     class WindowExit extends WindowAdapter {
@@ -342,5 +336,4 @@ public abstract class JPdemo extends JFrame implements ActionListener {
 	    setDelay(10);
 	}
     }
-
 }

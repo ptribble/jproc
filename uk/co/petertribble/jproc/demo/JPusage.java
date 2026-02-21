@@ -158,7 +158,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	    userMenu.add(jmi);
 	    userMenuItems.add(jmi);
 	}
-	jm.add(userMenu);
+	addMenu(userMenu);
     }
 
 
@@ -198,7 +198,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	removeColumn(columnMap.get("MINF"));
 	removeColumn(columnMap.get("MSND"));
 	removeColumn(columnMap.get("MRCV"));
-	jm.add(columnMenu);
+	addMenu(columnMenu);
     }
 
     /*
@@ -220,7 +220,7 @@ public final class JPusage extends JPdemo implements ActionListener {
 	    zoneMenu.add(jmi);
 	    zoneMenuItems.add(jmi);
 	}
-	jm.add(zoneMenu);
+	addMenu(zoneMenu);
     }
 
     private void handleUser(final JCheckBoxMenuItem jmi) {

@@ -158,7 +158,7 @@ public final class JPinfo extends JPdemo implements ActionListener {
 	    userMenu.add(jmi);
 	    userMenuItems.add(jmi);
 	}
-	jm.add(userMenu);
+	addMenu(userMenu);
     }
 
 
@@ -199,7 +199,7 @@ public final class JPinfo extends JPdemo implements ActionListener {
 	if (jps.getZones().size() == 1) {
 	    removeColumn(columnMap.get("ZONE"));
 	}
-	jm.add(columnMenu);
+	addMenu(columnMenu);
     }
 
     /*
@@ -221,7 +221,7 @@ public final class JPinfo extends JPdemo implements ActionListener {
 	    zoneMenu.add(jmi);
 	    zoneMenuItems.add(jmi);
 	}
-	jm.add(zoneMenu);
+	addMenu(zoneMenu);
     }
 
     private void handleUser(final JCheckBoxMenuItem jmi) {
