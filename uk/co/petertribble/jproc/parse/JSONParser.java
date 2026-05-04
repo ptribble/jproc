@@ -44,7 +44,6 @@ public final class JSONParser {
     }
 
     /**
-    /**
      * Parse the supplied String (in JSON format) and return the encoded
      * Set of processes.
      *
