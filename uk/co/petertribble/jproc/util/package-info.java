@@ -14,14 +14,14 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 /**
  * Generic utility classes to support JProc display.
- * <p>
- * Currently just PrettyFormat.
+ *
+ * <p>Currently just PrettyFormat.
  */
 
 package uk.co.petertribble.jproc.util;

@@ -14,15 +14,15 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 package uk.co.petertribble.jproc.api;
 
 import java.io.Serializable;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A class for filtering Solaris processes. Allows filtering by zone, user, and
@@ -258,7 +258,7 @@ public class JProcessFilter implements Serializable {
 	if (staskid > -1 && jpi.gettaskid() != staskid) {
 	    return false;
 	}
-	if (sprojid > -1 && jpi.getprojid() != sprojid) { //NOPMD
+	if (sprojid > -1 && jpi.getprojid() != sprojid) { // NOPMD
 	    return false;
 	}
 	return true;

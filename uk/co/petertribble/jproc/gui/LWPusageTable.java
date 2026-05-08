@@ -20,18 +20,18 @@
 
 package uk.co.petertribble.jproc.gui;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.Timer;
-import java.awt.BorderLayout;
+import javax.swing.table.DefaultTableCellRenderer;
 import uk.co.petertribble.jproc.api.JProc;
 import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.NoSuchProcessException;
 import uk.co.petertribble.jproc.util.PrettyFormat;
-import javax.swing.table.DefaultTableCellRenderer;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.util.List;
 
 /**
  * A panel showing process information rather like top.

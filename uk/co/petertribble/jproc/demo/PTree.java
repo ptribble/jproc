@@ -20,14 +20,14 @@
 
 package uk.co.petertribble.jproc.demo;
 
+import java.util.Enumeration;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.Enumeration;
+import javax.swing.tree.TreeNode;
 import uk.co.petertribble.jproc.api.JProc;
 import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.client.PClientConfig;
 import uk.co.petertribble.jproc.gui.ProcessTreeNode;
-import javax.swing.tree.TreeNode;
 
 /**
  * An example of the use of the JProc api to print information in the mannner
@@ -38,7 +38,7 @@ import javax.swing.tree.TreeNode;
 public final class PTree {
 
     private SortedMap<Integer, ProcessTreeNode> nodemap;
-    private SortedMap<Integer, JProcess> pmap; //NOPMD
+    private SortedMap<Integer, JProcess> pmap; // NOPMD
 
     /**
      * Run the ptree demo, printing a tree of all processes.

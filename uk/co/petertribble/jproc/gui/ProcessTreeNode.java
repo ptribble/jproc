@@ -20,8 +20,8 @@
 
 package uk.co.petertribble.jproc.gui;
 
-import uk.co.petertribble.jproc.api.JProcess;
 import javax.swing.tree.DefaultMutableTreeNode;
+import uk.co.petertribble.jproc.api.JProcess;
 
 /**
  * Represents a process in a tree.

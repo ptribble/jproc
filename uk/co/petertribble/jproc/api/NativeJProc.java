@@ -21,8 +21,8 @@
 package uk.co.petertribble.jproc.api;
 
 import java.io.File;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * An access class for Solaris /proc. Allows details on individual processes

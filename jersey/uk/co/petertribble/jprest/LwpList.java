@@ -14,14 +14,15 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 package uk.co.petertribble.jprest;
+
+import java.util.Set;
 import javax.ws.rs.*;
 import uk.co.petertribble.jproc.api.*;
-import java.util.Set;
 
 @Path("getLwps/{pid}")
 

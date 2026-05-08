@@ -20,31 +20,31 @@
 
 package uk.co.petertribble.jproc.demo;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Enumeration;
-import uk.co.petertribble.jproc.api.JProc;
-import uk.co.petertribble.jproc.api.JProcess;
-import uk.co.petertribble.jproc.api.JProcessFilter;
-import uk.co.petertribble.jproc.api.JProcInfo;
-import uk.co.petertribble.jproc.gui.JPinfoTable;
-import uk.co.petertribble.jproc.gui.LWPusageTable;
-import uk.co.petertribble.jproc.gui.ProcessTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreePath;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTree;
 import javax.swing.Timer;
-import java.awt.BorderLayout;
-import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
+import uk.co.petertribble.jproc.api.JProc;
+import uk.co.petertribble.jproc.api.JProcInfo;
+import uk.co.petertribble.jproc.api.JProcess;
+import uk.co.petertribble.jproc.api.JProcessFilter;
+import uk.co.petertribble.jproc.gui.JPinfoTable;
+import uk.co.petertribble.jproc.gui.LWPusageTable;
+import uk.co.petertribble.jproc.gui.ProcessTreeNode;
 
 /**
  * An example of the use of the JProc api to give a graphical display

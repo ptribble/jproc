@@ -20,11 +20,11 @@
 
 package uk.co.petertribble.jproc.client;
 
-import uk.co.petertribble.jproc.api.JProcException;
+import java.net.MalformedURLException;
+import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
-import org.apache.xmlrpc.XmlRpcException;
-import java.net.MalformedURLException;
+import uk.co.petertribble.jproc.api.JProcException;
 
 /**
  * A class providing access to a remote JProc server over XML-RPC.

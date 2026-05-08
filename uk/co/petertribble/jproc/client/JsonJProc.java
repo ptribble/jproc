@@ -23,13 +23,13 @@ package uk.co.petertribble.jproc.client;
 import java.io.IOException;
 import java.util.Set;
 import uk.co.petertribble.jproc.api.JLwp;
-import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.JProcException;
 import uk.co.petertribble.jproc.api.JProcInfo;
 import uk.co.petertribble.jproc.api.JProcLwpInfo;
 import uk.co.petertribble.jproc.api.JProcLwpStatus;
 import uk.co.petertribble.jproc.api.JProcStatus;
 import uk.co.petertribble.jproc.api.JProcUsage;
+import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.ProcessInterface;
 import uk.co.petertribble.jproc.parse.JSONParser;
 

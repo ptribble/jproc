@@ -22,8 +22,8 @@ package uk.co.petertribble.jproc.gui;
 
 import javax.swing.table.AbstractTableModel;
 import uk.co.petertribble.jproc.api.JProc;
-import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.JProcInfo;
+import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.NoSuchProcessException;
 
 /**

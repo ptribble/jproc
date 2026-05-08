@@ -20,16 +20,16 @@
 
 package uk.co.petertribble.jproc.gui;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Arrays;
 import javax.swing.table.AbstractTableModel;
 import uk.co.petertribble.jproc.api.JLwp;
 import uk.co.petertribble.jproc.api.JProc;
-import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.JProcUsage;
+import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.NoSuchProcessException;
 
 /**

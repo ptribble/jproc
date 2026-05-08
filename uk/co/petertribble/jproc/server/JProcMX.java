@@ -20,9 +20,9 @@
 
 package uk.co.petertribble.jproc.server;
 
+import java.util.Set;
 import uk.co.petertribble.jproc.api.JProc;
 import uk.co.petertribble.jproc.api.JProcess;
-import java.util.Set;
 
 /**
  * The actual implementation of the MBean exposing JProc data over JMX.

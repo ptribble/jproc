@@ -14,14 +14,14 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 /**
  * Graphical elements to display process information, mostly in tabular form.
- * <p>
- * The actual graphical applications are in the demo package.
+ *
+ * <p>The actual graphical applications are in the demo package.
  */
 
 package uk.co.petertribble.jproc.gui;

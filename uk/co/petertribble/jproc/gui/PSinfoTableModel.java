@@ -20,15 +20,15 @@
 
 package uk.co.petertribble.jproc.gui;
 
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import uk.co.petertribble.jproc.api.JProc;
+import uk.co.petertribble.jproc.api.JProcInfo;
 import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.JProcessFilter;
-import uk.co.petertribble.jproc.api.JProcInfo;
 
 /**
  * A TableModel to implement prstat.

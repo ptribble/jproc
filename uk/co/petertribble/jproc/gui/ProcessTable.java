@@ -20,17 +20,17 @@
 
 package uk.co.petertribble.jproc.gui;
 
-import javax.swing.JTable;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.Timer;
-import javax.swing.table.TableCellRenderer;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 import uk.co.petertribble.jproc.api.JProc;
 import uk.co.petertribble.jproc.api.JProcess;
 import uk.co.petertribble.jproc.api.NoSuchProcessException;
 import uk.co.petertribble.jproc.util.PrettyFormat;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 /**
  * A tabular representation of a process.

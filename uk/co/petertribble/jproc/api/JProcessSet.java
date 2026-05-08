@@ -14,15 +14,15 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 package uk.co.petertribble.jproc.api;
 
 import java.io.Serializable;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A class for representing a Set of Solaris processes and obtaining

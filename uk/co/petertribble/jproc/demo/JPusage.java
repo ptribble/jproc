@@ -20,23 +20,23 @@
 
 package uk.co.petertribble.jproc.demo;
 
-import uk.co.petertribble.jproc.api.JProc;
-import uk.co.petertribble.jproc.api.JProcessFilter;
-import uk.co.petertribble.jproc.api.JProcessSet;
-import uk.co.petertribble.jproc.client.PClientConfig;
-import uk.co.petertribble.jproc.gui.JPusageTable;
-import uk.co.petertribble.jproc.gui.JProcResources;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.HashMap;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import uk.co.petertribble.jproc.api.JProc;
+import uk.co.petertribble.jproc.api.JProcessFilter;
+import uk.co.petertribble.jproc.api.JProcessSet;
+import uk.co.petertribble.jproc.client.PClientConfig;
+import uk.co.petertribble.jproc.gui.JProcResources;
+import uk.co.petertribble.jproc.gui.JPusageTable;
 
 /**
  * A process view rather like top.

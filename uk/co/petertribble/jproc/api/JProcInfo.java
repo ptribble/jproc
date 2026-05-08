@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -113,7 +113,7 @@ public class JProcInfo implements Serializable {
      * Populate this object with data. This routine should never be called
      * by clients, and is only for the JNI layer to interface with.
      *
-     * FIXME pr_pgid pr_sid
+     * <p>FIXME pr_pgid pr_sid
      *
      * @param iprPid the process id
      * @param iprPpid process id of parent

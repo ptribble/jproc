@@ -20,6 +20,12 @@
 
 package uk.co.petertribble.jproc.demo;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,14 +35,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.SwingConstants;
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import uk.co.petertribble.jproc.gui.JProcResources;
 import uk.co.petertribble.jingle.JingleInfoFrame;
+import uk.co.petertribble.jproc.gui.JProcResources;
 
 /**
  * A base class for simple demo applications.
@@ -302,10 +302,10 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      * The main action handler. This handles both menu items (exit,
      * license, help) and updating the delay.
      *
-     * The help handler uses the demoname passed in the constructor
+     * <p>The help handler uses the demoname passed in the constructor
      * to find the right help file.
      *
-     * Subclasses wishing to override this method should call
+     * <p>Subclasses wishing to override this method should call
      * super.actionPerformed() to get the delay update handling,
      * and then use their own logic to handle any other changes.
      *
