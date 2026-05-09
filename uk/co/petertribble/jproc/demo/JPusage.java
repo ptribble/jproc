@@ -160,7 +160,6 @@ public final class JPusage extends JPdemo {
 	addMenu(userMenu);
     }
 
-
     /*
      * Hide the named column.
      */

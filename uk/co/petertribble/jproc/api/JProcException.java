@@ -45,6 +45,7 @@ public class JProcException extends RuntimeException {
     public JProcException(final String s) {
 	super(s);
     }
+
     /**
      * Construct a new JProcException with the given detail message and cause.
      *

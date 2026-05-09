@@ -103,6 +103,7 @@ public final class ProcessTable extends JTable implements ActionListener {
 	    timer.stop();
 	}
     }
+
     /**
      * Set the loop delay to be the specified number of seconds.
      * If a zero or negative delay is requested, stop the updates
@@ -146,6 +147,7 @@ public final class ProcessTable extends JTable implements ActionListener {
      */
     public final class SizeRenderer extends DefaultTableCellRenderer {
 	private static final long serialVersionUID = 1L;
+
 	@Override
 	public void setValue(final Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe
@@ -160,6 +162,7 @@ public final class ProcessTable extends JTable implements ActionListener {
      */
     public final class TimeRenderer extends DefaultTableCellRenderer {
 	private static final long serialVersionUID = 1L;
+
 	@Override
 	public void setValue(final Object value) {
 	    // We know it's a Long, we wrote the model, but to be safe

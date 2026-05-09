@@ -94,7 +94,6 @@ public final class PSinfoTableModel extends AbstractTableModel {
 	updateJprocess();
     }
 
-
     /**
      * Unset user filtering, so that all users are shown.
      */
