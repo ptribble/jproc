@@ -51,10 +51,10 @@ public class JProc implements Serializable {
      * you convert from name to id once, and do a lot of work using the id,
      * but that the id is converted many times to a name for presentation.
      */
-    private final transient Map<Integer, String> uMap = new HashMap<>();
-    private final transient Map<Integer, String> gMap = new HashMap<>();
-    private final transient Map<Integer, String> projMap = new HashMap<>();
-    private final transient Map<Integer, String> zMap = new HashMap<>();
+    private final transient Map<Integer, String> umap = new HashMap<>();
+    private final transient Map<Integer, String> gmap = new HashMap<>();
+    private final transient Map<Integer, String> projmap = new HashMap<>();
+    private final transient Map<Integer, String> zmap = new HashMap<>();
 
     /**
      * Create a new JProc object, that can be queried for information about
@@ -287,11 +287,11 @@ public class JProc implements Serializable {
      * @return The user name, or the userid if no username matches.
      */
     public String getUserName(final int uid) {
-	if (!uMap.containsKey(uid)) {
+	if (!umap.containsKey(uid)) {
 	    String name = njp.getUserName(uid);
-	    uMap.put(uid, (name == null) ? Integer.toString(uid) : name);
+	    umap.put(uid, (name == null) ? Integer.toString(uid) : name);
 	}
-	return uMap.get(uid);
+	return umap.get(uid);
     }
 
     /**
@@ -314,11 +314,11 @@ public class JProc implements Serializable {
      * @return The group name, or the groupid if no group matches.
      */
     public String getGroupName(final int gid) {
-	if (!gMap.containsKey(gid)) {
+	if (!gmap.containsKey(gid)) {
 	    String name = njp.getGroupName(gid);
-	    gMap.put(gid, (name == null) ? Integer.toString(gid) : name);
+	    gmap.put(gid, (name == null) ? Integer.toString(gid) : name);
 	}
-	return gMap.get(gid);
+	return gmap.get(gid);
     }
 
     /**
@@ -341,12 +341,12 @@ public class JProc implements Serializable {
      * @return The project name, or the project id if no project matches.
      */
     public String getProjectName(final int projid) {
-	if (!projMap.containsKey(projid)) {
+	if (!projmap.containsKey(projid)) {
 	    String name = njp.getProjectName(projid);
-	    projMap.put(projid,
+	    projmap.put(projid,
 			(name == null) ? Integer.toString(projid) : name);
 	}
-	return projMap.get(projid);
+	return projmap.get(projid);
     }
 
     /**
@@ -369,11 +369,11 @@ public class JProc implements Serializable {
      * @return The zone name, or the zone id if no zone matches.
      */
     public String getZoneName(final int zoneid) {
-	if (!zMap.containsKey(zoneid)) {
+	if (!zmap.containsKey(zoneid)) {
 	    String name = njp.getZoneName(zoneid);
-	    zMap.put(zoneid, (name == null) ? Integer.toString(zoneid) : name);
+	    zmap.put(zoneid, (name == null) ? Integer.toString(zoneid) : name);
 	}
-	return zMap.get(zoneid);
+	return zmap.get(zoneid);
     }
 
     /**
