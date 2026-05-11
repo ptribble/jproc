@@ -1,8 +1,7 @@
 JProc - a java jni interface to Solaris/illumos process information
 using the procfs filesystem.
 
-
-http://www.petertribble.co.uk/Solaris/jproc.html
+https://www.petertribble.co.uk/Solaris/jproc.html
 
 
 The primary demo is
@@ -26,8 +25,8 @@ JProc is licensed under the CDDL, just like the bulk of OpenSolaris - see
 the file LICENSES/CDDL-1.0.txt (also as help/CDDL.txt) for details
 
 JProc incorporates a couple of sets of utility classes. See
-http://www.petertribble.co.uk/Solaris/jingle.html
-http://www.petertribble.co.uk/Solaris/jumble.html
+https://www.petertribble.co.uk/Solaris/jingle.html
+https://www.petertribble.co.uk/Solaris/jumble.html
 
 This product includes software developed at
 The Apache Software Foundation (https://www.apache.org/).

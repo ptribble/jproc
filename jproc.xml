@@ -64,7 +64,7 @@ JProc provides a jni interface for Java applications to access Solaris process d
                 </common_name>
         <documentation>
           <doc_link name='petertribble.co.uk'
-            uri='http://www.petertribble.co.uk/Solaris/jproc.html'/>
+            uri='https://www.petertribble.co.uk/Solaris/jproc.html'/>
         </documentation>
         </template>
 </service>
