@@ -81,8 +81,6 @@ public final class JPinfo extends JPdemo {
      */
     private transient Set<JCheckBoxMenuItem> columnMenuItems;
 
-    private static final String VERSION = "JPinfo version 1.0";
-
     /**
      * Create a new JPinfo application.
      */
@@ -119,7 +117,7 @@ public final class JPinfo extends JPdemo {
 	mainPanel.add(new JScrollPane(jpip));
 	setContentPane(mainPanel);
 
-	addInfoPanel(mainPanel, VERSION);
+	addInfoPanel(mainPanel, "JPinfo");
 
 	userMenuItems = new HashSet<>();
 	addUserMenu();

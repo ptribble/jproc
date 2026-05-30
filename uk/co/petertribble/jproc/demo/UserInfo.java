@@ -63,8 +63,6 @@ public final class UserInfo extends JPdemo {
      */
     private transient Set<JCheckBoxMenuItem> zoneMenuItems;
 
-    private static final String VERSION = "UserInfo version 1.0";
-
     /**
      * Create a new UserInfo application.
      */
@@ -101,7 +99,7 @@ public final class UserInfo extends JPdemo {
 	mainPanel.add(new JScrollPane(jpip));
 	setContentPane(mainPanel);
 
-	addInfoPanel(mainPanel, VERSION);
+	addInfoPanel(mainPanel, "UserInfo");
 
 	zoneMenuItems = new HashSet<>();
 	if (jps.getZones().size() > 1) {

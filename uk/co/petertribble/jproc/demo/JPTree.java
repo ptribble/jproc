@@ -40,8 +40,6 @@ public final class JPTree extends JPdemo {
      */
     private JPTreePanel jpt;
 
-    private static final String VERSION = "JPTree version 1.0";
-
     /**
      * Run the JPTree demo, printing a tree of all processes.
      */
@@ -72,7 +70,7 @@ public final class JPTree extends JPdemo {
 
 	setContentPane(jpt);
 
-	addInfoPanel(jpt, VERSION);
+	addInfoPanel(jpt, "JPTree");
 
 	setSize(720, 560);
 	validate();
