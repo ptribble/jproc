@@ -56,6 +56,10 @@ public final class JPusageTable extends JTable implements ActionListener {
      */
     PSusageTableModel ftm;
     /**
+     * The update interval for the table.
+     */
+    int interval;
+    /**
      * A custom renderer for times.
      */
     private final DefaultTableCellRenderer timeColRenderer;
@@ -64,10 +68,6 @@ public final class JPusageTable extends JTable implements ActionListener {
      * A Timer to update the display in a loop.
      */
     private Timer timer;
-    /**
-     * The update interval for the table.
-     */
-    int interval;
 
     /**
      * Create a new JPusageTable.

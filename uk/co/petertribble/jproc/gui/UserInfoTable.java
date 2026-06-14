@@ -54,6 +54,10 @@ public final class UserInfoTable extends JTable implements ActionListener {
      */
     UserInfoTableModel ftm;
     /**
+     * The update interval for the table.
+     */
+    int interval;
+    /**
      * A custom renderer for sizes.
      */
     private final DefaultTableCellRenderer sizeColRenderer;
@@ -66,10 +70,6 @@ public final class UserInfoTable extends JTable implements ActionListener {
      * A Timer to update the display in a loop.
      */
     private Timer timer;
-    /**
-     * The update interval for the table.
-     */
-    int interval;
 
     /**
      * Create a new UserInfoTable.

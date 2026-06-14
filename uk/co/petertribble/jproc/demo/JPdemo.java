@@ -45,7 +45,17 @@ import uk.co.petertribble.jproc.gui.JProcResources;
  */
 public abstract class JPdemo extends JFrame implements ActionListener {
 
+    /**
+     * The default update interval, 5s.
+     */
+    protected static final int DEFAULT_INTERVAL = 5;
+
     private static final long serialVersionUID = 1L;
+
+    /**
+     * Whether this is a standalone or child demo.
+     */
+    boolean standalone;
 
     /**
      * A menu item to exit the demo.
@@ -93,11 +103,6 @@ public abstract class JPdemo extends JFrame implements ActionListener {
     private JLabel infoLabel;
 
     /**
-     * The default update interval, 5s.
-     */
-    protected static final int DEFAULT_INTERVAL = 5;
-
-    /**
      * The name of this demo.
      */
     private String demoname;
@@ -105,10 +110,6 @@ public abstract class JPdemo extends JFrame implements ActionListener {
      * The update interval for the demo.
      */
     private int interval;
-    /**
-     * Whether this is a standalone or child demo.
-     */
-    boolean standalone;
 
     /**
      * Constructs a JPdemo object.
